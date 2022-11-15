@@ -8,4 +8,4 @@ Actually: E/E architecture
 - describes a vehicle as a model 
 - fixed in concept and design
 
-[[Attack paths]] can be described as a chain of [[Attacker Privileges]] which can be achieved by performing a set of attacks or attack steps
+[[Attack Path]] can be described as a chain of [[Attacker Privileges]] which can be achieved by performing a set of attacks or attack steps
