@@ -13,13 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bachelor Thesis.md",
+                "file": "Papers/Model-Based Security Testing of Vehicle Networks.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "b0c1c6501a23899f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +94,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bachelor Thesis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +110,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bachelor Thesis.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +131,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Bachelor Thesis.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -136,17 +141,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "df9ebc4f67240882",
+  "active": "b0c1c6501a23899f",
   "lastOpenFiles": [
-    "2022-11-15.md",
-    "Buzzwords/ISO 26262.md",
-    "Buzzwords/ISO 21434.md",
-    "Buzzwords/UN R155.md",
-    "Buzzwords/OBD.md",
-    "Buzzwords/Ethernet.md",
-    "Buzzwords/ECU.md",
+    "Papers/Model-Based Security Testing of Vehicle Networks.md",
     "Buzzwords/E - E Architecture.md",
-    "Buzzwords/CAN.md",
-    "Buzzwords/Bluetooth.md"
+    "Papers/Automation in Automotive Security by Using Attacker Priviliges.md",
+    "Approaches/Architecture diagrams.md",
+    "Approaches/Model-Based Testing.md",
+    "Approaches/Model-Based Security Testing.md",
+    "Attack/Attack.md",
+    "Buzzwords/EFSM.md",
+    "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybercecurity engineering.md",
+    "Attack/Attacker Privileges.md"
   ]
 }
