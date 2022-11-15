@@ -1,0 +1,30 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "file:Bachelor Thesis",
+      "color": {
+        "a": 1,
+        "rgb": 8215533
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": -1,
+  "nodeSizeMultiplier": 1.19739583333333,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.401041666666667,
+  "repelStrength": 16.7708333333333,
+  "linkStrength": 1,
+  "linkDistance": 321,
+  "scale": 0.4505081176757852,
+  "close": false
+}

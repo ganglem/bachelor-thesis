@@ -1,0 +1,152 @@
+{
+  "main": {
+    "id": "63c0cdc6ab16176c",
+    "type": "split",
+    "children": [
+      {
+        "id": "fb699a24c29684f0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "df9ebc4f67240882",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bachelor Thesis.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "22c257a021f40c24",
+    "type": "split",
+    "children": [
+      {
+        "id": "3900a4ee84ef6836",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b35094ec72e852d3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7c9f27cfb68241be",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "d493a8103200655d",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9155341fbbcd8d8f",
+    "type": "split",
+    "children": [
+      {
+        "id": "ebc0759e75b129f2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "de6226d3ce045657",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Bachelor Thesis.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "efe2efad99b36a39",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Bachelor Thesis.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "295c96408aba0bd6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "09e603d789120f4c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Bachelor Thesis.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "df9ebc4f67240882",
+  "lastOpenFiles": [
+    "2022-11-15.md",
+    "Buzzwords/ISO 26262.md",
+    "Buzzwords/ISO 21434.md",
+    "Buzzwords/UN R155.md",
+    "Buzzwords/OBD.md",
+    "Buzzwords/Ethernet.md",
+    "Buzzwords/ECU.md",
+    "Buzzwords/E - E Architecture.md",
+    "Buzzwords/CAN.md",
+    "Buzzwords/Bluetooth.md"
+  ]
+}
