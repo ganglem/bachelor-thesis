@@ -1,7 +1,5 @@
 Tags: #paper #model-based 
 
-This is a summary of this paper
-
 ## Introduction
 
 ### Problem
@@ -17,6 +15,8 @@ This is a summary of this paper
 
 - [[Model-Based Testing]]
 - [[Model-Based Security Testing]]
+- [[Attack Path Generation Based on Attack and Penetration Testing Knowledge]]
+- [[Automation in Automotive Security by Using Attacker Priviliges]]
 
 
 ## Automotive Security Model
@@ -37,16 +37,21 @@ This is a summary of this paper
 	- environmental entities
 		- communication
 		- influences
-		- attacker
+		- [[Attacker]]
 	- [[Vulnerability]]
 2. apply [[Attacker Privileges]]
 	- to gain a specific privilege on the gateway, a vulnerability must be exploited
+
+**This model is based on [[EFSM]]**
+- Model elements: [[Attacker Privileges]]
+- Transitions: [[Vulnerability]]
+
 
 
 ## Proof of Concept
 
 - Attacker can connect to any interface to carry out attacks
-- Demonstration by choosing different entry points and as a result different [[Attack paths]]
+- Demonstration by choosing different entry points and as a result different [[Attack Path]]
 - Security model is used to represent security-related characteristics of a vehicular network
 - Analyze model for attack paths
 - Model contained several attack paths that were executed on the real vehicle and was able to describe attack path
