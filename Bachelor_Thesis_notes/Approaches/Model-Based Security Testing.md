@@ -1,4 +1,4 @@
-Tags: #model-based #approach
+Tags: #model-based
 Related: [[Model-Based Testing]]
 See also: [[Model-Based Security Testing of Vehicle Networks]]
 

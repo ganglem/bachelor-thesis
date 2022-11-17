@@ -1,4 +1,7 @@
-Tags: #attack 
+Tags: #attack #model-based
+
+*As defined in [[Model-Based Security Testing of Vehicle Networks]]
+and mentioned in [[Attack Path Generation Based on Attack and Penetration Testing Knowledge]]
 
 - **Read/Write**: read/write data on a communication system
 		- channels are not protected by secrity measures

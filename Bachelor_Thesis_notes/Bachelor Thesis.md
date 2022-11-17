@@ -1,4 +1,4 @@
-Tags: #bachelorthesis #paper  #approach 
+Tags: #bachelorthesis #paper  
 
 In this thesis you have to make attack path analyses on different internal vehicle network architectures and compare them based on which provides more security with regards attack paths. 
 
