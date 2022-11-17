@@ -1,14 +1,19 @@
 Tags: #paper #model-based 
 
+## Abstract
+
+[[Model-Based Security Testing]] is introduced using an [[EFSM]].
+
+
 ## Introduction
 
 ### Problem
 - Methods for security testing, such as pentests, are usually carried out manually in late phases of development.
 	- Vulnerabilites can only be eliminated in late stages
+- Standards like [[ISO 21434]], [[UN R155]]
 	
 ### Solution
-- [[Model-Based Security Testing]] to enable security tests early on in the process in an automated way
-	- Vulnerabilites are identified and eliminated at an early stage
+- [[Model-Based Security Testing]]
 
 
 ## Background and Related Work

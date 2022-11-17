@@ -1,4 +1,4 @@
-Tags: #model-based
+Tags: #model-based #testing
 See also: [[Model-Based Security Testing]], [[Model-Based Security Testing of Vehicle Networks]]
 
 - automate test process
