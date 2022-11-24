@@ -1,8 +1,8 @@
-Tags: #attack #testing 
+Tags: #attack #testing #todo
 
 - manual execution
 - experience-based
 - explorative
-- [[Back-Box Testing]]
+- [[Black-Box Testing]]
 
  -> considered difficult to automate

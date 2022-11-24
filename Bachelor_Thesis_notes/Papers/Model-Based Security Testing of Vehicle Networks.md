@@ -1,4 +1,4 @@
-Tags: #paper #model-based 
+Tags: #paper #model-based #automotive 
 
 ## Abstract
 
@@ -21,7 +21,7 @@ Tags: #paper #model-based
 - [[Model-Based Testing]]
 - [[Model-Based Security Testing]]
 - [[Attack Path Generation Based on Attack and Penetration Testing Knowledge]]
-- [[Automation in Automotive Security by Using Attacker Priviliges]]
+- [[Automation in Automotive Security by Using Attacker Privileges]]
 
 
 ## Automotive Security Model
