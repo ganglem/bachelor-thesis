@@ -10,6 +10,3 @@ This is why MBST aims to describe a system in a **formal way** to generte securi
 
 - enable security tests early on in the process in an automated way
 	- Vulnerabilites are identified and eliminated at an early stage
-- [[SUT]]s are extended by security-specific aspects
-
-- [[CSP]]

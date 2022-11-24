@@ -8,7 +8,3 @@ Tags: #model-based #buzzwords
 
 - Model elements: [[Attacker Privileges]]
 - Transitions: [[Vulnerability]]
-	- enables the change from a source state to a target state
-	- triggered when event occurs, guard condition must be met
-	- state changes and action will be triggered
-
