@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "fb699a24c29684f0",
+        "id": "fb7014ce4c837405",
         "type": "tabs",
         "children": [
           {
-            "id": "df9ebc4f67240882",
+            "id": "186f805c41a55e52",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md",
+                "file": "Standards/AUTOSAR.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,8 +48,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#testing",
-                "matchingCase": false,
+                "query": "tag:#automotive",
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md",
+                "file": "Standards/AUTOSAR.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md",
+                "file": "Standards/AUTOSAR.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md"
+                "file": "Standards/AUTOSAR.md"
               }
             }
           }
@@ -136,17 +136,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "df9ebc4f67240882",
+  "active": "186f805c41a55e52",
   "lastOpenFiles": [
-    "Papers/Automation in Automotive Security by Using Attacker Priviliges.md",
-    "Papers/Attack Path Generation Based on Attack and Penetration Testing Knowledge.md",
-    "Approaches/Security Testing in the Automotive Domain.md",
-    "Approaches/Security Testing.md",
-    "Buzzwords/OWASP.md",
-    "Attack/Penetration Testing.md",
-    "Approaches/Model-Based Testing.md",
-    "Approaches/Rating.md",
-    "Approaches/Model-Based Security Testing.md",
-    "Papers/Model-Based Security Testing of Vehicle Networks.md"
+    "Standards/UN R155.md",
+    "Standards/UNECE.md",
+    "Standards/ISO 15118.md",
+    "Standards/CVSS.md",
+    "Standards/CSP.md",
+    "Standards/AUTOSAR.md",
+    "Standards/SAE J3061.md",
+    "Standards/PTES.md",
+    "Standards/ISO 26262.md",
+    "Approaches/Security Testing.md"
   ]
 }
