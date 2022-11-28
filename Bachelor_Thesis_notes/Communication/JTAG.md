@@ -1,0 +1,11 @@
+Tags: #standard #todo #automotive 
+
+### [JTAG - Wikipedia](https://en.wikipedia.org/wiki/JTAG)
+
+**JTAG** (named after the **Joint Test Action Group** which codified it) is an [industry standard](https://en.wikipedia.org/wiki/Technical_standard "Technical standard") for verifying designs and testing [printed circuit boards](https://en.wikipedia.org/wiki/Printed_circuit_board "Printed circuit board") after manufacture.
+
+JTAG implements standards for on-chip instrumentation in [electronic design automation](https://en.wikipedia.org/wiki/Electronic_design_automation "Electronic design automation") (EDA) as a complementary tool to [digital simulation](https://en.wikipedia.org/wiki/Logic_simulation "Logic simulation"). It specifies the use of a dedicated [debug port](https://en.wikipedia.org/wiki/Debug_port "Debug port") implementing a [serial communications](https://en.wikipedia.org/wiki/Serial_communication "Serial communication") interface for low-overhead access without requiring direct external access to the system address and data buses. The interface connects to an on-chip Test Access Port (TAP) that implements a [stateful](https://en.wikipedia.org/wiki/State_(computer_science) "State (computer science)") protocol to access a set of test registers that present chip logic levels and device capabilities of various parts.
+
+The Joint Test Action Group formed in 1985 to develop a method of verifying designs and testing [printed circuit boards](https://en.wikipedia.org/wiki/Printed_circuit_board "Printed circuit board") after manufacture. In 1990 the [Institute of Electrical and Electronics Engineers](https://en.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers "Institute of Electrical and Electronics Engineers") codified the results of the effort in IEEE Standard 1149.1-1990, entitled _Standard Test Access Port and Boundary-Scan Architecture_.
+
+The JTAG standards have been extended by many semiconductor chip manufacturers with specialized variants to provide vendor-specific features

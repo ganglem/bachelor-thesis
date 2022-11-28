@@ -1,0 +1,5 @@
+Tags: #automotive #interface 
+
+### [On-board diagnostics - Wikipedia](https://en.wikipedia.org/wiki/On-board_diagnostics)
+
+**On-board diagnostics** (**OBD**) is a term referring to a vehicle's self-diagnostic and reporting capability. OBD systems give the vehicle owner or repair technician access to the status of the various vehicle sub-systems. The amount of diagnostic information available via OBD has varied widely since its introduction in the early 1980s versions of on-board vehicle computers. Early versions of OBD would simply illuminate a malfunction indicator light (MIL) or "[idiot light](https://en.wikipedia.org/wiki/Idiot_light "Idiot light")" if a problem was detected, but would not provide any information as to the nature of the problem. Modern OBD implementations use a standardized digital communications port to provide [real-time data](https://en.wikipedia.org/wiki/Real-time_data "Real-time data") in addition to a standardized series of [diagnostic trouble codes](https://en.wikipedia.org/wiki/Table_of_OBD-II_Codes "Table of OBD-II Codes"), or DTCs, which allow a person to rapidly identify and remedy malfunctions within the vehicle.

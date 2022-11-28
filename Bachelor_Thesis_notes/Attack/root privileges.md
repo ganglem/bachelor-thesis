@@ -1,1 +1,5 @@
-Tags: #attack #todo
+Tags: #attack 
+
+#### [Superuser - Wikipedia](https://en.wikipedia.org/wiki/Superuser)
+
+In computing, the **superuser** is a special user account used for [system administration](https://en.wikipedia.org/wiki/System_administrator "System administrator"). Depending on the operating system (OS), the actual name of this account might be **root**, **administrator**, **admin** or **supervisor**. In some cases, the actual name of the account is not the determining factor; on Unix-like systems, for example, the user with a user identifier (UID) of zero is the superuser, regardless of the name of that account) and in systems which implement a role based security model, any user with the role of superuser (or its synonyms) can carry out all actions of the superuser account. The [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege "Principle of least privilege") recommends that most users and applications run under an ordinary account to perform their work, as a superuser account is capable of making unrestricted, potentially adverse, system-wide changes.

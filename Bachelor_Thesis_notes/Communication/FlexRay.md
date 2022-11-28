@@ -1,0 +1,9 @@
+Tags: #communication_system #automotive 
+
+### [FlexRay - Wikipedia](https://en.wikipedia.org/wiki/FlexRay)
+
+**FlexRay** is an [automotive network communications protocol](https://en.wikipedia.org/wiki/Vehicle_bus "Vehicle bus") developed by the **FlexRay Consortium** to govern on-board automotive computing. It is designed to be faster and more reliable than [[CAN]] and [TTP](https://en.wikipedia.org/wiki/Time-Triggered_Protocol "Time-Triggered Protocol"), but it is also more expensive. The FlexRay consortium disbanded in 2009, but the FlexRay standard is now a set of ISO standards, ISO [17458-1](http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=59804) to [17458-5](http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=59809).
+
+FlexRay is a communication bus designed to ensure high data rates, fault tolerance, operating on a time cycle, split into static and dynamic segments for event-triggered and time-triggered communications.
+
+FlexRay supports data rates up to 10 [Mbit/s](https://en.wikipedia.org/wiki/Megabit "Megabit"), explicitly supports both star and "party line" bus topologies, and can have two independent data channels for fault-tolerance (communication can continue with reduced bandwidth if one channel is inoperative). The bus operates on a time cycle, divided into two parts: the static segment and the dynamic segment. The static segment is preallocated into slices for individual communication types, providing stronger determinism than its predecessor [[CAN]]. The dynamic segment operates more like [[CAN]], with nodes taking control of the bus as available, allowing event-triggered behavior.

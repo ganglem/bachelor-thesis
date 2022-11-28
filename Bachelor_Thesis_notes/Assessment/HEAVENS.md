@@ -1,0 +1,25 @@
+Tags: #assessment
+Links: [The Hitchhiker's Guide to Hacking Connected Cars: The HEAVENS Security Model (brierandthorn.com)](https://www.brierandthorn.com/post/the-hitchhiker-s-guide-to-hacking-connected-cars-the-heavens-security-model)
+
+  
+HEAVENS, an ancronym for HEAling Vulnerabilities to Enhance Software, Security, and Safety was a project partly funded by Vinnova, a Swedish government agency that started on April 2013 and went to March 2016. HEAVENS aimed at identifying owners, assets, risks, [[Vulnerability]], countermeasures, threat agents, and threats.
+
+HEAVENS defines a threat analysis and risk assessment methodology to facilitate the process of identifying security requirements and vulnerabilities of [[E - E Architecture]] automotive systems and to perform security evaluations of those systems.
+
+The target of HEAVENS is to equip owners with countermeasures to facilitate protecting their _assets_ by minimizing the _risk_ associated with the _vulnerabilities_ that can be exploited by the _threats_ originating from the _threat agents_.
+
+The primary objective of the HEAVENS security model was to outline a framework for identifying security requirements in the context of the automotive [[E - E Architecture]] systems through the interplay of safety and security in the context of automotive [[E - E Architecture]] systems.
+
+This is similar to the notion of functional safety requirements as described in [[ISO 26262]]. To accomplish this objective, the process of HEAVENS includes the identification of assets and threats associated with the assets. Then threats are mapped with the security attributes that derives a security level for each asset-threat pair by estimating threat level along with impact level. Consequently, the HEAVENS security model focuses on methods, processes and tool support for threat analysis and risk assessment with respect to the automotive [[E - E Architecture]] systems making it a great candidate as a framework for automotive risk assessments over a traditional IT risk assessment model of for example a web application.
+  
+In the HEAVENS security model, threats are the emphasis in the model and are ranked by determination of three factors: Threat Level (TL), which corresponds to a likelihood estimation; the Impact Level (IL), which a score based on impact to safety, financial, operational, privacy, and legislation; and Security Level (SL), the final risk ranking.
+
+HEAVENS leverages Microsoft’s threat-based [[STRIDE]] model for the threat modeling phase in the context of automotive E/E systems establishing a direct mapping between security objectives of Safety, Financial, Operational, Privacy, and Legislation with impact level estimation during risk assessment addressing risk through the lens of its impact to business for a particular threat for the relevant stakeholder. Estimation impact level paramaters are based on already-established industry standards, e.g. safety is aligned to [[ISO 26262]], financial is based on the BSI-Standard, and operational is based on the Failure Mode and Effect Analysis (FMEA) proposed by the Automotive Industry Action Group (AIAG).
+
+The HEAVENS model consists of three components or phases: **threat analysis**, where a description of a functional use case is the input to the threat analysis process, which produces two outputs, a mapping between threats and assets for each asset in the context of the use case, and a mapping between threats and security attributes to establish which security attributes are affected due to a particular threat in the context of an asset. 
+
+Next, the **risk assessment** is performed once the threats for the relevant assets are identified, which are then ranked. The threats and assets are used as input along with the threat level (TL) and impact level (IL). The result to the risk assessment is then outputted as a security level for each threat associated with each asset of the TOE/UC. 
+
+Finally, **security requirements** are defined by considering both the mapping between threat and asset, as well as security level to forumulate security requirements for the asset and TOE/UC. Security requirement is a function of asset, threat, security level and security attribute. It’s important to note that the security level considers the potential business impact in terms of security objectives fo a particular threat associate swith a particular asset.
+
+When making a decision on whether or not to use HEAVENS as your security model, it’s important to consider that in its most recent version, HEAVENS does not address an intersection of threats and vulnerabilities. So, while it is very effective at threat analysis, its important to note that other risk assessment frameworks, such as ISO do address vulnerability analysis and threat/vulnerability pairs.

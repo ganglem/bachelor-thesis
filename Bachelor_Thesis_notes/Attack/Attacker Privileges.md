@@ -20,5 +20,5 @@ Transition model is based on [[EFSM]]
 E.g.:
 
 - [[Attacker]] connects to the vehicle via [[OBD]]
-- [[OBD]] is connetced to [[CGW]] via [[CAN]]
-- [[CGW]] is used to gain access to the internal vehicle network
+- [[OBD]] is connetced to Central [[Gateway]] via [[CAN]]
+- Central [[Gateway]] is used to gain access to the internal vehicle network

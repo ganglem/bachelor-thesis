@@ -1,4 +1,4 @@
-Tags: #buzzwords #automotive #todo
+Tags:  #automotive 
 
 An **electronic control unit** (**ECU**), also known as an **electronic control module** (**ECM**), is an [embedded system](https://en.wikipedia.org/wiki/Embedded_system "Embedded system") in [automotive electronics](https://en.wikipedia.org/wiki/Automotive_electronics "Automotive electronics") that controls one or more of the [electrical systems](https://en.wikipedia.org/wiki/Automotive_electronics#Types "Automotive electronics") or subsystems in a car or other [motor vehicle](https://en.wikipedia.org/wiki/Motor_vehicle "Motor vehicle").
 
@@ -19,7 +19,7 @@ An **electronic control unit** (**ECU**), also known as an **electronic contr
     -   Logic outputs
 -   Communication links
     -   Housing
-    -   Bus Transceivers, e.g. for K-Line, CAN, Ethernet
+    -   Bus Transceivers, e.g. for K-Line, [[CAN]], [[Ethernet]]
 -   Embedded Software
     -   [Boot Loader](https://en.wikipedia.org/wiki/Boot_Loader "Boot Loader")
     -   Metadata for ECU and Software Identification, Version Management, Checksums

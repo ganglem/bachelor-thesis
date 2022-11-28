@@ -1,0 +1,5 @@
+Tags: #cryptography 
+
+### [Hardware security module - Wikipedia](https://en.wikipedia.org/wiki/Hardware_security_module)
+
+A **hardware security module** (**HSM**) is a physical computing device that safeguards and manages [digital keys](https://en.wikipedia.org/wiki/Digital_keys "Digital keys"), performs [[Encryption]] and decryption functions for [digital signatures](https://en.wikipedia.org/wiki/Digital_signature "Digital signature"), [strong authentication](https://en.wikipedia.org/wiki/Strong_authentication "Strong authentication") ([[Authentication]]) and other cryptographic functions. These modules traditionally come in the form of a plug-in card or an external device that attaches directly to a [computer](https://en.wikipedia.org/wiki/Computer "Computer") or [network server](https://en.wikipedia.org/wiki/Server_(computing) "Server (computing)"). A hardware security module contains one or more [secure cryptoprocessor](https://en.wikipedia.org/wiki/Secure_cryptoprocessor "Secure cryptoprocessor") [chips](https://en.wikipedia.org/wiki/Integrated_circuit)
