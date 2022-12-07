@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "cb12e6fd8340873a",
+        "id": "fb7014ce4c837405",
         "type": "tabs",
         "children": [
           {
-            "id": "7eebc3a1d103db52",
+            "id": "186f805c41a55e52",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Buzzwords/Architecture diagrams.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -44,8 +48,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#testing",
-                "matchingCase": false,
+                "query": "tag:#automotive",
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Buzzwords/Architecture diagrams.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Buzzwords/Architecture diagrams.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,27 +124,29 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Buzzwords/Architecture diagrams.md"
+              }
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 300,
     "collapsed": true
   },
-  "active": "7eebc3a1d103db52",
+  "active": "186f805c41a55e52",
   "lastOpenFiles": [
-    "Assessment/HEAVENS.md",
     "Assessment/TARA.md",
-    "[ISO 21434.md",
-    "Assessment/STRIDE.md",
-    "Questions.md",
-    "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md",
-    "Standards/ISO/ISO 21434.md",
+    "Assessment/OWASP.md",
+    "Papers/Automation in Automotive Security by Using Attacker Privileges.md",
+    "Assessment/HEAVENS.md",
     "Assessment/EVITA/EVITA.md",
-    "Attack.md",
-    "Papers/Model-Based Security Testing of Vehicle Networks.md"
+    "Assessment/EVITA/Knowledge of the Item or Component.md",
+    "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md",
+    "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
+    "Resources/PDFs/Proposal_MichaelWolf.pdf",
+    "Questions.md"
   ]
 }

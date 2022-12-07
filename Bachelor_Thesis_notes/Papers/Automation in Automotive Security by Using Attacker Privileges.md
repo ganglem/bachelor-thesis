@@ -1,9 +1,8 @@
 Tags: #paper #automotive 
-#todo
+Related: [[Model-Based Security Testing of Vehicle Networks]], [[Attack Path Generation Based on Attack and Penetration Testing Knowledge]]
 
-[[Attacker Privileges]]
-
-[[TARA]]
-
-[[Security Testing]]
+## General topics
+- [[Attacker Privileges]]
+- [[TARA]]
+- [[Security Testing]]
 
