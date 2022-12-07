@@ -1,4 +1,4 @@
-Tags: #assessment #automotive #todo
+Tags: #assessment #automotive
 
 ## Threat Analysis Risk Assessment
 

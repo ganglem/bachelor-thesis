@@ -1,6 +1,7 @@
 Tags: #assessment
 Links: [The Hitchhiker's Guide to Hacking Connected Cars: The HEAVENS Security Model (brierandthorn.com)](https://www.brierandthorn.com/post/the-hitchhiker-s-guide-to-hacking-connected-cars-the-heavens-security-model)
 
+This chapter discusses the HEAVENS and [[EVITA]] frameworks, which perform risk assessments of general IT systems and models built specifically for automotive systems, respectively. HEAVENS framework uses both a threat level and impact level to calculate risk. Performing a risk assessment using the HEAVENS model consists of three steps: determining the threat level = likelihood; determining the impact level = impact; and determining the security level = final risk rating. EVITA framework considers the potential of attacks to impact the privacy of vehicle passengers, financial losses, and the operational capabilities of the vehicle's systems and functions. EVITA assumes the probability of a successful attack in every attack scenario defined to be 100 percent probable predicated on the potential of the attacker and the target of evaluation's capability to withstand the attack.
   
 HEAVENS, an ancronym for HEAling Vulnerabilities to Enhance Software, Security, and Safety was a project partly funded by Vinnova, a Swedish government agency that started on April 2013 and went to March 2016. HEAVENS aimed at identifying owners, assets, risks, [[Vulnerability]], countermeasures, threat agents, and threats.
 
