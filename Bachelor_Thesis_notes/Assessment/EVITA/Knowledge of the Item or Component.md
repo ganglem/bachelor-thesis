@@ -1,4 +1,4 @@
-Related: [[ISO 21434]]
+Related: [[EVITA]]
 
 Indicates difficulty of the [[Attack]]
 

@@ -1,5 +1,4 @@
-Tags: 
-Related: [[ISO 21434]]
+Related: [[EVITA]]
 
 Descibes abilites of the [[Attacker]]
 

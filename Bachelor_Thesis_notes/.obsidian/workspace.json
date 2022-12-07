@@ -4,18 +4,32 @@
     "type": "split",
     "children": [
       {
-        "id": "fb7014ce4c837405",
+        "id": "cb12e6fd8340873a",
         "type": "tabs",
         "children": [
           {
-            "id": "186f805c41a55e52",
+            "id": "7eebc3a1d103db52",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Standards/AUTOSAR.md",
-                "mode": "source",
-                "source": false
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "49e287c7eb8e87f3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "72cbde72aec5349f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Resources/PDFs/ThreatSurf A method for automated Threat Surface assessment.pdf"
               }
             }
           }
@@ -48,8 +62,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#automotive",
-                "matchingCase": true,
+                "query": "tag:#testing",
+                "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -85,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Standards/AUTOSAR.md",
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Standards/AUTOSAR.md",
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Standards/AUTOSAR.md"
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
               }
             }
           }
@@ -136,17 +150,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "186f805c41a55e52",
+  "active": "7eebc3a1d103db52",
   "lastOpenFiles": [
-    "Standards/UN R155.md",
-    "Standards/UNECE.md",
-    "Standards/ISO 15118.md",
-    "Standards/CVSS.md",
-    "Standards/CSP.md",
-    "Standards/AUTOSAR.md",
-    "Standards/SAE J3061.md",
-    "Standards/PTES.md",
-    "Standards/ISO 26262.md",
-    "Approaches/Security Testing.md"
+    "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
+    "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md",
+    "Resources/PDFs/ThreatSurf A method for automated Threat Surface assessment.pdf",
+    "Papers/Model-Based Security Testing of Vehicle Networks.md",
+    "Resources/PDFs/Proposal_MichaelWolf.pdf",
+    "Resources/PDFs/Model-Based_Security_Testing_of_Vehicle_Networks.pdf",
+    "Resources/PDFs/HKA_ZH_Forschung_aktuell_2020.pdf",
+    "Resources/PDFs/Attack Path Generation Based on Attack and Penetration Testing Knowledge - final.pdf",
+    "Resources/PDFs/210920_escar2021_Konferenzband_A4_01_paper13.pdf",
+    "Standards/ISO 21434.md"
   ]
 }

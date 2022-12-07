@@ -1,4 +1,4 @@
-Related: [[ISO 21434]]
+Related: [[EVITA]]
 
 Equipment required by an [[Attacker]] to successfully execute an [[Attack]]
 

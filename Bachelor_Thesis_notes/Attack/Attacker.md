@@ -1,3 +1,3 @@
-Tags: #attack #todo
+Tags: #attack
 
-Wants to perform an [[Attack]]
+person, group, or organization that carries out an [[Attack Path]], [[Attack]]

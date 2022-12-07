@@ -1,4 +1,4 @@
-Related: [[ISO 21434]]
+Related: [[EVITA]]
 
 Describes [[Attacker]]'s window of opportunity to perform an attack
 
