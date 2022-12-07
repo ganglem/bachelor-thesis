@@ -130,15 +130,15 @@
   },
   "active": "7eebc3a1d103db52",
   "lastOpenFiles": [
+    "Assessment/HEAVENS.md",
+    "Assessment/TARA.md",
+    "[ISO 21434.md",
+    "Assessment/STRIDE.md",
+    "Questions.md",
+    "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md",
     "Standards/ISO/ISO 21434.md",
     "Assessment/EVITA/EVITA.md",
     "Attack.md",
-    "Papers/Model-Based Security Testing of Vehicle Networks.md",
-    "Buzzwords/Architecture diagrams.md",
-    "Attack/Attack Path.md",
-    "Communication/JTAG.md",
-    "Attack/Attacker Privileges.md",
-    "Standards/ISO/ISO 26262.md",
-    "Communication/Gateway.md"
+    "Papers/Model-Based Security Testing of Vehicle Networks.md"
   ]
 }

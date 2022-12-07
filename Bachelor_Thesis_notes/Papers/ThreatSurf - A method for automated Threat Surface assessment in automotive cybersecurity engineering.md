@@ -18,7 +18,7 @@ Tags: #paper #automotive
 
 ## Background and related work
 
-- provide a framewor for the execution of a [[TARA]] to achieve a general cybersecurity concept
+- provide a framework for the execution of a [[TARA]] to achieve a general cybersecurity concept
 - [[EVITA]]
 - [[TVRA]]
 - [[HEAVENS]]
