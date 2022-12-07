@@ -1,4 +1,4 @@
-Tags: #attack #model-based #todo
+Tags: #attack #model-based
 
 Related: [[Attack Tree]]
 

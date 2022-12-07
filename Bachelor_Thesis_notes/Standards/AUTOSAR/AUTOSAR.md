@@ -1,0 +1,8 @@
+Tags: #standard #automotive #autosar
+
+### [AUTOSAR](https://en.wikipedia.org/wiki/AUTOSAR)
+
+**AUTomotive Open System ARchitecture** (**AUTOSAR**) is a development partnership of [automotive](https://en.wikipedia.org/wiki/Automotive "Automotive")interested parties founded in 2003. It pursues the objective to create and establish an open and standardized [software architecture](https://en.wikipedia.org/wiki/Software_architecture "Software architecture") for automotive [electronic control units](https://en.wikipedia.org/wiki/Electronic_control_unit "Electronic control unit") ([[ECU]]s). Goals include the [scalability](https://en.wikipedia.org/wiki/Scalability "Scalability") to different vehicle and platform variants, transferability of software, the consideration of availability and safety requirements, a collaboration between various partners, sustainable use of natural resources, and maintainability during the [product lifecycle](https://en.wikipedia.org/wiki/Product_lifecycle "Product lifecycle")
+
+#### WHAT IS THE GOAL OF AUTOSAR
+The primary goal of the AUTOSAR partnership is the standardization of a common methodology, basic system functions and functional interfaces. This enables development partners to integrate, exchange, re-use and transfer functions within a vehicle network and substantially improves their efficiency of development. Having this goal in mind, AUTOSAR pushes the paradigm shift from an [[ECU]]-based to a function-based system design attempt in automotive software development and enables the management of the ever-growing software and [[E - E Architecture]]complexity with respect to technology and economics.

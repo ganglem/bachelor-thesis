@@ -1,1 +1,7 @@
-Tags: #communication_system #todo #interface 
+Tags: #communication_system #interface
+
+### [Gateway](https://en.wikipedia.org/wiki/Gateway_(telecommunications))
+
+A **gateway** is a piece of [networking hardware](https://en.wikipedia.org/wiki/Networking_hardware "Networking hardware") or software used in [telecommunications networks](https://en.wikipedia.org/wiki/Telecommunications_network "Telecommunications network") that allows data to flow from one discrete network to another. Gateways are distinct from [routers](https://en.wikipedia.org/wiki/Router_(computing) "Router (computing)") or [switches](https://en.wikipedia.org/wiki/Network_switch "Network switch") in that they communicate using more than one protocol to connect multiple networks and can operate at any of the seven layers of the [open systems interconnection](https://en.wikipedia.org/wiki/OSI_model "OSI model") model (OSI).
+
+The term gateway can also loosely refer to a computer or computer program configured to perform the tasks of a gateway, such as a [default gateway](https://en.wikipedia.org/wiki/Default_gateway "Default gateway") or [router](https://en.wikipedia.org/wiki/Router_(computing) "Router (computing)"), and in the case of [HTTP](https://en.wikipedia.org/wiki/HTTP "HTTP"), gateway is also often used as a synonym for [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy "Reverse proxy")

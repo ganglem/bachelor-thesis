@@ -11,26 +11,8 @@
             "id": "7eebc3a1d103db52",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "49e287c7eb8e87f3",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "72cbde72aec5349f",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Resources/PDFs/ThreatSurf A method for automated Threat Surface assessment.pdf"
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -99,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,29 +118,27 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
-              }
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "active": "7eebc3a1d103db52",
   "lastOpenFiles": [
-    "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
-    "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md",
-    "Resources/PDFs/ThreatSurf A method for automated Threat Surface assessment.pdf",
+    "Standards/ISO/ISO 21434.md",
+    "Assessment/EVITA/EVITA.md",
+    "Attack.md",
     "Papers/Model-Based Security Testing of Vehicle Networks.md",
-    "Resources/PDFs/Proposal_MichaelWolf.pdf",
-    "Resources/PDFs/Model-Based_Security_Testing_of_Vehicle_Networks.pdf",
-    "Resources/PDFs/HKA_ZH_Forschung_aktuell_2020.pdf",
-    "Resources/PDFs/Attack Path Generation Based on Attack and Penetration Testing Knowledge - final.pdf",
-    "Resources/PDFs/210920_escar2021_Konferenzband_A4_01_paper13.pdf",
-    "Standards/ISO 21434.md"
+    "Buzzwords/Architecture diagrams.md",
+    "Attack/Attack Path.md",
+    "Communication/JTAG.md",
+    "Attack/Attacker Privileges.md",
+    "Standards/ISO/ISO 26262.md",
+    "Communication/Gateway.md"
   ]
 }

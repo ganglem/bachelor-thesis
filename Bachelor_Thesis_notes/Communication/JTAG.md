@@ -1,4 +1,4 @@
-Tags: #standard #todo #automotive 
+Tags: #standard #automotive 
 
 ### [JTAG - Wikipedia](https://en.wikipedia.org/wiki/JTAG)
 
