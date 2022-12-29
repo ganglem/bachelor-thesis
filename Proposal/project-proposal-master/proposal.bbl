@@ -1,0 +1,256 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{iso21434}{standard}{}
+      \name{author}{1}{}{%
+        {{hash=7058e4bd76f877c52b621c942b30613c}{%
+           family={{International Organization for Standardization}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Geneva, Switzerland}%
+      }
+      \list{organization}{1}{%
+        {International Organization for Standardization}%
+      }
+      \strng{namehash}{7058e4bd76f877c52b621c942b30613c}
+      \strng{fullhash}{7058e4bd76f877c52b621c942b30613c}
+      \strng{bibnamehash}{7058e4bd76f877c52b621c942b30613c}
+      \strng{authorbibnamehash}{7058e4bd76f877c52b621c942b30613c}
+      \strng{authornamehash}{7058e4bd76f877c52b621c942b30613c}
+      \strng{authorfullhash}{7058e4bd76f877c52b621c942b30613c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Road vehicles -- Cybersecurity engineering -- Guideline and general aspects}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.iso.org/standard/73547.html
+      \endverb
+      \verb{url}
+      \verb https://www.iso.org/standard/73547.html
+      \endverb
+    \endentry
+    \entry{sae_j3061}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c823732636c3fca8652a18a68c2391eb}{%
+           family={{SAE International}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Warrendale, Pennsylvania, USA}%
+      }
+      \list{organization}{1}{%
+        {SAE International}%
+      }
+      \strng{namehash}{c823732636c3fca8652a18a68c2391eb}
+      \strng{fullhash}{c823732636c3fca8652a18a68c2391eb}
+      \strng{bibnamehash}{c823732636c3fca8652a18a68c2391eb}
+      \strng{authorbibnamehash}{c823732636c3fca8652a18a68c2391eb}
+      \strng{authornamehash}{c823732636c3fca8652a18a68c2391eb}
+      \strng{authorfullhash}{c823732636c3fca8652a18a68c2391eb}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Cybersecurity Guidebook for Cyber-Physical Vehicle Systems (SAE J3061)}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.sae.org/standards/content/j3061_201801/
+      \endverb
+      \verb{url}
+      \verb https://www.sae.org/standards/content/j3061_201801/
+      \endverb
+    \endentry
+    \entry{autosar}{standard}{}
+      \name{author}{1}{}{%
+        {{hash=9485d4212d78a174cf940c4e4cc2b33e}{%
+           family={{AUTOSAR Development Partnership}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Munich, Germany}%
+      }
+      \list{organization}{1}{%
+        {AUTOSAR Development Partnership}%
+      }
+      \strng{namehash}{9485d4212d78a174cf940c4e4cc2b33e}
+      \strng{fullhash}{9485d4212d78a174cf940c4e4cc2b33e}
+      \strng{bibnamehash}{9485d4212d78a174cf940c4e4cc2b33e}
+      \strng{authorbibnamehash}{9485d4212d78a174cf940c4e4cc2b33e}
+      \strng{authornamehash}{9485d4212d78a174cf940c4e4cc2b33e}
+      \strng{authorfullhash}{9485d4212d78a174cf940c4e4cc2b33e}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{AUTOSAR 4.2.2 Specification}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.autosar.org/standards/standard-downloads/
+      \endverb
+      \verb{url}
+      \verb https://www.autosar.org/standards/standard-downloads/
+      \endverb
+    \endentry
+    \entry{tara}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=ef9cb61878e61d434507444346b29d1a}{%
+           family={{National Institute of Standards and Technology}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Gaithersburg, Maryland, USA}%
+      }
+      \list{organization}{1}{%
+        {National Institute of Standards and Technology}%
+      }
+      \strng{namehash}{ef9cb61878e61d434507444346b29d1a}
+      \strng{fullhash}{ef9cb61878e61d434507444346b29d1a}
+      \strng{bibnamehash}{ef9cb61878e61d434507444346b29d1a}
+      \strng{authorbibnamehash}{ef9cb61878e61d434507444346b29d1a}
+      \strng{authornamehash}{ef9cb61878e61d434507444346b29d1a}
+      \strng{authorfullhash}{ef9cb61878e61d434507444346b29d1a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Threat Analysis Risk Assessment (TARA)}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final
+      \endverb
+      \verb{url}
+      \verb https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final
+      \endverb
+    \endentry
+    \entry{model_based_testing}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=b50e30d1ea12869001fb2ed0de0f7b19}{%
+           family={Sommer},
+           familyi={S\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=cb4227ad1625e038fb7be64acfec5ec4}{%
+           family={Kriesten},
+           familyi={K\bibinitperiod},
+           given={Reiner},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7b28e20f05eff1870755838615210267}{%
+           family={Kargl},
+           familyi={K\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{a4ec645d214ebafbda12449fe1d2e6e5}
+      \strng{fullhash}{1b565c5af5630cb00fe17b3f569b52a1}
+      \strng{bibnamehash}{1b565c5af5630cb00fe17b3f569b52a1}
+      \strng{authorbibnamehash}{1b565c5af5630cb00fe17b3f569b52a1}
+      \strng{authornamehash}{a4ec645d214ebafbda12449fe1d2e6e5}
+      \strng{authorfullhash}{1b565c5af5630cb00fe17b3f569b52a1}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2021 International Conference on Computational Science and Computational Intelligence (CSCI)}
+      \field{title}{Model-Based Security Testing of Vehicle Networks}
+      \field{year}{2021}
+      \field{pages}{685\bibrangedash 691}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/CSCI54926.2021.00179
+      \endverb
+    \endentry
+    \entry{attacker_privileges}{article}{}
+      \name{author}{3}{}{%
+        {{hash=79f574b0351ca67c47a3e8ea91f664e8}{%
+           family={Dürrwang},
+           familyi={D\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b50e30d1ea12869001fb2ed0de0f7b19}{%
+           family={Sommer},
+           familyi={S\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=cb4227ad1625e038fb7be64acfec5ec4}{%
+           family={Kriesten},
+           familyi={K\bibinitperiod},
+           given={Reiner},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Institute of Energy Efficient Mobility, Karlsruhe University of Applied Sciences}%
+      }
+      \list{location}{1}{%
+        {Karlsruhe, Germany}%
+      }
+      \strng{namehash}{35d598a1f65ca5dd4592390347a50a78}
+      \strng{fullhash}{fc42921f70be2683261bcb4683232f89}
+      \strng{bibnamehash}{fc42921f70be2683261bcb4683232f89}
+      \strng{authorbibnamehash}{fc42921f70be2683261bcb4683232f89}
+      \strng{authornamehash}{35d598a1f65ca5dd4592390347a50a78}
+      \strng{authorfullhash}{fc42921f70be2683261bcb4683232f89}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Automation in Automotive Security by Using Attacker Privileges}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.h-ka.de/en/ieem/profile
+      \endverb
+      \verb{url}
+      \verb https://www.h-ka.de/en/ieem/profile
+      \endverb
+    \endentry
+    \entry{attack_database}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b50e30d1ea12869001fb2ed0de0f7b19}{%
+           family={Sommer},
+           familyi={S\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=cb4227ad1625e038fb7be64acfec5ec4}{%
+           family={Kriesten},
+           familyi={K\bibinitperiod},
+           given={Reiner},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{7768c97ac02e1a9c93dc68a07dbea3df}
+      \strng{fullhash}{7768c97ac02e1a9c93dc68a07dbea3df}
+      \strng{bibnamehash}{7768c97ac02e1a9c93dc68a07dbea3df}
+      \strng{authorbibnamehash}{7768c97ac02e1a9c93dc68a07dbea3df}
+      \strng{authornamehash}{7768c97ac02e1a9c93dc68a07dbea3df}
+      \strng{authorfullhash}{7768c97ac02e1a9c93dc68a07dbea3df}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{SecForCARsSAVE}
+      \field{title}{Attack Path Generation Based on Attack and Penetration Testing Knowledge}
+      \field{year}{2022}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
