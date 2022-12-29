@@ -11,14 +11,26 @@ goal of this project, approach
 
 \medskip
 \noindent
-give a detailed definition of the initial problem that requires a solution, respectively the challenges of transferring or synthesizing a concept into a construction or realization
+give a detailed definition of the initial problem that requires a solution, 
+respectively the challenges of transferring or synthesizing a concept into a construction or realization
 
 \medskip
 \noindent
 define use cases and the deduced requirements for the implementation or construction
 \end{shaded}
 
-\lipsum[21-24]
+In this thesis you have to make attack path analyses on different internal vehicle network architectures and compare them
+based on which provides more security with regards attack
+paths.
+The first step would be creating multiple different architecture diagrams. Then you have to write a program, which reads
+files of a vehicle network topology, maps this to a list of entry point and target ECUs, and generates a list of all possible
+attack paths. To get a quick and early result, this list should
+be sorted by the number of hops over each gateway. The next
+step would be giving each entry point, gateway and connection a rating on how big the attack feasibility for this element
+is. Then, attack paths can be calculated - e.g. with the formula
+of the paper ”ThreatSurf A method for automated Threat Surface assessment”. At last, you have to decide on a criteria on
+how to rate the different topologies and compare them with
+it.
 
 
 %************************************************
@@ -36,5 +48,3 @@ specification of technical requirements, entities, interfaces, protocols and pro
 \noindent
 interdependencies of technical, human or environmental entities
 \end{shaded}
-
-\lipsum[25-28]

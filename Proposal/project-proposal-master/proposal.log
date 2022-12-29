@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.29)  29 DEC 2022 20:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.29)  29 DEC 2022 21:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1547,61 +1547,126 @@ Chapter 1.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--24
+
+ []
+
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/b/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-) [1
+[1
 
 
 
-] (Chapters/02-ProjectIdea-StateOfTheArt.tex
+]
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+) (Chapters/02-ProjectIdea-StateOfTheArt.tex
 Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--2
+
+ []
+
 [2]
-LaTeX Font Info:    Font shape `T1/pplj/m/sl' in size <10> not available
-(Font)              Font shape `T1/pplj/m/it' tried instead on input line 13.
+Underfull \hbox (badness 10000) in paragraph at lines 11--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--32
+
+ []
 
 Chapter 3.
 [3
 
-]) [4
+]
+Underfull \hbox (badness 10000) in paragraph at lines 62--65
 
-] (Chapters/03-Requirements-Specification.tex
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--75
+
+ []
+
+) (Chapters/03-Requirements-Specification.tex
 Chapter 4.
-[5]
+[4
+
+]
 Chapter 5.
-[6
+[5
 
 ]) (Chapters/03-Problem-Deliverables.tex
 Chapter 6.
-[7
+[6
 
 ]
 Chapter 7.
-[8
+[7
 
 ]) (Chapters/04-Design.tex
 Chapter 8.
-[9
+[8
 
 ]) (Chapters/05-Hardware-Purchases-Schedule.tex
 Chapter 9.
-[10
+[9
 
 ]
 Chapter 10.
-[11
+[10
 
 ]) (Chapters/06-Conclusion.tex
 Chapter 11.
-[12
+[11
 
 ]
 
 Package hyperref Warning: Suppressing empty link on input line 11.
 
-) [13
+) [12
 
-] [14
+]
+
+Package biblatex Warning: No driver for 'standard'.
+(biblatex)                Using fallback driver on input line 30.
+
+
+Overfull \hbox (2.48457pt too wide) in paragraph at lines 30--30
+\T1/pplj/m/it/10 j3061)\T1/pplj/m/n/10 , War-ren-dale, Penn-syl-va-nia, USA: SAE In-ter-na-tional, 2018. [On-line]. Avail-
+ []
+
+
+Package biblatex Warning: No driver for 'standard'.
+(biblatex)                Using fallback driver on input line 30.
+
+[13
 
 
 ] (proposal.aux)
@@ -1612,17 +1677,17 @@ Package logreq Info: Writing requests to 'proposal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41306 strings out of 476406
- 823851 string characters out of 2788622
- 1864787 words of memory out of 3000000
- 60857 multiletter control sequences out of 15000+600000
+ 41327 strings out of 476406
+ 824632 string characters out of 2788622
+ 1868787 words of memory out of 3000000
+ 60873 multiletter control sequences out of 15000+600000
  618612 words of font info for 141 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
- 122i,22n,120p,10656b,1267s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 122i,22n,120p,10656b,1599s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona.enc}{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona-sc.enc}<C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/ccicons/ccicons.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurb10.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrij8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/bera/fvmr8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonab.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonabi.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonar.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on proposal.pdf (18 pages, 242630 bytes).
+Output written on proposal.pdf (17 pages, 249268 bytes).
 PDF statistics:
- 287 PDF objects out of 1000 (max. 8388607)
- 47 named destinations out of 1000 (max. 500000)
+ 306 PDF objects out of 1000 (max. 8388607)
+ 52 named destinations out of 1000 (max. 500000)
  21674 words of extra memory for PDF output out of 24883 (max. 10000000)
 
