@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber proposal"] 1672344026 "proposal.bcf" "proposal.bbl" "proposal" 1672344047 0
+["biber proposal"] 1672344580 "proposal.bcf" "proposal.bbl" "proposal" 1672344591 0
   "Bibliography.bib" 1672344000 7187 2688c42422230b0b1f087e7c6783cf09 ""
-  "proposal.bcf" 1672344046 107097 94b6acb1868c1b0f23e1a0a6a31c5e1b "pdflatex"
+  "proposal.bcf" 1672344590 107097 94b6acb1868c1b0f23e1a0a6a31c5e1b "pdflatex"
   (generated)
   "proposal.bbl"
   "proposal.blg"
   (rewritten before read)
-["makeindex proposal.idx"] 1672343503 "proposal.idx" "proposal.ind" "proposal" 1672344047 0
-  "proposal.idx" 1672344045 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex proposal.idx"] 1672343503 "proposal.idx" "proposal.ind" "proposal" 1672344591 0
+  "proposal.idx" 1672344588 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "proposal.ilg"
   "proposal.ind"
   (rewritten before read)
-["pdflatex"] 1672344041 "c:/bachelor-thesis/Proposal/project-proposal-master/proposal.tex" "proposal.pdf" "proposal" 1672344047 0
+["pdflatex"] 1672344583 "c:/bachelor-thesis/Proposal/project-proposal-master/proposal.tex" "proposal.pdf" "proposal" 1672344591 0
   "C:/Users/EMKASTR/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1672316932 123061 b1655693ff17da57d507f8869750fb0c ""
   "C:/Users/EMKASTR/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1672317044 23169551 2835e5955d0a88b364dcae36cf74a739 ""
   "C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -290,23 +290,23 @@
   "Chapters/01-Introduction.tex" 1672344017 2307 ba5f20dc97d3852d9f265308b2a9e5f8 ""
   "Chapters/02-ProjectIdea-StateOfTheArt.tex" 1672344024 4800 af81f40175668c891ec0190a72665997 ""
   "Chapters/03-Problem-Deliverables.tex" 1668514035 1565 99399f1812fb683108279889f8685140 ""
-  "Chapters/03-Requirements-Specification.tex" 1672344015 2255 aa78546c4f097c48341babdb9f10e1a9 ""
+  "Chapters/03-Requirements-Specification.tex" 1672344567 2259 499b25a5f3e68d0839a5372224c545f6 ""
   "Chapters/04-Design.tex" 1668514035 763 ba9c0212d751da1a93c37af47af7e3f2 ""
   "Chapters/05-Hardware-Purchases-Schedule.tex" 1668514035 922 6e59449642a793663fb350c602e7605f ""
   "Chapters/06-Conclusion.tex" 1668514035 516 bd3414873c3a88153ee3029466c08863 ""
   "Chapters/Abstract.tex" 1668514035 346 1e669dc0b83a54649f2f4221d5132e93 ""
   "Graphics//bilingual-color-gradient.pdf" 1668514035 716012 ccd7f0722318f7e618f6f7e2b17735f4 ""
-  "License.tex" 1668514035 347 8989ad2755957169564893b0fcd5d77b ""
+  "License.tex" 1672344545 347 8989ad2755957169564893b0fcd5d77b ""
   "c:/bachelor-thesis/Proposal/project-proposal-master/proposal.tex" 1672317262 1005 f6cfef91499b1c7c608ad23f71fd004d ""
-  "proposal.aux" 1672344046 12601 0292b289f805509579815edc965c6678 "pdflatex"
-  "proposal.bbl" 1672344029 9968 462d3c7c7ffda338efc40a223796b57e "biber proposal"
-  "proposal.ind" 1672343503 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proposal.idx"
-  "proposal.out" 1672344045 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "proposal.run.xml" 1672344046 2466 3b4f1bc7a159ce12ee20e35ad14bcb1b "pdflatex"
+  "proposal.aux" 1672344590 12601 33a669ea683f85d854393562b7be90e0 "pdflatex"
+  "proposal.bbl" 1672344583 9968 462d3c7c7ffda338efc40a223796b57e "biber proposal"
+  "proposal.ind" 1672344545 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proposal.idx"
+  "proposal.out" 1672344589 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "proposal.run.xml" 1672344590 2466 3b4f1bc7a159ce12ee20e35ad14bcb1b "pdflatex"
   "proposal.tex" 1672317262 1005 f6cfef91499b1c7c608ad23f71fd004d ""
-  "proposal.toc" 1672344046 1863 72aa3151564fbe12478b53760f72533a "pdflatex"
-  "settings.tex" 1668514036 635 f824ccf13155b50d9ef52c22816f3e8c ""
-  "vs-report.cls" 1668514036 14889 e948d5643126d21759c80e7e3f47434e ""
+  "proposal.toc" 1672344590 1863 72aa3151564fbe12478b53760f72533a "pdflatex"
+  "settings.tex" 1672344545 635 f824ccf13155b50d9ef52c22816f3e8c ""
+  "vs-report.cls" 1672344545 14889 e948d5643126d21759c80e7e3f47434e ""
   (generated)
   "proposal.aux"
   "proposal.bcf"
