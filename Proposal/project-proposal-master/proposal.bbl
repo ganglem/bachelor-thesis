@@ -16,34 +16,5 @@
   {}
 \endgroup
 
-
-\refsection{0}
-  \datalist[entry]{none/global//global/global}
-    \entry{Adams2002}{book}{}
-      \name{author}{1}{}{%
-        {{hash=a1340ce3daa99823346adaeab80ed549}{%
-           family={Adams},
-           familyi={A\bibinitperiod},
-           given={Douglas},
-           giveni={D\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {William Heinemann Ltd.}%
-      }
-      \strng{namehash}{a1340ce3daa99823346adaeab80ed549}
-      \strng{fullhash}{a1340ce3daa99823346adaeab80ed549}
-      \strng{bibnamehash}{a1340ce3daa99823346adaeab80ed549}
-      \strng{authorbibnamehash}{a1340ce3daa99823346adaeab80ed549}
-      \strng{authornamehash}{a1340ce3daa99823346adaeab80ed549}
-      \strng{authorfullhash}{a1340ce3daa99823346adaeab80ed549}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{The Salmon of Doubt}
-      \field{year}{2002}
-    \endentry
-  \enddatalist
-\endrefsection
 \endinput
 

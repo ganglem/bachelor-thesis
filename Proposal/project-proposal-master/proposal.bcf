@@ -2353,8 +2353,13 @@
     <bcf:datasource type="file" datatype="bibtex">Bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">Adams2002</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">Adams2002</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">iso21434</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">sae_j3061</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">autosar</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">tara</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">model_based_testing</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">attacker_privileges</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">attack_database</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
