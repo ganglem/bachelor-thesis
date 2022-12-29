@@ -1767,7 +1767,6 @@ INPUT .\Chapters\02-ProjectIdea-StateOfTheArt.tex
 INPUT .\Chapters\02-ProjectIdea-StateOfTheArt.tex
 INPUT Chapters\02-ProjectIdea-StateOfTheArt.tex
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\tfm\nowacki\iwona\ec-iwonar.tfm
-INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplb9d.tfm
 INPUT .\Chapters\03-Requirements-Specification.tex
 INPUT .\Chapters\03-Requirements-Specification.tex
 INPUT .\Chapters\03-Requirements-Specification.tex
@@ -1775,10 +1774,6 @@ INPUT Chapters\03-Requirements-Specification.tex
 INPUT .\Chapters\03-Requirements-Specification.tex
 INPUT .\Chapters\03-Requirements-Specification.tex
 INPUT Chapters\03-Requirements-Specification.tex
-INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplb9d.vf
-INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplb8r.tfm
-INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\fplmb.tfm
-INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplbj8r.tfm
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplri9d.tfm
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplbi9d.tfm
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplbi9d.vf
@@ -1836,8 +1831,6 @@ INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\euler\eurb10.pfb
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\euler\eurb10.pfb
-INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\public\fpl\fplbj8a.pfb
-INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\public\fpl\fplbj8a.pfb
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\public\fpl\fplrc8a.pfb
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\public\fpl\fplrc8a.pfb
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\public\fpl\fplrij8a.pfb
@@ -1850,8 +1843,6 @@ INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\nowacki\iwona\i
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\nowacki\iwona\iwonabi.pfb
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\nowacki\iwona\iwonar.pfb
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\nowacki\iwona\iwonar.pfb
-INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\urw\palatino\uplb8a.pfb
-INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\urw\palatino\uplb8a.pfb
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\urw\palatino\uplbi8a.pfb
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\urw\palatino\uplbi8a.pfb
 INPUT C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\fonts\type1\urw\palatino\uplr8a.pfb

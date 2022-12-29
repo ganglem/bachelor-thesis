@@ -1,23 +1,15 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'proposal.blg'
-[140] biber-MSWIN64:340> INFO - === 
-[182] Biber.pm:418> INFO - Reading 'proposal.bcf'
-[326] Biber.pm:978> INFO - Found 7 citekeys in bib section 0
-[347] Biber.pm:4401> INFO - Processing section 0
-[363] Biber.pm:4592> INFO - Looking for bibtex file 'Bibliography.bib' for section 0
-[420] bibtex.pm:1713> INFO - LaTeX decoding ...
-[427] bibtex.pm:1518> INFO - Found BibTeX data source 'Bibliography.bib'
-[442] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[442] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[442] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[442] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
-[443] bbl.pm:654> INFO - Writing 'proposal.bbl' with encoding 'UTF-8'
-[443] bbl.pm:757> INFO - Output to proposal.bbl
-[443] Biber.pm:130> WARN - I didn't find a database entry for 'iso21434' (section 0)
-[444] Biber.pm:130> WARN - I didn't find a database entry for 'sae_j3061' (section 0)
-[444] Biber.pm:130> WARN - I didn't find a database entry for 'autosar' (section 0)
-[444] Biber.pm:130> WARN - I didn't find a database entry for 'tara' (section 0)
-[444] Biber.pm:130> WARN - I didn't find a database entry for 'model_based_testing' (section 0)
-[444] Biber.pm:130> WARN - I didn't find a database entry for 'attacker_privileges' (section 0)
-[444] Biber.pm:130> WARN - I didn't find a database entry for 'attack_database' (section 0)
-[444] Biber.pm:132> INFO - WARNINGS: 7
+[143] biber-MSWIN64:340> INFO - === 
+[186] Biber.pm:418> INFO - Reading 'proposal.bcf'
+[325] Biber.pm:978> INFO - Found 7 citekeys in bib section 0
+[345] Biber.pm:4401> INFO - Processing section 0
+[361] Biber.pm:4592> INFO - Looking for bibtex file 'Bibliography.bib' for section 0
+[431] bibtex.pm:1713> INFO - LaTeX decoding ...
+[464] bibtex.pm:1518> INFO - Found BibTeX data source 'Bibliography.bib'
+[576] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[577] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[577] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[577] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[593] bbl.pm:654> INFO - Writing 'proposal.bbl' with encoding 'UTF-8'
+[599] bbl.pm:757> INFO - Output to proposal.bbl
