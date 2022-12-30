@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.29)  29 DEC 2022 21:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.29)  30 DEC 2022 13:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1336,41 +1336,41 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
-LaTeX Font Info:    Trying to load font information for T1+pplj on input line 14.
+LaTeX Font Info:    Trying to load font information for T1+pplj on input line 10.
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pplj.fd
 File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
 ) (proposal.aux)
 \openout1 = `proposal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-Package scrbase Info: activating english \abstractname on input line 14.
-Package scrbase Info: activating english \partname on input line 14.
-Package scrbase Info: activating english \chaptername on input line 14.
-Package scrbase Info: activating english \appendixname on input line 14.
-Package scrbase Info: activating english \figurename on input line 14.
-Package scrbase Info: activating english \tablename on input line 14.
-Package scrbase Info: activating english \contentsname on input line 14.
-Package scrbase Info: activating english \listfigurename on input line 14.
-Package scrbase Info: activating english \listtablename on input line 14.
-Package scrbase Info: activating english \bibname on input line 14.
-Package scrbase Info: activating english \indexname on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+Package scrbase Info: activating english \abstractname on input line 10.
+Package scrbase Info: activating english \partname on input line 10.
+Package scrbase Info: activating english \chaptername on input line 10.
+Package scrbase Info: activating english \appendixname on input line 10.
+Package scrbase Info: activating english \figurename on input line 10.
+Package scrbase Info: activating english \tablename on input line 10.
+Package scrbase Info: activating english \contentsname on input line 10.
+Package scrbase Info: activating english \listfigurename on input line 10.
+Package scrbase Info: activating english \listtablename on input line 10.
+Package scrbase Info: activating english \bibname on input line 10.
+Package scrbase Info: activating english \indexname on input line 10.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
@@ -1384,8 +1384,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'proposal.bbl' found.
  (proposal.bbl)
-Package biblatex Info: Reference section=0 on input line 14.
-Package biblatex Info: Reference segment=0 on input line 14.
+Package biblatex Info: Reference section=0 on input line 10.
+Package biblatex Info: Reference segment=0 on input line 10.
 \c@lstlisting=\count489
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1410,11 +1410,11 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 14.
-Package microtype Info: Applying patch `item' on input line 14.
-Package microtype Info: Applying patch `toc' on input line 14.
-Package microtype Info: Applying patch `eqnum' on input line 14.
-Package microtype Info: Applying patch `footnote' on input line 14.
+LaTeX Info: Redefining \microtypecontext on input line 10.
+Package microtype Info: Applying patch `item' on input line 10.
+Package microtype Info: Applying patch `toc' on input line 10.
+Package microtype Info: Applying patch `eqnum' on input line 10.
+Package microtype Info: Applying patch `footnote' on input line 10.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1425,7 +1425,7 @@ Package microtype Info: No adjustment of character kerning.
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-ppl.cfg
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
-Package hyperref Info: Link coloring ON on input line 14.
+Package hyperref Info: Link coloring ON on input line 10.
  (proposal.out) (proposal.out)
 \@outlinefile=\write6
 \openout6 = `proposal.out'.
@@ -1437,14 +1437,14 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message adding:
 (scrreprt)             \usepackage{bookmark}
-(scrreprt)           before \begin{document} on input line 14.
+(scrreprt)           before \begin{document} on input line 10.
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \BKM@id=\count496
 ))
-LaTeX Font Info:    Trying to load font information for T1+iwona on input line 15.
+LaTeX Font Info:    Trying to load font information for T1+iwona on input line 11.
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/iwona\t1iwona.fd
 File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
 )
@@ -1452,19 +1452,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `iwona' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for U+zeur on input line 15.
+LaTeX Font Info:    Trying to load font information for U+zeur on input line 11.
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/eulervm\uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
 ) (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeus on input line 15.
+LaTeX Font Info:    Trying to load font information for U+zeus on input line 11.
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/eulervm\uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
 ) (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-eus.cfg
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeuex on input line 15.
+LaTeX Font Info:    Trying to load font information for U+zeuex on input line 11.
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/eulervm\uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 ) (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
@@ -1472,7 +1472,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 15.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 11.
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
@@ -1481,32 +1481,32 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (24.00003pt too wide) in paragraph at lines 15--15
+Overfull \hbox (24.00003pt too wide) in paragraph at lines 11--11
  [] 
  []
 
 
-Overfull \hbox (24.00003pt too wide) in paragraph at lines 15--15
+Overfull \hbox (24.00003pt too wide) in paragraph at lines 11--11
  [][] 
  []
 
 <Graphics//bilingual-color-gradient.pdf, id=6, 734.16887pt x 179.77864pt>
 File: Graphics//bilingual-color-gradient.pdf Graphic file (type pdf)
 <use Graphics//bilingual-color-gradient.pdf>
-Package pdftex.def Info: Graphics//bilingual-color-gradient.pdf  used on input line 15.
+Package pdftex.def Info: Graphics//bilingual-color-gradient.pdf  used on input line 11.
 (pdftex.def)             Requested size: 170.71652pt x 41.80357pt.
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 15.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 11.
 (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/bera\t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 15.
+(Font)              scaled to size 8.50006pt on input line 11.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (24.00003pt too wide) in paragraph at lines 15--15
+Overfull \hbox (24.00003pt too wide) in paragraph at lines 11--11
  [][] 
  []
 
@@ -1518,11 +1518,11 @@ Overfull \hbox (24.00003pt too wide) in paragraph at lines 15--15
 LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
 (Font)              scaled to size 10.0pt on input line 4.
 ) [2] (Chapters/Abstract.tex)
-LaTeX Font Info:    Trying to load font information for TS1+pplj on input line 15.
+LaTeX Font Info:    Trying to load font information for TS1+pplj on input line 11.
  (C:\Users\EMKASTR\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1pplj.fd
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
 
  []
 
@@ -1531,7 +1531,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--15
 
 
 ]
-Package tocbasic Info: character protrusion at toc deactivated on input line 15.
+Package tocbasic Info: character protrusion at toc deactivated on input line 11.
  (proposal.toc
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/10'.
@@ -1548,129 +1548,166 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--17
+Underfull \hbox (badness 10000) in paragraph at lines 8--18
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--20
+Underfull \hbox (badness 10000) in paragraph at lines 19--29
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--24
+Underfull \hbox (badness 10000) in paragraph at lines 30--38
 
  []
 
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/iwona/b/sc/10'.
-(microtype)             Ignoring protrusion settings for this character.
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--46
+
+ []
+
 [1
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
+Underfull \hbox (badness 10000) in paragraph at lines 55--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
+Underfull \hbox (badness 10000) in paragraph at lines 61--64
 
  []
 
-) (Chapters/02-ProjectIdea-StateOfTheArt.tex
+) (Chapters/02-StateOfTheArt.tex
 Chapter 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--2
-
- []
-
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 11--15
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--24
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--32
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-Chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+
+Overfull \hbox (4.78583pt too wide) in paragraph at lines 29--31
+\T1/pplj/m/n/10 gen-eral IT sys-tems and mod-els built specif-i-cally for au-to-mo-tive sys-tems. HEAV-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--31
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--41
+
+ []
+
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
+Underfull \hbox (badness 10000) in paragraph at lines 44--47
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--75
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--55
 
  []
 
 ) (Chapters/03-Requirements-Specification.tex
-Chapter 4.
-[4
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 22--25
+Chapter 3.
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 9--12
 
  []
 
-Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--19
+
+ []
+
+) (Chapters/04-Design.tex
+Chapter 4.
 [5
 
-]) (Chapters/03-Problem-Deliverables.tex
-Chapter 6.
+]
+Chapter 5.
 [6
 
 ]
+Overfull \hbox (22.48907pt too wide) in paragraph at lines 9--9
+|[]\T1/iwona/m/sc/14.4/80ls hardware re-quire-ments and re-quired pur-chases|  
+ []
+
+) [7
+
+] (Chapters/05-Hardware-Purchases-Schedule.tex
+Chapter 6.
+[8]) (Chapters/06-Conclusion.tex
 Chapter 7.
-[7
-
-]) (Chapters/04-Design.tex
-Chapter 8.
-[8
-
-]) (Chapters/05-Hardware-Purchases-Schedule.tex
-Chapter 9.
 [9
-
-]
-Chapter 10.
-[10
-
-]) (Chapters/06-Conclusion.tex
-Chapter 11.
-[11
 
 ]
 
 Package hyperref Warning: Suppressing empty link on input line 11.
 
-) [12
+) [10
 
 ]
 
 Package biblatex Warning: No driver for 'standard'.
-(biblatex)                Using fallback driver on input line 30.
+(biblatex)                Using fallback driver on input line 20.
 
 
-Overfull \hbox (2.48457pt too wide) in paragraph at lines 30--30
+Package biblatex Warning: No driver for 'standard'.
+(biblatex)                Using fallback driver on input line 20.
+
+
+Overfull \hbox (7.48457pt too wide) in paragraph at lines 20--20
 \T1/pplj/m/it/10 j3061)\T1/pplj/m/n/10 , War-ren-dale, Penn-syl-va-nia, USA: SAE In-ter-na-tional, 2018. [On-line]. Avail-
  []
 
 
 Package biblatex Warning: No driver for 'standard'.
-(biblatex)                Using fallback driver on input line 30.
+(biblatex)                Using fallback driver on input line 20.
 
-[13
+[11
 
 
 ] (proposal.aux)
@@ -1681,17 +1718,17 @@ Package logreq Info: Writing requests to 'proposal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41327 strings out of 476406
- 824632 string characters out of 2788622
- 1868787 words of memory out of 3000000
- 60873 multiletter control sequences out of 15000+600000
- 618612 words of font info for 141 fonts, out of 8000000 for 9000
+ 41328 strings out of 476406
+ 824970 string characters out of 2788622
+ 1879787 words of memory out of 3000000
+ 60881 multiletter control sequences out of 15000+600000
+ 615433 words of font info for 140 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
- 122i,22n,120p,10656b,1599s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona.enc}{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona-sc.enc}<C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/ccicons/ccicons.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurb10.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrij8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/bera/fvmr8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonab.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonabi.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonar.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on proposal.pdf (17 pages, 249277 bytes).
+ 122i,22n,120p,10656b,1605s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona.enc}<C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/ccicons/ccicons.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurb10.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrij8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/bera/fvmr8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonab.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonar.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on proposal.pdf (15 pages, 230466 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 21674 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 292 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
+ 20626 words of extra memory for PDF output out of 20736 (max. 10000000)
 

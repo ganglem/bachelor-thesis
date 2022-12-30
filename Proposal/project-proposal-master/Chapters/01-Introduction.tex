@@ -3,52 +3,68 @@
 \label{chp:introduction}
 %************************************************
 
-\section{Research field}\label{sec:field}
+\section{Research field: Cybersecurity of vehicular networks}\label{sec:field}
 
-\begin{shaded}
-\noindent
-introduction into the coarse research field of the project \\
-scope of this project: define what will be included and what not
-\end{shaded}
+Modern vehicles are becoming increasingly reliant on technology, 
+with a wide range of systems and components being connected to the internet and each other. 
+This includes everything from infotainment systems and navigation to advanced driver assistance systems and autonomous driving features.\\
+ISO 26262 describes these so called "E/E Systems" as systems which consists of electrical and electronic elements
+and components such as ECUs, sensors, actuators, connections and communication systems like CAN, Ethernet, Bluetooth, etc.\cite{iso26262}\\
+As these technologies become more prevalent, the need for strong cybersecurity measures becomes increasingly important. 
+Hackers and cybercriminals are constantly finding new ways to exploit vulnerabilities in these systems, 
+which can have serious consequences for both the safety and privacy of drivers.\\
+Ensuring the safety and security of connected vehicles is crucial to 
+the success of the emerging world of connected and autonomous transportation.\\
 
-This bachelor thesis is done in cooperation with Mercedes-Benz Tech Innovation.\\
-The company proposed the idea for a tool which can be used to automize the evaluation of the security of vehicular networks.
-To give this project a more scietific background, I will do the following: \\
+The internal vehicular network architecture plays a crucial role in the overall cybersecurity of a modern vehicle. 
+This is because it determines how different systems and components within the vehicle are connected and communicate with each other.\\
+Attack paths play an imprtant role in vehicle networks and security because they help companies to understand the specific routes 
+or methods that a malicious actor might use to attack a vehicle's systems or networks. 
+Identifying and understanding attack paths is crucial for protecting the safety and security 
+of connected and autonomous vehicles, as it allows companies to anticipate and prepare for potential threats.
+For example, by understanding the attack paths that might be used to gain unauthorized access to a vehicle's systems, 
+companies can implement appropriate security measures to prevent these attacks from occurring.\\
+These might include the use of encryption, authentication protocols, and firewall systems to protect against cyber threats.
+A well-designed internal vehicular network architecture can help to minimize the risk of cyberattacks.\\
 
-I will conduct attack path analyses on different internal vehicle network architectures.
-Those I will compare based on which provides more security with regard to attack paths.\\
+As the number of systems and components that are connected to the internet and each other increases,
+so too does the complexity of the internal vehicular network architecture. 
+This can make it more difficult to design and implement effective cybersecurity measures, 
+as there are more potential points of vulnerability that need to be addressed.\\
+Therefore, it is important for companies developing connected and autonomous vehicles 
+to prioritize cybersecurity in the design of their internal vehicular network architecture. 
+This can help to ensure the safety and security of the vehicle, 
+as well as protect the privacy and personal data of drivers and passengers.\\
 
-First, I will be creating multiple different architecture diagrams.\\
-Second, I will write a program, which automizes the evaluation of the different topologies.\\
-Finally, I will decide on a criteria how to rate the different topologies and compare them with it.\\
+Methods for security testing like penetration testing, are often carried out in late stages of develpment,
+which can lead to the discovery of vulnerabilities at a time when it is more difficult and costly to address them.\\
+Additionally, pentesting, is considered to be a skill-based activity that is still carried out manually.
+It requires a high level of expertise and experience with other cybersecurity tools and techniques.\\
+A crucial element for security assessment is a TARA, a Threat Analysis and Risk Assessment.
+Companies perform a TARA during the development process to identify and prioritize potential risks, a
+nd to implement controls or countermeasures to reduce or mitigate those risks to an acceptable level.\\
 
-\section{Project Type}\label{sec:type}
+The increased complexity of modern vehicles and arduous nature of the state-of-the-art security testing methods
+make it more unfeasibile for companies to conduct security assessment testing as is done right now.
+Thus, a need for an automated tool which can help resovle this issue and couple to the TARA process is apparent.
 
-\begin{shaded}
-\noindent
-type of the project. this may be implementation centric, exploratory/analytic or constructive/synthetic:
 
-\subsection{implementation centric}
-practical transfer of a theoretical concept, e. g. software
+\section{Background and Motivation}
+\label{sec:background}
 
-\bigskip
-\subsection{exploratory/analytic}
-define, categorize and evaluate an idea, concept or situation not addressed before in the same dimension as is proposed by this project
-\subsubsection{example}
-a new type of attack/exploit; transfer of a typical IT strategy to a new domain like automotive or embedded systems
+As a computer science student with a passion for cybersecurity and a focus on cyber security in my studies, 
+I joined the CarTT Security team at Mercedes-Benz Tech Innovation (MBTI) a year ago as a working student.
+I worked with automotive protocols such as CAN, CANFD, FlexRay, and Ethernet,
+used software like CANoe, DTS, as well as proprietary tools for pentesting,
+and performed scans and created architecture diagrams of vehicular networks.\\
 
-\bigskip
-\subsection {constructive/synthetic}
-put together existing implementations of parts or concepts in a novel way or with an unexplored purpose
-\subsubsection{example}
-design and composition of a laboratory environment
+Through my work there, I got to know the field of vehicular cybersecurity.
+As already described, the internal vehicular network architecture plays a crucial role in the overall cybersecurity of a modern vehicle.
+MBTI is facing the same challenges as mentioned in \ref{sec:field}, and is looking for a solution to this problem.\\
 
-\end{shaded}
-
-\vfill
-
-The bachelor thesis is both implementation centric as well as exploratory/analytic.\\
-
-The main focus of the project will be to compare different internal vehicle network architectures based on which provides more security with regard to attack paths.\\
-
-I will create ten different vehicular network architecture diagrams.\\
+My supervisor and colleague proposed the topic of automated vehicular network evaluation as a way 
+to solve the need for a tool to more efficiently assess the security of these systems.
+This approach involves generating attack paths automatically, 
+which can be used to simulate and assess the security of a system in a more efficient and comprehensive manner. 
+Doing so, it is possible to better identify and mitigate potential vulnerabilities early on in the development process
+and ultimately improves the overall flexibility and costs of security testing for MBTI.

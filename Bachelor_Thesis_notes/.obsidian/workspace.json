@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Buzzwords/Architecture diagrams.md",
+                "file": "Approaches/E - E Architecture.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "35ed43adfcd5afe3",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "9155341fbbcd8d8f",
@@ -85,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Buzzwords/Architecture diagrams.md",
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Buzzwords/Architecture diagrams.md",
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Buzzwords/Architecture diagrams.md"
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
               }
             }
           }
@@ -136,17 +147,27 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "186f805c41a55e52",
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "35ed43adfcd5afe3",
   "lastOpenFiles": [
-    "Assessment/TARA.md",
-    "Assessment/OWASP.md",
-    "Papers/Automation in Automotive Security by Using Attacker Privileges.md",
-    "Assessment/HEAVENS.md",
-    "Assessment/EVITA/EVITA.md",
-    "Assessment/EVITA/Knowledge of the Item or Component.md",
-    "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md",
+    "Resources/PDFs/ThreatSurf A method for automated Threat Surface assessment.pdf",
     "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
-    "Resources/PDFs/Proposal_MichaelWolf.pdf",
-    "Questions.md"
+    "Assessment/ASIL.md",
+    "Approaches/E - E Architecture.md",
+    "Assessment/TARA.md",
+    "Assessment/EVITA/EVITA.md",
+    "Papers/Model-Based Security Testing of Vehicle Networks.md",
+    "Papers/Attack Path Generation Based on Attack and Penetration Testing Knowledge.md",
+    "Approaches/Security Testing.md",
+    "Resources/PDFs/Proposal_MichaelWolf.pdf"
   ]
 }

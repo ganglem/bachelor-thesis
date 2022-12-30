@@ -1,0 +1,59 @@
+\chapter{State of the Art}
+\label{chp:stateoftheart}
+
+There a various approaches to assess the security of vehicular networks.
+Cybersecurity standards and frameworks give guidance and best practices for designing, implementing, 
+and testing the cybersecurity of automotive systems and networks.\\
+
+The following standards are mentioned in virtually every literature and are also used at MBTI,
+thus they are the most important ones to consider:
+
+\begin{itemize}
+\item ISO21434 proposes in particular an execution of functional testing and specifies engineering requirements for cybersecurity risk management regarding concept, product development, production, operation, maintenance and decommissioning of electrical and electronic E/E architecture systems in road vehicles, including their components and interfaces\cite{iso21434}.\\
+
+\item SAE J3061 provides a guide on vehicle cybersecurity and was created based off of, and expanded on from, existing practices which are being implemented or reported in industry, government and conference papers. The best practices are intended to be flexible, pragmatic, and adaptable in their further application to the vehicle industry as well as to other cyber-physical vehicle systems\cite{sae_j3061}.\\
+
+\item AUTOSAR is a standard for the development of software for electronic control units (ECUs) in the automotive industry\cite{autosar}.\\
+\end{itemize}
+
+The following frameworks, also, are mentioned frequently in literature and offer a base 
+for the development of a tool to assess the security of vehicular networks:
+
+\begin{itemize}
+
+\item Usually, a TARA (Threat and Risk Assessment)\cite{tara} is performed to identify the threats and vulnerabilities of the system. 
+TARA typically involves the use of a variety of tools and techniques, such as risk assessment methods, threat modeling, vulnerability assessments, and security testing. 
+A TARA is used by the security architectures at MBTI, so including it in my thesis is a must.\\
+It is evaluated using a method called CVSS\cite{cvss} (Common Vulnerability Scoring System).
+
+\item An important framework is HEAVENS, which perform risk assessments of general IT systems and models built specifically for automotive systems. 
+HEAVENS framework uses both a threat level and impact level to calculate risk\cite{heavens}.\\
+
+\item Another framework is the EVITA framework, which essentially performs the same things as HEAVENS, but also considers the potential of attacks to impact the privacy of vehicle passengers, financial losses, and the operational capabilities of the vehicle's systems and functions\cite{evita}.\\
+
+\end{itemize}
+
+Many of these approaches aim to standardize the process of assessing the security of vehicular networks.
+However, most of them are based on manual penetration testing and manual vulnerability assessment as of today.
+This is due to the fact that penetration testing is an experienced-based and explorative skill which is difficult to automate.
+Further research aims to improve or couple to already existing appproaches like performing a TARA.
+\\
+
+\begin{itemize}
+
+\item F. Sommer, R. Kriesten, and F. Kargl propose a model-based method for security testing of vehicle networks\cite{model_based_testing} using an EFSM (Extended Finite State Machine). 
+The nodes of the EFSM are the attacker privileges and the transitions are the actions or vulnerabilities that can be performed by the attacker.
+However, this approach yet does not have a practical implementation.\\
+
+\item J. Dürrwang et al. describe this concept of using EFSMs in "Automation in Automotive Security by Using Attacker Privileges"\cite{attacker_privileges}.
+Also no practical implementation is given.\\
+
+\item They further propose a method where both concepts are used in combination with a database containing successful vehicular penetration tests is proposed to faciliate and automate penetration testing by generating attack paths\cite{attack_database}.\\
+
+\item In contrast, D. Zelle et al. introduce concrete approach that can be used in a TARA, called "ThreatSurf"\cite{threat_surf}.
+They show feasibility of their approach using an algorithm for automated generation and rating of attack paths using the attack building blocks and attack feasibility.\\
+
+\end{itemize}
+
+
+
