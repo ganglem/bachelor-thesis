@@ -3,24 +3,38 @@
 \label{chp:design}
 %************************************************
 
-\chapter{Requirement Specification}
+The tool will do the following:
+
+\begin{enumerate}
+	\item take an ARXML file as input and parse it
+	\item have the opportunity to change ECU and bus rating
+	\item use an algorithm (potentially as mentioned in \cite{threat_surf}) to calculate the most feasible attack path from each entry vector to each target vector
+	\item output the results to a table
+	\item evaluate the table results, thus the vehicle architecture, based on a given criteria (not yet determined)
+\end{enumerate}
+
+
+%************************************************
+	\chapter{Requirement Specification}
 \label{chp:specification}
 
 \section{Hardware Requirements and Required Purchases}
 \label{chp:hardware-purchases}
 
-
-Required hardware to run the tool includes but is not limited to:
+Required hardware and software to for the project include but are not limited to:
 \begin{itemize}
-	\item a computer with
+	\item a virtual machine with a Linux distribution (distribution not yet specified)
 	\item Python (version not yet specified)
 	\item appropriate libraries for the tool
 	\item an IDE like PyCharm (recommended) or a text editor to change the script
+	\item a Git repository where the code and thesis will be stored
 \end{itemize}
 
+%************************************************
 
-\section{Functional Requirements}
-\label{chp:functional}
+
+\section{Implementation}
+\label{chp:implementation}
 
 \graffito{\begin{shaded}\textbf{just implementation and constructive projects}, remove this chapter if your project is of any other type.\end{shaded}}
 
@@ -32,8 +46,6 @@ specification of technical requirements, entities, interfaces, protocols and pro
 \noindent
 interdependencies of technical, human or environmental entities
 \end{shaded}
-
-
 
 
 \begin{shaded}

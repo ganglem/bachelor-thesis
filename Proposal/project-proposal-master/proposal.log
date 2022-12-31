@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.29)  30 DEC 2022 13:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.29)  30 DEC 2022 14:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1589,28 +1589,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--7
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-
 Overfull \hbox (4.78583pt too wide) in paragraph at lines 29--31
 \T1/pplj/m/n/10 gen-eral IT sys-tems and mod-els built specif-i-cally for au-to-mo-tive sys-tems. HEAV-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--31
-
  []
 
 
@@ -1618,34 +1598,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--41
-
- []
-
 [3
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 44--47
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--55
-
- []
-
-) (Chapters/03-Requirements-Specification.tex
+]) (Chapters/03-ProblemStatement.tex
 Chapter 3.
 [4]
 Underfull \hbox (badness 10000) in paragraph at lines 9--12
@@ -1671,13 +1626,13 @@ Chapter 5.
 [6
 
 ]
-Overfull \hbox (22.48907pt too wide) in paragraph at lines 9--9
+Overfull \hbox (22.48907pt too wide) in paragraph at lines 21--21
 |[]\T1/iwona/m/sc/14.4/80ls hardware re-quire-ments and re-quired pur-chases|  
  []
 
 ) [7
 
-] (Chapters/05-Hardware-Purchases-Schedule.tex
+] (Chapters/05-Schedule.tex
 Chapter 6.
 [8]) (Chapters/06-Conclusion.tex
 Chapter 7.
@@ -1718,17 +1673,17 @@ Package logreq Info: Writing requests to 'proposal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41328 strings out of 476406
- 824970 string characters out of 2788622
+ 41335 strings out of 476406
+ 824873 string characters out of 2788622
  1879787 words of memory out of 3000000
- 60881 multiletter control sequences out of 15000+600000
+ 60883 multiletter control sequences out of 15000+600000
  615433 words of font info for 140 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
  122i,22n,120p,10656b,1605s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona.enc}<C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/ccicons/ccicons.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurb10.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrij8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/bera/fvmr8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonab.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonar.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on proposal.pdf (15 pages, 230466 bytes).
+Output written on proposal.pdf (15 pages, 231403 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
- 49 named destinations out of 1000 (max. 500000)
+ 298 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
  20626 words of extra memory for PDF output out of 20736 (max. 10000000)
 

@@ -2365,6 +2365,7 @@
     <bcf:citekey order="10" intorder="1">attacker_privileges</bcf:citekey>
     <bcf:citekey order="11" intorder="1">attack_database</bcf:citekey>
     <bcf:citekey order="12" intorder="1">threat_surf</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">threat_surf</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
