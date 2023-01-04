@@ -1,71 +1,56 @@
 %************************************************
-\chapter{(System) Design}
+\chapter{Tool Design}
 \label{chp:design}
 %************************************************
 
-The tool will do the following:
+\section{purpose}\label{chp:purpose}
 
-\begin{enumerate}
-	\item take an ARXML file as input and parse it
-	\item have the opportunity to change ECU and bus rating
-	\item use an algorithm (potentially as mentioned in \cite{threat_surf}) to calculate the most feasible attack path from each entry vector to each target vector
-	\item output the results to a table
-	\item evaluate the table results, thus the vehicle architecture, based on a given criteria (not yet determined)
-\end{enumerate}
+The purpose of the tool is to help security architects at MBTI to quickly evaluate 
+the security of a given vehicular network architecture.
 
+\section{(Functional) Requirements}\label{funct-req}
 
-%************************************************
-	\chapter{Requirement Specification}
-\label{chp:specification}
+(Funcitonal) Requirements include but are not limited to:\\
 
-\section{Hardware Requirements and Required Purchases}
-\label{chp:hardware-purchases}
+General:
 
-Required hardware and software to for the project include but are not limited to:
 \begin{itemize}
-	\item a virtual machine with a Linux distribution (distribution not yet specified)
-	\item Python (version not yet specified)
-	\item appropriate libraries for the tool
-	\item an IDE like PyCharm (recommended) or a text editor to change the script
-	\item a Git repository where the code and thesis will be stored
+	\item A1\label{sec:a1} Multiple different vehicular network archtitecure diagrams as ARXML files.
+	\item A2\label{sec:a2} A criteria to evalute the architectures.
 \end{itemize}
 
-%************************************************
+Tool:
 
+\begin{itemize}
 
-\section{Implementation}
-\label{chp:implementation}
+	\item F1\label{sec:f1}: It will take an ARXML file as input. 
+		This ARXML file is an XML file containing the network diagram of the vehicle, which I have created beforehand
+		The network diagram consists of ECUs (nodes) and bus systems (edges) connecting the ECUs.
+		The ARXML will be parsed to a convenient datatype.
+		Fortunately, a member of the MBTI team has already implemented a convenient ARXML parser, that might be used in this tool.
 
-\graffito{\begin{shaded}\textbf{just implementation and constructive projects}, remove this chapter if your project is of any other type.\end{shaded}}
+\item F2\label{sec:f2}: Each ECU and each bus system will have a rating, or "difficulty", that can be changed in the script.
+\item F3\label{sec:f3}: ECUs can then be marked as entry vectors or target vectors.
 
-\begin{shaded}
-\noindent
-specification of technical requirements, entities, interfaces, protocols and procedures that will be employed to meet the identified requirements,
+\item F4\label{sec:f4}: Next, an algorithm (potentially as mentioned in ThreatSurf\cite{threat_surf}) will find the most feasibile attack path from each entry to each target, 
+		based on the ratings.
+		However, the algorithm can also be changed in the script.
 
-\medskip
-\noindent
-interdependencies of technical, human or environmental entities
-\end{shaded}
+\item F5\label{sec:f5}: The results are then output to a table, 
+		where the overall security of the network architecture is evaluted based on a criteria.
 
+\end{itemize}
 
-\begin{shaded}
-\noindent details on the general approach, solution strategies and implementation methods
+\section{Other Requirements}
+\label{chp:hardware-software}
 
-\vspace{5em}
+other requirements such as hardware, software or non-funcitonal requirements include, but are not limited to:
 
-\noindent specification of the concrete lab, experiment or test setup or the prototype\dots
-\paragraph{or} the architecture and detailed design plan of the implementation\dots
-
-\vspace{3em}
-
-\noindent \dots that is expected to achieve the goals,
-\paragraph{in particular:} that answers the identified research questions
-\paragraph{or} meets the requirements
-
-\vspace{5em}
-
-\noindent identify/partition work packages and their dependencies
-\end{shaded}
-
-
-\lipsum[29-30]
+\begin{itemize}
+	\item N1\label{sec:n1}: Tool must be script based
+	\item N2\label{sec:n2}: Programming language is Python (version not yet specified)
+	\item N3\label{sec:n3}: A virtual machine with a Linux distribution (distribution not yet specified)
+	\item N4\label{sec:n4}: Appropriate libraries for the tool, like the ARXML parser from MBTI
+	\item N5\label{sec:n5}: An IDE like PyCharm (recommended) or a text editor to change the script
+	\item N6\label{sec:n6}: A Git repository where the code and thesis will be stored
+\end{itemize}

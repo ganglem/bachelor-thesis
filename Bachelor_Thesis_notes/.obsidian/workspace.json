@@ -25,7 +25,7 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
+                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf"
               }
             }
           }
@@ -59,7 +59,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#automotive",
+                "query": "",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
+                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
+                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
+                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf"
               }
             }
           }
@@ -159,15 +159,15 @@
   },
   "active": "35ed43adfcd5afe3",
   "lastOpenFiles": [
+    "2023-01-04.md",
+    "Untitled.canvas",
+    "Standards/CVSS.md",
+    "Assessment/ASIL.md",
+    "Resources/PDFs/Proposal_MichaelWolf.pdf",
     "Resources/PDFs/ThreatSurf A method for automated Threat Surface assessment.pdf",
     "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
-    "Assessment/ASIL.md",
     "Approaches/E - E Architecture.md",
     "Assessment/TARA.md",
-    "Assessment/EVITA/EVITA.md",
-    "Papers/Model-Based Security Testing of Vehicle Networks.md",
-    "Papers/Attack Path Generation Based on Attack and Penetration Testing Knowledge.md",
-    "Approaches/Security Testing.md",
-    "Resources/PDFs/Proposal_MichaelWolf.pdf"
+    "Assessment/EVITA/EVITA.md"
   ]
 }
