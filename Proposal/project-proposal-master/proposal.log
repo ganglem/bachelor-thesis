@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.29)  30 DEC 2022 14:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.29)  4 JAN 2023 11:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1617,6 +1617,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--19
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
 ) (Chapters/04-Design.tex
 Chapter 4.
 [5
@@ -1681,7 +1691,7 @@ Here is how much of TeX's memory you used:
  1151 hyphenation exceptions out of 8191
  122i,22n,120p,10656b,1605s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona.enc}<C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/ccicons/ccicons.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurb10.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrij8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/bera/fvmr8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonab.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonar.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on proposal.pdf (15 pages, 231403 bytes).
+Output written on proposal.pdf (15 pages, 232582 bytes).
 PDF statistics:
  298 PDF objects out of 1000 (max. 8388607)
  54 named destinations out of 1000 (max. 500000)

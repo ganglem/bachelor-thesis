@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber proposal"] 1672406322 "proposal.bcf" "proposal.bbl" "proposal" 1672406582 0
+["biber proposal"] 1672828885 "proposal.bcf" "proposal.bbl" "proposal" 1672828944 0
   "Bibliography.bib" 1672401664 7194 7c3387fb97fa366ac77c39a5e8cbab58 ""
-  "proposal.bcf" 1672406582 107477 28ef5a630386f8c4e3f3aaa5b0c5eacf "pdflatex"
+  "proposal.bcf" 1672828944 107477 28ef5a630386f8c4e3f3aaa5b0c5eacf "pdflatex"
   (generated)
   "proposal.bbl"
   "proposal.blg"
   (rewritten before read)
-["makeindex proposal.idx"] 1672406315 "proposal.idx" "proposal.ind" "proposal" 1672406582 0
-  "proposal.idx" 1672406581 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex proposal.idx"] 1672828885 "proposal.idx" "proposal.ind" "proposal" 1672828944 0
+  "proposal.idx" 1672828942 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "proposal.ilg"
   "proposal.ind"
   (rewritten before read)
-["pdflatex"] 1672406578 "c:/bachelor-thesis/Proposal/project-proposal-master/proposal.tex" "proposal.pdf" "proposal" 1672406582 0
+["pdflatex"] 1672828939 "c:/bachelor-thesis/Proposal/project-proposal-master/proposal.tex" "proposal.pdf" "proposal" 1672828944 0
   "C:/Users/EMKASTR/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1672316932 123061 b1655693ff17da57d507f8869750fb0c ""
   "C:/Users/EMKASTR/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1672317044 23169551 2835e5955d0a88b364dcae36cf74a739 ""
   "C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -287,7 +287,7 @@
   "C:/Users/EMKASTR/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "Chapters/01-Introduction.tex" 1672404632 5566 0eaa01a2054e750330d0c5bfdd637e68 ""
   "Chapters/02-StateOfTheArt.tex" 1672406517 4323 f3dc13abfed21cfdab7efa58b23deb74 ""
-  "Chapters/03-ProblemStatement.tex" 1672405591 1215 6336aab542fec8e7c701cef2da7e0f0a ""
+  "Chapters/03-ProblemStatement.tex" 1672828934 1819 0e4c6036141de7c15848510ad66605e1 ""
   "Chapters/04-Design.tex" 1672406574 2445 ea7603038943f2a9d73ae06e71de52fe ""
   "Chapters/05-Schedule.tex" 1672404977 348 691061707ea247eee1ef09afbee06d3f ""
   "Chapters/06-Conclusion.tex" 1668514035 516 bd3414873c3a88153ee3029466c08863 ""
@@ -295,13 +295,13 @@
   "Graphics//bilingual-color-gradient.pdf" 1668514035 716012 ccd7f0722318f7e618f6f7e2b17735f4 ""
   "License.tex" 1672344545 347 8989ad2755957169564893b0fcd5d77b ""
   "c:/bachelor-thesis/Proposal/project-proposal-master/proposal.tex" 1672406280 607 2416142ec5c472922a37434608201b07 ""
-  "proposal.aux" 1672406582 11708 8bb4dd4e4aed469b2a07b90c93fd2e07 "pdflatex"
-  "proposal.bbl" 1672406324 18533 f0e529c8ed6463a241efb6c690068fe0 "biber proposal"
-  "proposal.ind" 1672406315 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proposal.idx"
-  "proposal.out" 1672406581 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "proposal.run.xml" 1672406582 2466 3b4f1bc7a159ce12ee20e35ad14bcb1b "pdflatex"
+  "proposal.aux" 1672828944 11708 8bb4dd4e4aed469b2a07b90c93fd2e07 "pdflatex"
+  "proposal.bbl" 1672828888 18533 f0e529c8ed6463a241efb6c690068fe0 "biber proposal"
+  "proposal.ind" 1672828885 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proposal.idx"
+  "proposal.out" 1672828943 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "proposal.run.xml" 1672828944 2466 3b4f1bc7a159ce12ee20e35ad14bcb1b "pdflatex"
   "proposal.tex" 1672406280 607 2416142ec5c472922a37434608201b07 ""
-  "proposal.toc" 1672406582 1442 4436d575d549556389d1cef0f30e096a "pdflatex"
+  "proposal.toc" 1672828944 1442 4436d575d549556389d1cef0f30e096a "pdflatex"
   "settings.tex" 1672344545 635 f824ccf13155b50d9ef52c22816f3e8c ""
   "vs-report.cls" 1672344545 14889 e948d5643126d21759c80e7e3f47434e ""
   (generated)
