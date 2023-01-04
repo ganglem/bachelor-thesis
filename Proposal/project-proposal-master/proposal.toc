@@ -13,4 +13,5 @@
 \contentsline {chapter}{\numberline {5}{Project Schedule}}{8}{chapter.5}%
 \contentsline {paragraph}{{project plan:}}{8}{paragraph*.2}%
 \contentsline {chapter}{\numberline {6}{Conclusion}}{9}{chapter.6}%
+\contentsline {chapter}{\numberline {}{Bibliography}}{10}{section*.3}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
