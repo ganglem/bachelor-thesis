@@ -6,12 +6,12 @@
 \contentsline {chapter}{\numberline {3}{Problem Statement}}{5}{chapter.3}%
 \contentsline {section}{\numberline {3.1}{Project Type}}{5}{section.3.1}%
 \contentsline {section}{\numberline {3.2}{Thesis Questions}}{5}{section.3.2}%
-\contentsline {chapter}{\numberline {4}{Tool Design}}{6}{chapter.4}%
+\contentsline {chapter}{\numberline {4}{Tool Design and Implementation}}{6}{chapter.4}%
 \contentsline {section}{\numberline {4.1}{purpose}}{6}{section.4.1}%
 \contentsline {section}{\numberline {4.2}{(Functional) Requirements}}{6}{section.4.2}%
 \contentsline {section}{\numberline {4.3}{Other Requirements}}{6}{section.4.3}%
 \contentsline {chapter}{\numberline {5}{Project Schedule}}{8}{chapter.5}%
-\contentsline {paragraph}{{project plan:}}{8}{paragraph*.2}%
-\contentsline {chapter}{\numberline {6}{Conclusion}}{9}{chapter.6}%
-\contentsline {chapter}{\numberline {}{Bibliography}}{10}{section*.3}%
+\contentsline {section}{\numberline {5.1}{Thesis Timeline}}{8}{section.5.1}%
+\contentsline {section}{\numberline {5.2}{Contingency Plans}}{8}{section.5.2}%
+\contentsline {chapter}{\numberline {}{Bibliography}}{9}{section*.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

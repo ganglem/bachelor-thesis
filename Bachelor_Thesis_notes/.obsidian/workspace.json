@@ -25,7 +25,7 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf"
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
               }
             }
           }
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf"
+                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
               }
             }
           }
@@ -159,14 +159,14 @@
   },
   "active": "35ed43adfcd5afe3",
   "lastOpenFiles": [
+    "Approaches/E - E Architecture.md",
+    "Resources/PDFs/Proposal_MichaelWolf.pdf",
+    "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
     "2023-01-04.md",
     "Untitled.canvas",
     "Standards/CVSS.md",
     "Assessment/ASIL.md",
-    "Resources/PDFs/Proposal_MichaelWolf.pdf",
     "Resources/PDFs/ThreatSurf A method for automated Threat Surface assessment.pdf",
-    "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
-    "Approaches/E - E Architecture.md",
     "Assessment/TARA.md",
     "Assessment/EVITA/EVITA.md"
   ]
