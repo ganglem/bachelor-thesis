@@ -15,18 +15,19 @@ the security of a given vehicular network architecture.
 General:
 
 \begin{itemize}
-	\item A1\label{sec:a1} Multiple different vehicular network archtitecure diagrams as ARXML files.
-	\item A2\label{sec:a2} A criteria to evalute the architectures.
+	\item A1\label{sec:a1} Multiple different vehicular network archtitecure diagrams as files of a certain datatype
+	\item A2\label{sec:a2} A criteria to evalute the architectures
+	\item A3\label{sec:a3} Compare architectures with one another and conclude which architecture offers the most security
 \end{itemize}
 
 Tool:
 
 \begin{itemize}
 
-	\item F1\label{sec:f1}: It will take an ARXML file as input. 
-		This ARXML file is an XML file containing the network diagram of the vehicle, which I have created beforehand
+	\item F1\label{sec:f1}: It will take a file as input. 
+		This file contains the network diagram of the vehicle, which I have created beforehand
 		The network diagram consists of ECUs (nodes) and bus systems (edges) connecting the ECUs.
-		The ARXML will be parsed to a convenient datatype.
+		The file content will be parsed to a convenient datatype.
 		Fortunately, a member of the MBTI team has already implemented a convenient ARXML parser, that might be used in this tool.
 
 \item F2\label{sec:f2}: Each ECU and each bus system will have a rating, or "difficulty", that can be changed in the script.
@@ -50,7 +51,7 @@ other requirements such as hardware, software or non-funcitonal requirements inc
 	\item N1\label{sec:n1}: Tool must be script based
 	\item N2\label{sec:n2}: Programming language is Python (version not yet specified)
 	\item N3\label{sec:n3}: A virtual machine with a Linux distribution (distribution not yet specified)
-	\item N4\label{sec:n4}: Appropriate libraries for the tool, like the ARXML parser from MBTI
+	\item N4\label{sec:n4}: Appropriate libraries for the tool
 	\item N5\label{sec:n5}: An IDE like PyCharm (recommended) or a text editor to change the script
 	\item N6\label{sec:n6}: A Git repository where the code and thesis will be stored
 \end{itemize}
