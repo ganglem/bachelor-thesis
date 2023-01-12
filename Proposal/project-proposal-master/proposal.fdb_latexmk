@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber proposal"] 1673205282 "proposal.bcf" "proposal.bbl" "proposal" 1673205667 0
-  "Bibliography.bib" 1673202902 7194 7c3387fb97fa366ac77c39a5e8cbab58 ""
-  "proposal.bcf" 1673205666 107477 28ef5a630386f8c4e3f3aaa5b0c5eacf "pdflatex"
+["biber proposal"] 1673530598 "proposal.bcf" "proposal.bbl" "proposal" 1673530889 0
+  "Bibliography.bib" 1673523932 7246 725c99107528b6f79a953975fc45c189 ""
+  "proposal.bcf" 1673530889 107417 e1b9f5aba93c12eb76356ae58b130c98 "pdflatex"
   (generated)
   "proposal.bbl"
   "proposal.blg"
   (rewritten before read)
-["makeindex proposal.idx"] 1673205281 "proposal.idx" "proposal.ind" "proposal" 1673205667 0
-  "proposal.idx" 1673205665 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex proposal.idx"] 1673530597 "proposal.idx" "proposal.ind" "proposal" 1673530889 0
+  "proposal.idx" 1673530886 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "proposal.ilg"
   "proposal.ind"
   (rewritten before read)
-["pdflatex"] 1673205662 "c:/Users/emilija/OneDrive - bwedu/Uni/bachelor-thesis/Proposal/project-proposal-master/proposal.tex" "proposal.pdf" "proposal" 1673205667 0
+["pdflatex"] 1673530881 "c:/Users/emilija/OneDrive - bwedu/Uni/bachelor-thesis/Proposal/project-proposal-master/proposal.tex" "proposal.pdf" "proposal" 1673530889 0
   "C:/Users/emilija/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1670507943 123061 b1655693ff17da57d507f8869750fb0c ""
   "C:/Users/emilija/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1670507459 10805980 cfb87a8998b7a5561e90eb1558c57727 ""
   "C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -276,23 +276,23 @@
   "C:/Users/emilija/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656233290 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/emilija/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656233319 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/emilija/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "Chapters/01-Introduction.tex" 1673202902 5566 0eaa01a2054e750330d0c5bfdd637e68 ""
-  "Chapters/02-StateOfTheArt.tex" 1673202902 4323 f3dc13abfed21cfdab7efa58b23deb74 ""
-  "Chapters/03-ProblemStatement.tex" 1673204768 2050 93fe771d3556c16f3fe0622b9e2aadfb ""
-  "Chapters/04-Design.tex" 1673205028 2620 8481df802989ee3163e106639d5e4203 ""
-  "Chapters/05-Schedule.tex" 1673205021 897 92f11a1d6f3c0a890ca77480028fcd96 ""
-  "Chapters/Abstract.tex" 1673205662 1194 072febf29b3327bf99a13879f166c239 ""
+  "Chapters/01-Introduction.tex" 1673528315 5197 f1cc4100a6d7de684764de27b8a7c796 ""
+  "Chapters/02-StateOfTheArt.tex" 1673530880 7813 c44c632223123d0087f8a731abac047e ""
+  "Chapters/03-ProblemStatement.tex" 1673526198 1856 050d1a73c913e563b195ccd9b828a58c ""
+  "Chapters/04-Design.tex" 1673528405 2527 4c4cee1109887d71ca744887b044bd62 ""
+  "Chapters/05-Schedule.tex" 1673526557 776 b29ab1d53178d7afb4b84999708ea5fb ""
+  "Chapters/Abstract.tex" 1673525675 959 f4f164991df53413e808a07936d62d43 ""
   "Graphics//bilingual-color-gradient.pdf" 1670507410 716012 ccd7f0722318f7e618f6f7e2b17735f4 ""
-  "Graphics/time.PNG" 1673204981 37104 4779d3d8d1d0713149eee2ad001e5eb8 ""
+  "Graphics/time.PNG" 1673523592 42071 c557919d8e099892b62fb8547251f55c ""
   "License.tex" 1670507410 347 8989ad2755957169564893b0fcd5d77b ""
-  "c:/Users/emilija/OneDrive - bwedu/Uni/bachelor-thesis/Proposal/project-proposal-master/proposal.tex" 1673203035 575 321913981b67546860b9cd1f810b3a70 ""
-  "proposal.aux" 1673205666 12432 a46e391854299b767fc5e86fb32d6723 "pdflatex"
-  "proposal.bbl" 1673205284 18533 f0e529c8ed6463a241efb6c690068fe0 "biber proposal"
-  "proposal.ind" 1673205281 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proposal.idx"
-  "proposal.out" 1673205666 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "proposal.run.xml" 1673205666 2466 3b4f1bc7a159ce12ee20e35ad14bcb1b "pdflatex"
-  "proposal.tex" 1673203035 575 321913981b67546860b9cd1f810b3a70 ""
-  "proposal.toc" 1673205666 1291 f5fdc0b6eb99e80e91a25906ee67875a "pdflatex"
+  "c:/Users/emilija/OneDrive - bwedu/Uni/bachelor-thesis/Proposal/project-proposal-master/proposal.tex" 1673526639 575 321913981b67546860b9cd1f810b3a70 ""
+  "proposal.aux" 1673530889 12348 f7be8eb339c5012d5ecf793d2d787f5a "pdflatex"
+  "proposal.bbl" 1673530601 17521 af407e1b43767567ceca5a6e0a6e2a40 "biber proposal"
+  "proposal.ind" 1673530597 0 d41d8cd98f00b204e9800998ecf8427e "makeindex proposal.idx"
+  "proposal.out" 1673530887 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "proposal.run.xml" 1673530889 2466 3b4f1bc7a159ce12ee20e35ad14bcb1b "pdflatex"
+  "proposal.tex" 1673526639 575 321913981b67546860b9cd1f810b3a70 ""
+  "proposal.toc" 1673530889 1292 81653a96d9a914b4bd09d74178adac4f "pdflatex"
   "settings.tex" 1670507410 635 f824ccf13155b50d9ef52c22816f3e8c ""
   "vs-report.cls" 1670507410 14889 e948d5643126d21759c80e7e3f47434e ""
   (generated)

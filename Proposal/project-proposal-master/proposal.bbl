@@ -177,37 +177,6 @@
       \verb https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final
       \endverb
     \endentry
-    \entry{cvss}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=2c2624a5059934a947d6e25fe8332ade}{%
-           family={{FIRST}},
-           familyi={F\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Bethesda, Maryland, USA}%
-      }
-      \list{organization}{1}{%
-        {FIRST}%
-      }
-      \strng{namehash}{2c2624a5059934a947d6e25fe8332ade}
-      \strng{fullhash}{2c2624a5059934a947d6e25fe8332ade}
-      \strng{bibnamehash}{2c2624a5059934a947d6e25fe8332ade}
-      \strng{authorbibnamehash}{2c2624a5059934a947d6e25fe8332ade}
-      \strng{authornamehash}{2c2624a5059934a947d6e25fe8332ade}
-      \strng{authorfullhash}{2c2624a5059934a947d6e25fe8332ade}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Common Vulnerability Scoring System (CVSS)}
-      \field{year}{2005}
-      \verb{urlraw}
-      \verb https://www.first.org/cvss/
-      \endverb
-      \verb{url}
-      \verb https://www.first.org/cvss/
-      \endverb
-    \endentry
     \entry{heavens}{misc}{}
       \name{author}{1}{}{%
         {{hash=8dd73d7cfa85a41176a48c024fdec7e2}{%
@@ -227,8 +196,8 @@
       \strng{authorbibnamehash}{8dd73d7cfa85a41176a48c024fdec7e2}
       \strng{authornamehash}{8dd73d7cfa85a41176a48c024fdec7e2}
       \strng{authorfullhash}{8dd73d7cfa85a41176a48c024fdec7e2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{HEAVENS: HEAling Vulnerabilities to ENhance Software Security and Safety}
@@ -259,8 +228,8 @@
       \strng{authornamehash}{ef9cb61878e61d434507444346b29d1a}
       \strng{authorfullhash}{ef9cb61878e61d434507444346b29d1a}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Evaluating the Vulnerability of Information Technology Assets (EVITA)}
@@ -296,8 +265,8 @@
       \strng{authorbibnamehash}{1b565c5af5630cb00fe17b3f569b52a1}
       \strng{authornamehash}{a4ec645d214ebafbda12449fe1d2e6e5}
       \strng{authorfullhash}{1b565c5af5630cb00fe17b3f569b52a1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2021 International Conference on Computational Science and Computational Intelligence (CSCI)}
@@ -339,17 +308,17 @@
       \strng{authorbibnamehash}{fc42921f70be2683261bcb4683232f89}
       \strng{authornamehash}{35d598a1f65ca5dd4592390347a50a78}
       \strng{authorfullhash}{fc42921f70be2683261bcb4683232f89}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Automation in Automotive Security by Using Attacker Privileges}
       \field{year}{2021}
       \verb{urlraw}
-      \verb https://www.h-ka.de/en/ieem/profile
+      \verb https://hss-opus.ub.ruhr-uni-bochum.de/opus4/frontdoor/index/index/year/2021/docId/8357
       \endverb
       \verb{url}
-      \verb https://www.h-ka.de/en/ieem/profile
+      \verb https://hss-opus.ub.ruhr-uni-bochum.de/opus4/frontdoor/index/index/year/2021/docId/8357
       \endverb
     \endentry
     \entry{attack_database}{article}{}

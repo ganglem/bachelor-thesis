@@ -23,9 +23,11 @@
             "id": "35ed43adfcd5afe3",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
+                "file": "Attack/Attacker Privileges.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -96,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
+                "file": "Attack/Attacker Privileges.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf",
+                "file": "Attack/Attacker Privileges.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Resources/PDFs/Proposal_MichaelWolf.pdf"
+                "file": "Attack/Attacker Privileges.md"
               }
             }
           }
@@ -147,27 +149,17 @@
     "width": 300,
     "collapsed": true
   },
-  "left-ribbon": {
-    "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
-    }
-  },
   "active": "35ed43adfcd5afe3",
   "lastOpenFiles": [
-    "Approaches/E - E Architecture.md",
+    "Papers/Attack Path Generation Based on Attack and Penetration Testing Knowledge.md",
+    "Papers/Model-Based Security Testing of Vehicle Networks.md",
+    "Papers/Automation in Automotive Security by Using Attacker Privileges.md",
+    "Resources/PDFs/Attack Path Generation Based on Attack and Penetration Testing Knowledge - final.pdf",
+    "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md",
+    "Attack/Attack Path.md",
+    "Resources/PDFs/210920_escar2021_Konferenzband_A4_01_paper13.pdf",
     "Resources/PDFs/Proposal_MichaelWolf.pdf",
-    "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
-    "2023-01-04.md",
-    "Untitled.canvas",
-    "Standards/CVSS.md",
-    "Assessment/ASIL.md",
-    "Resources/PDFs/ThreatSurf A method for automated Threat Surface assessment.pdf",
-    "Assessment/TARA.md",
-    "Assessment/EVITA/EVITA.md"
+    "Approaches/E - E Architecture.md",
+    "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf"
   ]
 }
