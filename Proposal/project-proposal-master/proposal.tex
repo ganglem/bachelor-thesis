@@ -5,7 +5,11 @@
 \renewcommand{\myTitle}{Comparing different vehicle architectures based on attack path analysis}
 \renewcommand{\myTime}{\today}
 \renewcommand{\mySupervisor}{Michael Wolf}
-               
+
+\usepackage[acronym,toc,automake]{glossaries}
+\loadglsentries{glossary.tex}
+\makeglossaries
+
 \begin{document}
 \makefrontmatter
 
@@ -14,6 +18,10 @@
 \input{Chapters/03-ProblemStatement}
 \input{Chapters/04-Design}
 \input{Chapters/05-Schedule}
+
+
+\printglossary[type=\acronymtype]
+\printglossary
 
 \makebackmatter
 \end{document}

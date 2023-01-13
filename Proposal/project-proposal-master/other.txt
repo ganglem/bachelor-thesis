@@ -1,0 +1,11 @@
+\item NIST SP 800-53 is a set of security controls and guidelines published by the National Institute of Standards and Technology (NIST) that provide a comprehensive framework for securing information systems and organizations. 
+The security controls in NIST SP 800-53 are organized into families, such as access control, incident response, and system and communications protection. 
+Each control has a specific objective, such as protecting against unauthorized access or ensuring information confidentiality, integrity, and availability. 
+The standard also includes guidelines for implementing and assessing the security controls and maintaining and updating them over time.
+The NIST SP 800-53 security controls are designed to be flexible and adaptable to specific needs, and they can be used in conjunction with other standards, guidelines, and best practices.
+In the context of the automotive industry, NIST SP 800-53 can be used in combination with other standards mentioned above. \cite{nist}.
+
+
+Part 1 contains the general requirements, which set out the overall safety goals and safety management processes. 
+Part 2 contains the requirements for the development process, which covers the safety planning, safety analysis, and safety implementation. 
+Part 3 contains the requirements for the production process, which covers the safety validation and safety verification.

@@ -5,7 +5,7 @@
 
 \section{purpose}\label{sec:purpose}
 
-The tool's purpose is to help security architects quickly evaluate the attack path feasibility of a given vehicular network architecture. 
+The tool's purpose is to help security architects quickly evaluate the \gls{attack path} feasibility of a given vehicular network architecture. 
 
 \section{(Functional) Requirements}\label{sec:funct-req}
 
@@ -15,7 +15,7 @@ General:
 
 \begin{itemize}
 	\item A1\label{sec:a1} Multiple different vehicular network architecture diagrams as files of a certain datatype 
-	\item A2\label{sec:a2} A criteria to evalute the architectures
+	\item A2\label{sec:a2} A criteria to evaluate the architectures
 	\item A3\label{sec:a3} Compare architectures with one another and conclude which architecture offers the most security
 \end{itemize}
 
@@ -23,7 +23,7 @@ Tool:
 
 \begin{itemize}
 
-\item F1\label{sec:f1}: The tool will take a file as input. This file contains the network diagram of the vehicle, which was created beforehand. The network diagram consists of ECUs (nodes) and bus systems (edges) connecting the ECUs. The file content will be parsed to a convenient datatype. 
+\item F1\label{sec:f1}: The tool will take a file as input. This file contains the network diagram of the vehicle, which was created beforehand. The network diagram consists of \gls{ecu}s (nodes) and bus systems (edges) connecting the ECUs. The file content will be parsed to a convenient datatype. 
 
 \item F2\label{sec:f2}: Each ECU and each bus system will have an attack feasibility rating, or "difficulty," that can be changed in the script. 
 
@@ -31,14 +31,14 @@ Tool:
 
 \item F4\label{sec:f4}: Next, an algorithm (potentially as mentioned in ThreatSurf \cite{threat_surf}) will find the most feasible attack path from each entry to each target based on the ratings. However, the algorithm can also be changed in the script. 
 
-\item F5\label{sec:f5}: The results are then output to a table, where the overall security of the network architecture is evaluated based on a criteria  (see \ref{sec:a2}).
+\item F5\label{sec:f5}: The results are then output to a table, where the overall security of the network architecture is evaluated based on a criteria (see \ref{sec:a2}).
 
 \end{itemize}
 
 \section{Other Requirements}
 \label{sec:hardware-software}
 
-other requirements such as hardware, software or non-funcitonal requirements include, but are not limited to:
+Other requirements such as hardware, software, or non-functional requirements include, but are not limited to:
 
 \begin{itemize}
 	\item N1\label{sec:n1}: The tool must be script based
