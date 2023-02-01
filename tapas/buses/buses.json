@@ -1,0 +1,16 @@
+{
+  "buses": [
+    {
+      "type": "can",
+      "feasibility": 1
+    },
+    {
+      "type" : "bluetooth",
+      "feasibility": 1
+    },
+    {
+      "type" : "wifi",
+      "feasibility": 1
+    }
+  ]
+}

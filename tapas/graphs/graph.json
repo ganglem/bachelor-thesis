@@ -1,0 +1,69 @@
+{
+  "a_name": "graph1",
+  "buses": [
+    {
+      "name": "b1",
+      "type": "can",
+      "ecus": [
+        "ecu1",
+        "ecu2"
+      ]
+    },
+    {
+      "name": "b2",
+      "type": "can",
+      "ecus": [
+        "ecu2",
+        "ecu3"
+      ]
+    },
+    {
+      "name": "b3",
+      "type": "can",
+      "ecus": [
+        "ecu3",
+        "ecu4"
+      ]
+    },
+    {
+      "name": "b4",
+      "type": "can",
+      "ecus": [
+        "ecu4",
+        "ecu5"
+      ]
+    },
+    {
+      "name": "b5",
+      "type": "can",
+      "ecus": [
+        "ecu5",
+        "ecu6"
+      ]
+    },
+    {
+      "name": "wifi",
+      "type": "wifi",
+      "ecus": [
+        "wifi",
+        "ecu1"
+      ]
+    },
+    {
+      "name": "bluetooth",
+      "type": "bluetooth",
+      "ecus": [
+        "bluetooth",
+        "ecu1"
+      ]
+    },
+    {
+      "name": "bluetooth",
+      "type": "bluetooth",
+      "ecus": [
+        "bluetooth",
+    "ecu6"
+      ]
+    }
+  ]
+}

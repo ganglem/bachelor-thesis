@@ -1,0 +1,44 @@
+{
+  "ecus": [
+    {
+      "name": "ecu1",
+      "type": "entry",
+      "feasibility": 1
+    },
+    {
+      "name": "ecu2",
+      "type": "",
+      "feasibility": 1
+    },
+    {
+      "name": "ecu3",
+      "type": "",
+      "feasibility": 1
+    },
+    {
+      "name": "ecu4",
+      "type": "",
+      "feasibility": 1
+    },
+    {
+      "name": "ecu5",
+      "type": "",
+      "feasibility": 1
+    },
+    {
+      "name": "ecu6",
+      "type": "target",
+      "feasibility": 1
+    },
+    {
+      "name": "bluetooth",
+      "type": "interface",
+      "feasibility": 0
+    },
+    {
+      "name": "wifi",
+      "type": "interface",
+      "feasibility": 0
+    }
+  ]
+}
