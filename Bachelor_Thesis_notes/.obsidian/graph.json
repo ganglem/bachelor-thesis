@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "",
+  "search": "autosar",
   "showTags": true,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -32,6 +32,6 @@
   "repelStrength": 20,
   "linkStrength": 0.78125,
   "linkDistance": 238,
-  "scale": 0.5334257528756633,
-  "close": false
+  "scale": 0.22579485193193627,
+  "close": true
 }

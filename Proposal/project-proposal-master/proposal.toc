@@ -1,26 +1,19 @@
 \vspace {-\cftbeforepartskip }
 \contentsline {chapter}{\numberline {1}{Introduction}}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}{Research field}}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}{Project Type}}{1}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}{implementation centric}}{1}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}{exploratory/analytic}}{1}{subsection.1.2.2}%
-\contentsline {subsubsection}{{example}}{1}{subsubsection*.2}%
-\contentsline {subsection}{\numberline {1.2.3}{constructive/synthetic}}{2}{subsection.1.2.3}%
-\contentsline {subsubsection}{{example}}{2}{subsubsection*.3}%
-\contentsline {chapter}{\numberline {2}{Project Idea}}{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3}{State of the Art}}{4}{chapter.3}%
-\contentsline {chapter}{\numberline {4}{Requirements Analysis}}{5}{chapter.4}%
-\contentsline {chapter}{\numberline {5}{Functional Specification}}{6}{chapter.5}%
-\contentsline {chapter}{\numberline {6}{Problem Statement}}{7}{chapter.6}%
-\contentsline {chapter}{\numberline {7}{Agreement on Deliverables}}{8}{chapter.7}%
-\contentsline {chapter}{\numberline {8}{(System) Design}}{9}{chapter.8}%
-\contentsline {paragraph}{{or}}{9}{paragraph*.4}%
-\contentsline {paragraph}{{in particular:}}{9}{paragraph*.5}%
-\contentsline {paragraph}{{or}}{9}{paragraph*.6}%
-\contentsline {chapter}{\numberline {9}{Hardware Requirements and Required Purchases}}{10}{chapter.9}%
-\contentsline {paragraph}{{resources:}}{10}{paragraph*.7}%
-\contentsline {chapter}{\numberline {10}{Project Schedule}}{11}{chapter.10}%
-\contentsline {paragraph}{{project plan:}}{11}{paragraph*.8}%
-\contentsline {chapter}{\numberline {11}{Conclusion}}{12}{chapter.11}%
-\contentsline {chapter}{\numberline {}{Bibliography}}{13}{section*.9}%
+\contentsline {section}{\numberline {1.1}{Research field: Cybersecurity of vehicular networks}}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}{Background and Motivation}}{2}{section.1.2}%
+\contentsline {chapter}{\numberline {2}{State of the Art}}{3}{chapter.2}%
+\contentsline {chapter}{\numberline {3}{Problem Statement}}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}{Project Type}}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}{Thesis Questions}}{7}{section.3.2}%
+\contentsline {chapter}{\numberline {4}{Tool Design and Implementation}}{8}{chapter.4}%
+\contentsline {section}{\numberline {4.1}{purpose}}{8}{section.4.1}%
+\contentsline {section}{\numberline {4.2}{(Functional) Requirements}}{8}{section.4.2}%
+\contentsline {section}{\numberline {4.3}{Other Requirements}}{8}{section.4.3}%
+\contentsline {chapter}{\numberline {5}{Project Schedule}}{10}{chapter.5}%
+\contentsline {section}{\numberline {5.1}{Thesis Timeline}}{10}{section.5.1}%
+\contentsline {section}{\numberline {5.2}{Contingency Plans}}{10}{section.5.2}%
+\contentsline {chapter}{Acronyms}{11}{section*.2}%
+\contentsline {chapter}{Glossary}{12}{section*.3}%
+\contentsline {chapter}{\numberline {}{Bibliography}}{13}{section*.4}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

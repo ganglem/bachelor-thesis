@@ -234,4 +234,4 @@ Tags: #paper #automotive
 	- [[CVSS]] practically combines the parameters of elapsed time, expertise, equipment, and knowledge of item or component
 	- rating with just the two different values of high and low must be done
 	- decision will be difficult whether the implementation of further security technology is considered necessary to reach the value low.
-	- [[EVITA]] method, show up the eligibility of this type of approach for this application area. The previously mentioned obstacles of existing solutions can be easily overcome, lack of compliance to[[ISO 21434]] may be eliminated with slight adaptions of the schemes
+	- [[EVITA]] method, show up the eligibility of this type of approach for this application area. The previously mentioned obstacles of existing solutions can be easily overcome, lack of compliance to [[ISO 21434]] may be eliminated with slight adaptions of the schemes

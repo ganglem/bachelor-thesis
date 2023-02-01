@@ -1,27 +1,50 @@
 %************************************************
-\chapter{(System) Design}
-\label{chp:design}
+\chapter{Tool Design and Implementation}
+\label{chp:tool}
 %************************************************
 
+\section{purpose}\label{sec:purpose}
 
-\begin{shaded}
-\noindent details on the general approach, solution strategies and implementation methods
+The tool's purpose is to help security architects quickly evaluate the \gls{attack path} feasibility of a given vehicular network architecture. 
 
-\vspace{5em}
+\section{(Functional) Requirements}\label{sec:funct-req}
 
-\noindent specification of the concrete lab, experiment or test setup or the prototype\dots
-\paragraph{or} the architecture and detailed design plan of the implementation\dots
+(Functional) Requirements include but are not limited to:\\
 
-\vspace{3em}
+General:
 
-\noindent \dots that is expected to achieve the goals,
-\paragraph{in particular:} that answers the identified research questions
-\paragraph{or} meets the requirements
+\begin{itemize}
+	\item A1\label{sec:a1} Multiple different vehicular network architecture diagrams as files of a certain datatype 
+	\item A2\label{sec:a2} A criteria to evaluate the architectures
+	\item A3\label{sec:a3} Compare architectures with one another and conclude which architecture offers the most security
+\end{itemize}
 
-\vspace{5em}
+Tool:
 
-\noindent identify/partition work packages and their dependencies
-\end{shaded}
+\begin{itemize}
 
+\item F1\label{sec:f1}: The tool will take a file as input. This file contains the network diagram of the vehicle, which was created beforehand. The network diagram consists of \gls{ecu}s (nodes) and bus systems (edges) connecting the ECUs. The file content will be parsed to a convenient datatype. 
 
-\lipsum[29-30]
+\item F2\label{sec:f2}: Each ECU and each bus system will have an attack feasibility rating, or "difficulty," that can be changed in the script. 
+
+\item F3\label{sec:f3}: ECUs can then be marked as entry points or target points. 
+
+\item F4\label{sec:f4}: Next, an algorithm (potentially as mentioned in ThreatSurf \cite{threat_surf}) will find the most feasible attack path from each entry to each target based on the ratings. However, the algorithm can also be changed in the script. 
+
+\item F5\label{sec:f5}: The results are then output to a table, where the overall security of the network architecture is evaluated based on a criteria (see \ref{sec:a2}).
+
+\end{itemize}
+
+\section{Other Requirements}
+\label{sec:hardware-software}
+
+Other requirements such as hardware, software, or non-functional requirements include, but are not limited to:
+
+\begin{itemize}
+	\item N1\label{sec:n1}: The tool must be script based
+	\item N2\label{sec:n2}: The programming language is Python (version not yet specified)
+	\item N3\label{sec:n3}: A virtual machine with a Linux distribution (distribution not yet specified)
+	\item N4\label{sec:n4}: Appropriate libraries for the tool
+	\item N5\label{sec:n5}: An IDE like PyCharm (recommended) or a text editor to change the script
+	\item N6\label{sec:n6}: A Git repository where the code and thesis will be stored
+\end{itemize}

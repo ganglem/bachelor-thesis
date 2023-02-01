@@ -1,31 +1,27 @@
-% % % % % % % % % % % % % % % % % %
-% Use biber instead of bib(la)tex!
-% You have been warned!
-% % % % % % % % % % % % % % % % % %
 \documentclass{vs-report}
 
-\renewcommand{\myName}{Emilija Kastratovic}
+\renewcommand{\myName}{Emilija Kastratović}
 \renewcommand{\myMail}{\mail{emilija.kastratovic@uni-ulm.de}\newline}
-\renewcommand{\myTitle}{Comparing different vehicle architectures
-based on attack path analysis}
+\renewcommand{\myTitle}{Comparing different vehicle architectures based on attack path analysis}
 \renewcommand{\myTime}{\today}
 \renewcommand{\mySupervisor}{Michael Wolf}
-               
+
+\usepackage[acronym,toc,automake]{glossaries}
+\loadglsentries{glossary.tex}
+\makeglossaries
+
 \begin{document}
 \makefrontmatter
 
 \input{Chapters/01-Introduction}
-\input{Chapters/02-ProjectIdea-StateOfTheArt}
-
-% The following two sets of two chapters are mutually exclusive, select just one set:
-% % just for implementation and constructive projects!
-\input{Chapters/03-Requirements-Specification} 
-% % just exploratory projects
-\input{Chapters/03-Problem-Deliverables} 
-
+\input{Chapters/02-StateOfTheArt}
+\input{Chapters/03-ProblemStatement}
 \input{Chapters/04-Design}
-\input{Chapters/05-Hardware-Purchases-Schedule}
-\input{Chapters/06-Conclusion}
+\input{Chapters/05-Schedule}
+
+
+\printglossary[type=\acronymtype]
+\printglossary
 
 \makebackmatter
 \end{document}
