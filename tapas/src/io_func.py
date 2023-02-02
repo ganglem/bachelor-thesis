@@ -8,6 +8,17 @@ import pandas as pd
 from matplotlib import pyplot as plt
 
 
+def print_tapas():
+    print("                         Welcome to\n"
+          "                    ╔════╦═══╦═══╦═══╦═══╗\n"
+          "                    ║╔╗╔╗║╔═╗║╔═╗║╔═╗║╔═╗║\n"
+          "                    ╚╝║║╚╣╚═╝║╚═╝║╚═╝║╚══╗\n"
+          "                      ║║ ║╔═╗║╔══╣╔═╗╠══╗║\n"
+          "                      ║║ ║║ ║║║  ║║ ║║╚═╝║\n"
+          "                      ╚╝ ╚╝ ╚╩╝  ╚╝ ╚╩═══╝\n"
+          "Tool for Automatic Path Analysis in Automotive Architectures\n")
+
+
 def parse_files(architecture_file: str, ecu_file: str, bus_file: str) -> Tuple[str, dict, dict, dict]:
     """
     This function takes three file names, loads their JSON contents, and returns the architecture name, architecture, ecus_config and buses_config as tuple
