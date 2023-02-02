@@ -1,13 +1,13 @@
 \vspace {-\cftbeforepartskip }
 \contentsline {chapter}{\numberline {1}{Introduction}}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}{Research field: Cybersecurity of vehicular networks}}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.1}{Research field: Cybersecurity of Vehicular Networks}}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}{Background and Motivation}}{2}{section.1.2}%
 \contentsline {chapter}{\numberline {2}{State of the Art}}{3}{chapter.2}%
 \contentsline {chapter}{\numberline {3}{Problem Statement}}{7}{chapter.3}%
 \contentsline {section}{\numberline {3.1}{Project Type}}{7}{section.3.1}%
 \contentsline {section}{\numberline {3.2}{Thesis Questions}}{7}{section.3.2}%
 \contentsline {chapter}{\numberline {4}{Tool Design and Implementation}}{8}{chapter.4}%
-\contentsline {section}{\numberline {4.1}{purpose}}{8}{section.4.1}%
+\contentsline {section}{\numberline {4.1}{Purpose}}{8}{section.4.1}%
 \contentsline {section}{\numberline {4.2}{(Functional) Requirements}}{8}{section.4.2}%
 \contentsline {section}{\numberline {4.3}{Other Requirements}}{8}{section.4.3}%
 \contentsline {chapter}{\numberline {5}{Project Schedule}}{10}{chapter.5}%
