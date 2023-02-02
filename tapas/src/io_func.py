@@ -118,8 +118,6 @@ def print_table(table: dict, architecture_name: str):
         print(f'An error occurred: {e}')
 
 
-def save_output_to_file():
-
 
 def save_graph(G: nx.DiGraph):
     """
