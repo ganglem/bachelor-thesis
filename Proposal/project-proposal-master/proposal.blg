@@ -1,15 +1,15 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'proposal.blg'
-[167] biber-MSWIN64:340> INFO - === 
-[227] Biber.pm:418> INFO - Reading 'proposal.bcf'
-[449] Biber.pm:978> INFO - Found 11 citekeys in bib section 0
-[475] Biber.pm:4401> INFO - Processing section 0
-[499] Biber.pm:4592> INFO - Looking for bibtex file 'Bibliography.bib' for section 0
-[580] bibtex.pm:1713> INFO - LaTeX decoding ...
-[610] bibtex.pm:1518> INFO - Found BibTeX data source 'Bibliography.bib'
-[733] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[733] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[733] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[733] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
-[750] bbl.pm:654> INFO - Writing 'proposal.bbl' with encoding 'UTF-8'
-[757] bbl.pm:757> INFO - Output to proposal.bbl
+[135] biber-MSWIN64:340> INFO - === 
+[178] Biber.pm:418> INFO - Reading 'proposal.bcf'
+[328] Biber.pm:978> INFO - Found 11 citekeys in bib section 0
+[348] Biber.pm:4401> INFO - Processing section 0
+[362] Biber.pm:4592> INFO - Looking for bibtex file 'Bibliography.bib' for section 0
+[416] bibtex.pm:1713> INFO - LaTeX decoding ...
+[439] bibtex.pm:1518> INFO - Found BibTeX data source 'Bibliography.bib'
+[528] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[529] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[529] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[529] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[541] bbl.pm:654> INFO - Writing 'proposal.bbl' with encoding 'UTF-8'
+[546] bbl.pm:757> INFO - Output to proposal.bbl

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.8)  2 FEB 2023 01:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.8)  2 FEB 2023 01:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1740,50 +1740,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--35
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
+Underfull \hbox (badness 10000) in paragraph at lines 36--46
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--48
+Underfull \hbox (badness 10000) in paragraph at lines 47--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--56
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--61
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1466) has occurred while \output is active []
 
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 62--68
+Underfull \hbox (badness 10000) in paragraph at lines 60--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--76
+Underfull \hbox (badness 10000) in paragraph at lines 67--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--85
+Underfull \hbox (badness 10000) in paragraph at lines 75--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--98
+Underfull \hbox (badness 10000) in paragraph at lines 84--96
 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1466) has occurred while \output is active []
 
  [5]) (Chapters/03-ProblemStatement.tex
 Chapter 3.
@@ -1879,7 +1874,7 @@ Here is how much of TeX's memory you used:
  1151 hyphenation exceptions out of 8191
  122i,22n,120p,10660b,1605s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona.enc}{C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona-sc.enc}<C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/public/ccicons/ccicons.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurb10.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrij8a.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/bera/fvmr8a.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonar.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on proposal.pdf (17 pages, 255565 bytes).
+Output written on proposal.pdf (17 pages, 255421 bytes).
 PDF statistics:
  383 PDF objects out of 1000 (max. 8388607)
  61 named destinations out of 1000 (max. 500000)
