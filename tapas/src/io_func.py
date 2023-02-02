@@ -118,6 +118,9 @@ def print_table(table: dict, architecture_name: str):
         print(f'An error occurred: {e}')
 
 
+def save_output_to_file():
+
+
 def save_graph(G: nx.DiGraph):
     """
     Saves directed graph `G` and as a png image.
@@ -128,7 +131,7 @@ def save_graph(G: nx.DiGraph):
     try:
         f = plt.figure()
         f.tight_layout()
-        nx.draw(G, ax = f.add_subplot(), with_labels = True, node_size = 1500, node_color = "skyblue", node_shape = "s")
+        nx.draw(G, ax = f.add_subplot(), with_labels = True, node_size = 200, node_color = "skyblue", node_shape = "s")
         f.savefig("graph.png")
     except Exception as e:
         print(f'An error occurred: {e}')
