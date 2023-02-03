@@ -132,60 +132,33 @@
       ]
     },
     {
-      "name": "wifi1",
+      "name": "wifi",
       "type": "wifi",
       "ecus": [
-        "wifi_interface",
-        "RADIO"
+        "wifi",
+        "RADIO",
+        "TEL",
+        "PARK"
       ]
     },
     {
-      "name": "wifi2",
-      "type": "wifi",
-      "ecus": [
-        "wifi_interface",
-        "TEL"
-      ]
-    },
-    {
-      "name": "bluetooth1",
+      "name": "bluetooth",
       "type": "bluetooth",
       "ecus": [
-        "bluetooth_interface",
-        "HU"
-      ]
-    },
-    {
-      "name": "bluetooth2",
-      "type": "bluetooth",
-      "ecus": [
-        "bluetooth_interface",
-        "TEL"
-      ]
-    },
-    {
-      "name": "bluetooth3",
-      "type": "bluetooth",
-      "ecus": [
-        "bluetooth_interface",
-        "RADIO"
+        "bluetooth",
+        "HU",
+        "TEL",
+        "RADIO",
+        "PARK"
       ]
     },
     {
       "name": "sat1",
       "type": "satellite",
       "ecus": [
-        "sat_interface",
-        "HU"
-      ]
-    }
-    ,
-    {
-      "name": "sat2",
-      "type": "satellite",
-      "ecus": [
-        "sat_interface",
-        "HU"
+        "satellite",
+        "HU",
+        "CU"
       ]
     }
   ]

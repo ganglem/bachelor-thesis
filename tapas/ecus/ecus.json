@@ -2,7 +2,7 @@
   "ecus": [
     {
       "name": "CGW",
-      "type": "target",
+      "type": "both",
       "feasibility": 10
     },
     {
@@ -97,7 +97,7 @@
     },
     {
       "name": "HU",
-        "type": "target",
+        "type": "both",
         "feasibility": 9
     },
     {
@@ -117,22 +117,22 @@
     },
     {
       "name": "CU",
-        "type": "entry",
+        "type": "both",
         "feasibility": 8
     },
     {
-      "name": "wifi_interface",
-      "type": "entry",
+      "name": "wifi",
+      "type": "interface",
       "feasibility": 0
     },
     {
-      "name": "bluetooth_interface",
-      "type": "entry",
+      "name": "bluetooth",
+      "type": "interface",
       "feasibility": 0
     },
     {
-      "name": "sat_interface",
-      "type": "entry",
+      "name": "satellite",
+      "type": "interface",
       "feasibility": 0
     }
   ]

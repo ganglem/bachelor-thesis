@@ -1,11 +1,13 @@
+import glob
 import json
 import os
-import glob
 from typing import Tuple
 
 import networkx as nx
 import pandas as pd
 from matplotlib import pyplot as plt
+
+from src.functions import table_evaluation
 
 
 def print_tapas():
@@ -107,7 +109,7 @@ def print_table(table: dict, architecture_name: str):
         distance_table = table["distance"]
         path_table = table["shortest_path"]
 
-        print(pd.DataFrame.from_dict(distance_table, orient = "index").sort_index())
+        print(pd.DataFrame.from_dict(distance_table, orient = "index").sort_index().T)
 
         for entry in path_table:
             for target in path_table[entry]:
@@ -116,7 +118,6 @@ def print_table(table: dict, architecture_name: str):
         print(f'KeyError: {e}')
     except Exception as e:
         print(f'An error occurred: {e}')
-
 
 
 def save_graph(G: nx.DiGraph):
@@ -131,6 +132,47 @@ def save_graph(G: nx.DiGraph):
         f.tight_layout()
         nx.draw(G, ax = f.add_subplot(), with_labels = True, node_size = 200, node_color = "skyblue", node_shape = "s")
         f.savefig("graph.png")
+    except Exception as e:
+        print(f'An error occurred: {e}')
+
+
+def print_evaluation(table: dict):
+    """
+    Prints a summary of a table.
+
+    Args:
+        table: A table containing the distance from each entry ECU to each target ECU.
+    """
+    total = table_evaluation(table)
+    print(f"Total sum of distances: {total}")
+
+
+def export_to_excel(table: dict, architecture_name: str):
+    """
+    Exports the distance table, shortest path table, and total sum of distances to an excel file in the "results" directory.
+
+    Args:
+        table (dict): The dictionary containing the distance and shortest path tables
+        architecture_name (str): The name of the architecture and the file name
+
+    """
+    try:
+        distance_table = table["distance"]
+        path_table = table["shortest_path"]
+
+        os.makedirs("../results", exist_ok = True)
+        with pd.ExcelWriter(f'../results/{architecture_name}.xlsx') as writer:
+            distance_df = pd.DataFrame.from_dict(distance_table, orient = "index").sort_index().T
+            distance_df.to_excel(writer, sheet_name = 'Distance', index = True)
+
+            path_df = pd.DataFrame.from_dict(path_table, orient = "index").sort_index().T
+            path_df.to_excel(writer, sheet_name = 'Shortest Path', index = True)
+
+            total = table_evaluation(table)
+            total_df = pd.DataFrame({'Total': [total]})
+            total_df.to_excel(writer, sheet_name = 'Total', index = True)
+    except KeyError as e:
+        print(f'KeyError: {e}')
     except Exception as e:
         print(f'An error occurred: {e}')
 
