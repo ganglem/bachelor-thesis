@@ -1,6 +1,6 @@
-PWD c:\Users\emilija\OneDrive - bwedu\Uni\bachelor-thesis\Proposal\project-proposal-master
+PWD c:\Dev\bachelor-thesis\Proposal\project-proposal-master
 INPUT C:\Users\emilija\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\emilija\OneDrive - bwedu\Uni\bachelor-thesis\Proposal\project-proposal-master\proposal.tex
+INPUT c:\Dev\bachelor-thesis\Proposal\project-proposal-master\proposal.tex
 OUTPUT proposal.log
 INPUT .\vs-report.cls
 INPUT .\vs-report.cls

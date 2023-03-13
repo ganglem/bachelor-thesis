@@ -3,9 +3,9 @@
 \label{chp:tool}
 %************************************************
 
-\section{purpose}\label{sec:purpose}
+\section{Purpose}\label{sec:purpose}
 
-The tool's purpose is to help security architects quickly evaluate the \gls{attack path} feasibility of a given vehicular network architecture. 
+The tool's purpose is to help security architects quickly evaluate thegiven vehicular network architecture based on their \gls{attack path} feasibility.
 
 \section{(Functional) Requirements}\label{sec:funct-req}
 
@@ -15,7 +15,7 @@ General:
 
 \begin{itemize}
 	\item A1\label{sec:a1} Multiple different vehicular network architecture diagrams as files of a certain datatype 
-	\item A2\label{sec:a2} A criteria to evaluate the architectures
+	\item A2\label{sec:a2} A criteria to evaluate the architectures and a survey to calibrate the criteria
 	\item A3\label{sec:a3} Compare architectures with one another and conclude which architecture offers the most security
 \end{itemize}
 
@@ -23,15 +23,19 @@ Tool:
 
 \begin{itemize}
 
-\item F1\label{sec:f1}: The tool will take a file as input. This file contains the network diagram of the vehicle, which was created beforehand. The network diagram consists of \gls{ecu}s (nodes) and bus systems (edges) connecting the ECUs. The file content will be parsed to a convenient datatype. 
+\item F1\label{sec:f1}: The tool will take files as input and parse them to a convenient datatype: 
+One file contains the network diagram of the vehicle.
+The network diagram consists of \gls{ecu}s (nodes), bus systems (edges) connecting the ECUs, and interfaces. 
+In a separate configuration file, each ECU and each bus system will have an attack feasibility rating. 
+It also specifies the entry points (ECUs and interfaces) and targets (ECUs).
 
-\item F2\label{sec:f2}: Each ECU and each bus system will have an attack feasibility rating, or "difficulty," that can be changed in the script. 
+\item F2\label{sec:f2}: A graph is created with the parsed data. The ratings in the configuration files are applied to the graph.
 
-\item F3\label{sec:f3}: ECUs can then be marked as entry points or target points. 
+\item F3\label{sec:f3}: Next, an algorithm will find the most feasible attack path from each entry to each target based on the ratings. The algorithm can also be changed in the script. 
 
-\item F4\label{sec:f4}: Next, an algorithm (potentially as mentioned in ThreatSurf \cite{threat_surf}) will find the most feasible attack path from each entry to each target based on the ratings. However, the algorithm can also be changed in the script. 
+\item F4\label{sec:f4}: The results are then output to a table containing the feasibility of each entry point to each target point together with the most feasible attack path.
 
-\item F5\label{sec:f5}: The results are then output to a table, where the overall security of the network architecture is evaluated based on a criteria (see \ref{sec:a2}).
+\item F5\label{sec:f5}: Based on the table, the overall security of the network architecture is evaluated using the criteria (see \ref{sec:type} and \hyperref[sec:a2]{A2}).
 
 \end{itemize}
 

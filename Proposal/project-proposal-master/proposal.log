@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.8)  13 JAN 2023 03:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.11.25) (preloaded format=pdflatex 2022.12.8)  2 FEB 2023 01:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/emilija/OneDrive - bwedu/Uni/bachelor-thesis/Proposal/project-proposal-master/proposal.tex"
-(c:/Users/emilija/OneDrive - bwedu/Uni/bachelor-thesis/Proposal/project-proposal-master/proposal.tex
+**c:/Dev/bachelor-thesis/Proposal/project-proposal-master/proposal.tex
+(c:/Dev/bachelor-thesis/Proposal/project-proposal-master/proposal.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2022-11-02> (vs-report.cls
 Document Class: vs-report 2014/10/17 Report document class, Institute of Distributed Systems (VS), Uni Ulm
@@ -1657,7 +1657,7 @@ Overfull \hbox (24.00003pt too wide) in paragraph at lines 14--14
 LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
 (Font)              scaled to size 10.0pt on input line 4.
 ) [2] (Chapters/Abstract.tex
-Underfull \hbox (badness 10000) in paragraph at lines 14--16
+Underfull \hbox (badness 10000) in paragraph at lines 13--17
 
  []
 
@@ -1692,12 +1692,12 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--15
+Underfull \hbox (badness 10000) in paragraph at lines 8--17
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--26
+Underfull \hbox (badness 10000) in paragraph at lines 18--26
 
  []
 
@@ -1706,46 +1706,99 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--26
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 39--43
+Underfull \hbox (badness 10000) in paragraph at lines 47--51
 
  []
 
 ) (Chapters/02-StateOfTheArt.tex
 Chapter 2.
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 26--32
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--22
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--28
 
  []
 
 [3
 
 ]
-Overfull \hbox (4.86977pt too wide) in paragraph at lines 52--55
-[]\T1/pplj/m/n/10 Another frame-work is the [][][]E-safety ve-hi-cle in-tru-sion pro-tected ap-pli-ca-tions (EVITA)[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--55
+Underfull \hbox (badness 10000) in paragraph at lines 29--35
 
  []
 
-[4]
-Underfull \vbox (badness 3482) has occurred while \output is active []
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
+
+ []
+
+
+Underfull \vbox (badness 1466) has occurred while \output is active []
+
+ [4]
+Underfull \hbox (badness 10000) in paragraph at lines 60--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--96
+
+ []
+
+
+Underfull \vbox (badness 1466) has occurred while \output is active []
 
  [5]) (Chapters/03-ProblemStatement.tex
 Chapter 3.
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 9--11
+Underfull \hbox (badness 10000) in paragraph at lines 9--12
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 13--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--22
+Underfull \hbox (badness 10000) in paragraph at lines 23--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
@@ -1766,7 +1819,7 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 [9]
-<Graphics/time.PNG, id=196, 1063.72406pt x 362.10281pt>
+<Graphics/time.PNG, id=201, 1063.72406pt x 362.10281pt>
 File: Graphics/time.PNG Graphic file (type png)
 <use Graphics/time.PNG>
 Package pdftex.def Info: Graphics/time.PNG  used on input line 11.
@@ -1814,16 +1867,16 @@ Package logreq Info: Writing requests to 'proposal.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  45538 strings out of 475281
- 898810 string characters out of 2773121
+ 898058 string characters out of 2773121
  1949869 words of memory out of 3000000
  66115 multiletter control sequences out of 15000+600000
  558273 words of font info for 128 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
- 122i,22n,120p,10693b,1605s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 122i,22n,120p,10660b,1605s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona.enc}{C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona-sc.enc}<C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/public/ccicons/ccicons.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eurb10.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrij8a.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/bera/fvmr8a.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonar.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/emilija/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on proposal.pdf (17 pages, 253131 bytes).
+Output written on proposal.pdf (17 pages, 255421 bytes).
 PDF statistics:
- 377 PDF objects out of 1000 (max. 8388607)
+ 383 PDF objects out of 1000 (max. 8388607)
  61 named destinations out of 1000 (max. 500000)
  19119 words of extra memory for PDF output out of 20736 (max. 10000000)
 
