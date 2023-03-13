@@ -1,44 +1,134 @@
 {
-  "a_name": "graph1",
+  "a_name": "presentation_architecture",
   "buses": [
     {
-      "name": "b1",
-      "type": "can",
+      "name": "eth1",
+      "type": "ethernet",
       "ecus": [
-        "ecu1",
-        "ecu2"
+        "CGW",
+        "BODY_CONTROL"
       ]
     },
     {
-      "name": "b2",
-      "type": "can",
+      "name": "eth2",
+      "type": "ethernet",
       "ecus": [
-        "ecu2",
-        "ecu3"
+        "CGW",
+        "POWERTRAIN"
       ]
     },
     {
-      "name": "b3",
-      "type": "can",
+      "name": "eth3",
+      "type": "ethernet",
       "ecus": [
-        "ecu3",
-        "ecu4"
+        "CGW",
+        "TELEMATICS"
       ]
     },
     {
-      "name": "b4",
-      "type": "can",
+      "name": "lin1",
+      "type": "lin",
       "ecus": [
-        "ecu4",
-        "ecu5"
+        "BODY_CONTROL",
+        "WPRA",
+        "VCS"
       ]
     },
     {
-      "name": "b5",
+      "name": "can1",
       "type": "can",
       "ecus": [
-        "ecu5",
-        "ecu6"
+        "BODY_CONTROL",
+        "TPM",
+        "CLIMATE",
+        "CLS",
+        "SEAT"
+      ]
+    },
+    {
+      "name": "canfd1",
+      "type": "canfd",
+      "ecus": [
+        "POWERTRAIN",
+        "ECM"
+      ]
+    },
+    {
+      "name": "canfd2",
+      "type": "canfd",
+      "ecus": [
+        "ECM",
+        "XCM"
+      ]
+    },
+    {
+      "name": "can2",
+      "type": "can",
+      "ecus": [
+        "ECM",
+        "FSCM",
+        "NOX"
+      ]
+    },
+    {
+      "name": "flexray",
+      "type": "flexray",
+      "ecus": [
+        "CGW",
+        "POWERTRAIN",
+        "ESP",
+        "PARK",
+        "EPS"
+      ]
+    },
+    {
+      "name": "canfd2",
+      "type": "canfd",
+      "ecus": [
+        "POWERTRAIN",
+        "CRG",
+        "BMU"
+      ]
+    },
+    {
+      "name": "eth4",
+      "type": "ethernet",
+      "ecus": [
+        "TELEMATICS",
+        "HU"
+      ]
+    },
+    {
+      "name": "eth5",
+      "type": "ethernet",
+      "ecus": [
+        "TELEMATICS",
+        "CU"
+      ]
+    },
+    {
+      "name": "eth6",
+      "type": "ethernet",
+      "ecus": [
+        "HU",
+        "CU"
+      ]
+    },
+    {
+      "name": "can3",
+      "type": "can",
+      "ecus": [
+        "TEL",
+        "DISP",
+        "RADIO"
+      ]
+    },
+    {
+      "name": "most",
+      "type": "most",
+      "ecus": [
+        "CU",
+        "RADIO"
       ]
     },
     {
@@ -46,7 +136,9 @@
       "type": "wifi",
       "ecus": [
         "wifi",
-        "ecu1"
+        "RADIO",
+        "TEL",
+        "PARK"
       ]
     },
     {
@@ -54,15 +146,19 @@
       "type": "bluetooth",
       "ecus": [
         "bluetooth",
-        "ecu1"
+        "HU",
+        "TEL",
+        "RADIO",
+        "PARK"
       ]
     },
     {
-      "name": "bluetooth",
-      "type": "bluetooth",
+      "name": "sat1",
+      "type": "satellite",
       "ecus": [
-        "bluetooth",
-    "ecu6"
+        "satellite",
+        "HU",
+        "CU"
       ]
     }
   ]
