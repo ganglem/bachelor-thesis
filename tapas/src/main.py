@@ -19,8 +19,13 @@ def main():
 
                 print_table(table, architecture_name)
 
+                print_evaluation(table)
+
                 save_graph(G)
+
+                export_to_excel(table, architecture_name)
 
 
 if __name__ == "__main__":
+    print_tapas()
     main()

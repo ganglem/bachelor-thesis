@@ -1,5 +1,5 @@
 PWD c:\Dev\bachelor-thesis\Proposal\project-proposal-master
-INPUT C:\Users\Emilija\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT C:\Users\emilija\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
 INPUT c:\Dev\bachelor-thesis\Proposal\project-proposal-master\proposal.tex
 OUTPUT proposal.log
 INPUT .\vs-report.cls

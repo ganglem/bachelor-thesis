@@ -27,23 +27,28 @@ def generate_graph(architecture, ecus_config, buses_config):
 
             ecu_types.setdefault(ecu_type, []).append(ecu)
 
-            if ecu_type == "entry" or ecu_type == "interface":
+            if ecu_type == "entry" or ecu_type == "both" or ecu_type == "interface":
                 entry_ecus.append({"name": ecu, "feasibility": ecu_feasibility})
-            elif ecu_type == "target":
+            if ecu_type == "target" or ecu_type == "both":
                 target_ecus.append(ecu)
 
+        for ecu in ecus_on_current_bus:
             for target_ecu in ecus_on_current_bus:
                 if target_ecu == ecu:
                     continue
                 target_ecu_config = get_attribute(ecus_config_dict, target_ecu)
                 target_ecu_config_type = get_attribute(target_ecu_config, "type")
                 if target_ecu_config_type == "interface":
-                    continue
-                target_ecu_feasibility = get_attribute(target_ecu_config, "feasibility")
-                feasibility = bus_feasibility+target_ecu_feasibility
-                G.add_edge(u_of_edge = ecu, v_of_edge = target_ecu, weight = feasibility)
+                    if ecu in entry_ecus or target_ecu in entry_ecus:
+                        feasibility = bus_feasibility
+                        G.add_edge(u_of_edge = target_ecu_config_type, v_of_edge = target_ecu, weight = feasibility)
+                elif target_ecu_config_type != "interface":
+                    target_ecu_feasibility = get_attribute(target_ecu_config, "feasibility")
+                    feasibility = bus_feasibility + target_ecu_feasibility
+                    G.add_edge(u_of_edge = ecu, v_of_edge = target_ecu, weight = feasibility)
 
     return G, entry_ecus, target_ecus
+
 
 
 def get_config(obj: str, objects_config: list, object_param: str, query: str) -> any:
@@ -113,3 +118,22 @@ def find_attack_path(G: nx.DiGraph, entry_ecus: list, target_ecus_names: list) -
             table["shortest_path"][entry_ecu_name][target_ecu_name] = shortest_path
 
     return table
+
+
+def table_evaluation(table: dict) -> int:
+    """
+    Sums up all the integer values in a table.
+
+    Args:
+        table: A table containing the distance from each entry ECU to each target ECU.
+
+    Returns:
+        The sum of all the integer values in the table.
+    """
+    total = 0
+    for entry_ecu in table["distance"].values():
+        for distance in entry_ecu.values():
+            total += distance
+    return total
+
+

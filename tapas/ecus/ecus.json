@@ -1,34 +1,129 @@
 {
   "ecus": [
     {
-      "name": "ecu1",
-      "type": "entry",
-      "feasibility": 1
+      "name": "CGW",
+      "type": "both",
+      "feasibility": 10
     },
     {
-      "name": "ecu2",
-      "type": "",
-      "feasibility": 1
-    },
-    {
-      "name": "ecu3",
-      "type": "",
-      "feasibility": 1
-    },
-    {
-      "name": "ecu4",
-      "type": "",
-      "feasibility": 1
-    },
-    {
-      "name": "ecu5",
-      "type": "",
-      "feasibility": 1
-    },
-    {
-      "name": "ecu6",
+      "name": "BODY_CONTROL",
       "type": "target",
+      "feasibility": 6
+    },
+    {
+      "name": "WPRA",
+      "type": "",
+      "feasibility": 2
+    },
+    {
+      "name": "VCS",
+      "type": "",
+      "feasibility": 2
+    },
+    {
+      "name": "TPM",
+      "type": "",
+      "feasibility": 3
+    },
+    {
+      "name": "CLIMATE",
+      "type": "",
+      "feasibility": 2
+    },
+    {
+      "name": "CLS",
+      "type": "target",
+      "feasibility": 6
+    },
+    {
+      "name": "POWERTRAIN",
+      "type": "target",
+      "feasibility": 10
+    },
+    {
+      "name": "SEAT",
+      "type": "",
       "feasibility": 1
+    },
+    {
+      "name": "ECM",
+      "type": "target",
+      "feasibility": 10
+    },
+    {
+      "name": "XCM",
+      "type": "",
+      "feasibility": 5
+    },
+    {
+      "name": "FSCM",
+      "type": "",
+        "feasibility": 4
+    },
+    {
+      "name": "NOX",
+        "type": "",
+            "feasibility": 4
+    },
+    {
+      "name": "CRG",
+      "type": "target",
+        "feasibility": 7
+    },
+    {
+      "name": "BMU",
+      "type": "target",
+      "feasibility": 6
+    },
+    {
+      "name": "ESP",
+        "type": "target",
+        "feasibility": 7
+    },
+    {
+      "name": "PARK",
+        "type": "entry",
+        "feasibility": 3
+    },
+    {
+      "name": "EPS",
+        "type": "",
+        "feasibility": 7
+    },
+    {
+      "name": "TELEMATICS",
+        "type": "",
+        "feasibility": 4
+    },
+    {
+      "name": "HU",
+        "type": "both",
+        "feasibility": 9
+    },
+    {
+      "name": "TEL",
+        "type": "entry",
+        "feasibility": 4
+    },
+    {
+      "name": "DISP",
+        "type": "",
+        "feasibility": 6
+    },
+    {
+      "name": "RADIO",
+        "type": "entry",
+        "feasibility": 3
+    },
+    {
+      "name": "CU",
+        "type": "both",
+        "feasibility": 8
+    },
+    {
+      "name": "wifi",
+      "type": "interface",
+      "feasibility": 0
     },
     {
       "name": "bluetooth",
@@ -36,7 +131,7 @@
       "feasibility": 0
     },
     {
-      "name": "wifi",
+      "name": "satellite",
       "type": "interface",
       "feasibility": 0
     }
