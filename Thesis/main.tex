@@ -1,0 +1,63 @@
+\documentclass{vs-thesis}
+\setdefaultlanguage{english} % english or german 
+
+% This package is only used in the demo and should be removed for the actual thesis.
+\usepackage{blindtext}
+
+% todo notes. (hint: remove for final version)
+\usepackage[backgroundcolor=white,linecolor=red,bordercolor=red,textsize=footnotesize]{todonotes}
+
+% Loads bibliography for citations.
+\addbibresource{bibliography.bib}
+
+% Define necessary metadata here
+\title{Comparing Different Vehicle Architectures Based On Attack Path Analysis}
+\thesistype{Bachelor Thesis}
+\titlegraphic{titleimage.jpg}
+\submissiondate{\today}
+
+\author{Emilija Kastratović}
+\studentnumber{1052407}
+\internalid{VS-2019-B18}
+\place{Ulm}
+
+\examiners{
+    Prof.\@~Dr.\,rer.\,nat.\@~Frank Kargl
+}
+\supervisors{M.Sc.\@~Michael Wolf}
+
+\institution{
+    Institute of Distributed Systems\\
+    Faculty of Engineering, Computer Science and Psychology\\
+    Ulm University}
+
+\license{\ccby}
+
+
+\usepackage[acronym,toc,automake]{glossaries}
+\loadglsentries{glossary.tex}
+\makeglossaries
+
+
+\begin{document}
+
+\frontmatter
+\maketitle
+\makeabstract
+\tableofcontents
+
+\mainmatter
+\input{chapters/1-introduction}
+\input{chapters/2-state-of-the-art}
+\input{chapters/3-tool}
+\input{chapters/4-vehicle-network-architectures} 
+\input{chapters/5-comparison-evaluation}
+\input{chapters/6-conclusion}
+
+
+\backmatter
+\printbibliography[heading=bibintoc]
+\printglossary[type=\acronymtype]
+\printglossary
+
+\end{document}
