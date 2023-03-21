@@ -1,0 +1,21 @@
+Hello everyone,
+
+as most of you know I'm currently writing my bachelor thesis on the topic of
+"Comparing different vehicle network architectures based on attack path analysis".
+I'm currently working on the part of the thesis where I have to calibrate the criteria to evaluate the architectures.
+
+In order to do so, I would like to conduct a survey.
+You will be asked to rank the architectures based on their security regarding possible attack paths.
+
+You will find different architectures attatched to this email.
+Please rank them from 1 to 7 (1st being most secure, 7th being least secure).
+If you can, please include why you ranked the architectures the way you did.
+Feel free to add any comments you might have and to ask any questions you might have.
+
+Please send your evaluation back to me by March 31st.
+
+Thank you very much for your help!
+
+
+Best regards,
+Emilija
