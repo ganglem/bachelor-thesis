@@ -1,3 +1,38 @@
 \chapter{Tool}
 \label{chp:tool}
 
+In order to evaluate the diffrent complex architecture, a tool was developed.
+The tool's purpose is to help security architects quickly evaluate thegiven vehicular network architecture based on their \gls{attack path} feasibility.
+This tool is capable of doing the following things:
+
+\begin{itemize}
+
+    \item F1\label{sec:f1}: The tool will take files as input and parse them to a convenient datatype: 
+    One file contains the network diagram of the vehicle.
+    The network diagram consists of \gls{ecu}s (nodes), bus systems (edges) connecting the ECUs, and interfaces. 
+    In a separate configuration file, each ECU and each bus system will have an attack feasibility rating. 
+    It also specifies the entry points (ECUs and interfaces) and targets (ECUs).
+    
+    \item F2\label{sec:f2}: A graph is created with the parsed data. The ratings in the configuration files are applied to the graph.
+    
+    \item F3\label{sec:f3}: Next, an algorithm will find the most feasible attack path from each entry to each target based on the ratings. The algorithm can also be changed in the script. 
+    
+    \item F4\label{sec:f4}: The results are then output to a table containing the feasibility of each entry point to each target point together with the most feasible attack path.
+    
+    \item F5\label{sec:f5}: Based on the table, the overall security of the network architecture is evaluated using the criteria.
+    
+    \end{itemize}
+
+The tool was written in Python 3.11 and uses the following libraries:
+
+\begin{itemize}
+
+    \item \textbf{NetworkX} \cite{networkx} is used to create the graph and to find the most feasible attack path.
+    
+    \item \textbf{Pydot} \cite{pydot} is used to create the graph visualization.
+    
+    \item \textbf{Pandas} \cite{pandas} is used to create the table.
+    
+    \item \textbf{Matplotlib} \cite{matplotlib} is used to create the graph visualization.
+    
+\end{itemize}
