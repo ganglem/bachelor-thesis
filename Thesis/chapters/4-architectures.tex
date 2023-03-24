@@ -22,10 +22,37 @@ Each architecture was modeled using these components:
 
 \end{itemize}
 
-This thesis focuses on 13-15 architectures.
-Ten architectures were used as a "training set" to determine and calibrate the criteria used to evaluate the remaining architectures, which are the focus of the comparison. 
+
 
 \section{Training set architectures}
+\label{sec:trainingarch}
+
+Ten architectures were used as a "training set" to determine and calibrate the criteria used to evaluate the remaining architectures, which are the focus of the comparison.\\\par
+
+Architecure 1 represent the most realistic architecture, as it is modeled after an actual architecture used in the automotive industry.
+It was important to include this architecture, since it could offer valuable insight into the real world.
+Architecure 2 is essentially the same as architecture 1, but without a central gateway, so we could see how the architecture would perform without it.\par
+The idea of architecture 3 was to group all the entry interfaces, to see how a centralized entry would affect the architecture.\par
+Architecture 4 offers entry points from all domain controllers, however notice how every domain controller only has one type of interface.
+In addition, ECUs that rely on more than one interface would now need to use that interface from another ECU.
+For example, \textit{TEL} has to use the Bluetooth interface of the \textit{Body Controller} instead of its own Bluetooth interface.\par
+Architecture 5 uses only Ethernet as the bus system, to see how the architecture would perform without any other bus system.
+Ethernet was chosen because it recieves the securest attack feasibility rating.
+In addition, there has been a trend in the automotive industry to increasingly use Ethernet as the bus system and maybe even some day replace most of the traditional CAN bus system.\par
+Architecture 6 puts all the ECUs onto an own bus system.
+This is interesting, as the possible ECUs on a bus are limited to just one, thus many of the attack paths and number of ECUs used for the path are trimmed down to a few.\par
+Architecture 7 has a similar idea to architecture 6, but instead of putting all the ECUs on their own bus system, it puts all the ECUs that used the same bus system on the same bus system.
+Now, the feasibility of the bus rating is much more significant to the overall architecture rating and can indicate whether the used bus systems are secure enough.\par
+Architecture 8 only has one entry point, namely the \textit{Central Gateway}. 
+This architecture eliminates other entry points meaning the attack paths all start at the same point.
+Additionally, the feasibility rating of the interfaces is more significant than before and the attack paths might become much more linear, thus the feasibility rating of the components themselves becomes a greater factor.\par
+Architecture 9 is essentially the same as Architecture 4, but without a central gateway.
+Again, the entry points are more dispersed, so the attack paths might become more complex.\par
+The final architecture of the test set only includes one of each interfaces but more dispersed than that of architecture 8.
+Note that the entries are also grouped together which shares the same idea of architecture 3.\\
+
+\newpage
+
 \begin{figure}
     \caption{Architecture 1}
     \includegraphics[width=\textwidth, page=1]{../Architectures-survey.pdf}
@@ -75,3 +102,4 @@ Ten architectures were used as a "training set" to determine and calibrate the c
     \caption{Architecture 10}
     \includegraphics[width=\textwidth, page=10]{../Architectures-survey.pdf}
 \end{figure}
+
