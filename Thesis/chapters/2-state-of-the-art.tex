@@ -1,8 +1,11 @@
 \chapter{State of the Art}
 \label{chp:stateoftheart}
 
-There are various approaches to assessing the security of vehicular networks. Cybersecurity standards and frameworks give guidance and best practices for designing, implementing, and testing the cybersecurity of automotive systems and networks. 
+There are various approaches to assessing the security of vehicular networks. Cybersecurity standards and frameworks give guidance and best practices for designing, implementing, and testing the cybersecurity of automotive systems and networks.
 The following standards are mentioned in virtually every piece of literature; thus, they are the most important ones to consider:
+
+The thesis aims to help organizations in the automotive industry to assess the security of their vehicular networks and to provide a tool to assist in this process, thus it is important to understand the existing approaches and frameworks that are used in the industry today and adhere to them.
+For the reasons mentioned above, the thesis can be used in conustion with the following standards and frameworks:\\
 
 ISO 26262 is an international standard for functional safety of \gls{e/e} systems in vehicles that provides a framework for the development of safety-related systems, 
 and lays out the safety requirements, safety goals, and safety measures to be considered during the whole lifecycle of a vehicle, including the design, development, production, and operation phases.
@@ -80,7 +83,10 @@ It also mentioned that the attacker needs to reach one of these privileges to ac
 The authors applied their privilege model to real-world automotive security attacks to demonstrate its practical use, in which
 an attacker is connecting to the vehicle via the \gls{obd} port, which is connected to the central gateway via \gls{can}, and then uses the central gateway to gain access to the internal vehicle network.
 They also showed the automatic generation of attack trees using a model checker in a custom software tool and an application of their privileges in security testing by describing attack paths. 
-In future work, the authors plan to formalize the security testing approach to allow for early testing during development and to evaluate the TARA and security testing approach in a case study.
+In future work, the authors plan to formalize the security testing approach to allow for early testing during development and to evaluate the TARA and security testing approach in a case study.\\
+
+These approaches are all closely related to each other and provide a strong foundation for this thesis, however the focus is on the EFSM model, the transitions between nodes and the attacker privileges.
+Those factors focus on the actual security mechanisms of the components, which is already induced with the feasibility rating of each component.\\
 
 In contrast, D. Zelle et al. introduce a concrete approach, "ThreatSurf" \cite{threat_surf}, which presents an algorithm for automated generation and rating of 
 attack paths in the automotive industry, using various attack building blocks and assessing attack feasibility.
@@ -93,7 +99,13 @@ compares it with other rating approaches such as attack-potential based approach
 The proposed attack feasibility rating concept is based on the attack-potential approach due to the complex nature of attacks against electric vehicles.
 Other approaches include the CVSS and attack vectors.
 They conclude that attack-potential based approaches have high flexibility but high complexity, 
-CVSS-based approaches are easier to handle but have lower flexibility and attack vector-based approaches are simpler but less suited for automotive applications. 
+CVSS-based approaches are easier to handle but have lower flexibility and attack vector-based approaches are simpler but less suited for automotive applications.\\
+The tool and algorthmic approach fits the needs of the thesis much better than the model-based approach, as the feasibility rating is represented as a single variable and it is easier to compare multiple architectures.\\
+
+While those papers mentioned above are a great foundation for this thesis, they do not provide a complete solution for the problem of automating the process of security testing in the automotive industry.
+The most important missing piece is the automatic evaluation of the possible attack paths and thus the automatic evaluation of the vehicle's architecture in general.
+While all of the approaches include a tool and an automaitc attack path search, they do not further consider the evaluation of the attack paths and architecture.
+This thesis aims to provide further steps to fill this gap by providing a tool as well as a criteria to evaluate and even compare multiple architectures.
 
 
 
