@@ -3,27 +3,24 @@ from io_func import *
 
 
 def main():
-    fext = "json"
-    architectures = load_files("..\\graphs", fext)
-    ecus = load_files("..\\ecus", fext)
-    buses = load_files("..\\buses", fext)
 
-    for architecture in architectures:
-        for ecu in ecus:
-            for bus in buses:
-                architecture_name, architecture, ecus_config, buses_config = parse_files(architecture, ecu, bus)
+    architecture = "..\\graphs\\Architecture1.json"
+    ecu = "..\\ecus\\ecus123567.json"
+    bus = "..\\buses\\buses.json"
 
-                G, entry_ecus, target_ecus_names = generate_graph(architecture, ecus_config, buses_config)
+    architecture_name, architecture, ecus_config, buses_config = parse_files(architecture, ecu, bus)
 
-                table = find_attack_path(G, entry_ecus, target_ecus_names)
+    G, entry_ecus, target_ecus_names = generate_graph(architecture, ecus_config, buses_config)
 
-                print_table(table, architecture_name)
+    table = find_attack_path(G, entry_ecus, target_ecus_names)
 
-                print_evaluation(table)
+    print_table(table, architecture_name)
 
-                save_graph(G)
+    print_evaluation(table)
 
-                export_to_excel(table, architecture_name)
+    save_graph(G)
+
+    export_to_excel(table, architecture_name)
 
 
 if __name__ == "__main__":

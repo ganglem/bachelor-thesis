@@ -1,0 +1,97 @@
+{
+  "a_name": "Architecture 7",
+  "buses": [
+    {
+      "name": "eth",
+      "type": "ethernet",
+      "ecus": [
+        "CGW",
+        "BODY_CONTROL",
+        "POWERTRAIN",
+        "TELEMATIC",
+        "DASH_UNIT",
+        "COMM_UNIT"
+      ]
+    },
+    {
+      "name": "canfd",
+      "type": "canfd",
+      "ecus": [
+        "CGW",
+        "BMU",
+        "XCM",
+        "CRG",
+        "ECM"
+      ]
+    },
+    {
+      "name": "can",
+      "type": "can",
+      "ecus": [
+        "CGW",
+        "DISP",
+        "SEAT",
+        "TPM",
+        "CLIMA",
+        "FCSM",
+        "CLS",
+        "NOXS",
+        "TEL"
+      ]
+    },
+    {
+      "name": "lin",
+      "type": "lin",
+      "ecus": [
+        "CGW",
+        "WPRA",
+        "VCS"
+      ]
+    },
+    {
+      "name": "most",
+      "type": "most",
+      "ecus": [
+        "CGW",
+        "RADIO"
+      ]
+    },
+    {
+      "name": "flexray",
+      "type": "flexray",
+      "ecus": [
+        "CGW",
+        "PARK",
+        "ESP",
+        "EPS"
+      ]
+    },
+    {
+      "name": "wifi",
+      "type": "wifi",
+      "ecus": [
+        "TEL",
+        "RADIO",
+        "PARK"
+      ]
+    },
+    {
+      "name": "bluetooth",
+      "type": "bluetooth",
+      "ecus": [
+        "TEL",
+        "RADIO",
+        "PARK",
+        "DASH_UNIT"
+      ]
+    },
+    {
+      "name": "satellite",
+      "type": "satellite",
+      "ecus": [
+        "DASH_UNIT",
+        "COMM_UNIT"
+      ]
+    }
+  ]
+}

@@ -3,7 +3,6 @@ bachelor-thesis\Proposal\project-proposal-master\proposal.aux
 bachelor-thesis\Proposal\project-proposal-master\proposal.bbl
 bachelor-thesis\Proposal\project-proposal-master\proposal.bcf
 bachelor-thesis\Proposal\project-proposal-master\proposal.blg
-proposal.fdb_latexmk
 bachelor-thesis\Proposal\project-proposal-master\proposal.fls
 bachelor-thesis\Proposal\project-proposal-master\proposal.idx
 bachelor-thesis\Proposal\project-proposal-master\proposal.ilg
@@ -12,7 +11,7 @@ bachelor-thesis\Proposal\project-proposal-master\proposal.log
 bachelor-thesis\Proposal\project-proposal-master\proposal.out
 bachelor-thesis\Proposal\project-proposal-master\proposal.run.xml
 bachelor-thesis\Proposal\project-proposal-master\proposal.synctex.gz
-bachelor-thesis\Proposal\project-proposal-master\proposal.tex
 bachelor-thesis\Proposal\project-proposal-master\proposal.toc
 bachelor-thesis\Proposal\project-proposal-master\settings.tex
 bachelor-thesis\Proposal\project-proposal-master\vs-report.cls
+*.iml

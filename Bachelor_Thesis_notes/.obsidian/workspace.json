@@ -47,11 +47,9 @@
             "id": "602db2d691426787",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Standards/AUTOSAR/AUTOSAR.md",
-                "mode": "source",
-                "source": false
+                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf"
               }
             }
           }
@@ -122,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Standards/AUTOSAR/AUTOSAR.md",
+                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Standards/AUTOSAR/AUTOSAR.md",
+                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Standards/AUTOSAR/AUTOSAR.md"
+                "file": "Resources/PDFs/Wolf-BA-AttackPathComparison.pdf"
               }
             }
           }
@@ -185,15 +183,15 @@
   },
   "active": "602db2d691426787",
   "lastOpenFiles": [
-    "Standards/SAE J3061.md",
-    "Standards/ISO/ISO 21434.md",
-    "Communication/VANET.md",
-    "Papers/ThreatSurf - A method for automated Threat Surface assessment in automotive cybersecurity engineering.md",
-    "Assessment/EVITA/EVITA.md",
-    "Standards/ISO/ISO 26262.md",
-    "Standards/PTES.md",
-    "Standards/CSP.md",
-    "Standards/CVSS.md",
-    "Assessment/TARA.md"
+    "Resources/PDFs/Attack Path Generation Based on Attack and Penetration Testing Knowledge - final.pdf",
+    "Papers/Attack Path Generation Based on Attack and Penetration Testing Knowledge.md",
+    "2023-02-01.md",
+    "Untitled 1.canvas",
+    "Papers/Model-Based Security Testing of Vehicle Networks.md",
+    "Papers/Automation in Automotive Security by Using Attacker Privileges.md",
+    "Bachelor Thesis.md",
+    "2023-01-04.md",
+    "Standards/AUTOSAR/AUTOSAR.md",
+    "Standards/SAE J3061.md"
   ]
 }
