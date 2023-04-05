@@ -1,0 +1,174 @@
+{
+  "a_name": "Architecture 3",
+  "buses": [
+    {
+      "name": "eth1",
+      "type": "ethernet",
+      "ecus": [
+        "CGW",
+        "BODY_CONTROL"
+      ]
+    },
+    {
+      "name": "eth2",
+      "type": "ethernet",
+      "ecus": [
+        "CGW",
+        "POWERTRAIN"
+      ]
+    },
+    {
+      "name": "eth3",
+      "type": "ethernet",
+      "ecus": [
+        "CGW",
+        "TELEMATIC"
+      ]
+    },
+    {
+      "name": "lin1",
+      "type": "lin",
+      "ecus": [
+        "BODY_CONTROL",
+        "WPRA",
+        "VCS"
+      ]
+    },
+    {
+      "name": "can1",
+      "type": "can",
+      "ecus": [
+        "BODY_CONTROL",
+        "TPM",
+        "CLIMA",
+        "CLS",
+        "SEAT",
+        "DISP"
+      ]
+    },
+    {
+      "name": "canfd1",
+      "type": "canfd",
+      "ecus": [
+        "POWERTRAIN",
+        "ECM"
+      ]
+    },
+    {
+      "name": "canfd2",
+      "type": "canfd",
+      "ecus": [
+        "ECM",
+        "XCM"
+      ]
+    },
+    {
+      "name": "can2",
+      "type": "can",
+      "ecus": [
+        "ECM",
+        "FCSM",
+        "NOXS"
+      ]
+    },
+    {
+      "name": "flexray1",
+      "type": "flexray",
+      "ecus": [
+        "CGW",
+        "POWERTRAIN",
+        "ESP",
+        "EPS"
+      ]
+    },
+    {
+      "name": "flexray2",
+      "type": "flexray",
+      "ecus": [
+        "TELEMATIC",
+        "PARK"
+      ]
+    },
+    {
+      "name": "canfd2",
+      "type": "canfd",
+      "ecus": [
+        "POWERTRAIN",
+        "CRG",
+        "BMU"
+      ]
+    },
+    {
+      "name": "eth4",
+      "type": "ethernet",
+      "ecus": [
+        "TELEMATIC",
+        "DASH_UNIT"
+      ]
+    },
+    {
+      "name": "eth5",
+      "type": "ethernet",
+      "ecus": [
+        "TELEMATIC",
+        "COMM_UNIT"
+      ]
+    },
+    {
+      "name": "eth6",
+      "type": "ethernet",
+      "ecus": [
+        "DASH_UNIT",
+        "COMM_UNIT"
+      ]
+    },
+    {
+      "name": "can3",
+      "type": "can",
+      "ecus": [
+        "DASH_UNIT",
+        "TEL",
+        "RADIO"
+      ]
+    },
+    {
+      "name": "most",
+      "type": "most",
+      "ecus": [
+        "COMM_UNIT",
+        "RADIO"
+      ]
+    },
+    {
+      "name": "wifi",
+      "type": "wifi",
+      "ecus": [
+        "wifi",
+        "CGW",
+        "RADIO",
+        "TEL",
+        "PARK"
+      ]
+    },
+    {
+      "name": "bluetooth",
+      "type": "bluetooth",
+      "ecus": [
+        "bluetooth",
+        "DASH_UNIT",
+        "TEL",
+        "RADIO",
+        "PARK"
+      ]
+    },
+    {
+      "name": "sat1",
+      "type": "satellite",
+      "ecus": [
+        "satellite",
+        "DASH_UNIT",
+        "COMM_UNIT"
+      ]
+    }
+  ]
+}
