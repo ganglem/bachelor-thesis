@@ -18,12 +18,18 @@ Each architecture was modeled using these components:
     
     \item \textbf{Bus systems}: ECUs are connected to each other using bus systems. The bus systems are the edges in the graph. The possible bus systems are CAN, CANFD, LIN, FlexRay, and Ethernet.
     
-    \item \textbf{Interfaces}: The interfaces are the connections between the ECUs and the external world. They are the connections between the ECUs and the bus systems. The possible interfaces are Bluetooth, Wifi, and Sattelite.
+    \item \textbf{Interfaces}: The interfaces are the connections between the ECUs and the external world. They are the connections between the ECUs and the bus systems. The possible interfaces are Bluetooth, WiFi, and GNSS.
     
     \item \textbf{Attack feasibility}: Each component of the architecture (ECU, bus system, interface) has its own rating for its attack feasibility.
 
 \end{itemize}
 
+\subsection{Components}
+\label{components}
+
+Using the scale mentioned in \ref{chp:config} for each component, a lower rating means that the component is more secure, while a higher rating means that the component is less secure.
+This also indicated that the higher the overall score one architecture receives, the less secure it is.
+This subsection will further explain some the aforementioned components as well as their attack feasibility based on their attributes.
 
 
 \section{Training set architectures}
