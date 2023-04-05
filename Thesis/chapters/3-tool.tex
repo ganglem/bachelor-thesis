@@ -1,8 +1,6 @@
 \chapter{Tool}
 \label{chp:tool}
 
-TODO: describe bellman ford
-
 In order to evaluate the different complex architecture, a tool was developed.
 The tool's purpose is to help security architects quickly evaluate the given vehicular network architecture based on their \gls{attack path} feasibility.\\
 Furthermore, the tool is used in this thesis to automatically generate the most feasible attack paths for the different complex architectures, 
@@ -12,6 +10,8 @@ The following sections will describe the tool's implementation.
 
 \section{Configuration Files Structure}
 \label{sec:config}
+
+TODO: decide on the numbers
 
 First, the architecture, ECUs and buses need to be defined in a configuration file.
 The configuration files for the simulation are stored in JSON format, which is a lightweight data interchange format that is easyto read and write, and easy for machines to parse and generate.
@@ -57,7 +57,7 @@ It contains an array of objects, where each object represents a communication li
 
 \begin{itemize}
 \item \textbf{name}: The name of the link.
-\item \textbf{type}: The type of the link (\textit{CAN, CANFD, FlexRay, Ethernet, MOST, LIN, Bluetooth, WiFi, Ethernet}).
+\item \textbf{type}: The type of the link (\textit{CAN, CANFD, FlexRay, Ethernet, MOST, LIN, Bluetooth, WiFi, Ethernet, GNSS}).
 \item \textbf{ecus}: An array of the names of the ECUs that are connected by this link.
 \end{itemize}
 
@@ -65,33 +65,5 @@ It contains an array of objects, where each object represents a communication li
 \section{Tool Implementation}
 \label{sec:implementation}
 
-The tool processes these configurations to generate a directed graph representation of the system architecture using the NetworkX package and
-then identifies the entry ECUs and target ECUs in the system, and computes the attack paths from each entry ECU to each target ECU. 
-To achieve this, the tool uses the Bellman-Ford algorithm to compute the shortest path between each entry ECU and each target ECU, 
-and also computes the distance of the path, which is the sum of the feasibility values of the path's edges. 
-The feasibility of an edge is the sum of the feasibility of the bus and the feasibility of the target ECU. 
-The tool prints the resulting table of distances and shortest paths.\\
-
-The script contains several functions, including the \texttt{main()}, \texttt{generate\_graph()}, and \texttt{find\_attack\_path()}, 
-as well as three auxiliary functions \texttt{get\_config()}, \texttt{get\_attribute()}, and \texttt{print\_table()}. \\
-
-The \texttt{main()} function orchestrates the execution of the tool and takes no input arguments. 
-It first loads the configuration files from the file system. 
-It then iterates over all possible combinations of system architecture, ECUs, and buses, and calls \texttt{generate\_graph()} to generate the graph representation of the system. 
-Next, it calls \texttt{find\_attack\_path()} to compute the attack paths in the graph, and finally, it prints the resulting table of distances and shortest paths.\\
-
-The \texttt{generate\_graph()} function takes as input the system architecture, 
-the ECUs in the system, and the buses connecting the ECUs. It initializes the list of entry ECUs and target ECUs, and the directed graph G using the NetworkX package. 
-It then iterates over each bus in the system architecture and obtains the list of ECUs connected to it. 
-For each ECU in the list, it obtains its type and feasibility values from the ECU configuration and adds it to the list of entry or target ECUs if its type matches. 
-It then iterates over all pairs of ECUs in the list and computes the feasibility of the path between them by adding the feasibility values of the bus and the target ECU. 
-It then adds an edge to the graph with a weight equal to the feasibility of the path.\\
-
-The \texttt{find\_attack\_path()} function takes as input the directed graph G, the list of entry ECUs, and the list of target ECUs. 
-It initializes the resulting table of distances and shortest paths, and then iterates over each entry ECU and each target ECU. 
-For each pair, it uses the Bellman-Ford algorithm to compute the shortest path between them and obtains the distance of the path. 
-It then adds the distance and the path to the resulting table.\\
-
-Both \texttt{generate\_graph()} and \texttt{find\_attack\_path()} functions are critical to the execution of the tool. 
-\texttt{generate\_graph()} generates the graph representation of the system, while \texttt{find\_attack\_path()} computes the shortest attack path between all possible pairs of entry and target ECUs in the system. 
-The resulting table from \texttt{find\_attack\_path()} is the output of the tool, which lists the distance and shortest path for each pair of entry and target ECUs in the system.
+TODO: REDO
+TODO: describe bellman ford
