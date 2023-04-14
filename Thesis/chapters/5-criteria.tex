@@ -11,7 +11,56 @@ In addition, the training set is much larger than the main set, thus the results
 \section{Survey}
 \label{sec:survey}
 
-Security experts at Mercedes-Benz Tech Innovation were given ten architectures as shown in \ref{chp:arch}
+Security experts at Mercedes-Benz Tech Innovation were given ten architectures as shown in \ref{chp:arch}.
 The experts were asked to rank the architectures and give reasoning behind their ranking, as well as add any comments they had.
+Since there are ten architectures, the ranking went from 1 to 10, where 1 is the most secure and 10 is the least secure.
+To get to a result in the end, each rank was given a score, where 1 got 1 points, 2 got 2 points, and so on.
+In the end, each ranking or score each architecture got was summed up, and the architecture with the lowest score was the most secure.
 
-TODO: RESULTS
+The result is as follows:
+
+\begin{table}[h]
+    \centering
+    \caption{Rank and Architecture}
+    \begin{tabular}{ |c|c| } 
+    \hline
+    Rank & Architecture \\
+    \hline
+    1 & 3 \\
+    2 & 6 \\
+    3 & 8 \\
+    4 & 2 \\
+    5 & 10 \\
+    6 & 7 \\
+    7 & 9 \\
+    8 & 1 \\
+    9 & 4 \\
+    10 & 5 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+Looking at the reason behind the ranking, the experts gave the following feedback:\\
+
+They all agreed that one of the most important, if not the most important, criteria is the amount of hops there is between the entry and target.
+The fewer hops there are, the easier it is for an attacker to get to the target.\\
+Another crucial factor is isolation - isolation of domains as well as the ECUs themselves, and especially an isolated Powertrain domain.
+It gives the opportunity to compartmentalize the system, and security mechanisms can be applied to each domain or ECU individually.
+The Powertain domain is the "heart" of the vehicle because it controls the engine, transmission, and other important systems, thus it is crucial to isolate it.
+However, it is also not feasibile to have too much isolation, as it would make the system too complex.
+For example, Architectures \ref{sec:arch6} and \ref{sec:arch7} are very isolated, but they are also very complex and unfeasible.
+Communication between the ECUs must also be considered, as it is a crucial part of the vehicle itself. 
+Too many ECUs communicating with each other that way can lead to a lot of overhead.\\
+Other factors include whether a \textit{Central Gateway} is present, which is always beneficial, as well as the amount of external interfaces.
+More external interfaces means more attack vectors, and thus more security mechanisms must be implemented.\\
+
+One thing that was not considered in this survey was the security mechanisms implemented in the vehicle, such as firewalls or IDCs.
+However, it is of course important to consider them when evaluating the architectures. 
+In this thesis, they are represented through the feasibility of each ECU, bus and interface as mentioned in \ref{sec:config}.
+
+
+\section{Criteria}
+
+Having the result from the survey, the criteria used to evaluate the architectures was calibrated.
+The amount of hops between the entry and target being the most important criteria, each attack path feasibility is divided by the amount of hops it took from entry to target.
+This way, the more hops there are, the less feasible the attack path is.
