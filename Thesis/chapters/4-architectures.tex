@@ -16,9 +16,9 @@ Each architecture was modeled using these components:
     
     \item \textbf{Targets}: ECUs that are considered targets for an attacker. They are targets because they contain sensitive data or because they are critical for the vehicle's functionality.
     
-    \item \textbf{Bus systems}: ECUs are connected to each other using bus systems. The bus systems are the edges in the graph. The possible bus systems are CAN, CANFD, LIN, FlexRay, and Ethernet.
+    \item \textbf{Bus systems}: ECUs are connected to each other using bus systems. The bus systems are the edges in the graph. The possible bus systems are \textit{CAN, CANFD, LIN, FlexRay, MOST} and \textit{Ethernet}.
     
-    \item \textbf{Interfaces}: The interfaces are the connections between the ECUs and the external world. They are the connections between the ECUs and the bus systems. The possible interfaces are Bluetooth, WiFi, and GNSS.
+    \item \textbf{Interfaces}: The interfaces are the connections between the ECUs and the external world. They are the connections between the ECUs and the bus systems. The possible interfaces are \textit{Bluetooth, WiFi,} and \textit{GNSS}.
     
     \item \textbf{Attack feasibility}: Each component of the architecture (ECU, bus system, interface) has its own rating for its attack feasibility.
 
@@ -27,10 +27,29 @@ Each architecture was modeled using these components:
 \subsection{Components}
 \label{sec:components}
 
-Using the scale mentioned in \ref{sec:config} for each component, a lower rating means that the component is more secure, while a higher rating means that the component is less secure.
-This also indicated that the higher the overall score one architecture receives, the less secure it is.
+Using the scale mentioned in \ref{sec:config} for each component, a higher rating means that the component is more secure, i.e. might have more security mechanisms in place,
+while a lower rating means that the component lacks such mechanisms.
+This also indicated that the higher the overall score one architecture receives, the more secure it is.
 This subsection will further explain some the aforementioned components as well as their attack feasibility based on their attributes.
 
+\begin{itemize}
+    \item \textbf{ECU}: \gls{ecu}.
+    
+    \item \textbf{CAN}: \gls{can}. It is a serial bus standard for connecting electronic control units in automotive applications.
+    It is the most common bus system used in the automotive industry. 
+    The security of the \gls{can} bus for this thesis and the tool later on is set in the middle of all the other bus systems and will receive a 0.4 out of 1.0
+
+    \item \textbf{CAN FD}: \gls{canfd}. It is an extension of the \gls{can} standard that allows for higher data rates.
+    In terms of security it will be reated higher than \gls{can} and will receive a 0.5 out of 1.0
+    
+    \item \textbf{LIN}: \gls{lin}. It is a weaker bus system than \gls{can} and \gls{canfd} and will receive a 0.1 out of 1.0.
+    
+    \item \textbf{FlexRay}: \gls{flexray}. It is a bus system that is used in the automotive industry for real-time communication.
+    Due to its use for the \textit{Powertrain}, and its advantages over \gls{can}, it will receive a 0.9 out of 1.0.
+
+    \item \textbf{MOST}: \gls{most}. It is a bus system that is used in the automotive industry for media.
+    It receives a 
+\end{itemize}
     
 \section{Training set architectures}
 \label{sec:trainingarch}
@@ -115,7 +134,6 @@ In addition, there has been a trend in the automotive industry to increasingly u
     \includegraphics[width=\textwidth, page=6]{../Architectures-survey.pdf}
 \end{figure}
 
-TODO: Explain why this is interesting.
 Architecture 6 puts all the ECUs onto an own bus system.
 This is interesting, as the possible ECUs on a bus are limited to just one, thus many of the attack paths and number of ECUs used for the path are trimmed down to a few.
 \par
@@ -129,7 +147,6 @@ This is interesting, as the possible ECUs on a bus are limited to just one, thus
     \includegraphics[width=\textwidth, page=7]{../Architectures-survey.pdf}
 \end{figure}
 
-TODO: Explain why this is interesting.
 Architecture 7 has a similar idea to architecture 6, but instead of putting all the ECUs on their own bus system, it puts all the ECUs that used the same bus system on the same bus system.
 Now, the feasibility of the bus rating is much more significant to the overall architecture rating and can indicate whether the used bus systems are secure enough.\par
 
@@ -156,7 +173,6 @@ Additionally, the feasibility rating of the interfaces is more significant than 
     \includegraphics[width=\textwidth, page=9]{../Architectures-survey.pdf}
 \end{figure}
 
-TODO: Explain why this is interesting.
 Architecture 9 is essentially the same as Architecture 4, but without a central gateway.
 Again, the entry points are more dispersed resulting in an enlarged attack surface \par
 
@@ -169,6 +185,5 @@ Again, the entry points are more dispersed resulting in an enlarged attack surfa
     \includegraphics[width=\textwidth, page=10]{../Architectures-survey.pdf}
 \end{figure}
 
-TODO: Explain why this is interesting.
 The final architecture of the test set only includes one of each interfaces but more dispersed than that of architecture 8.
 Note that the entries are also grouped together which shares the same idea of architecture 3.\\
