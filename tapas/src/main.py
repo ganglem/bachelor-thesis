@@ -37,14 +37,15 @@ def main():
 
         finals[architecture_name] = table_evaluation(entry_ecus, target_ecus_names, table)
 
-        ranking = dict(sorted(finals.items(), key=lambda item: item[1], reverse=True))
-
-        for key, value in ranking.items():
-            print(key, value)
-
         #save_graph(G)
 
         #export_to_excel(table, architecture_name)
+
+    ranking = dict(sorted(finals.items(), key=lambda item: item[1], reverse=True))
+
+    print('Ranking: ')
+    for key, value in ranking.items():
+        print(key, value)
 
 
 if __name__ == "__main__":
