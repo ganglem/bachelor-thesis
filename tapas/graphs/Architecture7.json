@@ -91,7 +91,7 @@
       "name": "gnss",
       "type": "gnss",
       "ecus": [
-        "gnss"
+        "gnss",
         "DASH_UNIT",
         "COMM_UNIT"
       ]
