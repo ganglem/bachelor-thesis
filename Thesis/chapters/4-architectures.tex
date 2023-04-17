@@ -33,14 +33,19 @@ This also indicated that the higher the overall score one architecture receives,
 This subsection will further explain some the aforementioned components as well as their attack feasibility based on their attributes.
 
 \begin{itemize}
-    \item \textbf{ECU}: \gls{ecu}.
+    \item \textbf{ECU}: \gls{ecu}. An ECU is an embedded system  
+
+    Since each ECU has an individual task, whose criticality varies, the attack feasibility of an ECU is based on the criticality of the task it performs.
+    Thus, each ECU will have an own attack feasibility. 
+    For example, the Engine Control Unit (ECU) is responsible for the engine, and thus is a critical ECU, 
+    whereas the SEAT ECU, that are responsible for the seats, are not as critical.
     
     \item \textbf{CAN}: \gls{can}. It is a serial bus standard for connecting electronic control units in automotive applications.
     It is the most common bus system used in the automotive industry. 
-    The security of the \gls{can} bus for this thesis and the tool later on is set in the middle of all the other bus systems and will receive a 0.4 out of 1.0
+    The security of the \gls{can} bus for this thesis and the tool later on is set in the middle of all the other bus systems and will receive a 0.5 out of 1.0
 
     \item \textbf{CAN FD}: \gls{canfd}. It is an extension of the \gls{can} standard that allows for higher data rates.
-    In terms of security it will be reated higher than \gls{can} and will receive a 0.5 out of 1.0
+    In terms of security it will be reated higher than \gls{can} and will receive a 0.6 out of 1.0
     
     \item \textbf{LIN}: \gls{lin}. It is a weaker bus system than \gls{can} and \gls{canfd} and will receive a 0.1 out of 1.0.
     
@@ -48,7 +53,15 @@ This subsection will further explain some the aforementioned components as well 
     Due to its use for the \textit{Powertrain}, and its advantages over \gls{can}, it will receive a 0.9 out of 1.0.
 
     \item \textbf{MOST}: \gls{most}. It is a bus system that is used in the automotive industry for media.
-    It receives a 
+    It receives a lower rating than CAN, CAN FD and FlexRay, as it is not used for critical systems, and will receive a 0.3 out of 1.0.
+
+    \item \textbf{Ethernet}: Ethernet will receive a rating of 0.8 out of 1.0, as it is used for critical systems, but is not as secure as the other bus systems.
+    
+    \item \textbf{Bluetooth}: It receives a rating of 0.4 out of 1.0.
+
+    \item \textbf{WiFi}: It receives a rating of 0.6 out of 1.0, as it is more secure than Bluetooth, but not as secure as Ethernet.
+    
+    \item \textbf{GNSS}: It receives a rating of 0.5 out of 1.0.
 \end{itemize}
     
 \section{Training set architectures}
