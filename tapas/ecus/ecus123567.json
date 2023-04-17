@@ -131,7 +131,7 @@
       "feasibility": 0
     },
     {
-      "name": "satellite",
+      "name": "gnss",
       "type": "interface",
       "feasibility": 0
     }
