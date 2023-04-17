@@ -1,0 +1,112 @@
+\chapter{Tool}
+\label{chp:tool}
+
+In order to evaluate the different complex architecture, a tool was developed.
+The tool's purpose is to help security architects quickly evaluate the given vehicular network architecture based on their \gls{attack path} feasibility.\\
+Furthermore, the tool is used in this thesis to automatically generate the most feasible attack paths for the different complex architectures, 
+as well as evalaute them based on the criteria.
+
+The following sections will describe the tool's implementation.
+
+\section{Configuration Files Structure}
+\label{sec:config}
+
+TODO: decide on the numbers
+
+First, the architecture, ECUs and buses need to be defined in a configuration file.
+The configuration files for the simulation are stored in JSON format, which is a lightweight data interchange format that is easyto read and write, and easy for machines to parse and generate.
+
+There are three main configuration files used in the simulation: buses.json, ECUs.json, and graph.json.
+Each file has a specific structure and contains different attributes.
+
+Note that the feasibility rating is between 0 and 1, where 0 is most feasible, i.e. the attack is most likely to succeed, and 1 is least feasible, i.e. the attack is least likely to succeed.
+
+\subsection{buses.json}
+\label{sec:buses}
+
+The tool takes as input three sets of configuration files, each of them represented in the JSON format: 
+the system architecture, the ECUs in the system, and the buses connecting the ECUs. 
+
+This file defines the different communication buses that are used in the simulation. 
+It contains an array of objects, where each object represents a bus and has the following attributes:
+
+\begin{itemize}
+\item \textbf{type}: The type of the bus: \textit{CAN, CANFD, FlexRay, Ethernet, MOST, LIN}.
+\item \textbf{feasibility}: A value between 0 and 1 indicating the bus' attack feasibility.
+\end{itemize}
+
+\subsection{ECUs.json}
+\label{sec:ECUs}
+
+This file defines the electronic control units (ECUs) that are used in the simulation. 
+
+It contains an array of objects, where each object represents an ECU and has the following attributes
+
+\begin{itemize}
+\item \textbf{name}: The name of the ECU.
+\item \textbf{type}: The type of the ECU (e.g., entry, target, interface).
+\item \textbf{feasibility}: A value between 0 and 1 indicating the ECU's attack feasibility.
+\end{itemize}
+
+\subsection{graph.json}
+\label{sec:graph}
+
+This file defines the topology of the system being simulated, i.e. the architecture. 
+It contains an array of objects, where each object represents a communication link which contains the ECUs and interfaces and has the following attributes:
+
+\begin{itemize}
+\item \textbf{name}: The name of the link.
+\item \textbf{type}: The type of the link (\textit{CAN, CANFD, FlexRay, Ethernet, MOST, LIN, Bluetooth, WiFi, Ethernet, GNSS}).
+\item \textbf{ECUs}: An array of the names of the ECUs that are connected by this link.
+\end{itemize}
+
+Note that external interfaces (e.g., Bluetooth, WiFi, GNSS) are also considered as ECUs as well as buses in the simulation.
+Treating them as such simplifies the implementation of the tool using the following libraries.
+The feasibility of the interface can be set in either the buses.json or ecus.json file, however it is recommended to set it in the buses.json file.
+Whichever file is used, note that the feasibility must be set to 0 in the other file, to avoid double counting.
+
+
+\section{Tool Implementation}
+\label{sec:implementation}
+
+The tool is implemented in Python 3.10 and newer.
+Python was chosen as the implementation language because it is a script-based language, allowing for quick prototyping and development.
+Python is also used in the security domain, as well as the proprietary tool used by MBTI.
+Additionally, the language offers a vast variety of libraries that can be used to implement the tool.
+The most important and useful library in the tool is \textit{networkx} for graph manipulation and generation.\\
+
+\texttt{main()} calls the following functions, which are integral to the tool's functionality:\\
+
+\texttt{parse\_files(architecture, ECU, bus)}: it takes in three parameters: \texttt{architecture, ecu, bus}.
+They are the above described configuration files, loads the contents of these files and returns them as a tuple. 
+Specifically, the function loads the contents of the architecture file, ECU file and bus file, 
+and extracts the architecture name, architecture, ECUs configuration, and buses configuration, respectively. 
+The function returns these four objects as a tuple.\\
+
+\texttt{generate\_graph(architecture, ECUs\_config, buses\_config)}:\\
+This function generates a directed graph based on the input architecture, ECU configuration, and buses configuration dictionaries. 
+It then returns the generated graph along with two lists of entry and target ECUs.
+The function first creates empty lists for entry ECUs and target ECUs, and a directed graph \texttt{G} representing the vehicle network architecture using the \textit{networkx} library. 
+It then creates dictionaries for ECUs configuration and buses configuration using the \textit{name} and \textit{type} attributes respectively.
+The function then iterates through each bus in the architecture and extracts its type and feasibility from buses configuration. 
+It also extracts the list of ECUs on the bus and for each ECU, it extracts its type and feasibility from ECUs config. 
+Based on the ECU type, it adds the ECU to either the entry ECUs or target ECUs list.
+Finally, for each ECU on the bus, it iterates through all other ECUs on the same bus and checks their types. 
+If the target ECU has the \textit{interface} type and at least one of the ECUs in the current bus is an entry ECU, 
+then an edge is added to the graph with a weight equal to the bus feasibility. 
+Otherwise, an edge is added between the two ECUs with a weight equal to the sum of the bus feasibility and the target ECU's feasibility.
+The function returns the generated graph, along with the entry ECUs and target ECUs lists.\\
+
+\texttt{find\_attack\_path}: To evaluate the graph, the function takes the graph G,
+the dictionary representing the entry ECUs, and a list of strings containing the target ECUs. 
+It then finds the distance and shortest path from each entry ECU to each target ECU in the graph using the 
+\textit{Bellman-Ford algorithm} and returns a dictionary table containing the distance and shortest path for each combination of entry and target ECU.\\
+
+The table dictionary has two keys, \textit{distance} and \textit{shortest\_path}, each of which has a value of another dictionary. 
+The \textit{distance} dictionary maps each entry ECU to another dictionary that maps each target ECU to its distance from the entry ECU. 
+The \textit{shortest\_path} dictionary maps each entry ECU to another dictionary that maps each target ECU to its shortest path from the entry ECU.\\
+
+In the end, a funciton which applies the criteria to the table is called, which returns the feasibility rating of the architecture.\\
+
+Various \textit{I/O functions} take care of printing the results, saving them to an external file, or quickly saving the graph as an image file
+and other \textit{helper functions} are used to simplify the code.

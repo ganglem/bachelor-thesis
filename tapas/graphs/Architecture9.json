@@ -144,10 +144,10 @@
       ]
     },
     {
-      "name": "sat1",
-      "type": "satellite",
+      "name": "gnss",
+      "type": "gnss",
       "ecus": [
-        "satellite",
+        "gnss",
         "TELEMATIC"
       ]
     }

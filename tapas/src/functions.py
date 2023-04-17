@@ -41,14 +41,13 @@ def generate_graph(architecture, ecus_config, buses_config):
                 if target_ecu_config_type == "interface":
                     if ecu in entry_ecus or target_ecu in entry_ecus:
                         feasibility = bus_feasibility
-                        G.add_edge(u_of_edge = target_ecu_config_type, v_of_edge = target_ecu, weight = feasibility)
+                        G.add_edge(u_of_edge=target_ecu_config_type, v_of_edge=target_ecu, weight=feasibility)
                 elif target_ecu_config_type != "interface":
                     target_ecu_feasibility = get_attribute(target_ecu_config, "feasibility")
                     feasibility = bus_feasibility + target_ecu_feasibility
-                    G.add_edge(u_of_edge = ecu, v_of_edge = target_ecu, weight = feasibility)
+                    G.add_edge(u_of_edge=ecu, v_of_edge=target_ecu, weight=feasibility)
 
     return G, entry_ecus, target_ecus
-
 
 
 def get_config(obj: str, objects_config: list, object_param: str, query: str) -> any:
@@ -104,36 +103,43 @@ def find_attack_path(G: nx.DiGraph, entry_ecus: list, target_ecus_names: list) -
     Returns:
         A table containing the distance and shortest path from each entry ECU to each target ECU.
     """
-    table = {"distance": {}, "shortest_path": {}}
+    table = {"distance": {}, "shortest_path": {}, "hops": {}}
 
     for entry_ecu in entry_ecus:
         entry_ecu_name = entry_ecu["name"]
         table["distance"][entry_ecu_name] = {}
         table["shortest_path"][entry_ecu_name] = {}
+        table["hops"][entry_ecu_name] = {}
 
         for target_ecu_name in target_ecus_names:
-            distance = nx.bellman_ford_path_length(G, entry_ecu_name, target_ecu_name)+entry_ecu["feasibility"]
+            distance = nx.bellman_ford_path_length(G, entry_ecu_name, target_ecu_name) + entry_ecu["feasibility"]
             shortest_path = nx.shortest_path(G, entry_ecu_name, target_ecu_name)
             table["distance"][entry_ecu_name][target_ecu_name] = distance
             table["shortest_path"][entry_ecu_name][target_ecu_name] = shortest_path
+            table["hops"][entry_ecu_name][target_ecu_name] = max(len(shortest_path) - 1, 0)
 
+            print(table)
     return table
 
 
-def table_evaluation(table: dict) -> int:
+def table_evaluation(entry_ecus: list, target_ecus_names: list, table: dict):
     """
-    Sums up all the integer values in a table.
-
-    Args:
-        table: A table containing the distance from each entry ECU to each target ECU.
-
-    Returns:
-        The sum of all the integer values in the table.
+    Take each distance and sup it up for one path. then divide that result by the amount of hops.
+    :param table:
+    :return:
     """
     total = 0
-    for entry_ecu in table["distance"].values():
-        for distance in entry_ecu.values():
-            total += distance
-    return total
+    total_hops = 0
 
+    for entry_ecu in entry_ecus:
+        entry_ecu_name = entry_ecu["name"]
+        for target_ecu_name in target_ecus_names:
+            distance = table["distance"][entry_ecu_name][target_ecu_name]
+            hops = table["hops"][entry_ecu_name][target_ecu_name]
+            print(entry_ecu_name, " to ", target_ecu_name, " distance: ", distance, " hops: ", hops)
+            total_hops += hops
+            total += distance * hops
 
+    print("The total of this architecture is: ", round(total))
+
+    return round(total)

@@ -136,17 +136,6 @@ def save_graph(G: nx.DiGraph):
         print(f'An error occurred: {e}')
 
 
-def print_evaluation(table: dict):
-    """
-    Prints a summary of a table.
-
-    Args:
-        table: A table containing the distance from each entry ECU to each target ECU.
-    """
-    total = table_evaluation(table)
-    print(f"Total sum of distances: {total}")
-
-
 def export_to_excel(table: dict, architecture_name: str):
     """
     Exports the distance table, shortest path table, and total sum of distances to an excel file in the "results" directory.
