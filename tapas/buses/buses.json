@@ -2,39 +2,39 @@
   "buses": [
     {
       "type": "can",
-      "feasibility": 1
+      "feasibility": 0.5
     },
     {
       "type": "canfd",
-      "feasibility": 1
+      "feasibility": 0.6
     },
     {
       "type": "lin",
-      "feasibility": 1
+      "feasibility": 0.1
     },
     {
       "type": "flexray",
-      "feasibility": 1
+      "feasibility": 0.9
     },
     {
       "type": "most",
-      "feasibility": 1
+      "feasibility": 0.3
     },
     {
-      "type": "satellite",
-      "feasibility": 1
+      "type": "gnss",
+      "feasibility": 0.8
     },
     {
       "type": "ethernet",
-      "feasibility": 1
+      "feasibility": 0.8
     },
     {
       "type" : "bluetooth",
-      "feasibility": 1
+      "feasibility": 0.4
     },
     {
       "type" : "wifi",
-      "feasibility": 1
+      "feasibility": 0.4
     }
   ]
 }

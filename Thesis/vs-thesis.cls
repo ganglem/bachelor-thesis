@@ -159,7 +159,8 @@
 % SECTIONING STYLES (toledo)
 %
 % See http://tex.stackexchange.com/questions/161577/memoir-hangnum-chapter-number-in-right-margin-switch for the inspiration
-\setsecnumdepth{subsection}
+\setcounter{secnumdepth}{4}
+\numberwithin{subsection}{section}
 
 \makeatletter
 \makechapterstyle{toledo}{%

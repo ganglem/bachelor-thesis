@@ -206,10 +206,10 @@
       ]
     },
     {
-      "name": "satellite",
-      "type": "satellite",
+      "name": "gnss",
+      "type": "gnss",
       "ecus": [
-        "satellite",
+        "gnss",
         "DASH_UNIT",
         "COMM_UNIT"
       ]
