@@ -3,137 +3,137 @@
     {
       "name": "CGW",
       "type": "target",
-      "feasibility": 1
+      "feasibility": 0.9
     },
     {
       "name": "BODY_CONTROL",
       "type": "target",
-      "feasibility": 1
+      "feasibility": 0.4
     },
     {
       "name": "WPRA",
       "type": "",
-      "feasibility": 1
+      "feasibility": 0.2
     },
     {
       "name": "VCS",
       "type": "",
-      "feasibility": 1
+      "feasibility": 0.2
     },
     {
       "name": "TPM",
       "type": "",
-      "feasibility": 1
+      "feasibility": 0.3
     },
     {
       "name": "CLIMA",
       "type": "",
-      "feasibility": 1
+      "feasibility": 0.3
     },
     {
       "name": "CLS",
       "type": "target",
-      "feasibility": 1
+      "feasibility": 0.7
     },
     {
       "name": "SEAT",
       "type": "",
-      "feasibility": 1
+      "feasibility": 0.3
     },
     {
       "name": "ESP",
       "type": "target",
-      "feasibility": 1
+      "feasibility": 0.3
     },
     {
       "name": "PARK",
       "type": "",
-      "feasibility": 1
+      "feasibility": 0.6
     },
     {
       "name": "EPS",
       "type": "",
-      "feasibility": 1
+      "feasibility": 0.5
     },
     {
       "name": "POWERTRAIN",
-      "type": "target",
+      "type": "",
       "feasibility": 1
     },
     {
       "name": "CRG",
       "type": "target",
-      "feasibility": 1
+      "feasibility": 0.8
     },
     {
       "name": "BMU",
       "type": "target",
-      "feasibility": 1
+      "feasibility": 0.7
     },
     {
       "name": "ECM",
       "type": "target",
-      "feasibility": 1
+      "feasibility": 0.8
     },
     {
       "name": "XCM",
         "type": "",
-        "feasibility": 1
+        "feasibility": 0.5
     },
     {
       "name": "NOXS",
         "type": "",
-        "feasibility": 1
+        "feasibility": 0.4
     },
     {
       "name": "FCSM",
         "type": "",
-        "feasibility": 1
+        "feasibility": 0.5
     },
     {
       "name": "TELEMATIC",
         "type": "target",
-        "feasibility": 1
+        "feasibility": 0.6
     },
     {
       "name": "DASH_UNIT",
         "type": "target",
-        "feasibility": 1
+        "feasibility": 0.7
     },
     {
       "name": "COMM_UNIT",
         "type": "target",
-        "feasibility": 1
+        "feasibility": 0.8
     },
     {
       "name": "TEL",
         "type": "",
-        "feasibility": 1
+        "feasibility": 0.3
     },
     {
       "name": "DISP",
         "type": "",
-        "feasibility": 1
+        "feasibility": 0.4
     },
     {
       "name": "RADIO",
         "type": "",
-        "feasibility": 1
+        "feasibility": 0.3
     },
-    {
+       {
       "name": "wifi",
       "type": "interface",
-      "feasibility": 1
+      "feasibility": 0
     },
     {
       "name": "bluetooth",
       "type": "interface",
-      "feasibility": 1
+      "feasibility": 0
     },
     {
       "name": "satellite",
       "type": "interface",
-      "feasibility": 1
+      "feasibility": 0
     }
   ]
 }
