@@ -78,7 +78,7 @@ The most important and useful library in the tool is \textit{networkx} for graph
 \texttt{main()} calls the following functions, which are integral to the tool's functionality:\\
 
 \texttt{parse\_files(architecture, ECU, bus)}: it takes in three parameters: \texttt{architecture, ecu, bus}.
-They are the above described configuration files, loads the contents of these files and returns them as a tuple. 
+They are the above described configuration files and loads the contents of these files. 
 Specifically, the function loads the contents of the architecture file, ECU file and bus file, 
 and extracts the architecture name, architecture, ECUs configuration, and buses configuration, respectively. 
 The function returns these four objects as a tuple.\\
@@ -86,7 +86,8 @@ The function returns these four objects as a tuple.\\
 \texttt{generate\_graph(architecture, ECUs\_config, buses\_config)}:\\
 This function generates a directed graph based on the input architecture, ECU configuration, and buses configuration dictionaries. 
 It then returns the generated graph along with two lists of entry and target ECUs.
-The function first creates empty lists for entry ECUs and target ECUs, and a directed graph \texttt{G} representing the vehicle network architecture using the \textit{networkx} library. 
+The function first creates empty lists for entry ECUs and target ECUs, and a directed graph \texttt{G} representing 
+the vehicular network architecture using the \textit{networkx} library. 
 It then creates dictionaries for ECUs configuration and buses configuration using the \textit{name} and \textit{type} attributes respectively.
 The function then iterates through each bus in the architecture and extracts its type and feasibility from buses configuration. 
 It also extracts the list of ECUs on the bus and for each ECU, it extracts its type and feasibility from ECUs config. 
@@ -95,18 +96,24 @@ Finally, for each ECU on the bus, it iterates through all other ECUs on the same
 If the target ECU has the \textit{interface} type and at least one of the ECUs in the current bus is an entry ECU, 
 then an edge is added to the graph with a weight equal to the bus feasibility. 
 Otherwise, an edge is added between the two ECUs with a weight equal to the sum of the bus feasibility and the target ECU's feasibility.
+\textit{Note: This is why it was easier to treat external interfaces as ECUs as well as buses.
+Since we are looking for the shortest path for an interface type, not the ECU using it, treating all interfaces
+as a bus and ECU conntected to the internal ECUs using such interface facilitates the shortest path generation.}
 The function returns the generated graph, along with the entry ECUs and target ECUs lists.\\
 
 \texttt{find\_attack\_path}: To evaluate the graph, the function takes the graph G,
 the dictionary representing the entry ECUs, and a list of strings containing the target ECUs. 
 It then finds the distance and shortest path from each entry ECU to each target ECU in the graph using the 
 \textit{Bellman-Ford algorithm} and returns a dictionary table containing the distance and shortest path for each combination of entry and target ECU.\\
-
-The table dictionary has two keys, \textit{distance} and \textit{shortest\_path}, each of which has a value of another dictionary. 
+The table dictionary has three keys, \textit{distance}, \textit{shortest\_path}, and \textit{hops} each of which has a value of another dictionary. 
 The \textit{distance} dictionary maps each entry ECU to another dictionary that maps each target ECU to its distance from the entry ECU. 
-The \textit{shortest\_path} dictionary maps each entry ECU to another dictionary that maps each target ECU to its shortest path from the entry ECU.\\
+The \textit{shortest\_path} dictionary maps each entry ECU to another dictionary that maps each target ECU to its shortest path from the entry ECU.
+\textit{Hops} shows the amount of hops between the entry and target ECUs.\\
 
-In the end, a funciton which applies the criteria to the table is called, which returns the feasibility rating of the architecture.\\
+In the end, a funciton which applies the criteria (\ref{chp:criteria}) to the table is called, which returns the feasibility rating of the architecture.\\
+The evaluation of the architecture is done in a single function and it is easy to extend the tool to support other criteria.
+Since the evaluation of the attack feasibility of the architecture is represented by a single number, 
+it is easy to rank and compare the results of different architectures.\\
 
 Various \textit{I/O functions} take care of printing the results, saving them to an external file, or quickly saving the graph as an image file
 and other \textit{helper functions} are used to simplify the code.

@@ -42,12 +42,18 @@ The result is as follows:
 
 Looking at the reason behind the ranking, the experts gave the following feedback:\\
 
-They all agreed that one of the most important, if not the most important, criteria is the amount of hops there is between the entry and target.
-The fewer hops there are, the easier it is for an attacker to get to the target.
-One thing that was not considered in this survey was the security mechanisms implemented in the vehicle, such as firewalls or IDCs.
+They all agreed that one of the most important criteria is the amount of hops there is between the entry and target.
+Hops play a crucial role in an attack path since the more hops there are, the more difficult it is for an attacker to get from entry to target.
+However, not every one hop is equal.
+
+One thing that was not considered in these architectures was the security mechanisms implemented in the vehicle, such as firewalls or IDCs.
+As already mentioned, they are implicitly considered in the attack feasibility of each component, 
+but it has not been specifically stated which ECUs have which security properties.
 Security mechanisms, of course, hinder the attacker from progressing quickly through the attack path.
-The question of intelligent domains also arises; does the domain controller differentiate between the different domains, or does it just forward messages?
-All of these factros result in one hop not being the same as another.
+
+Another aspect are intelligent domain controllers. 
+There is a difference whether the domain controller differentiates between the different domains, or if it just forwards messages.
+
 It is of course important to consider them when evaluating the architectures, however in this thesis, 
 they are represented through the feasibility of each ECU, bus and interface as mentioned in \ref{sec:config}.
 
@@ -55,7 +61,7 @@ Another crucial factor is isolation - isolation of domains as well as the ECUs t
 It gives the opportunity to compartmentalize the system, and security mechanisms can be applied to each domain or ECU individually.
 The Powertain domain is the "heart" of the vehicle because it controls the engine, transmission, and other important systems, thus it is crucial to isolate it.
 However, it is also not feasibile to have too much isolation, as it would make the system too complex.
-For example, Architectures 6 (\ref{sec:arch6}) and 7 (\ref{sec:arch7}) are very isolated, but they are also very complex and unfeasible.
+For example, Architectures 6 (\ref{subsec:arch6}) and 7 (\ref{subsec:arch7}) are very isolated, but they are also very complex and unfeasible.
 
 Communication between the ECUs must also be considered, as it is a crucial part of the vehicle itself. 
 Too many isolated ECUs communicating with each other can lead to a lot of overhead.\\
@@ -65,6 +71,7 @@ For example, if a message is sent over CAN, converting it to CANFD is no problem
 Other factors include whether a \textit{Central Gateway} is present, which is always beneficial, as well as the amount of external interfaces.
 More external interfaces means more attack vectors, and thus more security mechanisms must be implemented.\\
 
+All of these factors result in one hop not being the same as another and thus the hop's properties must be considered when evaluating the architectures.
 
 \section{Criteria}
 
