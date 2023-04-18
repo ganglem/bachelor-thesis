@@ -1,32 +1,31 @@
 import json
 from vsdx import VisioFile
-import xml.etree.ElementTree as ET
 
-def parse_visio():
-    # Open the Visio file
-    #filename = "C:\\Dev\\bachelor-thesis\\BR192_NetworkDiagram_v1.vsdx"
-    filename = "tapas/visio/visio/pages/page1.xml"
+# Open the Visio file
+filename = "C:\\Dev\\bachelor-thesis\\BR192_NetworkDiagram_v1.vsdx"
+doc = VisioFile(filename)
 
-    # Load the XML file
-    tree = ET.parse(filename)
-    root = tree.getroot()
+# Loop through all the shapes in the file
+ecus = []
+buses = []
 
-    # Define the XML namespace
-    ns = {'v': 'http://schemas.microsoft.com/office/visio/2012/main'}
+# Loop through all the shapes in the file
+for page in doc.pages:
+    for shape in page.child_shapes:
+        # Check if the shape is a box or a rounded box
+        if shape.shape_type == "Box":
+            # Check if the box has any Round cells
+            if "Round" in shape.cells:
+                # Add the box to the ECUs list
+                ecus.append(shape)
+        # Check if the shape is a line
+        elif shape.shape_type == "Line":
+            # Add the line to the Buses list
+            buses.append(shape)
 
-    # Iterate over all Shape elements
-    for shape in root.findall('v:Shapes/v:Shape', ns):
-        # Extract the ID and Type attributes
-        shape_id = shape.get('ID')
-        shape_type = shape.get('Type')
-        print(f'Shape ID: {shape_id}, Type: {shape_type}')
 
-        # Extract the values of selected cells
-        for cell in shape.findall('v:Cell[@N="PinX" or @N="PinY" or @N="Width" or @N="Height"]', ns):
-            cell_name = cell.get('N')
-            cell_value = cell.get('V')
-            print(f'  {cell_name}: {cell_value}')
+# Print the number of ECUs and Buses found
+print(f"Found {len(ecus)} ECUs and {len(buses)} Buses.")
 
-        # Extract the text content
-        text = shape.find('v:Text', ns).text.strip()
-        print(f'  Text: {text}\n')
+print(ecus)
+

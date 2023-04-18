@@ -1,6 +1,5 @@
 from functions import *
 from io_func import *
-from src.visio_parser import parse_visio
 
 
 def main():
@@ -50,5 +49,4 @@ def main():
 
 if __name__ == "__main__":
     print_tapas()
-    #main()
-    parse_visio()
+    main()
