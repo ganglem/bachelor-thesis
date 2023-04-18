@@ -108,12 +108,13 @@ def print_table(table: dict, architecture_name: str):
 
         distance_table = table["distance"]
         path_table = table["shortest_path"]
+        hops_table = table["hops"]
 
         print(pd.DataFrame.from_dict(distance_table, orient = "index").sort_index().T)
 
         for entry in path_table:
             for target in path_table[entry]:
-                print("Shortest path from "+entry+" to "+target+":"+str(path_table[entry][target]))
+                print(entry, "->", target, ": [" + str(hops_table[entry][target]) , "hop(s)]" , str(path_table[entry][target][1:]))
     except KeyError as e:
         print(f'KeyError: {e}')
     except Exception as e:

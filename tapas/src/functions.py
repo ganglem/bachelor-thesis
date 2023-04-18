@@ -116,9 +116,8 @@ def find_attack_path(G: nx.DiGraph, entry_ecus: list, target_ecus_names: list) -
             shortest_path = nx.shortest_path(G, entry_ecu_name, target_ecu_name)
             table["distance"][entry_ecu_name][target_ecu_name] = distance
             table["shortest_path"][entry_ecu_name][target_ecu_name] = shortest_path
-            table["hops"][entry_ecu_name][target_ecu_name] = max(len(shortest_path) - 1, 0)
+            table["hops"][entry_ecu_name][target_ecu_name] = max(len(shortest_path) - 2, 1)
 
-            print(table)
     return table
 
 
@@ -136,10 +135,10 @@ def table_evaluation(entry_ecus: list, target_ecus_names: list, table: dict):
         for target_ecu_name in target_ecus_names:
             distance = table["distance"][entry_ecu_name][target_ecu_name]
             hops = table["hops"][entry_ecu_name][target_ecu_name]
-            print(entry_ecu_name, " to ", target_ecu_name, " distance: ", distance, " hops: ", hops)
-            total_hops += hops
-            total += distance * hops
+            distance = distance / hops
+            total += distance
 
     print("The total of this architecture is: ", round(total))
+    print()
 
     return round(total)
