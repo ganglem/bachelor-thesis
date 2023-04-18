@@ -138,7 +138,7 @@ def table_evaluation(entry_ecus: list, target_ecus_names: list, table: dict):
             distance = distance / hops
             total += distance
 
-    print("The total of this architecture is: ", round(total))
+    print("The feasibility of this architecture is: ", round(total))
     print()
 
     return round(total)
