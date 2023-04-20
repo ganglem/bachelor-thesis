@@ -142,3 +142,5 @@ def table_evaluation(entry_ecus: list, target_ecus_names: list, table: dict):
     print()
 
     return round(total)
+#verbindungen und interfaces habe ich nicht in der survey berücksichtigt
+#ergebnisse begründen
