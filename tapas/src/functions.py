@@ -47,6 +47,12 @@ def generate_graph(architecture, ecus_config, buses_config):
                     feasibility = bus_feasibility + target_ecu_feasibility
                     G.add_edge(u_of_edge=ecu, v_of_edge=target_ecu, weight=feasibility)
 
+    #make lists unique
+    entry_ecus = [dict(t) for t in {tuple(d.items()) for d in entry_ecus}]
+    target_ecus = list(set(target_ecus))
+
+
+
     return G, entry_ecus, target_ecus
 
 
@@ -93,7 +99,7 @@ def get_attribute(obj: any, attribute: any) -> any:
 
 def find_attack_path(G: nx.DiGraph, entry_ecus: list, target_ecus_names: list) -> dict:
     """
-    Finds the distance and shortest path from each entry ecu to each target ecu in a graph.
+    Finds the feasibility and shortest path from each entry ecu to each target ecu in a graph.
 
     Args:
         G: A NetworkX graph representing the system architecture.
@@ -101,46 +107,73 @@ def find_attack_path(G: nx.DiGraph, entry_ecus: list, target_ecus_names: list) -
         target_ecus_names: A list of strings representing the target ECUs.
 
     Returns:
-        A table containing the distance and shortest path from each entry ECU to each target ECU.
+        A table containing the feasibility and shortest path from each entry ECU to each target ECU.
     """
-    table = {"distance": {}, "shortest_path": {}, "hops": {}}
+    table = {"feasibility": {}, "shortest_path": {}, "hops": {}}
 
     for entry_ecu in entry_ecus:
         entry_ecu_name = entry_ecu["name"]
-        table["distance"][entry_ecu_name] = {}
+        table["feasibility"][entry_ecu_name] = {}
         table["shortest_path"][entry_ecu_name] = {}
         table["hops"][entry_ecu_name] = {}
 
         for target_ecu_name in target_ecus_names:
-            distance = nx.bellman_ford_path_length(G, entry_ecu_name, target_ecu_name) + entry_ecu["feasibility"]
+            feasibility = nx.bellman_ford_path_length(G, entry_ecu_name, target_ecu_name) + entry_ecu["feasibility"]
             shortest_path = nx.shortest_path(G, entry_ecu_name, target_ecu_name)
-            table["distance"][entry_ecu_name][target_ecu_name] = distance
+            table["feasibility"][entry_ecu_name][target_ecu_name] = feasibility
             table["shortest_path"][entry_ecu_name][target_ecu_name] = shortest_path
-            table["hops"][entry_ecu_name][target_ecu_name] = max(len(shortest_path) - 2, 1)
+            table["hops"][entry_ecu_name][target_ecu_name] = max(len(shortest_path) - 2, 0)
 
     return table
 
 
 def table_evaluation(entry_ecus: list, target_ecus_names: list, table: dict):
     """
-    Take each distance and sup it up for one path. then divide that result by the amount of hops.
+    Take each feasibility and sup it up for one path. then divide that result by the amount of hops.
     :param table:
     :return:
     """
     total = 0
     total_hops = 0
+    weight_hops = 0
+    weight_isolation = 0
+    weight_cgw = 0
+    weight_interfaces = 0
+
+    attack_paths = len(entry_ecus) * len(target_ecus_names)
 
     for entry_ecu in entry_ecus:
         entry_ecu_name = entry_ecu["name"]
         for target_ecu_name in target_ecus_names:
-            distance = table["distance"][entry_ecu_name][target_ecu_name]
-            hops = table["hops"][entry_ecu_name][target_ecu_name]
-            distance = distance / hops
-            total += distance
 
+            feasibility = table["feasibility"][entry_ecu_name][target_ecu_name]
+
+            hops = table["hops"][entry_ecu_name][target_ecu_name]
+
+            # average hops in the whole architecture
+            total_hops += hops
+
+            #amount of interfaces
+
+            #amount of attack paths
+
+            if "CGW" in table["shortest_path"][entry_ecu_name][target_ecu_name]:
+                weight_cgw = 1
+            else:
+                weight_cgw = 0.5
+
+            weight_hops = max(hops,1)
+
+            weight_isolation = len(table["shortest_path"][entry_ecu_name][target_ecu_name])
+
+            
+
+    print(total_hops/attack_paths)
     print("The feasibility of this architecture is: ", round(total))
     print()
 
     return round(total)
-#verbindungen und interfaces habe ich nicht in der survey berücksichtigt
-#ergebnisse begründen
+
+# verbindungen und interfaces habe ich nicht in der survey berücksichtigt
+# ergebnisse begründen
+# LIN connected, targets, others
