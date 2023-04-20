@@ -1,3 +1,13 @@
+\newglossaryentry{attack path}
+{
+    name = Attack Path,
+    description = {
+        As defined in \cite{iso21434}, an attack path is a
+        set of deliberate actions that an attacker takes to realize a threat scenario, a potential cause of compromise of cybersecurity properties of one or more assets in order to realize a damage scenario.
+    }
+}
+
+
 \chapter{Architectures}
 \label{chp:arch}
 
@@ -20,7 +30,9 @@ Each architecture was modeled using these components:
     
     \item \textbf{Interfaces}: The interfaces are the connections between the ECUs and the external world. They are the connections between the ECUs and the bus systems. The possible interfaces are \textit{Bluetooth, WiFi,} and \textit{GNSS}.
     
-    \item \textbf{Attack feasibility}: Each component of the architecture (ECU, bus system, interface) has its own rating for its attack feasibility.
+    \item \textbf{Attack feasibility}: The attack feasibility indicates how feasible it is to attack a certain component in the architecture.
+    
+    Each component of the architecture (ECU, bus system, interface) has its own rating for its attack feasibility.
 
 \end{itemize}
 
@@ -127,136 +139,83 @@ Note: the higher the rating, the more secure the technology is.
 \section{Training set architectures}
 \label{sec:trainingarch}
 
-Ten architectures were used as a "training set" to determine and calibrate the criteria used to 
+Ten architectures were used as a \textit{training set} to determine and calibrate the criteria used to 
 evaluate the remaining architectures, which are the focus of the comparison.
 This was done to avoid biasing the results, as well as have a well evaluated criteria.
 In addition, the training set is much larger than the main set, thus the results are more accurate.
 
-The following section will describe the test architectures and estimate the expected behavior of the architectures.
+The following section will describe the test architectures and estimate the impact the architectural choices have on the security of the system.
 
-\subsection{Architecture 1}
+subsection{Architecture 1}
 \label{subsec:arch1}
 
-\begin{figure}[h!]
-    \caption{Architecture 1}
-    \includegraphics[width=\textwidth, page=1]{../Architectures-survey.pdf}
-\end{figure}
-
-Architecure 1 represent the most realistic architecture, as it is modeled after an actual architecture used in the automotive industry.
+Architecture \ref{fig:architecture1} represents the most realistic architecture, 
+as it is modeled after an actual architecture used in the automotive industry. 
+It offers six entry points with three being targets, one of which is the \textit{Central Gateway}, and eight targets in total. 
 It was important to include this architecture, since it could offer valuable insight into the real world.
-The first architecture offers six entry points with three being targets, one of it even being the \textit{Central Gateway}, and eight targets in total.
-\par
-
 
 \subsection{Architecture 2}
-\label{subsec:arch2}	
+\label{subsec:arch2}
 
-\begin{figure}[h!]
-    \caption{Architecture 2}
-    \includegraphics[width=\textwidth, page=2]{../Architectures-survey.pdf}
-\end{figure}
-
-Architecure 2 is essentially the same as architecture 1, but without a central gateway, 
-so we could see how the architecture would perform without it.\par
-
+Architecture \ref{fig:architecture2} is essentially the same as Architecture 1, 
+but without a central gateway, to see how the architecture would perform without it.
 
 \subsection{Architecture 3}
 \label{subsec:arch3}
 
-\begin{figure}[h!]
-    \caption{Architecture 3}
-    \includegraphics[width=\textwidth, page=3]{../Architectures-survey.pdf}
-\end{figure}
-
-The idea of architecture 3 was to group all the entry interfaces, to see how a centralized entry would affect the architecture.
-Isolating the possible entry locations reduces the attack surface, prolongs the attack path to each target, and increases the number of ECUs used for the path, thus making the attack more difficult as the attacker would have to compromise more ECUs.\par
-
+Architecture \ref{fig:architecture3} was designed to group all the entry interfaces to see how a centralized entry would affect the architecture. 
+Isolating the possible entry locations reduces the attack surface, prolongs the attack path to each target, 
+and increases the number of ECUs used for the path, thus making the attack more difficult as the attacker would have to compromise more ECUs. 
+It is similar to Architecture 10, in a sense that the entry points are centralized, however, in this case, the entry points are not isolated to a single ECU.
 
 \subsection{Architecture 4}
 \label{subsec:arch4}
 
-\begin{figure}[h!]
-    \caption{Architecture 4}
-    \includegraphics[width=\textwidth, page=4]{../Architectures-survey.pdf}
-\end{figure}
-
-Architecture 4 offers entry points from all domain controllers, however notice how every domain controller only has one type of interface.
-In addition, ECUs that rely on more than one interface would now need to use that interface from another ECU.
-For example, \textit{TEL} has to use the Bluetooth interface of the \textit{Body Controller} instead of its own Bluetooth interface.
-Having an entry point from each domain controller enlargens the attack surface, as the attacker would only need to compromise one ECU in each domain controller to gain quick access to the whole domain.\par
-
+Architecture \ref{fig:architecture4} offers entry points from all domain controllers, 
+however, notice how every domain controller has only one type of interface. 
+Having an entry point from each domain controller enlarges the attack surface, 
+as the attacker would only need to compromise one ECU in each domain controller to gain quick access to the whole domain. 
+It is essentially the same as Architecture 9, however, including the \textit{Central Gateway}.
 
 \subsection{Architecture 5}
 \label{subsec:arch5}
 
-\begin{figure}[h!]
-    \caption{Architecture 5}
-    \includegraphics[width=\textwidth, page=5]{../Architectures-survey.pdf}
-\end{figure}
-
-Architecture 5 uses only Ethernet as the bus system, to see how the architecture would perform without any other bus system.
-Ethernet was chosen because it recieves the securest attack feasibility rating.
-In addition, there has been a trend in the automotive industry to increasingly use Ethernet as the bus system and maybe even some day replace most of the traditional CAN bus system.\par
-
+Architecture \ref{fig:architecture5} uses only Ethernet as the bus system, 
+to see how the architecture would perform without any other bus system. 
+Ethernet was chosen because it receives the securest attack feasibility rating of any bus system.
 
 \subsection{Architecture 6}
 \label{subsec:arch6}
 
-\begin{figure}[h!]
-    \caption{Architecture 6}
-    \includegraphics[width=\textwidth, page=6]{../Architectures-survey.pdf}
-\end{figure}
-
-Architecture 6 puts all the ECUs onto an own bus system.
-This is interesting, as the possible ECUs on a bus are limited to just one, thus many of the attack paths and number of ECUs used for the path are trimmed down to a few.
-\par
-
+Architecture \ref{fig:architecture6} puts all the ECUs onto their own bus system. 
+This increases complexity in communication between the ECUs but it also offers great isolation between the ECUs, 
+however, it also reduces the hops per attack path and number of ECUs used for the path.
 
 \subsection{Architecture 7}
 \label{subsec:arch7}
 
-\begin{figure}[h!]
-    \caption{Architecture 7}
-    \includegraphics[width=\textwidth, page=7]{../Architectures-survey.pdf}
-\end{figure}
-
-Architecture 7 has a similar idea to architecture 6, but instead of putting all the ECUs on their own bus system, it puts all the ECUs that used the same bus system on the same bus system.
-Now, the feasibility of the bus rating is much more significant to the overall architecture rating and can indicate whether the used bus systems are secure enough.\par
-
-
+Architecture \ref{fig:architecture7} has a similar idea to Architecture 6, 
+but instead of putting all the ECUs on their own bus system, it puts all the ECUs that used the same bus system on the same bus system. 
+Now, the feasibility of the bus rating is much more significant to the overall architecture rating and can indicate whether the used bus systems are secure enough.
 
 \subsection{Architecture 8}
 \label{subsec:arch8}
 
-\begin{figure}[h!]
-    \caption{Architecture 8}
-    \includegraphics[width=\textwidth, page=8]{../Architectures-survey.pdf}
-\end{figure}
-
-Architecture 8 only has one entry point, namely the \textit{Central Gateway}. 
-This architecture eliminates other entry points meaning the attack paths all start at the same point, thus reducing the attack surface.
-Additionally, the feasibility rating of the interfaces is more significant than before and the attack paths might become much more linear, thus the feasibility rating of the components themselves becomes a greater factor.\par
-
+Architecture \ref{fig:architecture8} only has one entry point, namely the \textit{Central Gateway}. 
+This architecture eliminates other entry points meaning the attack paths all start at the same point, thus reducing the attack surface. 
+Additionally, the feasibility rating of the interfaces is more significant than before and the attack paths might become much more linear, 
+thus the feasibility rating of the components.
 
 \subsection{Architecture 9}
 \label{subsec:arch9}
 
-\begin{figure}[h!]
-    \caption{Architecture 9}
-    \includegraphics[width=\textwidth, page=9]{../Architectures-survey.pdf}
-\end{figure}
-
-Architecture 9 is essentially the same as Architecture 4, but without a central gateway.
-Again, the entry points are more dispersed resulting in an enlarged attack surface \par
-
+Architecture \ref{fig:architecture9} is essentially the same as Architecture 4, 
+but without a central gateway. Again, the entry points are more dispersed resulting in an enlarged attack surface 
+and the significance of the Central Gateway can be deduced more from such a comparison.
 
 \subsection{Architecture 10}
 \label{subsec:arch10}
 
-\begin{figure}[h!]
-    \caption{Architecture 10}
-    \includegraphics[width=\textwidth, page=10]{../Architectures-survey.pdf}
-\end{figure}
-
-The final architecture of the test set only includes one of each interfaces but more dispersed than that of architecture 8.
-Note that the entries are also grouped together which shares the same idea of architecture 3.\\
+Architecture \ref{fig:architecture10} is the final architecture of the test set. 
+It only includes one of each interface but more dispersed than that of Architecture 8. 
+Note that the entries are also grouped together which shares the same idea of Architecture 3.

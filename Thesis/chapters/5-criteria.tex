@@ -26,55 +26,56 @@ The result is as follows:
     \hline
     Rank & Architecture \\
     \hline
-    1 & \ref{subsec:arch3} 3\\
-    2 & \ref{subsec:arch8} 8\\
-    3 & \ref{subsec:arch6} 6\\
-    4 & \ref{subsec:arch10} 10\\
-    5 & \ref{subsec:arch2} 2\\
-    6 & \ref{subsec:arch7} 1\\
-    7 & \ref{subsec:arch1} 5\\
-    8 & \ref{subsec:arch9} 7\\
-    9 & \ref{subsec:arch5} 9\\
-    10 & \ref{subsec:arch4} 4\\
+    1 & \ref{fig:architecture3}\\
+    2 & \ref{fig:architecture8}\\
+    3 & \ref{fig:architecture6}\\
+    4 & \ref{fig:architecture10}\\
+    5 & \ref{fig:architecture2}\\
+    6 & \ref{fig:architecture1}\\
+    7 & \ref{fig:architecture5}\\
+    8 & \ref{fig:architecture7}\\
+    9 & \ref{fig:architecture9}\\
+    10 & \ref{fig:architecture4}\\
     \hline
     \end{tabular}
 \end{table}
 
-Looking at the reason behind the ranking, the experts gave the following feedback:\\
+The experts agreed that the number of hops between the entry and target is a critical criterion in evaluating the security of attack paths. 
+The more hops there are, the more challenging it becomes for attackers to navigate from the entry point to the target, however not every hop is the same.\\
 
-They all agreed that one of the most important criteria is the amount of hops there is between the entry and target.
-Hops play a crucial role in an attack path since the more hops there are, the more difficult it is for an attacker to get from entry to target.
-However, not every one hop is equal.
+Separation and isolation, both of domains and ECUs, is a crucial consideration, as it enables compartmentalization and application of security measures to each domain or ECU individually. 
+The Powertrain domain, which controls the engine, transmission, and other critical systems, is of particular concern, and its position in the network must be carefully considered. 
+It was thus somewhat expected that Architecture \ref{fig:architecture3} received the highest score, as it has all of the external intefaces placed in the same domain.
+Architecture \ref{fig:architecture10} was also expected to receive a high score, as it is similar to Architecture 3 \ref{fig:architecture3} in terms of the placement of the external interfaces,
+but the Telematic domain controller being a target was a concern.
+Architecture \ref{fig:architecture6} was also not expected to receive a high score, as the the maximum number of hops between the entry and target is 2 on average,
+but the experts agreed that isolation played a huge role in the evaluation.\\
 
-One thing that was not considered in these architectures was the security mechanisms implemented in the vehicle, such as firewalls or IDCs.
-As already mentioned, they are implicitly considered in the attack feasibility of each component, 
-but it has not been specifically stated which ECUs have which security properties.
-Security mechanisms, of course, hinder the attacker from progressing quickly through the attack path.
+However, excessive isolation would make the system too complex. 
+Architectures \ref{fig:architecture6} and \ref{fig:architecture7} also provide high levels of isolation, but at the cost of increased overall complexity.
+Communication between ECUs must also be considered, as it is an essential part of the vehicle. 
+Too many isolated ECUs communicating with each other can result in significant overhead. 
+Media change, such as from CAN to CANFD or FlexRay or Ethernet, also introduces additional hurdles.\\
 
-Another aspect are intelligent domain controllers. 
-There is a difference whether the domain controller differentiates between the different domains, or if it just forwards messages.
+Other factors that need to be evaluated include the presence of a Central Gateway and the number of external interfaces, as more interfaces mean more attack vectors and the need for more security mechanisms.
+Architecture \ref{fig:architecture4} and Architecture \ref{fig:architecture9} have most spread out interfaces, and thus they were expected to receive a low score,
+whereas Architectures \ref{fig:architecture8} was expected to receive a high score, as the Central Gateway is the only entry vector into the network.
+However, a Central Gateway with no external interfaces is overall less secure than an architecture with no Central Gateway at all, and that is why 
+Architecture \ref{fig:architecture2} received a higher score than Architecture \ref{fig:architecture1}. 
+Of course, the type and the security of the external interface plays a role as well, because every interface has different security properties.\\
 
-It is of course important to consider them when evaluating the architectures, however in this thesis, 
-they are represented through the feasibility of each ECU, bus and interface as mentioned in \ref{sec:config}.
-
-Another crucial factor is isolation - isolation of domains as well as the ECUs themselves, and especially an isolated Powertrain domain.
-It gives the opportunity to compartmentalize the system, and security mechanisms can be applied to each domain or ECU individually.
-The Powertain domain is the "heart" of the vehicle because it controls the engine, transmission, and other important systems, thus it is crucial to isolate it.
-However, it is also not feasibile to have too much isolation, as it would make the system too complex.
-For example, Architectures 6 (\ref{subsec:arch6}) and 7 (\ref{subsec:arch7}) are very isolated, but they are also very complex and unfeasible.
-
-Communication between the ECUs must also be considered, as it is a crucial part of the vehicle itself. 
-Too many isolated ECUs communicating with each other can lead to a lot of overhead.\\
-Media change is also to be considered. 
-For example, if a message is sent over CAN, converting it to CANFD is no problem but a different media such as FlexRay or Ethernet requires overhead as well.\\
-
-Other factors include whether a \textit{Central Gateway} is present, which is always beneficial, as well as the amount of external interfaces.
-More external interfaces means more attack vectors, and thus more security mechanisms must be implemented.\\
-
-All of these factors result in one hop not being the same as another and thus the hop's properties must be considered when evaluating the architectures.
+While the attack feasibility of each component accounts for the security mechanisms implemented in the vehicle, such as firewalls or IDCs, 
+these mechanisms and the component's feasibility have not been explicitly stated in the architectures under consideration, since every component can vary in their implementation.
+However, these feasibility assessments are represented through the feasibility of each ECU, bus, and interface as explained in Section \ref{sec:config}.
+The experts agreed that the presence of security mechanisms is a critical factor in evaluating the security of the architectures.
+Such security measures impede attackers from progressing quickly through the attack path. 
+For example, intelligent domain controllers that differentiate between domains are more effective than those that only forward messages.
+As a result, the final results varied between experts, as expected.\\
 
 \section{Criteria}
 
-Having the result from the survey, the criteria used to evaluate the architectures was calibrated.
-The amount of hops between the entry and target being the most important criteria, each attack path feasibility is divided by the amount of hops it took from entry to target.
-This way, the more hops there are, the less feasible the attack path is.
+Using those results from \ref{sec:survey} as orientation, the criteria was calibrated to get the best possible result, 
+i.e. as close to the ranking from the survey.
+
+
+

@@ -779,3 +779,9 @@
 	\input{frontmatter/abstract.tex}
     \newpage
 }
+
+\newcommand\makegraphicsappendix{
+    \newpage
+    \input{frontmatter/graphics.tex}
+    \newpage
+}
