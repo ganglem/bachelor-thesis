@@ -7,7 +7,7 @@ import networkx as nx
 import pandas as pd
 from matplotlib import pyplot as plt
 
-from src.functions import table_evaluation
+from src.functions import apply_criteria
 
 
 def print_tapas():
@@ -158,7 +158,7 @@ def export_to_excel(table: dict, architecture_name: str):
             path_df = pd.DataFrame.from_dict(path_table, orient = "index").sort_index().T
             path_df.to_excel(writer, sheet_name = 'Shortest Path', index = True)
 
-            total = table_evaluation(table)
+            total = apply_criteria(table)
             total_df = pd.DataFrame({'Total': [total]})
             total_df.to_excel(writer, sheet_name = 'Total', index = True)
     except KeyError as e:

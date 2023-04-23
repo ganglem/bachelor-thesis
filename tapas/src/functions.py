@@ -127,7 +127,7 @@ def find_attack_path(G: nx.DiGraph, entry_ecus: list, target_ecus_names: list) -
     return table
 
 
-def table_evaluation(entry_ecus: list, target_ecus_names: list, table: dict):
+def apply_criteria(entry_ecus: list, target_ecus_names: list, table: dict):
     """
     Take each feasibility and sup it up for one path. then divide that result by the amount of hops.
     :param table:
@@ -166,7 +166,7 @@ def table_evaluation(entry_ecus: list, target_ecus_names: list, table: dict):
 
             weight_isolation = len(table["shortest_path"][entry_ecu_name][target_ecu_name])
 
-            
+
 
     print(total_hops/attack_paths)
     print("The feasibility of this architecture is: ", round(total))
