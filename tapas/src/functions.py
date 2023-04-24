@@ -1,8 +1,7 @@
 import networkx as nx
 
-
 def generate_graph(architecture, ecus_config, buses_config):
-    entry_ecus = []
+    entry_points = []
     target_ecus = []
     G = nx.DiGraph()
     ecus_config_dict = {item['name']: item for item in ecus_config}
@@ -28,7 +27,7 @@ def generate_graph(architecture, ecus_config, buses_config):
             ecu_types.setdefault(ecu_type, []).append(ecu)
 
             if ecu_type == "entry" or ecu_type == "both" or ecu_type == "interface":
-                entry_ecus.append({"name": ecu, "feasibility": ecu_feasibility})
+                entry_points.append({"name": ecu, "feasibility": ecu_feasibility})
             if ecu_type == "target" or ecu_type == "both":
                 target_ecus.append(ecu)
 
@@ -39,7 +38,7 @@ def generate_graph(architecture, ecus_config, buses_config):
                 target_ecu_config = get_attribute(ecus_config_dict, target_ecu)
                 target_ecu_config_type = get_attribute(target_ecu_config, "type")
                 if target_ecu_config_type == "interface":
-                    if ecu in entry_ecus or target_ecu in entry_ecus:
+                    if ecu in entry_points or target_ecu in entry_points:
                         feasibility = bus_feasibility
                         G.add_edge(u_of_edge=target_ecu_config_type, v_of_edge=target_ecu, weight=feasibility)
                 elif target_ecu_config_type != "interface":
@@ -48,12 +47,10 @@ def generate_graph(architecture, ecus_config, buses_config):
                     G.add_edge(u_of_edge=ecu, v_of_edge=target_ecu, weight=feasibility)
 
     #make lists unique
-    entry_ecus = [dict(t) for t in {tuple(d.items()) for d in entry_ecus}]
+    entry_points = [dict(t) for t in {tuple(d.items()) for d in entry_points}]
     target_ecus = list(set(target_ecus))
 
-
-
-    return G, entry_ecus, target_ecus
+    return G, entry_points, target_ecus
 
 
 def get_config(obj: str, objects_config: list, object_param: str, query: str) -> any:
@@ -76,7 +73,6 @@ def get_config(obj: str, objects_config: list, object_param: str, query: str) ->
             return item.get(query)
     raise ValueError(f'Object {obj} does not exist in the config list')
 
-
 def get_attribute(obj: any, attribute: any) -> any:
     """
     Retrieves the value of an attribute for a given object.
@@ -96,14 +92,51 @@ def get_attribute(obj: any, attribute: any) -> any:
     except (KeyError, TypeError):
         raise ValueError(f"attribute: {attribute} not found in object or not accessible")
 
+def get_ext_int(architecture: dict) -> int:
 
-def find_attack_path(G: nx.DiGraph, entry_ecus: list, target_ecus_names: list) -> dict:
+    """Retrieve amount of ecus on interface bus"""
+
+    ext_int = []
+
+    for bus in architecture:
+        if bus['type'] == 'wifi':
+            ext_int.append(bus['ecus'])
+        elif bus['type'] == 'gnss':
+            ext_int.append( bus['ecus'])
+        elif bus['type'] == 'bluetooth':
+            ext_int.append(bus['ecus'])
+
+    amt_interfaces = 0
+
+    for i in ext_int:
+        amt_interfaces += len(i)-1
+
+    return amt_interfaces
+
+def get_avg_ecus(architecture) -> int:
+
+    """Retrieve the average amount of ecus on a bus in an architecture"""
+
+    ecus_on_bus = []
+    avg = 1
+
+    for bus in architecture:
+        ecus_on_bus.append((bus['ecus']))
+
+    for bus in ecus_on_bus:
+        avg += len(bus)
+
+    avg = avg / len(ecus_on_bus)
+    return round(avg)
+
+
+def find_attack_path(G: nx.DiGraph, entry_points: list, target_ecus_names: list) -> dict:
     """
     Finds the feasibility and shortest path from each entry ecu to each target ecu in a graph.
 
     Args:
         G: A NetworkX graph representing the system architecture.
-        entry_ecus: A list of dictionaries representing the entry ECUs.
+        entry_points: A list of dictionaries representing the entry points.
         target_ecus_names: A list of strings representing the target ECUs.
 
     Returns:
@@ -111,68 +144,72 @@ def find_attack_path(G: nx.DiGraph, entry_ecus: list, target_ecus_names: list) -
     """
     table = {"feasibility": {}, "shortest_path": {}, "hops": {}}
 
-    for entry_ecu in entry_ecus:
-        entry_ecu_name = entry_ecu["name"]
-        table["feasibility"][entry_ecu_name] = {}
-        table["shortest_path"][entry_ecu_name] = {}
-        table["hops"][entry_ecu_name] = {}
+    for entry_point in entry_points:
+        entry_point_name = entry_point["name"]
+        table["feasibility"][entry_point_name] = {}
+        table["shortest_path"][entry_point_name] = {}
+        table["hops"][entry_point_name] = {}
 
         for target_ecu_name in target_ecus_names:
-            feasibility = nx.bellman_ford_path_length(G, entry_ecu_name, target_ecu_name) + entry_ecu["feasibility"]
-            shortest_path = nx.shortest_path(G, entry_ecu_name, target_ecu_name)
-            table["feasibility"][entry_ecu_name][target_ecu_name] = feasibility
-            table["shortest_path"][entry_ecu_name][target_ecu_name] = shortest_path
-            table["hops"][entry_ecu_name][target_ecu_name] = max(len(shortest_path) - 2, 0)
+            feasibility = nx.bellman_ford_path_length(G, entry_point_name, target_ecu_name) + entry_point["feasibility"]
+            shortest_path = nx.shortest_path(G, entry_point_name, target_ecu_name)
+            table["feasibility"][entry_point_name][target_ecu_name] = feasibility
+            table["shortest_path"][entry_point_name][target_ecu_name] = shortest_path
+            table["hops"][entry_point_name][target_ecu_name] = max(len(shortest_path) - 2, 0)
 
     return table
 
-
-def apply_criteria(entry_ecus: list, target_ecus_names: list, table: dict):
+def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, architecture: dict) -> dict:
     """
     Take each feasibility and sup it up for one path. then divide that result by the amount of hops.
     :param table:
     :return:
     """
-    total = 0
+
+    # total architecture feasibility
+    architecture_feasibility = 0
+
+    # total architecture hops
     total_hops = 0
-    weight_hops = 0
-    weight_isolation = 0
-    weight_cgw = 0
-    weight_interfaces = 0
 
-    attack_paths = len(entry_ecus) * len(target_ecus_names)
+    # average amount of ecus per bus
+    isolation = get_avg_ecus(architecture)
 
-    for entry_ecu in entry_ecus:
+    # amount of external interfaces
+    interfaces = get_ext_int(architecture)
+
+    # amount of total attack paths
+    attack_paths = len(entry_points) * len(target_ecus_names)
+
+    # debatable
+    if "CGW" in architecture:
+        cgw = 1
+    else:
+        cgw = 0.7
+
+
+    for entry_ecu in entry_points:
         entry_ecu_name = entry_ecu["name"]
         for target_ecu_name in target_ecus_names:
 
+            # get feasibility and hops for each path
             feasibility = table["feasibility"][entry_ecu_name][target_ecu_name]
 
             hops = table["hops"][entry_ecu_name][target_ecu_name]
 
-            # average hops in the whole architecture
             total_hops += hops
 
-            #amount of interfaces
+            architecture_feasibility += feasibility*hops
 
-            #amount of attack paths
-
-            if "CGW" in table["shortest_path"][entry_ecu_name][target_ecu_name]:
-                weight_cgw = 1
-            else:
-                weight_cgw = 0.5
-
-            weight_hops = max(hops,1)
-
-            weight_isolation = len(table["shortest_path"][entry_ecu_name][target_ecu_name])
+    architecture_feasibility = 
 
 
 
     print(total_hops/attack_paths)
-    print("The feasibility of this architecture is: ", round(total))
+    print("The feasibility of this architecture is: ", round(architecture_feasibility))
     print()
 
-    return round(total)
+    return round(architecture_feasibility, 2)
 
 # verbindungen und interfaces habe ich nicht in der survey berücksichtigt
 # ergebnisse begründen

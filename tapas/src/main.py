@@ -35,7 +35,7 @@ def main():
 
         print_table(table, architecture_name)
 
-        finals[architecture_name] = apply_criteria(entry_ecus, target_ecus_names, table)
+        finals[architecture_name] = apply_criteria(entry_ecus, target_ecus_names, table, architecture)
 
         # save_graph(G)
 
