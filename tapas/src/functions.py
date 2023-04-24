@@ -206,14 +206,16 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     #try every combination and save
     feasibilities = []
 
-    for weight_cgw in range (0,2):
-        for  weight_attack in range (0,2):
-            for weight_interfaces in range (0,2):
-                for  weight_isolation in range (0,2):
-                    for weight_hops in range (0,2):
-                        for weight_arch in range (1,2):
+    for weight_cgw in range (1):
+        for weight_attack in range (1,10):
+            for weight_interfaces in range (1,10):
+                for weight_isolation in range (1,10):
+                    for weight_hops in range (10,15):
+                        for weight_arch in range (10,15):
 
-                            architecture_feasibility = (architecture_feasibility*weight_arch + total_hops*weight_hops + isolation*weight_isolation + interfaces*weight_interfaces + attack_paths*weight_attack + cgw*weight_cgw) / (weight_arch + weight_hops + weight_isolation + weight_interfaces + weight_attack + weight_cgw)
+                            architecture_feasibility = (architecture_feasibility*(weight_arch/10) + total_hops*(weight_hops/10) +
+                                                        isolation*(weight_isolation/10) + interfaces*(weight_interfaces/10) +
+                                                        attack_paths*(weight_attack/10) + cgw*(weight_cgw/10)) / (weight_arch/10 + weight_hops/10 + weight_isolation/10 + weight_interfaces/10 + weight_attack/10 + weight_cgw/10)
                             architecture_feasibility = round(architecture_feasibility, 3)
                             feasibilities.append(architecture_feasibility)
 
