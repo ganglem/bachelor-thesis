@@ -159,7 +159,7 @@ def find_attack_path(G: nx.DiGraph, entry_points: list, target_ecus_names: list)
 
     return table
 
-def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, architecture: dict) -> dict:
+def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, architecture: dict) -> list:
     """
     Take each feasibility and sup it up for one path. then divide that result by the amount of hops.
     :param table:
@@ -185,7 +185,7 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     if "CGW" in architecture:
         cgw = 1
     else:
-        cgw = 0.7
+        cgw = 0.5
 
 
     for entry_ecu in entry_points:
@@ -199,17 +199,25 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 
             total_hops += hops
 
+            hops = max(hops, 0.1)
+
             architecture_feasibility += feasibility*hops
 
-    architecture_feasibility = 
+    #try every combination and save
+    feasibilities = []
 
+    for weight_cgw in range (0,2):
+        for  weight_attack in range (0,2):
+            for weight_interfaces in range (0,2):
+                for  weight_isolation in range (0,2):
+                    for weight_hops in range (0,2):
+                        for weight_arch in range (1,2):
 
+                            architecture_feasibility = (architecture_feasibility*weight_arch + total_hops*weight_hops + isolation*weight_isolation + interfaces*weight_interfaces + attack_paths*weight_attack + cgw*weight_cgw) / (weight_arch + weight_hops + weight_isolation + weight_interfaces + weight_attack + weight_cgw)
+                            architecture_feasibility = round(architecture_feasibility, 3)
+                            feasibilities.append(architecture_feasibility)
 
-    print(total_hops/attack_paths)
-    print("The feasibility of this architecture is: ", round(architecture_feasibility))
-    print()
-
-    return round(architecture_feasibility, 2)
+    return feasibilities
 
 # verbindungen und interfaces habe ich nicht in der survey berücksichtigt
 # ergebnisse begründen
