@@ -2,7 +2,7 @@ from difflib import SequenceMatcher
 
 from functions import *
 from io_func import *
-import Levenshtein as lev
+
 
 def main():
 
@@ -37,42 +37,9 @@ def main():
 
         print_table(table, architecture_name)
 
-        finals[architecture_name] = apply_criteria(entry_ecus, target_ecus_names, table, architecture)
-        # save_graph(G)
+        finals[architecture_name], weights = apply_criteria(entry_ecus, target_ecus_names, table, architecture)
 
-        # export_to_excel(table, architecture_name)
-
-
-    ranking = dict(sorted(finals.items(), key=lambda item: item[1], reverse=True))
-    for key, value in ranking.items():
-        print(key, value)
-
-    survey_ranking = ["Architecture 3", "Architecture 8", "Architecture 6", "Architecture 10", "Architecture 2", "Architecture 1", "Architecture 5", "Architecture 7", "Architecture 9", "Architecture 4"]
-
-    num_options = len(finals["Architecture 1"])  # assume all architectures have same number of options
-
-    dist_cmp = {}
-
-    for i in range(num_options):
-
-        ranked_list_for_distance = []
-        ranked_options = sorted(finals.items(), key=lambda item: item[1][i], reverse=True)
-
-        print("Ranking for Option", i)
-        for rank, (architecture, options) in enumerate(ranked_options):
-            print(str(rank+1) + ". ", architecture + ":", options[i])
-            ranked_list_for_distance.append(architecture)
-
-        distance = lev.distance(survey_ranking, ranked_list_for_distance)
-        dist_cmp[i] = round(distance,)
-
-
-    #print sorted dist_cmp according to value
-    print("Distance Comparison")
-    for key, value in sorted(dist_cmp.items(), key=lambda item: item[1], reverse=True):
-        print("Option", key, ":", value, "")
-
-
+    get_criteria(finals,weights)
 
 
 if __name__ == "__main__":
