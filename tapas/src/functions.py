@@ -205,12 +205,9 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 
             total_hops += hops
 
-            if hops == 0:
-                architecture_feasibility += feasibility * hops
-            elif hops == 1:
-                architecture_feasibility += feasibility * 0.1
-            else:
-                architecture_feasibility += feasibility * hops
+            if hops == 1 :
+                hops = hops * 0.1
+            architecture_feasibility += feasibility * hops
 
     # save the original value of architecture_feasibility
     original_architecture_feasibility = architecture_feasibility
@@ -221,18 +218,18 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     weights = []
 
 
-    for w1 in range(50, 100):
-        for w2 in range(90, 100):
-            for w3 in range(1, 50):
-                for w4 in range(1, 50):
+    for w1 in range(1, 100):
+        for w2 in range(1, 100):
+            for w3 in range(1, 100):
+                #for w4 in range(1, 100):
 
-                    numerator = (100 * original_architecture_feasibility * cgw)
-                    denominator = w1 * 0.1 * total_hops + w2 * 0.1 * isolation + w3 * 0.1 * interfaces + w4 * 0.1 * attack_paths
+                numerator = (100 * original_architecture_feasibility * cgw)
+                denominator = w1 * 0.1 * total_hops + w2 * 0.1 * isolation + w3 * 0.1 * interfaces
 
-                    new_architecture_feasibility = numerator / denominator
+                new_architecture_feasibility = round(numerator / denominator, 2)
 
-                    feasibilities.append(new_architecture_feasibility)
-                    weights.append([w1, w2, w3, w4])
+                feasibilities.append(new_architecture_feasibility)
+                weights.append([w1, w2, w3])
 
     #w1 = 50
     #w2 = 94
@@ -253,9 +250,10 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 
 
 def get_criteria(finals,weights):
+
     ranking = dict(sorted(finals.items(), key=lambda item: item[1], reverse=True))
 
-    output_file = "rankingcrys.txt"
+    output_file = "best_naming_set.txt"
 
     with open(output_file, 'w') as f:
 
@@ -263,14 +261,15 @@ def get_criteria(finals,weights):
                           "Architecture 1", "Architecture 5", "Architecture 7", "Architecture 9", "Architecture 4"]
         num_options = len(finals["Architecture 1"])  # assume all architectures have same number of options
         dist_cmp = {}
+
         for i in range(num_options):
 
             ranked_list_for_distance = []
             ranked_options = sorted(finals.items(), key=lambda item: item[1][i], reverse=True)
 
-            #only write if distance is 6
             f.write(f"\nRanking for Option {i}\n")
             f.write(f"Weights: {weights[i]}\n")
+
             for rank, (architecture, options) in enumerate(ranked_options):
                 f.write(f"{str(rank + 1)}. {architecture}: {options[i]}\n")
                 ranked_list_for_distance.append(architecture)
@@ -284,10 +283,3 @@ def get_criteria(finals,weights):
 
 
     print(f"Results written to {os.path.abspath(output_file)}")
-
-
-
-
-
-
-
