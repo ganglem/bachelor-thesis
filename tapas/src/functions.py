@@ -4,6 +4,7 @@ import Levenshtein as lev
 
 import os
 
+
 def generate_graph(architecture, ecus_config, buses_config):
     entry_points = []
     target_ecus = []
@@ -102,6 +103,7 @@ def get_ext_int(architecture: dict) -> int:
     """Retrieve amount of ecus on interface bus"""
 
     ext_int = []
+    amt_interfaces = 0
 
     for bus in architecture:
         if bus['type'] == 'wifi':
@@ -111,27 +113,40 @@ def get_ext_int(architecture: dict) -> int:
         elif bus['type'] == 'bluetooth':
             ext_int.append(bus['ecus'])
 
-    amt_interfaces = 0
-
     for i in ext_int:
+        print("INTERFACES:", i[1:])
         amt_interfaces += len(i) - 1
 
-    return amt_interfaces
+    return amt_interfaces, ext_int
 
 
 def get_avg_ecus(architecture) -> int:
     """Retrieve the average amount of ecus on a bus in an architecture"""
 
-    ecus_on_bus = []
-    avg = 1
+    buses = []
+    ecus = 0
+
+    print(architecture)
 
     for bus in architecture:
-        ecus_on_bus.append((bus['ecus']))
+        print(bus)
+        if bus["name"] == "wifi" or bus["name"] == "bluetooth" or bus["name"] == "gnss":
+            continue
+        else:
+            buses.append((bus['ecus']))
 
-    for bus in ecus_on_bus:
-        avg += len(bus)
+    for bus in buses:
+        if "wifi" in bus or "bluetooth" in bus or "gnss" in bus:
+            ecus += len(bus)-1
+        else:
+            ecus += len(bus)
 
-    avg = avg / len(ecus_on_bus)
+    print("ECUS:", ecus)
+    print("BUSES:", len(buses))
+
+    avg = ecus/len(buses)
+
+    print("AVG:", avg)
     return round(avg)
 
 
@@ -165,8 +180,6 @@ def find_attack_path(G: nx.DiGraph, entry_points: list, target_ecus_names: list)
     return table
 
 
-
-
 def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, architecture: dict) -> list:
     """
     Take each feasibility and sup it up for one path. then divide that result by the amount of hops.
@@ -183,17 +196,21 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     # average amount of ecus per bus
     isolation = get_avg_ecus(architecture)
 
-    # amount of external interfaces
-    interfaces = get_ext_int(architecture)
+    # amount of external amt_interfaces
+    amt_interfaces, interfaces = get_ext_int(architecture)
 
     # amount of total attack paths
     attack_paths = len(entry_points) * len(target_ecus_names)
 
     # debatable
-    if "CGW" in architecture:
-        cgw = 1
-    else:
-        cgw = 0.5
+    cgw = 1
+    if "CGW" not in architecture:
+        cgw -= 0.2
+    if "CGW" in interfaces:
+        cgw -= 0.4
+    if "CGW" in target_ecus_names:
+        cgw -= 0.1
+
 
     for entry_ecu in entry_points:
         entry_ecu_name = entry_ecu["name"]
@@ -205,9 +222,9 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 
             total_hops += hops
 
-            if hops == 1 :
-                hops = hops * 0.1
-            architecture_feasibility += feasibility * hops
+            #if hops == 1:
+             #   hops = hops * 0.1
+            architecture_feasibility += feasibility ** hops
 
     # save the original value of architecture_feasibility
     original_architecture_feasibility = architecture_feasibility
@@ -217,29 +234,32 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     feasibilities = []
     weights = []
 
+    for w1 in range(10, 100):
+        for w2 in range(10, 100):
+            for w3 in range(10, 100):
+                #for w4 in range(0, 100, 10):
 
-    for w1 in range(1, 100):
-        for w2 in range(1, 100):
-            for w3 in range(1, 100):
-                #for w4 in range(1, 100):
+                numerator = (1000 * (original_architecture_feasibility ** (0.6+cgw)))
+                denominator = (total_hops * w1 * 0.08 + isolation ** (w2*0.08) + amt_interfaces ** (w3 * 0.08))
 
-                numerator = (100 * original_architecture_feasibility * cgw)
-                denominator = w1 * 0.1 * total_hops + w2 * 0.1 * isolation + w3 * 0.1 * interfaces
+                if denominator < 1:
+                    continue
+                else:
+                    #print(f"NUM: {numerator}, DEN: {denominator}")
+                    new_architecture_feasibility = round(numerator / denominator, 2)
 
-                new_architecture_feasibility = round(numerator / denominator, 2)
+                    feasibilities.append(new_architecture_feasibility)
+                    weights.append([w1, w2, w3])
 
-                feasibilities.append(new_architecture_feasibility)
-                weights.append([w1, w2, w3])
+    # w1 = 50
+    # w2 = 94
+    # w3 = 47
+    # w4 = 1
 
-    #w1 = 50
-    #w2 = 94
-    #w3 = 47
-    #w4 = 1
+    # numerator = (100 * original_architecture_feasibility * cgw)
+    # denominator = w1 * 0.1 * total_hops + w2 * 0.1 * isolation + w3 * 0.1 * amt_interfaces + w4 * 0.1 * attack_paths
 
-    #numerator = (100 * original_architecture_feasibility * cgw)
-    #denominator = w1 * 0.1 * total_hops + w2 * 0.1 * isolation + w3 * 0.1 * interfaces + w4 * 0.1 * attack_paths
-
-    #new_architecture_feasibility = numerator / denominator
+    # new_architecture_feasibility = numerator / denominator
 
     return feasibilities, weights
 
@@ -248,12 +268,10 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 # ergebnisse begründen
 
 
-
-def get_criteria(finals,weights):
-
+def get_criteria(finals, weights):
     ranking = dict(sorted(finals.items(), key=lambda item: item[1], reverse=True))
 
-    output_file = "best_naming_set.txt"
+    output_file = "best_naming_set4.txt"
 
     with open(output_file, 'w') as f:
 
@@ -280,6 +298,5 @@ def get_criteria(finals,weights):
         # only write if distance is 6
         for key, value in sorted(dist_cmp.items(), key=lambda item: item[1], reverse=True):
             f.write(f"Option {key}: {value}\n")
-
 
     print(f"Results written to {os.path.abspath(output_file)}")

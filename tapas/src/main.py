@@ -39,8 +39,7 @@ def main():
 
         finals[architecture_name], weights = apply_criteria(entry_ecus, target_ecus_names, table, architecture)
 
-    get_criteria(finals,weights)
-
+    get_criteria(finals, weights)
 
 if __name__ == "__main__":
     print_tapas()
