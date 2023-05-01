@@ -114,9 +114,9 @@ def get_ext_int(architecture: dict) -> int:
             ext_int.append(bus['ecus'])
 
     for i in ext_int:
-        print("INTERFACES:", i[1:])
         amt_interfaces += len(i) - 1
 
+    print("[DEBUG] AMT INTERFACES:", amt_interfaces)
     return amt_interfaces, ext_int
 
 
@@ -126,10 +126,7 @@ def get_avg_ecus(architecture) -> int:
     buses = []
     ecus = 0
 
-    print(architecture)
-
     for bus in architecture:
-        print(bus)
         if bus["name"] == "wifi" or bus["name"] == "bluetooth" or bus["name"] == "gnss":
             continue
         else:
@@ -141,12 +138,12 @@ def get_avg_ecus(architecture) -> int:
         else:
             ecus += len(bus)
 
-    print("ECUS:", ecus)
-    print("BUSES:", len(buses))
+    print("[DEBUG] ECUS:", ecus)
+    print("[DEBUG] BUSES:", len(buses))
 
     avg = ecus/len(buses)
 
-    print("AVG:", avg)
+    print("[DEBUG] ISOLATION:", avg)
     return round(avg)
 
 
@@ -207,7 +204,7 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     if "CGW" not in architecture:
         cgw -= 0.2
     if "CGW" in interfaces:
-        cgw -= 0.4
+        cgw -= 0.3
     if "CGW" in target_ecus_names:
         cgw -= 0.1
 
@@ -224,7 +221,7 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 
             #if hops == 1:
              #   hops = hops * 0.1
-            architecture_feasibility += feasibility ** hops
+            architecture_feasibility += feasibility * hops
 
     # save the original value of architecture_feasibility
     original_architecture_feasibility = architecture_feasibility
@@ -234,22 +231,22 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     feasibilities = []
     weights = []
 
-    for w1 in range(10, 100):
-        for w2 in range(10, 100):
-            for w3 in range(10, 100):
+    for w1 in range(1, 50):
+        for w2 in range(1, 10):
+            for w3 in range(1, 100):
                 #for w4 in range(0, 100, 10):
 
-                numerator = (1000 * (original_architecture_feasibility ** (0.6+cgw)))
-                denominator = (total_hops * w1 * 0.08 + isolation ** (w2*0.08) + amt_interfaces ** (w3 * 0.08))
+                numerator = (100 * (original_architecture_feasibility * cgw))
+                denominator = (total_hops * w1 + (isolation ** w2) + amt_interfaces * w3)
 
-                if denominator < 1:
-                    continue
-                else:
+                #if denominator < 1:
+                    #continue
+                #else:
                     #print(f"NUM: {numerator}, DEN: {denominator}")
-                    new_architecture_feasibility = round(numerator / denominator, 2)
+                new_architecture_feasibility = round(numerator / denominator, 2)
 
-                    feasibilities.append(new_architecture_feasibility)
-                    weights.append([w1, w2, w3])
+                feasibilities.append(new_architecture_feasibility)
+                weights.append([w1, w2, w3])
 
     # w1 = 50
     # w2 = 94
@@ -271,7 +268,7 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 def get_criteria(finals, weights):
     ranking = dict(sorted(finals.items(), key=lambda item: item[1], reverse=True))
 
-    output_file = "best_naming_set4.txt"
+    output_file = "best_naming_set10.txt"
 
     with open(output_file, 'w') as f:
 
