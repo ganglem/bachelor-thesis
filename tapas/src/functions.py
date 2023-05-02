@@ -102,22 +102,32 @@ def get_attribute(obj: any, attribute: any) -> any:
 def get_ext_int(architecture: dict) -> int:
     """Retrieve amount of ecus on interface bus"""
 
-    ext_int = []
-    amt_interfaces = 0
+    prep_arch = []
+    prep_interfaces = []
+    total_amount = 0
 
     for bus in architecture:
         if bus['type'] == 'wifi':
-            ext_int.append(bus['ecus'])
+            prep_arch.append(bus['ecus'])
         elif bus['type'] == 'gnss':
-            ext_int.append(bus['ecus'])
+            prep_arch.append(bus['ecus'])
         elif bus['type'] == 'bluetooth':
-            ext_int.append(bus['ecus'])
+            prep_arch.append(bus['ecus'])
 
-    for i in ext_int:
-        amt_interfaces += len(i) - 1
+    for sub in prep_arch:
+        prep_interfaces.append(sub[1:])
 
-    print("[DEBUG] AMT INTERFACES:", amt_interfaces)
-    return amt_interfaces, ext_int
+    print("[DEBUG] PREP INTERFACES:", prep_interfaces)
+    for sub in prep_interfaces:
+        total_amount += len(sub)
+
+    prep_set = [item for sublist in prep_interfaces for item in sublist]
+    interfaces_set = set(prep_set)
+    print("[DEBUG] INTERFACES SET:", interfaces_set)
+    avg_interfaces = len(interfaces_set)
+
+    print("[DEBUG] TOTAL AMOUNT", total_amount)
+    return total_amount, prep_arch, avg_interfaces
 
 
 def get_avg_ecus(architecture) -> int:
@@ -194,10 +204,15 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     isolation = get_avg_ecus(architecture)
 
     # amount of external amt_interfaces
-    amt_interfaces, interfaces = get_ext_int(architecture)
+    amt_interfaces, interfaces, avg_interfaces = get_ext_int(architecture)
 
     # amount of total attack paths
     attack_paths = len(entry_points) * len(target_ecus_names)
+
+    # test
+    test_interfaces = avg_interfaces
+
+    print("[DEBUG] TEST INTERFACES:", test_interfaces)
 
     # debatable
     cgw = 1
@@ -207,7 +222,6 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
         cgw -= 0.3
     if "CGW" in target_ecus_names:
         cgw -= 0.1
-
 
     for entry_ecu in entry_points:
         entry_ecu_name = entry_ecu["name"]
@@ -231,13 +245,13 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     feasibilities = []
     weights = []
 
-    for w1 in range(1, 50):
+    for w1 in range(1, 10):
         for w2 in range(1, 10):
             for w3 in range(1, 100):
                 #for w4 in range(0, 100, 10):
 
                 numerator = (100 * (original_architecture_feasibility * cgw))
-                denominator = (total_hops * w1 + (isolation ** w2) + amt_interfaces * w3)
+                denominator = (total_hops * w1 + (isolation ** w2) + test_interfaces * w3)
 
                 #if denominator < 1:
                     #continue
@@ -268,7 +282,7 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 def get_criteria(finals, weights):
     ranking = dict(sorted(finals.items(), key=lambda item: item[1], reverse=True))
 
-    output_file = "best_naming_set10.txt"
+    output_file = "../data/best_naming_set16.txt"
 
     with open(output_file, 'w') as f:
 
