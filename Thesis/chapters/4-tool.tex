@@ -17,7 +17,7 @@ The configuration files for the simulation are stored in JSON format, which is a
 There are three main configuration files used in the simulation: buses.json, ECUs.json, and graph.json.
 Each file has a specific structure and contains different attributes.
 
-Note that the feasibility rating is between 0 and 1, where 0 is most feasible, i.e. the attack is most likely to succeed, and 1 is least feasible, i.e. the attack is least likely to succeed.
+Note that the higher the feasibility rating is, the lower the likelihood that the attack will succeed.
 
 \subsection{buses.json}
 \label{sec:buses}
@@ -30,7 +30,7 @@ It contains an array of objects, where each object represents a bus and has the 
 
 \begin{itemize}
 \item \textbf{type}: The type of the bus: \textit{CAN, CANFD, FlexRay, Ethernet, MOST, LIN}.
-\item \textbf{feasibility}: A value between 0 and 1 indicating the bus' attack feasibility.
+\item \textbf{feasibility}: A value between 0 and 1 indicating the bus' attack feasibility (\textit{see \ref{table:bus_rating}}).
 \end{itemize}
 
 \subsection{ECUs.json}
@@ -43,7 +43,9 @@ It contains an array of objects, where each object represents an ECU and has the
 \begin{itemize}
 \item \textbf{name}: The name of the ECU.
 \item \textbf{type}: The type of the ECU (e.g., entry, target, interface).
-\item \textbf{feasibility}: A value between 0 and 1 indicating the ECU's attack feasibility.
+\item \textbf{feasibility}: Since no furhter information is given for the ECUS (in terms of security mechanisms and functionality),
+and for simplification purposes, the feasibility rating is threefold; 
+LIN ECUs are given a rating of 0.1, targets and FlexRay ECUs are rated with 0.9 and "the rest" is given a rating of 0.5.
 \end{itemize}
 
 \subsection{graph.json}
