@@ -20,6 +20,7 @@ In the end, each ranking or score each architecture got was summed up, and the a
 The result is as follows:
 
 \begin{table}[h]
+    \label{table:survey}
     \centering
     \caption{Rank and Architecture}
     \begin{tabular}{ |c|c| } 
@@ -39,6 +40,11 @@ The result is as follows:
     \hline
     \end{tabular}
 \end{table}
+
+Of course there are many ways how a security architect approaches an evaluation.
+Each architect comes from a different background with different experience and thus will see some factors as more or less important than another.
+Even though architects tend to agree in general, it's in the details where opinions will digress.
+This result thus represents the architects' mean opinion on the security of the architectures. 
 
 The experts agreed that the number of hops between the entry and target is a critical criterion in evaluating the security of attack paths. 
 The more hops there are, the more challenging it becomes for attackers to navigate from the entry point to the target, however not every hop is the same.\\
@@ -72,10 +78,69 @@ Such security measures impede attackers from progressing quickly through the att
 For example, intelligent domain controllers that differentiate between domains are more effective than those that only forward messages.
 As a result, the final results varied between experts, as expected.\\
 
+In general, Architectures \ref{fig:architecture3}, \ref{fig:architecture6}, \ref{fig:architecture8}, and \ref{fig:architecture10} received a positive feedback,
+whereas Architectures \ref{fig:architecture4}, \ref{fig:architecture7}, and \ref{fig:architecture9} received a negative feedback.
+
 \section{Criteria}
 
-Using those results from \ref{sec:survey} as orientation, the criteria was calibrated to get the best possible result, 
-i.e. as close to the ranking from the survey.
+Just as there are many ways to evaluate an architecture, there are many ways to a general criteria for this thesis.
+Similar to \cite{threat_surf}, we decided to approach the criteria as a mathematical equation that can be applied to every architecture equally.
+This equation takes the different aforementioned factors into account:
+
+\begin{enumerate}
+    \item Architecture feasibility
+    \item Attack Path feasibility
+    \item Presence and influence of a Central Gateway
+    \item Amount of hops 
+    \item Isolation of ECUs
+    \item Amount of interfaces/entry points
+\end{enumerate}
+
+Finding the most fitting equation was done in a manual, brute-force like attempt.
+
+Iterating over each of the ten architectures, their factors were given a weight and were then arranged in different mathematical operations.
+These weights were iterated from factors between 0 and 100, resulting in millions of combinations for every attempted equation.
+Each combination of the ten architectures using the same weights was then represented as a ranked table. 
+In the end, the weights of the tables which had the smallest eucledian distance to the survey table \ref{table:survey} were taken into consideration.
+There were hundreds of feasible weight combinations, and in the end the smallest possible weights were chosen.
+
+Finding an equation that fit the criteria was a step-by-step progress.
+In genreal, we asked ourselves the questions:\\
+\textit{Which of the factors is it favorable to have more of?} and \textit{Which of the factors is it unfavorable to have more of?}
+
+The resulting equation is as follows and is explained below:
 
 
 
+Let's consider any one architecture:\\
+It is clear that a high architecture feasibility score and a high number of hops in each attack path is the most desirable.
+To get the architecture feasibility, each attack path feasibility is multiplied by the amount of hops it has.
+For example, 
+Since the Bellman-Ford algorithm finds and takes the lowest weighted attack path, i.e. the least secure one, 
+a high score for this path means the most feasibile path receives a high security rating.
+It is also taken into account how many hops there are. 
+
+
+\mathit{A} := {Architectures}& a in \mathit{A}
+
+
+\mathit{P} := {Attack Paths_{a}}& p in \mathit{P} \\\\
+
+
+feasibility_{a} := \sum_{p} feasibility_{p} * hops_{p} * cgw_{a} \\\\
+
+cgw_{a} := 
+\begin{cases}
+1,&\text{base case}\\
+cgw_{a} - 0.2,&\text{if not in a}\\
+cgw_{a} - 0.3,&\text{if external interface in a}\\
+cgw_{a} - 0.1,&\text{if target in in a}\\
+\end{cases}\\\\
+
+hops_{a} := \sum_{p} hops_{p}\\\\
+
+interfaces := \text{total amount of entry points in } a\\\\
+
+separation := \text{average amount of ECUs per bus in } a\\\\
+
+rating_{a} := \frac{100 * feasibility_{a} * cgw_{a}}{hops_{a}*w_{1} + isolation_{a}^{w_{2}} + interfaces_{a}*w_{3}}
