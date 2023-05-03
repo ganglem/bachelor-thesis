@@ -7,7 +7,7 @@ import networkx as nx
 import pandas as pd
 from matplotlib import pyplot as plt
 
-from src.functions import table_evaluation
+from src.functions import apply_criteria
 
 
 def print_tapas():
@@ -96,25 +96,25 @@ def load_json(file_name: str) -> dict:
 
 def print_table(table: dict, architecture_name: str):
     """
-    prints the distance table and shortest path table of dictionary of tables and the architecture name.
+    prints the feasibility table and shortest path table of dictionary of tables and the architecture name.
 
     Args:
-        table (dict): The dictionary containing the distance and shortest path tables
+        table (dict): The dictionary containing the feasibility and shortest path tables
         architecture_name (str): The name of the architecture
     """
     try:
         string = "Architecture: "+architecture_name
         print("\n"+string)
 
-        distance_table = table["distance"]
+        feasibility_table = table["feasibility"]
         path_table = table["shortest_path"]
         hops_table = table["hops"]
 
-        print(pd.DataFrame.from_dict(distance_table, orient = "index").sort_index().T)
+        print(pd.DataFrame.from_dict(feasibility_table, orient = "index").sort_index().T)
 
         for entry in path_table:
             for target in path_table[entry]:
-                print(entry , "->" , target + ": [" + str(hops_table[entry][target]) , "hop(s)]" , str(path_table[entry][target][1:]))
+                print(entry, "->", target, ": [" + str(hops_table[entry][target]) , "hop(s)]" , str(path_table[entry][target][1:]))
     except KeyError as e:
         print(f'KeyError: {e}')
     except Exception as e:
@@ -139,26 +139,26 @@ def save_graph(G: nx.DiGraph):
 
 def export_to_excel(table: dict, architecture_name: str):
     """
-    Exports the distance table, shortest path table, and total sum of distances to an excel file in the "results" directory.
+    Exports the feasibility table, shortest path table, and total sum of feasibilitys to an excel file in the "results" directory.
 
     Args:
-        table (dict): The dictionary containing the distance and shortest path tables
+        table (dict): The dictionary containing the feasibility and shortest path tables
         architecture_name (str): The name of the architecture and the file name
 
     """
     try:
-        distance_table = table["distance"]
+        feasibility_table = table["feasibility"]
         path_table = table["shortest_path"]
 
         os.makedirs("../results", exist_ok = True)
         with pd.ExcelWriter(f'../results/{architecture_name}.xlsx') as writer:
-            distance_df = pd.DataFrame.from_dict(distance_table, orient = "index").sort_index().T
-            distance_df.to_excel(writer, sheet_name = 'Distance', index = True)
+            feasibility_df = pd.DataFrame.from_dict(feasibility_table, orient = "index").sort_index().T
+            feasibility_df.to_excel(writer, sheet_name = 'feasibility', index = True)
 
             path_df = pd.DataFrame.from_dict(path_table, orient = "index").sort_index().T
             path_df.to_excel(writer, sheet_name = 'Shortest Path', index = True)
 
-            total = table_evaluation(table)
+            total = apply_criteria(table)
             total_df = pd.DataFrame({'Total': [total]})
             total_df.to_excel(writer, sheet_name = 'Total', index = True)
     except KeyError as e:

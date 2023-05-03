@@ -1,3 +1,5 @@
+from difflib import SequenceMatcher
+
 from functions import *
 from io_func import *
 
@@ -35,18 +37,9 @@ def main():
 
         print_table(table, architecture_name)
 
-        finals[architecture_name] = table_evaluation(entry_ecus, target_ecus_names, table)
+        finals[architecture_name], weights = apply_criteria(entry_ecus, target_ecus_names, table, architecture)
 
-        #save_graph(G)
-
-        #export_to_excel(table, architecture_name)
-
-    ranking = dict(sorted(finals.items(), key=lambda item: item[1], reverse=True))
-
-    print('Ranking: ')
-    for key, value in ranking.items():
-        print(key, value)
-
+    get_criteria(finals, weights)
 
 if __name__ == "__main__":
     print_tapas()
