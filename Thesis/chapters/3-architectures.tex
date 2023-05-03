@@ -1,18 +1,20 @@
-\newglossaryentry{attack path}
-{
-    name = Attack Path,
-    description = {
-        As defined in \cite{iso21434}, an attack path is a
-        set of deliberate actions that an attacker takes to realize a threat scenario, a potential cause of compromise of cybersecurity properties of one or more assets in order to realize a damage scenario.
-    }
-}
-
-
 \chapter{Architectures}
 \label{chp:arch}
 
 The following chapter will show and explain the different architectures used in this thesis.
 The architectures were based on existing architectures used in the automotive industry as well as experimental ones based on certain attributes.
+
+\section{Feasibility}
+\label{def:feasibility}
+
+Before we dive in, we want to explain and define the term \textit{feasibility} in the context of this thesis.
+Normally, a high attack feasibility in a vehicular architecture means a less secure architecture and that an attacker has less difficulty attacking the vehicle.
+However, due to the nature of the mathematics used in this thesis, we will conveniently define feasibility as the opposite of that, or to an extend apply it to another functionality.
+Imagine the term feasibility, or feasibility rating, to be the security rating of an architecture.
+In this thesis, the higher the feasibility score an architecture receives, the more secure it is. 
+
+\section{Components}
+\label{sec:components}
 
 While architectures used in the automotive industry are complex, with sometimes up to 150 ECUs in one model, 
 the architectures used in this thesis were sized down to a more manageable size, with 20 ECUs for each architecture.
@@ -30,18 +32,15 @@ Each architecture was modeled using these components:
     
     \item \textbf{Interfaces}: The interfaces are the connections between the ECUs and the external world. They are the connections between the ECUs and the bus systems. The possible interfaces are \textit{Bluetooth, WiFi,} and \textit{GNSS}.
     
-    \item \textbf{Attack feasibility}: The attack feasibility indicates how feasible it is to attack a certain component in the architecture.
+    \item \textbf{Attack feasibility}
     
     Each component of the architecture (ECU, bus system, interface) has its own rating for its attack feasibility.
 
 \end{itemize}
 
-\section{Components}
-\label{sec:components}
-
 Using the scale mentioned in \ref{sec:config} for each component, a higher rating means that the component is more secure, i.e. might have more security mechanisms in place,
 while a lower rating means that the component lacks such mechanisms.
-This also indicated that the higher the overall score one architecture receives, the more secure it is.
+This also indicated that the higher the overall rating one architecture receives, the more secure it is.
 This subsection will further explain some the aforementioned components as well as their attack feasibility based on their attributes.
 
 \begin{itemize}
@@ -115,6 +114,7 @@ has different use cases and different security characteristics and vulnerabiliti
 However, based on experts' experience, these values were given each component:
 
 \begin{table}[h]
+    \label{table:bus_rating}
     \centering
     \begin{tabular}{|l|c|}
     \hline
@@ -146,7 +146,7 @@ In addition, the training set is much larger than the main set, thus the results
 
 The following section will describe the test architectures and estimate the impact the architectural choices have on the security of the system.
 
-subsection{Architecture 1}
+\subsection{Architecture 1}
 \label{subsec:arch1}
 
 Architecture \ref{fig:architecture1} represents the most realistic architecture, 
