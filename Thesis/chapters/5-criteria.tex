@@ -110,37 +110,50 @@ In genreal, we asked ourselves the questions:\\
 
 The resulting equation is as follows and is explained below:
 
-
-
 Let's consider any one architecture:\\
 It is clear that a high architecture feasibility score and a high number of hops in each attack path is the most desirable.
 To get the architecture feasibility, each attack path feasibility is multiplied by the amount of hops it has.
-For example, 
+ 
 Since the Bellman-Ford algorithm finds and takes the lowest weighted attack path, i.e. the least secure one, 
 a high score for this path means the most feasibile path receives a high security rating.
-It is also taken into account how many hops there are. 
+It is also taken into account how many hops there are. \\
+
+\begin{equation}
+    \mathit{A} := {Architectures} a \in \mathit{A} \label{eq:architectures}\\\\
+\end{equation}
+
+\begin{equation}
+    \mathit{P} := {Attack Paths_{a}} p \in \mathit{P} \label{eq:attack_paths}\\\\
+\end{equation}
+
+\begin{equation}
+    feasibility_{a} := \sum_{p} feasibility_{p} * hops_{p} * cgw_{a} \label{eq:feasibility}\\\\
+\end{equation}
+
+\begin{equation}
+    cgw_{a} := 
+    \begin{cases}
+    1,&\text{base case}\\
+    cgw_{a} - 0.2,&\text{if } \not\in a\\\\
+    cgw_{a} - 0.3,&\text{if external interface} \in a\\\\
+    cgw_{a} - 0.1,&\text{if target} \in a\\\\
+    \end{cases} \label{eq:cgw}\\\\
+\end{equation}
+
+\begin{equation}
+    hops_{a} := \sum_{p} hops_{p} \label{eq:hops}\\\\
+\end{equation}
+
+\begin{equation}
+    interfaces := \text{total amount of entry points in } a \label{eq:interfaces}\\\\
+\end{equation}
+
+\begin{equation}
+    separation := \text{average amount of ECUs per bus in } a \label{eq:separation}\\\\
+\end{equation}
+
+\begin{equation}
+    rating_{a} := \frac{100 * feasibility_{a} * cgw_{a}}{hops_{a}*w_{1} + isolation_{a}^{w_{2}} + interfaces_{a}*w_{3}} \label{eq:rating}\\\\
+\end{equation}
 
 
-\mathit{A} := {Architectures}& a in \mathit{A}
-
-
-\mathit{P} := {Attack Paths_{a}}& p in \mathit{P} \\\\
-
-
-feasibility_{a} := \sum_{p} feasibility_{p} * hops_{p} * cgw_{a} \\\\
-
-cgw_{a} := 
-\begin{cases}
-1,&\text{base case}\\
-cgw_{a} - 0.2,&\text{if not in a}\\
-cgw_{a} - 0.3,&\text{if external interface in a}\\
-cgw_{a} - 0.1,&\text{if target in in a}\\
-\end{cases}\\\\
-
-hops_{a} := \sum_{p} hops_{p}\\\\
-
-interfaces := \text{total amount of entry points in } a\\\\
-
-separation := \text{average amount of ECUs per bus in } a\\\\
-
-rating_{a} := \frac{100 * feasibility_{a} * cgw_{a}}{hops_{a}*w_{1} + isolation_{a}^{w_{2}} + interfaces_{a}*w_{3}}
