@@ -1,0 +1,139 @@
+{
+  "ecus": [
+    {
+      "name": "CGW",
+      "type": "target",
+      "feasibility": 0.9
+    },
+    {
+      "name": "BODY_CONTROL",
+      "type": "",
+      "feasibility": 0.5
+    },
+    {
+      "name": "WPRA",
+      "type": "",
+      "feasibility": 0.1
+    },
+    {
+      "name": "VCS",
+      "type": "",
+      "feasibility": 0.1
+    },
+    {
+      "name": "TPM",
+      "type": "",
+      "feasibility": 0.5
+    },
+    {
+      "name": "CLIMA",
+      "type": "",
+      "feasibility": 0.5
+    },
+    {
+      "name": "CLS",
+      "type": "target",
+      "feasibility": 0.9
+    },
+    {
+      "name": "SEAT",
+      "type": "",
+      "feasibility": 0.5
+    },
+    {
+      "name": "ESP",
+      "type": "target",
+      "feasibility": 0.9
+    },
+    {
+      "name": "PARK",
+      "type": "target",
+      "feasibility": 0.5
+    },
+    {
+      "name": "EPS",
+      "type": "",
+      "feasibility": 0.5
+    },
+    {
+      "name": "POWERTRAIN",
+      "type": "target",
+      "feasibility": 0.9
+    },
+    {
+      "name": "CRG",
+      "type": "target",
+      "feasibility": 0.9
+    },
+    {
+      "name": "BMU",
+      "type": "",
+      "feasibility": 0.5
+    },
+    {
+      "name": "ECM",
+      "type": "target",
+      "feasibility": 0.9
+    },
+    {
+      "name": "XCM",
+        "type": "",
+        "feasibility": 0.5
+    },
+    {
+      "name": "NOXS",
+        "type": "",
+        "feasibility": 0.5
+    },
+    {
+      "name": "FCSM",
+        "type": "",
+        "feasibility": 0.5
+    },
+    {
+      "name": "TELEMATIC",
+        "type": "",
+        "feasibility": 0.5
+    },
+    {
+      "name": "DASH_UNIT",
+        "type": "target",
+        "feasibility": 0.9
+    },
+    {
+      "name": "COMM_UNIT",
+        "type": "target",
+        "feasibility": 0.9
+    },
+    {
+      "name": "TEL",
+        "type": "",
+        "feasibility": 0.5
+    },
+    {
+      "name": "DISP",
+        "type": "",
+        "feasibility": 0.5
+    },
+    {
+      "name": "RADIO",
+        "type": "",
+        "feasibility": 0.5
+    },
+    {
+      "name": "wifi",
+      "type": "interface",
+      "feasibility": 0
+    },
+    {
+      "name": "bluetooth",
+      "type": "interface",
+      "feasibility": 0
+    },
+    {
+      "name": "gnss",
+      "type": "interface",
+      "feasibility": 0
+    }
+  ]
+}

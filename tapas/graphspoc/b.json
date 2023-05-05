@@ -1,5 +1,5 @@
 {
-  "a_name": "Architecture 1",
+  "a_name": "Architecture B",
   "buses": [
     {
       "name": "eth1",
@@ -42,7 +42,9 @@
         "TPM",
         "CLIMA",
         "CLS",
-        "SEAT"
+        "SEAT",
+        "DISP",
+        "TEL"
       ]
     },
     {
@@ -57,8 +59,9 @@
       "name": "canfd2",
       "type": "canfd",
       "ecus": [
-        "ECM",
-        "XCM"
+        "POWERTRAIN",
+        "CRG",
+        "BMU"
       ]
     },
     {
@@ -77,17 +80,16 @@
         "CGW",
         "POWERTRAIN",
         "ESP",
-        "PARK",
-        "EPS"
+        "EPS",
+        "PARK"
       ]
     },
     {
       "name": "canfd3",
       "type": "canfd",
       "ecus": [
-        "POWERTRAIN",
-        "CRG",
-        "BMU"
+        "ECM",
+        "XCM"
       ]
     },
     {
@@ -119,8 +121,6 @@
       "type": "can",
       "ecus": [
         "DASH_UNIT",
-        "TEL",
-        "DISP",
         "RADIO"
       ]
     },
@@ -137,10 +137,8 @@
       "type": "wifi",
       "ecus": [
         "wifi",
-        "CGW",
-        "RADIO",
         "TEL",
-        "PARK"
+        "RADIO"
       ]
     },
     {
@@ -148,10 +146,8 @@
       "type": "bluetooth",
       "ecus": [
         "bluetooth",
-        "DASH_UNIT",
         "TEL",
-        "RADIO",
-        "PARK"
+        "RADIO"
       ]
     },
     {
@@ -159,7 +155,6 @@
       "type": "gnss",
       "ecus": [
         "gnss",
-        "DASH_UNIT",
         "COMM_UNIT"
       ]
     }
