@@ -245,22 +245,26 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     feasibilities = []
     weights = []
 
-    for w1 in range(1, 10):
-        for w2 in range(1, 10):
-            for w3 in range(1, 100):
+    #for w1 in range(1, 10):
+        #for w2 in range(1, 10):
+            #for w3 in range(1, 100):
                 #for w4 in range(0, 100, 10):
 
-                numerator = (100 * (original_architecture_feasibility * cgw))
-                denominator = (total_hops * w1 + (isolation ** w2) + test_interfaces * w3)
+    w1 = 1
+    w2 = 4
+    w3 = 25
 
-                #if denominator < 1:
-                    #continue
-                #else:
-                    #print(f"NUM: {numerator}, DEN: {denominator}")
-                new_architecture_feasibility = round(numerator / denominator, 2)
+    numerator = (100 * (original_architecture_feasibility * cgw))
+    denominator = (total_hops * w1 + (isolation ** w2) + test_interfaces * w3)
 
-                feasibilities.append(new_architecture_feasibility)
-                weights.append([w1, w2, w3])
+    #if denominator < 1:
+        #continue
+    #else:
+        #print(f"NUM: {numerator}, DEN: {denominator}")
+    new_architecture_feasibility = round(numerator / denominator, 2)
+
+    feasibilities.append(new_architecture_feasibility)
+    weights.append([w1, w2, w3])
 
     # w1 = 50
     # w2 = 94
@@ -282,13 +286,13 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 def get_criteria(finals, weights):
     ranking = dict(sorted(finals.items(), key=lambda item: item[1], reverse=True))
 
-    output_file = "../data/best_naming_set16.txt"
+    output_file = "./best_naming_set16.txt"
 
     with open(output_file, 'w') as f:
 
         survey_ranking = ["Architecture 3", "Architecture 8", "Architecture 6", "Architecture 10", "Architecture 2",
                           "Architecture 1", "Architecture 5", "Architecture 7", "Architecture 9", "Architecture 4"]
-        num_options = len(finals["Architecture 1"])  # assume all architectures have same number of options
+        num_options = len(finals["Architecture A"])  # assume all architectures have same number of options
         dist_cmp = {}
 
         for i in range(num_options):
@@ -306,7 +310,6 @@ def get_criteria(finals, weights):
             distance = lev.distance(survey_ranking, ranked_list_for_distance)
             dist_cmp[i] = round(distance, )
 
-        # only write if distance is 6
         for key, value in sorted(dist_cmp.items(), key=lambda item: item[1], reverse=True):
             f.write(f"Option {key}: {value}\n")
 
