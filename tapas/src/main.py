@@ -18,12 +18,16 @@ def main():
             '..\\graphs\\Architecture7.json': '..\\ecus\\ecus123567.json',
             '..\\graphs\\Architecture8.json': '..\\ecus\\ecus8.json',
             '..\\graphs\\Architecture9.json': '..\\ecus\\ecus9.json',
-            '..\\graphs\\Architecture10.json': '..\\ecus\\ecus10.json',
+            '..\\graphs\\Architecture10.json': '..\\ecus\\ecus10.json'
             }
+
+    config2 = {'..\\graphspoc\\a.json': '..\\ecuspoc\\ecusA.json',
+               '..\\graphspoc\\b.json': '..\\ecuspoc\\ecusB.json',
+               '..\\graphspoc\\c.json': '..\\ecuspoc\\ecusC.json'}
 
     finals = {}
 
-    for architecture, ecu in config.items():
+    for architecture, ecu in config2.items():
 
         print(architecture)
         #architecture = input('Select architecture file path: > ')
