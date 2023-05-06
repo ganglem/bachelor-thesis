@@ -257,6 +257,8 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     numerator = (100 * (original_architecture_feasibility * cgw))
     denominator = (total_hops * w1 + (isolation ** w2) + test_interfaces * w3)
 
+    print("[DEBUG] TOTAL HOPS:", total_hops)
+
     #if denominator < 1:
         #continue
     #else:

@@ -40,7 +40,14 @@
       "ecus": [
         "BODY_CONTROL",
         "TPM",
-        "CLIMA",
+        "CLIMA"
+      ]
+    },
+    {
+      "name": "can2",
+      "type": "can",
+      "ecus": [
+        "BODY_CONTROL",
         "CLS",
         "SEAT"
       ]
@@ -72,15 +79,22 @@
       ]
     },
     {
-      "name": "flexray",
+      "name": "flexray1",
       "type": "flexray",
       "ecus": [
-        "CGW",
         "POWERTRAIN",
         "ESP",
         "EPS",
         "PARK"
       ]
+    },
+    {
+      "name": "flexray2",
+        "type": "flexray",
+        "ecus": [
+          "CGW",
+          "POWERTRAIN"
+        ]
     },
     {
       "name": "canfd3",
@@ -119,10 +133,24 @@
       "type": "can",
       "ecus": [
         "DASH_UNIT",
-        "TEL",
-        "RADIO",
-        "DISP"
+        "TEL"
       ]
+    },
+    {
+      "name": "can4",
+        "type": "can",
+        "ecus": [
+          "DASH_UNIT",
+          "DISP"
+        ]
+    },
+    {
+      "name": "can5",
+        "type": "can",
+        "ecus": [
+          "DASH_UNIT",
+          "RADIO"
+        ]
     },
     {
       "name": "most",

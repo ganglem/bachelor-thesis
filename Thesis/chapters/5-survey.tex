@@ -1,5 +1,5 @@
-\chapter{Deciding on the criteria}
-\label{chp:criteria}
+\chapter{Survey and criteria calibration}
+\label{chp:introcriteria}
 
 One of the most important asepcts of this thesis is the criteria used to evaluate the different architectures.
 
@@ -7,6 +7,90 @@ In order to find and calibrate a good criteria, a survey was conducted in which 
 Their rating and feedback on this "training set" was used to calibrate the criteria used on the main architectures in this thesis.
 Doing a survey with such a set rather than the architectures themselves was done to avoid biasing the results, as well as have a well evaluated criteria.
 In addition, the training set is much larger than the main set, thus the results are more accurate.
+
+\section{Training set architectures}
+\label{sec:trainingarch}
+
+Ten architectures were used as a \textit{training set} to determine and calibrate the criteria used to 
+evaluate the remaining architectures, which are the focus of the comparison.
+This was done to avoid biasing the results, as well as have a well evaluated criteria.
+In addition, the training set is much larger than the main set, thus the results are more accurate.
+
+The following section will describe the test architectures and estimate the impact the architectural choices have on the security of the system.
+
+\subsection{Architecture 1}
+\label{subsec:arch1}
+
+Architecture \ref{fig:architecture1} represents the most realistic architecture, 
+as it is modeled after an actual architecture used in the automotive industry. 
+It offers six entry points with three being targets, one of which is the \textit{Central Gateway}, and eight targets in total. 
+It was important to include this architecture, since it could offer valuable insight into the real world.
+
+\subsection{Architecture 2}
+\label{subsec:arch2}
+
+Architecture \ref{fig:architecture2} is essentially the same as Architecture 1, 
+but without a central gateway, to see how the architecture would perform without it.
+
+\subsection{Architecture 3}
+\label{subsec:arch3}
+
+Architecture \ref{fig:architecture3} was designed to group all the entry interfaces to see how a centralized entry would affect the architecture. 
+Isolating the possible entry locations reduces the attack surface, prolongs the attack path to each target, 
+and increases the number of ECUs used for the path, thus making the attack more difficult as the attacker would have to compromise more ECUs. 
+It is similar to Architecture 10, in a sense that the entry points are centralized, however, in this case, the entry points are not isolated to a single ECU.
+
+\subsection{Architecture 4}
+\label{subsec:arch4}
+
+Architecture \ref{fig:architecture4} offers entry points from all domain controllers, 
+however, notice how every domain controller has only one type of interface. 
+Having an entry point from each domain controller enlarges the attack surface, 
+as the attacker would only need to compromise one ECU in each domain controller to gain quick access to the whole domain. 
+It is essentially the same as Architecture 9, however, including the \textit{Central Gateway}.
+
+\subsection{Architecture 5}
+\label{subsec:arch5}
+
+Architecture \ref{fig:architecture5} uses only Ethernet as the bus system, 
+to see how the architecture would perform without any other bus system. 
+Ethernet was chosen because it receives the securest attack feasibility rating of any bus system.
+
+\subsection{Architecture 6}
+\label{subsec:arch6}
+
+Architecture \ref{fig:architecture6} puts all the ECUs onto their own bus system. 
+This increases complexity in communication between the ECUs but it also offers great isolation between the ECUs, 
+however, it also reduces the hops per attack path and number of ECUs used for the path.
+
+\subsection{Architecture 7}
+\label{subsec:arch7}
+
+Architecture \ref{fig:architecture7} has a similar idea to Architecture 6, 
+but instead of putting all the ECUs on their own bus system, it puts all the ECUs that used the same bus system on the same bus system. 
+Now, the feasibility of the bus rating is much more significant to the overall architecture rating and can indicate whether the used bus systems are secure enough.
+
+\subsection{Architecture 8}
+\label{subsec:arch8}
+
+Architecture \ref{fig:architecture8} only has one entry point, namely the \textit{Central Gateway}. 
+This architecture eliminates other entry points meaning the attack paths all start at the same point, thus reducing the attack surface. 
+Additionally, the feasibility rating of the interfaces is more significant than before and the attack paths might become much more linear, 
+thus the feasibility rating of the components.
+
+\subsection{Architecture 9}
+\label{subsec:arch9}
+
+Architecture \ref{fig:architecture9} is essentially the same as Architecture 4, 
+but without a central gateway. Again, the entry points are more dispersed resulting in an enlarged attack surface 
+and the significance of the Central Gateway can be deduced more from such a comparison.
+
+\subsection{Architecture 10}
+\label{subsec:arch10}
+
+Architecture \ref{fig:architecture10} is the final architecture of the test set. 
+It only includes one of each interface but more dispersed than that of Architecture 8. 
+Note that the entries are also grouped together which shares the same idea of Architecture 3.
 
 \section{Survey}
 \label{sec:survey}
@@ -80,80 +164,3 @@ As a result, the final results varied between experts, as expected.\\
 
 In general, Architectures \ref{fig:architecture3}, \ref{fig:architecture6}, \ref{fig:architecture8}, and \ref{fig:architecture10} received a positive feedback,
 whereas Architectures \ref{fig:architecture4}, \ref{fig:architecture7}, and \ref{fig:architecture9} received a negative feedback.
-
-\section{Criteria}
-
-Just as there are many ways to evaluate an architecture, there are many ways to a general criteria for this thesis.
-Similar to \cite{threat_surf}, we decided to approach the criteria as a mathematical equation that can be applied to every architecture equally.
-This equation takes the different aforementioned factors into account:
-
-\begin{enumerate}
-    \item Architecture feasibility
-    \item Attack Path feasibility
-    \item Presence and influence of a Central Gateway
-    \item Amount of hops 
-    \item Isolation of ECUs
-    \item Amount of interfaces/entry points
-\end{enumerate}
-
-Finding the most fitting equation was done in a manual, brute-force like attempt.
-
-Iterating over each of the ten architectures, their factors were given a weight and were then arranged in different mathematical operations.
-These weights were iterated from factors between 0 and 100, resulting in millions of combinations for every attempted equation.
-Each combination of the ten architectures using the same weights was then represented as a ranked table. 
-In the end, the weights of the tables which had the smallest eucledian distance to the survey table \ref{table:survey} were taken into consideration.
-There were hundreds of feasible weight combinations, and in the end the smallest possible weights were chosen.
-
-Finding an equation that fit the criteria was a step-by-step progress.
-In genreal, we asked ourselves the questions:\\
-\textit{Which of the factors is it favorable to have more of?} and \textit{Which of the factors is it unfavorable to have more of?}
-
-The resulting equation is as follows and is explained below:
-
-Let's consider any one architecture:\\
-It is clear that a high architecture feasibility score and a high number of hops in each attack path is the most desirable.
-To get the architecture feasibility, each attack path feasibility is multiplied by the amount of hops it has.
- 
-Since the Bellman-Ford algorithm finds and takes the lowest weighted attack path, i.e. the least secure one, 
-a high score for this path means the most feasibile path receives a high security rating.
-It is also taken into account how many hops there are. \\
-
-\begin{equation}
-    \mathit{A} := {Architectures} a \in \mathit{A} \label{eq:architectures}\\\\
-\end{equation}
-
-\begin{equation}
-    \mathit{P} := {Attack Paths_{a}} p \in \mathit{P} \label{eq:attack_paths}\\\\
-\end{equation}
-
-\begin{equation}
-    feasibility_{a} := \sum_{p} feasibility_{p} * hops_{p} * cgw_{a} \label{eq:feasibility}\\\\
-\end{equation}
-
-\begin{equation}
-    cgw_{a} := 
-    \begin{cases}
-    1,&\text{base case}\\
-    cgw_{a} - 0.2,&\text{if } \not\in a\\\\
-    cgw_{a} - 0.3,&\text{if external interface} \in a\\\\
-    cgw_{a} - 0.1,&\text{if target} \in a\\\\
-    \end{cases} \label{eq:cgw}\\\\
-\end{equation}
-
-\begin{equation}
-    hops_{a} := \sum_{p} hops_{p} \label{eq:hops}\\\\
-\end{equation}
-
-\begin{equation}
-    interfaces := \text{total amount of entry points in } a \label{eq:interfaces}\\\\
-\end{equation}
-
-\begin{equation}
-    separation := \text{average amount of ECUs per bus in } a \label{eq:separation}\\\\
-\end{equation}
-
-\begin{equation}
-    rating_{a} := \frac{100 * feasibility_{a} * cgw_{a}}{hops_{a}*w_{1} + isolation_{a}^{w_{2}} + interfaces_{a}*w_{3}} \label{eq:rating}\\\\
-\end{equation}
-
-

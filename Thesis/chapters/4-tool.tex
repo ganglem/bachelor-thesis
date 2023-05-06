@@ -43,9 +43,7 @@ It contains an array of objects, where each object represents an ECU and has the
 \begin{itemize}
 \item \textbf{name}: The name of the ECU.
 \item \textbf{type}: The type of the ECU (e.g., entry, target, interface).
-\item \textbf{feasibility}: Since no furhter information is given for the ECUS (in terms of security mechanisms and functionality),
-and for simplification purposes, the feasibility rating is threefold; 
-LIN ECUs are given a rating of 0.1, targets and FlexRay ECUs are rated with 0.9 and "the rest" is given a rating of 0.5.
+\item \textbf{feasibility}: A value between 0 and 1 indicating the ECU's attack feasibility (\textit{see \ref{table:ecu_rating}}).
 \end{itemize}
 
 \subsection{graph.json}

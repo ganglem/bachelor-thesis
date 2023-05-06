@@ -30,9 +30,16 @@
       "type": "lin",
       "ecus": [
         "BODY_CONTROL",
-        "WPRA",
-        "VCS"
+        "WPRA"
       ]
+    },
+    {
+      "name": "lin2",
+      "type": "lin",
+        "ecus": [
+          "BODY_CONTROL",
+          "VCS"
+        ]
     },
     {
       "name": "can1",
@@ -40,9 +47,23 @@
       "ecus": [
         "BODY_CONTROL",
         "TPM",
+        "CLS"
+      ]
+    },
+    {
+      "name": "can2",
+      "type": "can",
+      "ecus": [
+        "BODY_CONTROL",
         "CLIMA",
-        "CLS",
-        "SEAT",
+        "SEAT"
+      ]
+    },
+    {
+      "name": "can3",
+      "type": "can",
+      "ecus": [
+        "BODY_CONTROL",
         "DISP",
         "TEL"
       ]
@@ -65,7 +86,7 @@
       ]
     },
     {
-      "name": "can2",
+      "name": "can4",
       "type": "can",
       "ecus": [
         "ECM",

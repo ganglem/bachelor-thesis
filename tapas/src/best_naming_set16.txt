@@ -1,0 +1,7 @@
+
+Ranking for Option 0
+Weights: [1, 4, 25]
+1. Architecture B: 173.43
+2. Architecture A: 148.15
+3. Architecture C: 142.59
+Option 0: 10
