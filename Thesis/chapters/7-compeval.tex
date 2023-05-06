@@ -3,7 +3,8 @@
 
 To prove that the criteria is properly calibrated and gives desired results, another set of architectures is evaluated.\\
 These architectures were designed with the survey feedback in mind.
-The test set architectures sometimes different immensely from each other to be able to better crystallize the criteria,
+In the following, they are referred to as \textit{Proof Of Concept} architectures.\\
+The training set architectures sometimes different immensely from each other to be able to better crystallize the criteria,
 whereas these now are kept relatively similar to each other to ensure the criteria is not biased towards a specific architecture.\\
 Similarly to the test set, this chapter will describe the architectures, estimate the desired results, and evaluate the architectures using the tool.
 The following architectures all use the same building blocks with the same values as described in \ref{chp:arch}.
@@ -11,17 +12,56 @@ The following architectures all use the same building blocks with the same value
 \section{Architecture A}
 \label{sec:archa}
 
-\nameref{fig:architectureA} features four entry points, and six interfaces which are relatively separated from the rest of the components 
-meaning that the amount of hops for some targets is very high. 
-
+\nameref{fig:architectureA} features four entry points, and six interfaces - the highest amount of all the architectures.
+However, the strong point here is that they are are relatively separated from the rest of the components.
+In addition, it features a Centra Gateway that is not an entry point.
+These factors indicate a high amount of hops for some targets.
+In terms of isolation of ECUs, most ECUs share their bus with at least two or more other ECUs, resulting in a low isolation compared to the other architectures.\\
+Based on the criteria, this architecture is expected to do the best out of the three architectures.
 
 \section{Architecture B}
 \label{sec:archb}
 
-\nameref{fig:architectureB}
-
-
+\nameref{fig:architectureB} features three entry points and five interfaces.
+Though the number is lower that that of Architecture A, the entry points are more spread out, meaning that the maximum amount of hops is lower.
+The Central Gateway, however, is not an entry point and the isolation of ECUs is better compared to A.
+This architecture, though offering better isolation, is expected to perform worse than A due to the lower amount of hops.
 \section{Architecture C}
 \label{sec:archc}
 
-\nameref{fig:architectureC}
+\nameref{fig:architectureC} has only three entry points and three interfaces - however one of them being the Central Gateway and 
+in addition, the entry points are distributed across the architecture. 
+This results in a lower amount of hops for the targets, putting this architecture at a disadvantage compared to the other two.
+Isolation of ECUs here is similar or somewhat better to B.
+Due to the low amount of hops and the Central Gateway being an entry point, this architecture is expected to perform 
+similar to B, but still the worst out of the three.
+
+
+\section{Results - Proof Of Concept Architectures}
+
+The results are as follows:
+
+\begin{table}[h]
+    \label{table:survey}
+    \centering
+    \caption{Rank and Architecture}
+    \begin{tabular}{ |c|c|c| } 
+    \hline
+    Rank & Architecture & Rating\\
+    \hline
+    1 & \nameref{fig:architectureA} & 152.97\\ 
+    2 & \nameref{fig:architectureB} & 129.2\\
+    3 & \nameref{fig:architectureC} & 124.66\\
+    \hline
+    \end{tabular}
+\end{table}
+
+Taking the criteria into account, the results reflect the expectations.
+Architecture A, with the highest amount of hops, due to the secluded entry points, is ranked first.
+Architectre B, with a lower amount of hops, but better isolation, is ranked second.
+Architecture C, with the lowest amount of hops and the Central Gateway being an entry point, is ranked third.\\
+
+As shown by the score, \nameref{fig:architectureB} and \nameref{fig:architectureC} are relatively close to each other,
+but the Central Gateway being an entry point in \nameref{fig:architectureC} is the deciding factor for the lower score.\\
+
+Overall, this Proof of Concept confirms that the criteria is properly calibrated and gives the desired results.

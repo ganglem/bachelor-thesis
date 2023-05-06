@@ -30,15 +30,8 @@
       "type": "lin",
       "ecus": [
         "BODY_CONTROL",
-        "WPRA"
-      ]
-    },
-    {
-      "name": "lin2",
-      "type": "lin",
-        "ecus": [
-          "BODY_CONTROL",
-          "VCS"
+        "WPRA",
+        "VCS"
         ]
     },
     {

@@ -30,6 +30,8 @@
 % Enhances amsmath and provides further mathematical tools.
 \RequirePackage{mathtools}
 
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
 % Use the following code for XeLaTeX
 \ifxetex
     \RequirePackage[expansion=false,final]{microtype}

@@ -214,14 +214,25 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 
     print("[DEBUG] TEST INTERFACES:", test_interfaces)
 
+    cgw_count = 0
+
     # debatable
     cgw = 1
     if "CGW" not in architecture:
-        cgw -= 0.2
-    if "CGW" in interfaces:
-        cgw -= 0.3
+        cgw -= 0.15
+        print("true1")
+    for interface in interfaces:
+        if cgw_count == 0:
+            if "CGW" in interface:
+                cgw -= 0.1
+                cgw_count = 1
+                print("true2")
     if "CGW" in target_ecus_names:
-        cgw -= 0.1
+        cgw -= 0.05
+        print("true3")
+
+    print("[DEBUG] CGW:", cgw)
+    print("[DEBUG] interfaces:", interfaces)
 
     for entry_ecu in entry_points:
         entry_ecu_name = entry_ecu["name"]
@@ -245,19 +256,19 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     feasibilities = []
     weights = []
 
-    #for w1 in range(1, 10):
+    #for w1 in range(1, 2):
         #for w2 in range(1, 10):
-            #for w3 in range(1, 100):
-                #for w4 in range(0, 100, 10):
+            #for w3 in range(30, 100):
+            # for w4 in range(0, 100, 10):
 
     w1 = 1
     w2 = 4
-    w3 = 25
+    w3 = 32
 
     numerator = (100 * (original_architecture_feasibility * cgw))
     denominator = (total_hops * w1 + (isolation ** w2) + test_interfaces * w3)
 
-    print("[DEBUG] TOTAL HOPS:", total_hops)
+
 
     #if denominator < 1:
         #continue
@@ -268,15 +279,14 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     feasibilities.append(new_architecture_feasibility)
     weights.append([w1, w2, w3])
 
-    # w1 = 50
-    # w2 = 94
-    # w3 = 47
-    # w4 = 1
+
+
 
     # numerator = (100 * original_architecture_feasibility * cgw)
     # denominator = w1 * 0.1 * total_hops + w2 * 0.1 * isolation + w3 * 0.1 * amt_interfaces + w4 * 0.1 * attack_paths
 
     # new_architecture_feasibility = numerator / denominator
+    print("[DEBUG] TOTAL HOPS:", total_hops)
 
     return feasibilities, weights
 

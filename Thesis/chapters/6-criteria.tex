@@ -3,18 +3,75 @@
 
 Just as there are many ways to evaluate an architecture, there are many ways to a general criteria for this thesis.
 Similar to \cite{threat_surf}, we decided to approach the criteria as a mathematical equation that can be applied to every architecture equally.
-This equation takes the different aforementioned factors into account:
+This equation takes into account the architecture feasibility, attack path feasibility, presence and influence of a Central Gateway,
+amount of hops, isolation of ECUs and amount of interfaces/entry points.\\
 
-\begin{enumerate}
-    \item Architecture feasibility
-    \item Attack Path feasibility
-    \item Presence and influence of a Central Gateway
-    \item Amount of hops 
-    \item Isolation of ECUs
-    \item Amount of interfaces/entry points
-\end{enumerate}
+Finding the most fitting equation was done in a manual, brute-force like attempt.\\\par
 
-Finding the most fitting equation was done in a manual, brute-force like attempt.
+We define a set of architectures $\mathit{A}$, where each architecture $a$ has a set of attack paths $\mathit{P}$:\\
+\begin{equation}
+    \mathit{A} := {Architectures} \tab a \in \mathit{A} \label{eq:architectures}
+\end{equation}
+\begin{equation}
+    \mathit{P} := {Attack Paths_{a}} \tab p \in \mathit{P} \label{eq:attack_paths}
+\end{equation}
+
+\hfill \break
+
+Next, we define the factors that are taken into account for the equation.\\
+
+Since the Bellman-Ford algorithm finds and takes the lowest weighted attack path, i.e. the least secure one, 
+a high score for this path means the most feasibile path receives a high security rating.
+Multiplying the feasibility of each attack path with the amount of hops it has, we also take into account the amount of hops in each attack path.
+The more hops there are, the better.
+This is because the more hops there are, the more ECUs there are to compromise, 
+and the more ECUs there are to compromise, the more likely it is that the attacker will be hindered to reach the target ECU.\\
+We calculate the architecture feasibility $feasibility_{a}$ by multiplying the feasibility of each attack path $feasibility_{p}$ with the amount of hops $hops_{p}$ in each attack path:
+\begin{equation}
+    feasibility_{a} := \sum_{p} feasibility_{p} * hops_{p} * cgw_{a} \label{eq:feasibility}
+\end{equation}
+
+\hfill \break
+
+The Central Gateway also plays a role in the security of an architecture.
+As mentioned before, the benefit of a Central Gateway is dependent on whether it is present, an entry point, and or a target.
+A Central Gateway is beneficial if it is present, but not an entry point or a target.
+The Central Gateway factor is 1 by default, and is then decreased by 0.15 if the Central Gateway is not present,
+by 0.1 if the Central Gateway is an entry point, and by 0.05 if the Central Gateway is a target.
+This reflects the opinion of the Security Architects.\\
+To include the influence of a Central Gateway, we define the Central Gateway factor $cgw_{a}$ as follows:\\
+\begin{equation}
+    cgw_{a} := 
+    \begin{cases}
+    1,&\text{base case}\\
+    cgw_{a} - 0.15,&\text{if } \not\in a\\
+    cgw_{a} - 0.1,&\text{if external interface} \in a\\
+    cgw_{a} - 0.05,&\text{if target} \in a\\
+    \end{cases} \label{eq:cgw}
+\end{equation}
+
+\hfill \break
+
+To later norm the amount of hops, we set the hops factor $hops_{a}$ as follows:\\
+\begin{equation}
+    hops_{a} := \sum_{p} hops_{p} \label{eq:hops}
+\end{equation}
+
+\hfill \break
+
+Isolation of an architecture is defined as the amount of ECUs per bus, which we call the separation factor $separation_{a}$:\\
+\begin{equation}
+    isolation_{a} := \text{average amount of ECUs per bus in } a \label{eq:isolation}
+\end{equation}
+
+\hfill \break
+
+And lastly, we define the amount of entry points as the interfaces factor $interfaces_{a}$:\\
+\begin{equation}
+    entrypoints_{a} := \text{total amount of entry points in } a \label{eq:interfaces}
+\end{equation}
+
+\hfill  \break
 
 Iterating over each of the ten architectures, their factors were given a weight and were then arranged in different mathematical operations.
 These weights were iterated from factors between 0 and 100, resulting in millions of combinations for every attempted equation.
@@ -24,52 +81,33 @@ There were hundreds of feasible weight combinations, and in the end the smallest
 
 Finding an equation that fit the criteria was a step-by-step progress.
 In genreal, we asked ourselves the questions:\\
-\textit{Which of the factors is it favorable to have more of?} and \textit{Which of the factors is it unfavorable to have more of?}
-
-The resulting equation is as follows and is explained below:
+\textit{Which of the factors is it favorable to have more of?} and \textit{Which of the factors is it unfavorable to have more of?}\\\\
 
 Let's consider any one architecture:\\
 It is clear that a high architecture feasibility score and a high number of hops in each attack path is the most desirable.
-To get the architecture feasibility, each attack path feasibility is multiplied by the amount of hops it has.
- 
-Since the Bellman-Ford algorithm finds and takes the lowest weighted attack path, i.e. the least secure one, 
-a high score for this path means the most feasibile path receives a high security rating.
-It is also taken into account how many hops there are. \\
+To get the architecture feasibility, each attack path feasibility is multiplied by the amount of hops it has \ref{eq:feasibility}.
+We know that the more difficult the path, the more secure the architecture and the more hops there are in a path, the more difficult it is to reach the target ECU.\\
 
-\begin{equation}
-    \mathit{A} := {Architectures} a \in \mathit{A} \label{eq:architectures}\\\\
-\end{equation}
+This is then muplitplied by the Central Gateway factor \ref{eq:cgw}.\\
 
-\begin{equation}
-    \mathit{P} := {Attack Paths_{a}} p \in \mathit{P} \label{eq:attack_paths}\\\\
-\end{equation}
+To get a reasonable rating score, the product of the feasibility and Central Gateway factor are multiplied by 100.\\
 
-\begin{equation}
-    feasibility_{a} := \sum_{p} feasibility_{p} * hops_{p} * cgw_{a} \label{eq:feasibility}\\\\
-\end{equation}
 
-\begin{equation}
-    cgw_{a} := 
-    \begin{cases}
-    1,&\text{base case}\\
-    cgw_{a} - 0.2,&\text{if } \not\in a\\\\
-    cgw_{a} - 0.3,&\text{if external interface} \in a\\\\
-    cgw_{a} - 0.1,&\text{if target} \in a\\\\
-    \end{cases} \label{eq:cgw}\\\\
-\end{equation}
+Next, we consider the factors that are unfavorable to have more of.\\
 
-\begin{equation}
-    hops_{a} := \sum_{p} hops_{p} \label{eq:hops}\\\\
-\end{equation}
+The isolation of an architecture, i.e. the amount of ECUs per bus, is unfavorable to have more of.
+This is because the more ECUs there are per bus, the more ECUs there are to compromise on one bus.
+Taking a look back at \nameref{fig:architecture6}, which received a good rating, we can deduce that the more isolated the ECUs are, the better.\\
 
-\begin{equation}
-    interfaces := \text{total amount of entry points in } a \label{eq:interfaces}\\\\
-\end{equation}
+The amount of interfaces is also unfavorable to have more of.
+In this case, we only take into account the amount of entry points, and not the amount of total interfaces.
+Doing so, we are able to differentiate between one ECU with many interfaces and many ECUs with one interface since more entry points are also likely more spread out.
+Combining entry points and the amount of hops, we can deduce whether the entry points are secluded or spread out.
+High hops most likely means that the entry points are all grouped together, and low hops means that the entry points are spread out.\\\\
 
-\begin{equation}
-    separation := \text{average amount of ECUs per bus in } a \label{eq:separation}\\\\
-\end{equation}
-
+In the end, we receive the following equation:\\
 \begin{equation}
     rating_{a} := \frac{100 * feasibility_{a} * cgw_{a}}{hops_{a}*w_{1} + isolation_{a}^{w_{2}} + interfaces_{a}*w_{3}} \label{eq:rating}\\\\
 \end{equation}
+
+\hfill \break

@@ -101,30 +101,6 @@ Since there are ten architectures, the ranking went from 1 to 10, where 1 is the
 To get to a result in the end, each rank was given a score, where 1 got 1 points, 2 got 2 points, and so on.
 In the end, each ranking or score each architecture got was summed up, and the architecture with the lowest score was the most secure.
 
-The result is as follows:
-
-\begin{table}[h]
-    \label{table:survey}
-    \centering
-    \caption{Rank and Architecture}
-    \begin{tabular}{ |c|c| } 
-    \hline
-    Rank & Architecture \\
-    \hline
-    1 & \ref{fig:architecture3}\\
-    2 & \ref{fig:architecture8}\\
-    3 & \ref{fig:architecture6}\\
-    4 & \ref{fig:architecture10}\\
-    5 & \ref{fig:architecture2}\\
-    6 & \ref{fig:architecture1}\\
-    7 & \ref{fig:architecture5}\\
-    8 & \ref{fig:architecture7}\\
-    9 & \ref{fig:architecture9}\\
-    10 & \ref{fig:architecture4}\\
-    \hline
-    \end{tabular}
-\end{table}
-
 Of course there are many ways how a security architect approaches an evaluation.
 Each architect comes from a different background with different experience and thus will see some factors as more or less important than another.
 Even though architects tend to agree in general, it's in the details where opinions will digress.
@@ -147,10 +123,11 @@ Communication between ECUs must also be considered, as it is an essential part o
 Too many isolated ECUs communicating with each other can result in significant overhead. 
 Media change, such as from CAN to CANFD or FlexRay or Ethernet, also introduces additional hurdles.\\
 
-Other factors that need to be evaluated include the presence of a Central Gateway and the number of external interfaces, as more interfaces mean more attack vectors and the need for more security mechanisms.
+Other factors that need to be evaluated include the presence of a Central Gateway and the number of external interfaces, 
+as more interfaces mean more attack vectors and the need for more security mechanisms.
 Architecture \ref{fig:architecture4} and Architecture \ref{fig:architecture9} have most spread out interfaces, and thus they were expected to receive a low score,
 whereas Architectures \ref{fig:architecture8} was expected to receive a high score, as the Central Gateway is the only entry vector into the network.
-However, a Central Gateway with no external interfaces is overall less secure than an architecture with no Central Gateway at all, and that is why 
+However, a Central Gateway with no external interfaces is overall likely more secure than an architecture with no Central Gateway at all, and that is why 
 Architecture \ref{fig:architecture2} received a higher score than Architecture \ref{fig:architecture1}. 
 Of course, the type and the security of the external interface plays a role as well, because every interface has different security properties.\\
 
@@ -164,3 +141,30 @@ As a result, the final results varied between experts, as expected.\\
 
 In general, Architectures \ref{fig:architecture3}, \ref{fig:architecture6}, \ref{fig:architecture8}, and \ref{fig:architecture10} received a positive feedback,
 whereas Architectures \ref{fig:architecture4}, \ref{fig:architecture7}, and \ref{fig:architecture9} received a negative feedback.
+
+
+\section{Results - Training Set Architectures}
+
+The result is as follows:
+
+\begin{table}[h]
+    \label{table:survey}
+    \centering
+    \caption{Rank and Architecture}
+    \begin{tabular}{ |c|c|c| } 
+    \hline
+    Rank & Architecture & Rating\\
+    \hline
+    1 & \ref{fig:architecture3} & 151.48\\
+    2 & \ref{fig:architecture8} & 60.58\\
+    3 & \ref{fig:architecture6} & 59.85\\
+    4 & \ref{fig:architecture10} & 59.8\\
+    5 & \ref{fig:architecture2} & 56.52\\
+    6 & \ref{fig:architecture1} & 44.69\\
+    7 & \ref{fig:architecture5} & 43.46\\
+    8 & \ref{fig:architecture7} & 42.21\\
+    9 & \ref{fig:architecture9} & 31.38\\
+    10 & \ref{fig:architecture4} & 13.02\\
+    \hline
+    \end{tabular}
+\end{table}
