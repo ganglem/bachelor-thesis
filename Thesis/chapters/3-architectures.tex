@@ -1,17 +1,29 @@
 \chapter{Architectures}
 \label{chp:arch}
 
-The following chapter will show and explain the different architectures used in this thesis.
-The architectures were based on existing architectures used in the automotive industry as well as experimental ones based on certain attributes.
+Similarly to a common network, a vehicle network is a system of electronic components and devices within a vehicle 
+that communicate with each other to perform different functions, such as engine performance, safety, entertainment, and navigation. 
+
+What started as a simple network of a few electronic control units (ECUs) has evolved into a complex network of ECUs,
+and while the evolution of these systems has resulted in improved vehicle efficiency and features, 
+it has also created new cybersecurity concerns.
+
+There are several types of components in a vehicle network, and in order to understand these and their security features,
+we will first elaborate on those and define certain terms in this chapter that will be used throughout this thesis.
 
 \section{Feasibility}
 \label{def:feasibility}
 
 First, we want to explain and define the term \textit{feasibility} in the context of this thesis.
-Normally, a high attack feasibility in a vehicular architecture means a less secure architecture and that an attacker has less difficulty attacking the vehicle.
-However, due to the nature of the mathematics used in this thesis, we will conveniently define feasibility as the opposite of that, or to an extend apply it to another functionality.
-Imagine the term feasibility, or feasibility rating, to be the security rating of an architecture.
-In this thesis, the higher the feasibility score an architecture receives, the more secure it is. 
+Normally, the term feasibility is used to describe the possibility of something to be done or achieved, or the likelihood of something to happen.
+This applies to the term in this thesis as well, as we will use it to describe the likelihood of an attack to be successful.
+This means, a higher \textit{attack feasibility} means that an attack is more likely to be successful, while a lower \textit{attack feasibility} means that an attack is less likely to be successful.
+
+However, due to further factors used in this thesis, this thesis will also refer to the term of \textit{security feasibility}.
+This term is used to describe the rating of a component to be secure, i.e. the likelihood of an attack is unsuccessful.
+Architectures and their components will receive a security feasibility, which a higher rating means that the component is more secure, while a lower rating means that the component is less secure.
+The rating or score an architecture receives is similar to a benchmark that is used to compare the security of different architectures.
+The higher the score, the better the rating and the more secure the architecture is.
 
 \section{Components}
 \label{sec:components}

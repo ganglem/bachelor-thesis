@@ -1,7 +1,14 @@
 
 Ranking for Option 0
 Weights: [1, 4, 32]
-1. Architecture A: 152.97
-2. Architecture B: 129.2
-3. Architecture C: 124.66
-Option 0: 10
+1. Architecture 10: 151.48
+2. Architecture 3: 60.58
+3. Architecture 8: 59.85
+4. Architecture 6: 59.8
+5. Architecture 2: 56.52
+6. Architecture 5: 44.69
+7. Architecture 1: 43.46
+8. Architecture 4: 42.21
+9. Architecture 9: 31.38
+10. Architecture 7: 13.02
+Option 0: 6

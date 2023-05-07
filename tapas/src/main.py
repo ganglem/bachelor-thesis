@@ -27,7 +27,7 @@ def main():
 
     finals = {}
 
-    for architecture, ecu in config2.items():
+    for architecture, ecu in config.items():
 
         print(architecture)
         #architecture = input('Select architecture file path: > ')

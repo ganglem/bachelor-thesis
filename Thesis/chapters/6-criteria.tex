@@ -87,27 +87,66 @@ Let's consider any one architecture:\\
 It is clear that a high architecture feasibility score and a high number of hops in each attack path is the most desirable.
 To get the architecture feasibility, each attack path feasibility is multiplied by the amount of hops it has \ref{eq:feasibility}.
 We know that the more difficult the path, the more secure the architecture and the more hops there are in a path, the more difficult it is to reach the target ECU.\\
-
 This is then muplitplied by the Central Gateway factor \ref{eq:cgw}.\\
-
 To get a reasonable rating score, the product of the feasibility and Central Gateway factor are multiplied by 100.\\
 
-
 Next, we consider the factors that are unfavorable to have more of.\\
-
 The isolation of an architecture, i.e. the amount of ECUs per bus, is unfavorable to have more of.
 This is because the more ECUs there are per bus, the more ECUs there are to compromise on one bus.
 Taking a look back at \nameref{fig:architecture6}, which received a good rating, we can deduce that the more isolated the ECUs are, the better.\\
-
 The amount of interfaces is also unfavorable to have more of.
 In this case, we only take into account the amount of entry points, and not the amount of total interfaces.
 Doing so, we are able to differentiate between one ECU with many interfaces and many ECUs with one interface since more entry points are also likely more spread out.
 Combining entry points and the amount of hops, we can deduce whether the entry points are secluded or spread out.
-High hops most likely means that the entry points are all grouped together, and low hops means that the entry points are spread out.\\\\
+High hops most likely means that the entry points are all grouped together, and low hops means that the entry points are spread out.\\
 
 In the end, we receive the following equation:\\
 \begin{equation}
     rating_{a} := \frac{100 * feasibility_{a} * cgw_{a}}{hops_{a}*w_{1} + isolation_{a}^{w_{2}} + interfaces_{a}*w_{3}} \label{eq:rating}\\\\
 \end{equation}
+
+\hfill \break
+
+To figure out the weights $w_{1}$, $w_{2}$, and $w_{3}$, we iterated over the factors from 0 to 100 for each architecture.
+Each permutation was then ranked, and the weights of the permutations that had the smallest eucledian distance to the survey table \ref{table:survey} were taken into consideration.
+In the end, the permutation with the smallest weights was chosen, however, the other options were possible as well.
+$w_{1}$ was chosen to be 1, $w_{2}$ was chosen to be 4, and $w_{3}$ was chosen to be 32.\\
+
+The resulting table had an eucledian distance of 6 to the survey table \ref{table:survey}, which was the best result out of all the permutations, and looked as follows:\\
+
+\begin{table}[h]
+    \label{table:survey}
+    \centering
+    \caption{Rank and Architecture}
+    \begin{tabular}{ |c|c|c| } 
+    \hline
+    Rank & Architecture & Rating\\
+    \hline
+    1 & \ref{fig:architecture10} & 151.48\\
+    2 & \ref{fig:architecture3} & 60.58\\
+    3 & \ref{fig:architecture8} & 59.85\\
+    4 & \ref{fig:architecture6} & 59.8\\
+    5 & \ref{fig:architecture2} & 56.52\\
+    6 & \ref{fig:architecture5} & 44.69\\
+    7 & \ref{fig:architecture1} & 43.46\\
+    8 & \ref{fig:architecture4} & 42.21\\
+    9 & \ref{fig:architecture9} & 31.38\\
+    10 & \ref{fig:architecture7} & 13.02\\
+    \hline
+    \end{tabular}
+\end{table}
+
+As we can see, the table is very similar to the survey table \ref{table:survey}, with the eucledian distance being 6.
+The architectures that received the best rating, which were 
+\nameref{fig:architecture10}, \nameref{fig:architecture3}, \nameref{fig:architecture8}, and \nameref{fig:architecture6} 
+also being the ones that were ranked the highest,
+and the architectures that received the worst rating also being the ones that were ranked the lowest.
+Differences are that \nameref{fig:architecture10} jumped from rank 4 to rank 1, \nameref{fig:architecture1} and \nameref{fig:architecture5} switched places, 
+and so did \nameref{fig:architecture9} and \nameref{fig:architecture7}.
+
+We were able to achieve a very similar result to the survey table \ref{table:survey}, although with minor differences.
+The overall criteria matched with the criteria and feedback from the security experts.
+However, we are content with the results, taking into consideration that the formula and the weights were chosen by hand and not by a machine learning algorithm.
+The process of finding the formula and the weights was a step-by-step, brute-force-like process, and the results were very satisfying.\\
 
 \hfill \break
