@@ -6,7 +6,11 @@ Similar to \cite{threat_surf}, we decided to approach the criteria as a mathemat
 This equation takes into account the architecture feasibility, attack path feasibility, presence and influence of a Central Gateway,
 amount of hops, isolation of ECUs and amount of interfaces/entry points.\\
 
-Finding the most fitting equation was done in a manual, brute-force like attempt.\\\par
+Finding the most fitting equation was done in a manual, brute-force like attempt.
+The following chapter will describe the equation, the factors that are taken into account, and the reasoning behind them.\\
+
+\section{Equation factors}
+\label{sec:equation_factors}
 
 We define a set of architectures $\mathit{A}$, where each architecture $a$ has a set of attack paths $\mathit{P}$:\\
 \begin{equation}
@@ -71,7 +75,9 @@ And lastly, we define the amount of entry points as the interfaces factor $inter
     entrypoints_{a} := \text{total amount of entry points in } a \label{eq:interfaces}
 \end{equation}
 
-\hfill  \break
+
+\section{Equation}
+\label{sec:equation}
 
 Iterating over each of the ten architectures, their factors were given a weight and were then arranged in different mathematical operations.
 These weights were iterated from factors between 0 and 100, resulting in millions of combinations for every attempted equation.
@@ -81,7 +87,7 @@ There were hundreds of feasible weight combinations, and in the end the smallest
 
 Finding an equation that fit the criteria was a step-by-step progress.
 In genreal, we asked ourselves the questions:\\
-\textit{Which of the factors is it favorable to have more of?} and \textit{Which of the factors is it unfavorable to have more of?}\\\\
+\textit{Which of the factors is it favorable to have more of?} and \textit{Which of the factors is it unfavorable to have more of?}\\
 
 Let's consider any one architecture:\\
 It is clear that a high architecture feasibility score and a high number of hops in each attack path is the most desirable.

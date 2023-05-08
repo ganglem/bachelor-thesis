@@ -1,2 +1,46 @@
 \chapter{Conclusion}
 \label{chp:conclusion}
+
+In this thesis we have explored the security of automotive network architectures.\\\par
+
+We have done this by first researching the current state of the art in automotive network security,
+finding that the current state of the art is lacking in the area of security evaluation.
+To fill this gap, we have developed a new method for evaluating the security of automotive network architectures.
+We conducted a survey to find out what factors are important for security architects when evaluating an architecture,
+and used these factors to develop a criteria that can be used to evaluate the security of an architecture.
+A tool helped us to automate the evaluation of architectures, by automatically generating model-based architectures,
+finding their most feasibile attack path and calculating their security feasibility by applying the criteria.\\
+
+Key findings showed that the most important factors for security architects are the attack path feasibility,
+hops between entry points and targets, isolation of ECUs on a bus, and the presence and influence of a Central Gateway,
+as well as the amount and distribution of entry points actross a network architecture.\\
+
+The results and findings of this thesis can be used to aid security architects in their evaluation 
+and conception of future automotive network architectures by also providing a 
+tool that automoizes the process of graph generation, attack path finding, evaluation, and comparison of architectures.\\\par
+
+Despite providing valuable insights into the security of automotive network architectures,
+this thesis is not without its limitations.\\
+
+The criteria is based on the opinions of a small pool of security experts.
+More security experts should be consulted to further validate the criteria.\\
+In addition, the architectures in the training set as well as the training set itself used for the survey was small.
+A larger training set would have provided more data to work with, and would have allowed for a more accurate criteria.
+More accurate and architectures actually used in the automotive industry would have also been beneficial, as out 
+architectures were kept small and simple.
+This was done to keep the conception and survey short and simple, but it would have been interesting to see how the criteria would have
+performed on more complex architectures.\\
+Another limitation was the way the criteria was developed and calibrated.
+Using machine learning to build a neural network that would have learned the criteria would have 
+been more accurate and would have allowed for more accurate criteria.\\
+
+Based on the findings and limitations, future work could include the aforementioned suggestions for improvement.
+In addition, the work of a security architect for this process could be further automated by 
+having different data formats for the input files, such as XML, PDF, or image files, and generation of a report on the security of the architecture.\\
+
+Despite these limitations, our research has shown to be successful as the criteria, represented as a mathematical formula, 
+was able to closely replicate the evaluaiton of the security experts.\\
+
+Overall, this thesis has provided valuable understanding on how can different E/E architectures be rated based on their attack path feasibility,
+what architectural approach makes a network safer than others and how secure a vehicular network architecture is by using a criteria 
+calibrated by security experts.\\

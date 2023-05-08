@@ -10,6 +10,7 @@ it has also created new cybersecurity concerns.
 
 There are several types of components in a vehicle network, and in order to understand these and their security features,
 we will first elaborate on those and define certain terms in this chapter that will be used throughout this thesis.
+Throughout this thesis, we will use the term \textit{architecture} to describe a vehicular network architecture of ECUs and their connections.
 
 \section{Feasibility}
 \label{def:feasibility}
@@ -19,8 +20,8 @@ Normally, the term feasibility is used to describe the possibility of something 
 This applies to the term in this thesis as well, as we will use it to describe the likelihood of an attack to be successful.
 This means, a higher \textit{attack feasibility} means that an attack is more likely to be successful, while a lower \textit{attack feasibility} means that an attack is less likely to be successful.
 
-However, due to further factors used in this thesis, this thesis will also refer to the term of \textit{security feasibility}.
-This term is used to describe the rating of a component to be secure, i.e. the likelihood of an attack is unsuccessful.
+However, due to further factors used in this thesis, this thesis will also refer to the term of \textit{feasibility rating}
+which refers to the security feasibility of a component, i.e. the likelihood of an attack is unsuccessful.
 Architectures and their components will receive a security feasibility, which a higher rating means that the component is more secure, while a lower rating means that the component is less secure.
 The rating or score an architecture receives is similar to a benchmark that is used to compare the security of different architectures.
 The higher the score, the better the rating and the more secure the architecture is.
@@ -30,7 +31,7 @@ The higher the score, the better the rating and the more secure the architecture
 
 While architectures used in the automotive industry are complex, with sometimes up to 150 ECUs in one model, 
 the architectures used in this thesis were sized down to a more manageable size, with 20 ECUs for each architecture.
-Each architecture was modeled using these components:
+Each architecture was represented as a graph and was modeled using these components:
 
 \begin{itemize}
 
@@ -44,10 +45,8 @@ Each architecture was modeled using these components:
     
     \item \textbf{Interfaces}: The interfaces are the connections between the ECUs and the external world. They are the connections between the ECUs and the bus systems. The possible interfaces are \textit{Bluetooth, WiFi,} and \textit{GNSS}.
     
-    \item \textbf{Attack feasibility}
+    \item \textbf{Attack \nameref{def:feasibility}}
     
-    Each component of the architecture (ECU, bus system, interface) has its own rating for its attack feasibility.
-
 \end{itemize}
 
 Using the scale mentioned in \ref{sec:config} for each component, a higher rating means that the component is more secure, i.e. might have more security mechanisms in place,
@@ -58,11 +57,11 @@ This subsection will further explain some the aforementioned components as well 
 \begin{itemize}
     \item \textbf{\gls{ecu}}: An ECU is an embedded system in an automotive system that cotrnols various systems in the vehicle.
     ECUs are typically connected to each other using a bus system, enabling communication between the each other.
+    Over the years, vehicles have become more and more complex, and thus the number of ECUs has increased.
     Since each ECU has an individual task, whose criticality varies, the attack feasibility of an ECU is based on the criticality of the task it performs.
-    Thus, each ECU will have an own attack feasibility. 
     For example, the Engine Control Unit (ECU) is responsible for the engine, and thus is a critical ECU, 
     whereas the SEAT ECU, that are responsible for the seats in a vehicle, are not as critical.
-    Over the years, vehicles have become more and more complex, and thus the number of ECUs has increased.
+    For simplicity, the ECUs and their feasbility rating in this thesis are divided into three as seen in \ref{table:ecu_rating:ecu}.
     
     \item \textbf{\gls{can}}: CAN a communication protocol utilized in modern vehicles and industrial applications 
     to enable devices and microcontrollers to communicate with one another. 
@@ -160,5 +159,3 @@ However, based on experts' experience, these values were given each component:
     \end{tabular}
     \caption{Ranking of ECUs based on security}
 \end{table}
-
-Note: the higher the rating, the more secure the technology is.
