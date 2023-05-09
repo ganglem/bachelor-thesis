@@ -1,6 +1,6 @@
 
 Ranking for Option 0
-Weights: [1, 4, 32]
+Weights: [0, 4, 32]
 1. Architecture 10: 212.25
 2. Architecture 8: 74.15
 3. Architecture 6: 73.73

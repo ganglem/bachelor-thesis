@@ -64,8 +64,8 @@ def load_files(folder_path: str, file_extension: str) -> list:
 
         # save the file paths in a list
         file_paths = glob.glob(os.path.join(folder_path, f"*.{file_extension}"))
-        for file_path in file_paths:
-            print(f"Successfully saved file from file path: {file_path}")
+        #for file_path in file_paths:
+            #print(f"Successfully saved file from file path: {file_path}")
         break
 
     return file_paths
@@ -86,7 +86,7 @@ def load_json(file_name: str) -> dict:
     try:
         with open(file_name) as json_file:
             j = json.load(json_file)
-            print(f"Successfully loaded JSON file: {file_name}")
+            #print(f"Successfully loaded JSON file: {file_name}")
             return j
     except FileNotFoundError as e:
         raise FileNotFoundError(f'Error loading JSON file {file_name} : {e}')

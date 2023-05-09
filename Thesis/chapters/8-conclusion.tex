@@ -1,46 +1,69 @@
 \chapter{Conclusion}
 \label{chp:conclusion}
 
-In this thesis we have explored the security of automotive network architectures.\\\par
+In this thesis, we have embarked on an in-depth investigation into the safety measures of automotive network designs.\\
 
-We have done this by first researching the current state of the art in automotive network security,
-finding that the current state of the art is lacking in the area of security evaluation.
-To fill this gap, we have developed a new method for evaluating the security of automotive network architectures.
-We conducted a survey to find out what factors are important for security architects when evaluating an architecture,
-and used these factors to develop a criteria that can be used to evaluate the security of an architecture.
-A tool helped us to automate the evaluation of architectures, by automatically generating model-based architectures,
-finding their most feasibile attack path and calculating their security feasibility by applying the criteria.\\
+Our first step was to explore the present state of automotive network security, 
+where we identified a significant shortfall in the evaluation of security measures. 
+To address this issue, we devised an innovative method to gauge the security of automotive network designs.\\
 
-Key findings showed that the most important factors for security architects are the attack path feasibility,
-hops between entry points and targets, isolation of \gls{ecu} on a bus, and the presence and influence of a \gls{cgw},
-as well as the amount and distribution of entry points actross a network architecture.\\
+We conducted a comprehensive survey to discern what security architects consider crucial when evaluating a network's architecture. 
+These factors were then used to create a set of criteria for assessing the security of a network's architecture. 
+To streamline this process, we designed a tool that would automate the evaluation process by generating model-based architectures, 
+identifying their most plausible attack path, and calculating their security feasibility based on the established criteria.\\
 
-The results and findings of this thesis can be used to aid security architects in their evaluation 
-and conception of future automotive network architectures by also providing a 
-tool that automoizes the process of graph generation, attack path finding, evaluation, and comparison of architectures.\\\par
+The survey's findings indicated that the most critical aspects for security architects were the attack path's feasibility, 
+the number of hops between entry points and targets, the isolation of ECUs on a bus, 
+the presence and impact of a CGW, and the quantity and distribution of entry points across a network's architecture.
 
-Despite providing valuable insights into the security of automotive network architectures,
-this thesis is not without its limitations.\\
+This thesis has introduced an approach to evaluating the security of various automotive architectures. 
+By establishing a set of factors deemed essential to the overall security of the architecture, 
+we formulated a mathematical equation that provides a measurable security score.
 
-The criteria is based on the opinions of a small pool of security experts.
-More security experts should be consulted to further validate the criteria.\\
-In addition, the architectures in the training set as well as the training set itself used for the survey was small.
-A larger training set would have provided more data to work with, and would have allowed for a more accurate criteria.
-More accurate and architectures actually used in the automotive industry would have also been beneficial, as out 
-architectures were kept small and simple.
-This was done to keep the conception and survey short and simple, but it would have been interesting to see how the criteria would have
-performed on more complex architectures.\\
-Another limitation was the way the criteria was developed and calibrated.
-Using machine learning to build a neural network that would have learned the criteria would have 
-been more accurate and would have allowed for more accurate criteria.\\
+This equation takes into account aspects such as the architecture's feasibility, the attack path's feasibility, 
+the CGW's presence and impact, the number of hops, isolation of ECUs, and the quantity of interfaces or entry points. 
+Each of these factors was thoughtfully selected based on an understanding of vehicle architecture and the potential threats it could face.
 
-Based on the findings and limitations, future work could include the aforementioned suggestions for improvement.
-In addition, the work of a security architect for this process could be further automated by 
-having different data formats for the input files, such as XML, PDF, or image files, and generation of a report on the security of the architecture.\\
+Balancing these various factors posed one of the most significant challenges in this endeavor. 
+We addressed this by i an iterative processes and expert opinion comparisons and
+we managed to find an optimal weight assignment for each factor in the equation.
 
-Despite these limitations, our research has shown to be successful as the criteria, represented as a mathematical formula, 
-was able to closely replicate the evaluaiton of the security experts.\\
+The resulting model is a robust and adaptable tool for evaluating the security of automotive architectures. 
+Its accuracy was confirmed through comparisons with expert rankings, showing a strong correlation. 
+Despite some discrepancies in the rankings, the model's results were consistent with the experts' opinions.
 
-Overall, this thesis has provided valuable understanding on how can different E/E architectures be rated based on their attack path feasibility,
-what architectural approach makes a network safer than others and how secure a vehicular network architecture is by using a criteria 
-calibrated by security experts.\\
+The model's versatility is a critical component of our work. 
+It can accommodate different vehicle architectures, attack strategies, 
+and technological advancements by adjusting the weights of the factors in the equation. 
+This makes the model applicable in various contexts and future scenarios.
+
+Furthermore, the model's quantitative nature provides a clear and objective measure of security, 
+which is a valuable tool for engineers and designers in the field. 
+It allows for quick evaluation of different design proposals and identification of the most secure ones.\\
+
+Despite providing valuable insights into automotive network architectures' security, the thesis has its limitations.
+While we believe this model significantly contributes to vehicle architecture security, we acknowledge its imperfections. 
+As demonstrated in our evaluation, there are instances where the model's results deviate from expert opinion, 
+pointing to areas where the model could be refined.
+
+Furthermore, the criteria are based on a small pool of security experts' opinions, 
+indicating a need for further validation by consulting more security experts. 
+Additionally, a larger training set would have provided more data, allowing for more accurate criteria. 
+It would also have been beneficial to use more accurate architectures used in the automotive industry, 
+even though our architectures were kept simple for the sake of concept and survey simplicity. 
+Observing how the criteria would perform on more complex architectures could provide interesting insights.
+
+Another limitation lay in the development and calibration of the criteria. 
+Employing machine learning to construct a neural network that would learn the criteria might have 
+yielded more accurate results and allowed for the creation of more precise criteria.
+
+Regarding future work, improvements could include the suggestions mentioned above. 
+The role of a security architect could be further automated in this process by accepting various data formats for input files, 
+such as XML, PDF, or image files, and generating a report on the architecture's security.\\
+
+In spite of these limitations, our research has proven successful as the criteria, 
+represented as a mathematical formula, closely replicated the security experts' evaluations.
+
+This thesis has provided valuable insights into the evaluation of different E/E architectures based on their attack path feasibility, 
+determining which architectural approach makes a network safer, and quantifying a vehicular network architecture's security using expert-calibrated criteria.
+Overall, the research serves as a significant contribution to the understanding of vehicular network architecture security.

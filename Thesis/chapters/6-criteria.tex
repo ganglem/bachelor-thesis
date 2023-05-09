@@ -1,13 +1,13 @@
 \chapter{Criteria for Evaluation}
 \label{chp:criteria}
 
-Just as there are many ways to evaluate an architecture, there are many ways to a general criteria for this thesis.
-Similar to \cite{threat_surf}, we decided to approach the criteria as a mathematical equation that can be applied to every architecture equally.
-This equation takes into account the architecture feasibility, attack path feasibility, presence and influence of a \acrshort{cgw},
-amount of hops, isolation of \acrshort{ecu}s and amount of interfaces/entry points.\\
+Just as there are many ways to evaluate an architecture, there are many ways to come to criteria for this thesis.
+Similar to \cite{threat_surf}, we approached the criteria as a mathematical equation that can be applied equally to every architecture.
+This equation considers the architecture feasibility, attack path feasibility, presence and influence of a \acrshort{cgw},
+amount of hops, isolation of \acrshort{ecu}s, and amount of interfaces/entry points.\\
 
-Finding the most fitting equation was done in a manual, brute-force like attempt.
-The following chapter will describe the equation, the factors that are taken into account, and the reasoning behind them.\\
+Finding the most fitting equation was done in a manual, brute-force-like attempt.
+The following chapter will describe the equation, the factors considered, and the reasoning behind them.\\
 
 \section{Equation factors}
 \label{sec:equation_factors}
@@ -22,25 +22,25 @@ We define a set of architectures $\mathit{A}$, where each architecture $a$ has a
 
 \hfill \break
 
-Next, we define the factors that are taken into account for the equation.\\
+Next, we define the factors that are considered for the equation.\\
 
-Since the Bellman-Ford algorithm finds and takes the lowest weighted attack path, i.e. the least secure one, 
-a high score for this path means the most feasibile path receives a high security rating.
-Multiplying the feasibility of each attack path with the amount of hops it has, we also take into account the amount of hops in each attack path.
+Since the Bellman-Ford algorithm finds and takes the lowest weighted attack path, i.e., the least secure one, 
+a high score for this path means the most feasible path receives a high security rating.
+Multiplying the feasibility of each attack path with the number of hops it has, we also consider the number of hops in each attack path.
 The more hops there are, the better.
 This is because the more hops there are, the more \acrshort{ecu}s there are to compromise, 
-and the more \acrshort{ecu}s there are to compromise, the more likely it is that the attacker will be hindered to reach the target \acrshort{ecu}.\\
+and the more \acrshort{ecu}s there are to compromise, the more likely the attacker will be hindered from reaching the target \acrshort{ecu}.\\
 We calculate the architecture feasibility $feasibility_{a}$ by multiplying the feasibility of each attack path $feasibility_{p}$ with the amount of hops $hops_{p}$ in each attack path:
 \begin{equation}
-    feasibility_{a} := \sum_{p} feasibility_{p} * hops_{p} * cgw_{a} \label{eq:feasibility}
+    feasibility_{a} := \sum_{p} feasibility_{p} cdot  hops_{p} cdot  cgw_{a} \label{eq:feasibility}
 \end{equation}
 
 \hfill \break
 
 The \acrshort{cgw} also plays a role in the security of an architecture.
-As mentioned before, the benefit of a \acrshort{cgw} is dependent on whether it is present, an entry point, and or a target.
-A \acrshort{cgw} is beneficial if it is present, but not an entry point or a target.
-The \acrshort{cgw} factor is 1 by default, and is then decreased by 0.15 if the \acrshort{cgw} is not present,
+As mentioned before, the benefit of a \acrshort{cgw} depends on whether it is present, an entry point, or a target.
+A \acrshort{cgw} is beneficial if it is present but not an entry point or a target.
+The \acrshort{cgw} factor is 1 by default and is then decreased by 0.15 if the \acrshort{cgw} is not present,
 by 0.1 if the \acrshort{cgw} is an entry point, and by 0.05 if the \acrshort{cgw} is a target.
 This reflects the opinion of the security experts.\\
 To include the influence of a \acrshort{cgw}, we define the \acrshort{cgw} factor $cgw_{a}$ as follows:\\
@@ -56,9 +56,9 @@ To include the influence of a \acrshort{cgw}, we define the \acrshort{cgw} facto
 
 \hfill \break
 
-In this thesis we define \textit{hops} in an attack path as the amount of \textit{$\acrshort{ecu}s - 1$} in the path from entry point to target.
-The interface itself does not count as a hop, only the entry point, i.e. if the entry point is also the target, the amount of hops is 0.
-To later norm the amount of hops, we set the hops factor $hops_{a}$ as follows:\\
+In this thesis, we define \textit{hops} in an attack path as the amount of \textit{$\acrshort{ecu}s - 1$} in the path from an entry point to a target.
+The interface itself does not count as a hop, only the entry point, i.e., if the entry point is also the target, the amount of hops is 0.
+To later norm the number of hops, we set $hops_{a}$ as follows:\\
 \begin{equation}
     hops_{a} := \sum_{p} hops_{p} \label{eq:hops}
 \end{equation}
@@ -72,9 +72,9 @@ Isolation of an architecture is defined as the amount of \acrshort{ecu}s per bus
 
 \hfill \break
 
-And lastly, we define the amount of entry points as the interfaces factor $interfaces_{a}$:\\
+And lastly, we define the number of entry points as the interfaces factor $entrypoints{a}$:\\
 \begin{equation}
-    entrypoints_{a} := \text{total amount of entry points in } a \label{eq:interfaces}
+    entrypoints_{a} := \text{total amount of entry points in } a \label{eq:entrypoints}
 \end{equation}
 
 \section{Equation}
@@ -83,60 +83,84 @@ And lastly, we define the amount of entry points as the interfaces factor $inter
 Iterating over each of the ten architectures, their factors were given a weight and were then arranged in different mathematical operations.
 These weights were iterated from factors between 0 and 100, resulting in millions of combinations for every attempted equation.
 Each combination of the ten architectures using the same weights was then represented as a ranked table. 
-In the end, the weights of the tables which had the smallest eucledian distance to the survey table \ref{table:survey} were taken into consideration.
-There were hundreds of feasible weight combinations, and in the end the smallest possible weights were chosen.
+In the end, the weights of the tables with the smallest Euclidean distance to the survey table \ref{table:survey} were considered.
+There were hundreds of feasible weight combinations, and ultimately, the smallest possible weights were chosen.
 
 Finding an equation that fit the criteria was a step-by-step progress.
-In genreal, we asked ourselves the questions:\\
+In general, we asked ourselves the questions:\\
 \textit{Which of the factors is it favorable to have more of?} and \textit{Which of the factors is it unfavorable to have more of?}\\
 
-Let's consider any one architecture:\\
-It is clear that a high architecture feasibility score and a high number of hops in each attack path is the most desirable.
-To get the architecture feasibility, each attack path feasibility is multiplied by the amount of hops it has \ref{eq:feasibility}.
-We know that the more difficult the path, the more secure the architecture and the more hops there are in a path, the more difficult it is to reach the target \acrshort{ecu}.\\
-This is then muplitplied by the \acrshort{cgw} factor \ref{eq:cgw}.\\
+Let us consider any one architecture:\\
+The most desirable is a high architecture feasibility score and many hops in each attack path.
+To get the architecture feasibility, each attack path feasibility is multiplied by the number of hops it has \ref{eq:feasibility}.
+We know that the more difficult the path, the more secure the architecture, and the more hops there are in a path, the more difficult it is to reach the target \acrshort{ecu}.\\
+This is then multiplied by the \acrshort{cgw} factor \ref{eq:cgw}.\\
 To get a reasonable rating score, the product of the feasibility and \acrshort{cgw} factor are multiplied by 100.\\
 
 Next, we consider the factors that are unfavorable to have more of.\\
-The isolation of an architecture, i.e. the amount of \acrshort{ecu}s per bus, is unfavorable to have more of.
+The isolation of an architecture, i.e., the amount of \acrshort{ecu}s per bus, is unfavorable to have more of.
 This is because the more \acrshort{ecu}s there are per bus, the more \acrshort{ecu}s there are to compromise on one bus.
-Taking a look back at \nameref{fig:architecture6}, which received a good rating, we can deduce that the more isolated the \acrshort{ecu}s are, the better.\\
+Looking back at \nameref{fig:architecture6}, which received a good rating, we can deduce that the more isolated the \acrshort{ecu}s are, the better.\\
 The amount of interfaces is also unfavorable to have more of.
-In this case, we only take into account the amount of entry points, and not the amount of total interfaces.
-Doing so, we are able to differentiate between one \acrshort{ecu} with many interfaces and many \acrshort{ecu}s with one interface since more entry points are also likely more spread out.
-Combining entry points and the amount of hops, we can deduce whether the entry points are secluded or spread out.
-High hops most likely means that the entry points are all grouped together, and low hops means that the entry points are spread out.\\
+In this case, we only consider the number of entry points and not the number of total interfaces.
+Doing so, we can differentiate between one \acrshort{ecu} with many interfaces and many \acrshort{ecu}s with one interface since more entry points are also likely more spread out.
+Combining entry points and the number of hops, we can deduce whether the entry points are secluded or spread out.
+High hops most likely mean that the entry points are all grouped, and low hops mean that the entry points are spread out.\\
 
 In the end, we receive the following equation:\\
 \begin{equation}
-    rating_{a} := \frac{100 * feasibility_{a} * cgw_{a}}{hops_{a}*w_{1} + isolation_{a}^{w_{2}} + interfaces_{a}*w_{3}} \label{eq:rating}\\\\
+    rating_{a} := \frac{100 cdot  feasibility_{a} cdot  cgw_{a}}{hops_{a}cdot w_{1} + isolation_{a}^{w_{2}} + entrypoints_{a}cdot w_{3}} \label{eq:rating}\\\\
 \end{equation}
 
 \hfill \break
 
-To figure out the weights $w_{1}$, $w_{2}$, and $w_{3}$, we iterated over the factors from 0 to 100 for each architecture.
-Each permutation was then ranked, and the weights of the permutations that had the smallest eucledian distance to the survey table \ref{table:survey} were taken into consideration.
-In the end, the permutation with the smallest weights was chosen, however, the other options were possible as well, 
-as the resulting scores did not differ much in terms of how close an architecture is ranked.
-$w_{1}$ was chosen to be 1, $w_{2}$ was chosen to be 4, and $w_{3}$ was chosen to be 32.\\
+In order to determine the optimal weights $w_{1}$, $w_{2}$, and $w_{3}$, we carried out iterations over the factors ranging from 0 to 100 for each architectural model. 
+Every permutation was subsequently ranked, and the weights of the permutations that were closest to the survey table \ref{table:survey} in terms of Euclidean distance were taken into account. 
+Eventually, we selected the permutation with the smallest weights. However, other options were also plausible since their scores were relatively close in terms of how the architecture was ranked. 
+We assigned 1 to $w_{1}$, 4 to $w_{2}$, and 32 to $w_{3}$.
 
-Notice how $w_{2}$ is an exponent, and not a multiplication.
-It did start out as one, but during our testing we found that the best results were achieved with the weight being 99,
-indicating that the isolation factors plays a more important role than the other factors and initially believed, and therefore decided to make it an exponent.
-We experimented with omitting $w_{1}$ completely, as the weight is only 1, however, results were not as good as with $w_{1}$ included.
-For example, the score discrepancy between \nameref{fig:architecture10} and the other architectures was much higher without $w_{1}$ included,
-\nameref{fig:architecture8} would be ranked higher than \nameref{fig:architecture3} and \nameref{fig:architecture6} 
-which did not represent the survey results. 
-We concluded that including the total hops was necessary to get the desired results.\\
-Weighing the entry points factor more, gave similar results, however, \nameref{fig:architecture6} was ranked 
-much lower in this case compared to the desired results.
-Weighing it less, however, gave completely different and undesired results, with \nameref{fig:architecture4} being ranked
-as one of the most secure architectures instead of one of the least secure, and \nameref{fig:architecture8} being evaluated
-as one of the least secure ones. Looking at \ref{table:survey}, this is exactly the opposite of what we want.\\
+We multiplied the \acrshort{cgw} factor with the architectural feasibility score because it impacts the overall architecture, rather than just a specific attack path or factor. 
+It is already weighted, and the weights are calibrated in a way that it influences the feasibility of the architecture without overshadowing it. 
+Trials involving subtraction and modifications of the \acrshort{cgw} led to impractical results, as it would either become too dominant over the other factors or not considered sufficiently. 
+Architectures without a \acrshort{cgw} factor ranked significantly lower or not low enough. 
+This holds true for architectures with no \acrshort{cgw} but other compensatory advantages, when compared to architectures with an entry point \acrshort{cgw}, such as \nameref{fig:architecture2}.
+
+Looking first at the nominator only and not regarding the denominator, results vary drastically, from the desired outcome.
+\nameref{fig:architecture4} would be ranked fourth, and in contrast \nameref{fig:architecture6} would be among the last,
+with \nameref{fig:architecture8} even scoring last place.
+\nameref{fig:architecture3} however, scores second place, long beind \nameref{fig:architecture10} in first place.
+Even though this is not ideal it is a good start, bt the denominator is definitely needed to get a better result.
+
+We considered the possibility of entirely excluding $w_{1}$ since its weight is only 1. 
+However, the inclusion of $w_{1}$ produced better results. For instance, without $w_{1}$, the score gap between \nameref{fig:architecture10} and other architectures was much wider, 
+leading to \nameref{fig:architecture8} ranking higher than \nameref{fig:architecture3} and \nameref{fig:architecture6}, which didn't align with the survey results. 
+There is a limit to how large this factor can be; testing with a higher weight for $w_{1}$ is illogical, as it would imply that an increase in hops leads to a poorer architecture, 
+which is contrary to our understanding. Initially, we introduced the factor to normalize the hops for each architecture. 
+We concluded that the inclusion of total hops with a low weight of 1 was necessary to yield the desired results.
+
+Initially, $w_{2}$ was intended to serve as a standard multiplication factor like others in our model. 
+However, during the course of our tests, we found that the most optimal results were achieved when the weight was set at 99. 
+This suggested that the isolation factor had a more significant influence on the outcomes than initially anticipated. 
+Therefore, we decided to transform it into an exponent to better represent its significance.
+\nameref{fig:architecture6} displayed the highest isolation factor and, interestingly, also ranked top in our survey results. 
+Its strength lay in the effective isolation of the \acrshort{ecu}s. 
+We came to the conclusion that the isolation factor should be accorded a higher weight in our ranking to reflect its importance. 
+Otherwise, its effectiveness wouldn't be sufficiently recognized in the ranking.
+However, the challenge was that increasing the weight for the isolation factor would lead to a larger denominator in our calculations. 
+This, in turn, could overpower the numerator, resulting in undesirable outcomes. 
+For instance, some architectures might end up with a score of zero due to this imbalance.
+
+The entry point factor holds a significant sway on the overall assessment and comparison of the architectures. 
+If this factor is not considered, \nameref{fig:architecture4} lands in the middle of the ranking, 
+which contradicts the survey results. Furthermore, without it, \nameref{fig:architecture8}
+would be deemed extremely unsecure, placing second from the bottom. 
+If we were to assign a higher weight to this factor, it would result in a lower score for \nameref{fig:architecture6}, 
+but it would not change the other architectures significantly.
+
 
 \label{sec:calibration}
 
-The resulting table had an eucledian distance of 6 to the survey table \ref{table:survey}, which was the best result out of all the permutations, and looked as follows:\\
+The resulting table had a Euclidian distance of 6 to the survey table \ref{table:survey}, which was the best result out of all the permutations, and looked as follows:\\
 
 \begin{table}[h]
     \label{table:testcriteriaresults}
@@ -160,7 +184,7 @@ The resulting table had an eucledian distance of 6 to the survey table \ref{tabl
     \end{tabular}
 \end{table}
 
-As we can see, the table is very similar to the survey table \ref{table:survey}, with the eucledian distance being 6.
+As we can see, the table is very similar to the survey table \ref{table:survey}, with the Euclidean distance being 6.
 The architectures that received the best rating, which were 
 \nameref{fig:architecture10}, \nameref{fig:architecture3}, \nameref{fig:architecture8}, and \nameref{fig:architecture6} 
 also being the ones that were ranked the highest,
@@ -172,33 +196,34 @@ We were able to replicate the order of architectures \ref{fig:architecture3}, \r
 Looking at their feasibility score, it is evident that their rating was very close to each other, just like the security experts' opinions.
 Concentrated entry points were an advantage of \nameref{fig:architecture3} and \ref{fig:architecture8}, 
 however the \acrshort{cgw} being the entry point in \nameref{fig:architecture8} is what made it rank below \nameref{fig:architecture3}.
-In contrast, \nameref{fig:architecture6}'s strong isolaiton is what made it rank high.
-This distribution let's us consider this rating a success.\\
+In contrast, \nameref{fig:architecture6}'s strong isolation is what made it rank high.
+We consider this distribution of this rating a success.\\
 
 \nameref{fig:architecture10} ranked first in our table, which was not the case in the survey table \ref{table:survey}.
-This is due to the entry points being isolated, the \acrshort{cgw} only being a target and not an entry point, 
-and the amount of hops being high, as no interface shares an \acrshort{ecu} with another interface.
-The priorities of the security experts are in fact reflected in this architecture, and
-strictly sticking to the criteria, \nameref{fig:architecture10} is the best architecture by far.
-The opinion was not shared by the security experts, ranking it fourth, but this opinion was also surprising to us.\\
+This is due to the isolated entry points, the \acrshort{cgw} only being a target and not an entry point, 
+and the number of hops being high, as no interface shares an \acrshort{ecu} with another interface.
+The priorities of the security experts are reflected in this architecture, and
+strictly sticking to the criteria, \nameref{fig:architecture10} is the best.
+The opinion was not shared by the security experts, ranking it fourth, but it was also surprising.\\
 
 \nameref{fig:architecture2} is correctly ranked above \nameref{fig:architecture1} and \nameref{fig:architecture5}..
-Though it is missing the \acrshort{cgw}, the CGW in \ref{fig:architecture1} is an entry point, which is more unfavorable, as it reduces the amount of total hops.
+Though it is missing the \acrshort{cgw}, the CGW in \ref{fig:architecture1} is an entry point, which is more unfavorable, as it reduces the number of total hops.
 \ref{fig:architecture5} uses Ethernet only, which has a higher security rating than CAN, thus placing above \ref{fig:architecture1}.\\
-The result is interesting because the architectures are the same with one key difference each, thus we are able to exactly see the priorities of the security experts
-as reflected with the criteria.
-\ref{fig:architecture5} and \ref{fig:architecture1} ranked close to each other, thus we consider this result a success.\\
+The result is interesting because the architectures are the same with one key difference each. Thus we can see the priorities of the security experts
+as reflected in the criteria.
+\ref{fig:architecture5} and \ref{fig:architecture1} ranked close to each other. Thus we consider this result a success.\\
 
-Unfortunately, we were not able to replicate the low ranking of \ref{fig:architecture4}.
-As our criteria weighs the isolation factor the most out of all the factors, it is understandable that \ref{fig:architecture7} is placed last,
+Unfortunately, we could not replicate the low ranking of \ref{fig:architecture4}.
+As our criteria weighs isolation the most out of all the factors, it is understandable that \ref{fig:architecture7} is placed last,
 even though it is placed third in the survey.
 Isolation in this architecture was intentionally removed, with every \acrshort{ecu}s having to share the bus with every \acrshort{ecu} using the same bus technology.
 It is surprising to see that \nameref{fig:architecture4} ranked much better than \ref{fig:architecture9} and even \ref{fig:architecture7}.
 \ref{fig:architecture9} and \ref{fig:architecture4} are the same, except for the presence of the \acrshort{cgw} in \ref{fig:architecture4}.
-However, this does reflect the opinion of some security experts that having a CGW is better than having none, if it is not an entry point.\\
+However, this reflects some security experts' opinion that having a CGW is better than having none if it is not an entry point.\\
 
-To summarize, we were able to choose a criteria and according weights in such a way that the resulting table was very similar to the survey table \ref{table:survey}.
-The criteria was constructed so that the priorities of the security experts were reflected, 
+To summarize, we were able to choose criteria and according weights in such a way that the resulting table 
+was very similar to the survey table \ref{table:survey}.
+The criteria were constructed so that the priorities of the security experts were reflected, 
 and the weights were chosen so that the resulting table was as close to the survey table as possible.
 Though \nameref{fig:architecture10} and \ref{fig:architecture4} were the only major exceptions, 
-we find that the results, and thus the criteria, are nevertheless valid.\\
+we find that the results, and thus our criteria equation, is nevertheless valid.\\

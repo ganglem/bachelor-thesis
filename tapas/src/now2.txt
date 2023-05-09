@@ -1,0 +1,14 @@
+
+Ranking for Option 0
+Weights: [1, 0, 32]
+1. Architecture 10: 223.62
+2. Architecture 8: 139.65
+3. Architecture 3: 80.2
+4. Architecture 2: 78.9
+5. Architecture 6: 64.24
+6. Architecture 5: 59.78
+7. Architecture 1: 58.13
+8. Architecture 4: 54.86
+9. Architecture 7: 54.06
+10. Architecture 9: 41.12
+Option 0: 7

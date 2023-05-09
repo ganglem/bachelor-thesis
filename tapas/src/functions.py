@@ -117,7 +117,7 @@ def get_ext_int(architecture: dict) -> int:
     for sub in prep_arch:
         prep_interfaces.append(sub[1:])
 
-    print("[DEBUG] PREP INTERFACES:", prep_interfaces)
+    #print("[DEBUG] PREP INTERFACES:", prep_interfaces)
     for sub in prep_interfaces:
         total_amount += len(sub)
 
@@ -148,8 +148,8 @@ def get_avg_ecus(architecture) -> int:
         else:
             ecus += len(bus)
 
-    print("[DEBUG] ECUS:", ecus)
-    print("[DEBUG] BUSES:", len(buses))
+    #print("[DEBUG] ECUS:", ecus)
+    #print("[DEBUG] BUSES:", len(buses))
 
     avg = ecus/len(buses)
 
@@ -212,7 +212,7 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     # test
     test_interfaces = avg_interfaces
 
-    print("[DEBUG] TEST INTERFACES:", test_interfaces)
+    print("[DEBUG] NO INTERFACES:", test_interfaces)
 
     cgw_count = 0
 
@@ -232,7 +232,7 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
         print("true3")
 
     print("[DEBUG] CGW:", cgw)
-    print("[DEBUG] interfaces:", interfaces)
+    #print("[DEBUG] interfaces:", interfaces)
 
     for entry_ecu in entry_points:
         entry_ecu_name = entry_ecu["name"]
@@ -263,7 +263,7 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 
     w1 = 1
     w2 = 4
-    w3 = 32
+    w3 = 500
 
     numerator = (100 * (original_architecture_feasibility * cgw))
     denominator = (total_hops * w1 + (isolation ** w2) + test_interfaces * w3)
@@ -298,7 +298,7 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 def get_criteria(finals, weights):
     ranking = dict(sorted(finals.items(), key=lambda item: item[1], reverse=True))
 
-    output_file = "./best_naming_set16.txt"
+    output_file = "./highw3.txt"
 
     with open(output_file, 'w') as f:
 
