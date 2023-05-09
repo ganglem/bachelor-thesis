@@ -85,26 +85,41 @@ This function takes three arguments as input:
 The function processes this input to create a directed graph \texttt{(nx.DiGraph())} 
 that represents the system's architecture and computes the feasibility between various nodes (\acrshort{ecu}s). 
 It returns the generated graph, a list of entry points, and a list of target \acrshort{ecu}s.
-\begin{itemize}
-    \item \texttt{architecture}: a list of buses, where each bus contains information about its type and the Electronic Control Units (\acrshort{ecu}s) connected to it.
-    \item \texttt{ecus\_config}: a list of \acrshort{ecu} configurations, containing information about each \acrshort{ecu}'s name, type, and feasibility.
-    \item \texttt{buses\_config}: a list of bus configurations, containing information about each bus's type and feasibility.  
-\end{itemize}
 
-The function goes through the following steps:
-\begin{enumerate}
-    \item Initialize empty lists for \texttt{entry\_points} and \texttt{target\_ecus}, 
-        and create dictionaries for \texttt{ecus\_config} and \texttt{buses\_config}.
-    \item Initialize an empty graph.
-    \item Extract the current bus type, bus feasibility, and a list of \acrshort{ecu}s on the current bus.
-    \item Iterate through each \acrshort{ecu} on the current bus, determine its type and feasibility, and append it to the 
-        appropriate list based on its type (entry, target, or both).
-    \item For each pair of \acrshort{ecu}s on the current bus, if the target \acrshort{ecu} is an interface, 
-        add an edge in the graph with the weight as the bus feasibility; 
-        otherwise, add an edge with the weight as the sum of bus feasibility and target \acrshort{ecu} feasibility.
-    \item Make the \texttt{entry\_points} list unique by removing duplicates and convert the \texttt{target\_ecus} list to a set (to remove duplicates).
-    \item Return the generated graph, the list of entry points, and the list of target \acrshort{ecu}s.
-\end{enumerate}
+\begin{algorithm}[h]
+    \caption{Generate Graph}
+    \label{alg:generate_graph}
+    \begin{algorithmic}[1]
+    \Procedure{generate\_graph}{$architecture, ecus\_config, buses\_config$}
+        \State $entry\_points \gets$ \Call{EmptyList}{}
+        \State $target\_ecus \gets$ \Call{EmptyList}{}
+        \State $G \gets$ \Call{nx.DiGraph}{}
+        \ForAll{$bus \in architecture$}
+            \State $bus\_type, bus\_feasibility, bus\_ecus \gets$ \Call{ExtractInfo}{$bus$}
+            \ForAll{$ecu \in bus\_ecus$}
+                \State $ecu\_type, ecu\_feasibility \gets$ \Call{ExtractInfo}{$ecu, ecus\_config$}
+                \If{$ecu\_type$ is $entry$ or $both$}
+                    \State \Call{Append}{$entry\_points, ecu$}
+                \EndIf
+                \If{$ecu\_type$ is $target$ or $both$}
+                    \State \Call{Append}{$target\_ecus, ecu$}
+                \EndIf
+                \ForAll{$target\_ecu \in bus\_ecus$}
+                    \If{$target\_ecu$ is interface}
+                        \State \Call{G.addEdge}{$ecu, target\_ecu, weight=bus\_feasibility$}
+                    \Else
+                        \State $target\_ecu\_feasibility \gets$ \Call{ExtractInfo}{$target\_ecu, ecus\_config$}
+                        \State \Call{G.addEdge}{$ecu, target\_ecu, weight=bus\_feasibility + target\_ecu\_feasibility$}
+                    \EndIf
+                \EndFor
+            \EndFor
+        \EndFor
+        \State $entry\_points \gets$ \Call{MakeUnique}{$entry\_points$}
+        \State $target\_ecus \gets$ \Call{Set}{$target\_ecus$}
+        \State \Return $G, entry\_points, target\_ecus$
+    \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
 
 \textit{Note: This is why it was easier to treat external interfaces as \acrshort{ecu}s as well as buses.
 Since we are looking for the shortest path for an interface type, not the \acrshort{ecu} using it, treating all interfaces
@@ -116,31 +131,36 @@ The function returns the generated graph, along with the entry \acrshort{ecu}s a
 This function is designed to find the feasibility and the shortest path from each entry \acrshort{ecu} 
 to each target \acrshort{ecu} in a given directed graph \texttt{(nx.DiGraph)}.
 
-The function takes three arguments as input:
-\begin{itemize}
-    \item \texttt{G}: A NetworkX directed graph representing the system architecture.
-    \item \texttt{entry\_points}: A list of dictionaries representing the entry points (\acrshort{ecu}s that can be used as starting points for an attack).
-    \item \texttt{target\_ecus\_names}: A list of strings representing the target \acrshort{ecu}s (\acrshort{ecu}s that the attack aims to reach).
-\end{itemize}
-
-The function returns a table (a dictionary) containing the feasibility and the shortest path from each entry \acrshort{ecu} to each target \acrshort{ecu}. 
-The table also contains the number of hops in the shortest path.
-The function goes through the following steps:
-
-\begin{enumerate}
-    \item Initialize an empty table with three keys: \texttt{feasibility}, \texttt{shortest\_path}, and \texttt{hops}. 
-        Each key corresponds to a nested dictionary.
-    \item Iterate through each entry point (\acrshort{ecu}) in the \texttt{entry\_points} list.
-    \item For each entry point, create nested dictionaries for \texttt{feasibility}, \texttt{shortest\_path}, and \texttt{hops} using the entry point's name as the key.
-    \item Iterate through each target \acrshort{ecu} in the \texttt{target\_ecus\_names} list.
-    \item For each entry-target \acrshort{ecu} pair, calculate the feasibility using the Bellman-Ford algorithm and add the entry point's feasibility.
-    \item Calculate the shortest path using the \texttt{nx.shortest\_path function}.
-    \item Store the calculated feasibility, shortest path, and the number of hops (length of the shortest path minus 2, or 0 if the length is less than 2) in the table.
-    \item Return the table containing the feasibility, shortest path, and the number of hops for each entry-target \acrshort{ecu} pair.
-\end{enumerate}
-
-The resulting table can be used to analyze the most feasible attack paths between various entry points and target \acrshort{ecu}s in the system's architecture.\\
-
+\begin{algorithm}[h]
+    \caption{Find Attack Path}
+    \label{alg:findattackpath}
+    \begin{algorithmic}[1]
+    \Procedure{FindAttackPath}{$G, entry\_points, target\_ecus\_names$}
+        \State $table \gets$ \Call{EmptyDict}{}
+        \State $table["feasibility"] \gets$ \Call{EmptyDict}{}
+        \State $table["shortest\_path"] \gets$ \Call{EmptyDict}{}
+        \State $table["hops"] \gets$ \Call{EmptyDict}{}
+        \ForAll{$entry \in entry\_points$}
+            \State $table["feasibility"][entry] \gets$ \Call{EmptyDict}{}
+            \State $table["shortest\_path"][entry] \gets$ \Call{EmptyDict}{}
+            \State $table["hops"][entry] \gets$ \Call{EmptyDict}{}
+            \ForAll{$target \in target\_ecus\_names$}
+                \State $table["feasibility"][entry][target] \gets$ \Call{BellmanFord}{$G, entry, target$}
+                \State $table["shortest\_path"][entry][target] \gets$ \Call{nx.shortest\_path}{$G, entry, target$}
+                \If{$\text{length}(table["shortest\_path"][entry][target]) \geq 2$}
+                    \State $table["hops"][entry][target] \gets \text{length}(table["shortest\_path"][entry][target]) - 2$
+                \Else
+                    \State $table["hops"][entry][target] \gets 0$
+                \EndIf
+            \EndFor
+        \EndFor
+        \State \Return $table$
+    \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+    
+The resulting table can be used to analyze the most feasible attack paths between 
+various entry points and target \acrshort{ecu}s in the system's architecture.\\
 
 Finally, \texttt{apply\_criteria} applies the \nameref{chp:criteria} to the table.
 Each architecture receives a feasibility score and the result can be interpreted as a benchmark for the architecture's security.\\
@@ -149,5 +169,39 @@ it is easy to rank and compare the results of different architectures, which the
 
 It is easy to extend the tool to support other criteria.\\
 
-Various \textit{I/O functions} take care of printing the results, saving them to an external file, or quickly saving the graph as an image file
+Various \textit{I/O functions} are responsible for printing the results, saving them to an external file, or quickly saving the graph as an image file
 and other \textit{helper functions} are used to simplify the code.
+
+Below is the implementation of the Bellman-Ford algorithm used in \texttt{\nameref{alg:findattackpath}}.
+
+The Bellman-Ford algorithm is a graph search algorithm that computes 
+the shortest paths from a single source vertex to all other vertices in a weighted graph.
+It is very similar to the Dijkstra algorithm, but it can work with negative edge weights.\\T
+Both algorithms are possible solutions to the our proble, but we chose the Bellman-Ford algorithm because it was mentioned in \cite{threat_surf}.
+
+\begin{algorithm}[h]
+    \caption{Bellman-Ford Algorithm}
+    \begin{algorithmic}[1]
+    \Procedure{BellmanFord}{$Graph, source$}
+        \ForAll{$vertex \in Graph.vertices$}
+            \State $distance[vertex] \gets \infty$
+            \State $predecessor[vertex] \gets \text{null}$
+        \EndFor
+        \State $distance[source] \gets 0$
+        \For{$i \gets 1$ to $|Graph.vertices| - 1$}
+            \ForAll{$edge \in Graph.edges$}
+                \If{$distance[edge.source] + edge.weight < distance[edge.target]$}
+                    \State $distance[edge.target] \gets distance[edge.source] + edge.weight$
+                    \State $predecessor[edge.target] \gets edge.source$
+                \EndIf
+            \EndFor
+        \EndFor
+        \ForAll{$edge \in Graph.edges$}
+            \If{$distance[edge.source] + edge.weight < distance[edge.target]$}
+                \State \Return "Graph contains a negative-weight cycle"
+            \EndIf
+        \EndFor
+        \State \Return $distance, predecessor$
+    \EndProcedure
+    \end{algorithmic}
+\end{algorithm}

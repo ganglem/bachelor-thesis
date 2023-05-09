@@ -56,6 +56,8 @@ To include the influence of a \acrshort{cgw}, we define the \acrshort{cgw} facto
 
 \hfill \break
 
+In this thesis we define \textit{hops} in an attack path as the amount of \textit{$\acrshort{ecu}s - 1$} in the path from entry point to target.
+The interface itself does not count as a hop, only the entry point, i.e. if the entry point is also the target, the amount of hops is 0.
 To later norm the amount of hops, we set the hops factor $hops_{a}$ as follows:\\
 \begin{equation}
     hops_{a} := \sum_{p} hops_{p} \label{eq:hops}
@@ -114,10 +116,24 @@ In the end, we receive the following equation:\\
 
 To figure out the weights $w_{1}$, $w_{2}$, and $w_{3}$, we iterated over the factors from 0 to 100 for each architecture.
 Each permutation was then ranked, and the weights of the permutations that had the smallest eucledian distance to the survey table \ref{table:survey} were taken into consideration.
-In the end, the permutation with the smallest weights was chosen, however, the other options were possible as well.
+In the end, the permutation with the smallest weights was chosen, however, the other options were possible as well, 
+as the resulting scores did not differ much in terms of how close an architecture is ranked.
 $w_{1}$ was chosen to be 1, $w_{2}$ was chosen to be 4, and $w_{3}$ was chosen to be 32.\\
 
-\section{Results - Criteria Calibration Results}
+Notice how $w_{2}$ is an exponent, and not a multiplication.
+It did start out as one, but during our testing we found that the best results were achieved with the weight being 99,
+indicating that the isolation factors plays a more important role than the other factors and initially believed, and therefore decided to make it an exponent.
+We experimented with omitting $w_{1}$ completely, as the weight is only 1, however, results were not as good as with $w_{1}$ included.
+For example, the score discrepancy between \nameref{fig:architecture10} and the other architectures was much higher without $w_{1}$ included,
+\nameref{fig:architecture8} would be ranked higher than \nameref{fig:architecture3} and \nameref{fig:architecture6} 
+which did not represent the survey results. 
+We concluded that including the total hops was necessary to get the desired results.\\
+Weighing the entry points factor more, gave similar results, however, \nameref{fig:architecture6} was ranked 
+much lower in this case compared to the desired results.
+Weighing it less, however, gave completely different and undesired results, with \nameref{fig:architecture4} being ranked
+as one of the most secure architectures instead of one of the least secure, and \nameref{fig:architecture8} being evaluated
+as one of the least secure ones. Looking at \ref{table:survey}, this is exactly the opposite of what we want.\\
+
 \label{sec:calibration}
 
 The resulting table had an eucledian distance of 6 to the survey table \ref{table:survey}, which was the best result out of all the permutations, and looked as follows:\\
