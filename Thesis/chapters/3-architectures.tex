@@ -4,13 +4,13 @@
 Similarly to a common network, a vehicle network is a system of electronic components and devices within a vehicle 
 that communicate with each other to perform different functions, such as engine performance, safety, entertainment, and navigation. 
 
-What started as a simple network of a few electronic control units (ECUs) has evolved into a complex network of ECUs,
+What started as a simple network of a few electronic control units (\gls{ecu}s) has evolved into a complex network of \gls{ecu}s,
 and while the evolution of these systems has resulted in improved vehicle efficiency and features, 
 it has also created new cybersecurity concerns.
 
 There are several types of components in a vehicle network, and in order to understand these and their security features,
 we will first elaborate on those and define certain terms in this chapter that will be used throughout this thesis.
-Throughout this thesis, we will use the term \textit{architecture} to describe a vehicular network architecture of ECUs and their connections.
+Throughout this thesis, we will use the term \textit{architecture} to describe a vehicular network architecture of \gls{ecu}s and their connections.
 
 \section{Feasibility}
 \label{def:feasibility}
@@ -29,21 +29,22 @@ The higher the score, the better the rating and the more secure the architecture
 \section{Components}
 \label{sec:components}
 
-While architectures used in the automotive industry are complex, with sometimes up to 150 ECUs in one model, 
-the architectures used in this thesis were sized down to a more manageable size, with 20 ECUs for each architecture.
+While architectures in the automotive industry are complex, often featuring up to 150 \gls{ecu}s in a single model, 
+this thesis will focus on more manageable examples, each consisting of 20 \gls{ecu}s
 Each architecture was represented as a graph and was modeled using these components:
 
 \begin{itemize}
 
-    \item \textbf{ECUs}: The different ECUs in the architecture. They are the nodes of the graph.
+    \item \textbf{\gls{ecu}s}: The different \gls{ecu}s in the architecture. They are the nodes of the graph.
     
-    \item \textbf{Entry points}: The entry points to the architecture. The only possible entries are the external interfaces that an ECU might have.
+    \item \textbf{Entry points}: The entry points to the architecture. The only possible entries are the external interfaces that an \gls{ecu} might have.
     
-    \item \textbf{Targets}: ECUs that are considered targets for an attacker. They are targets because they contain sensitive data or because they are critical for the vehicle's functionality.
+    \item \textbf{Targets}: \gls{ecu}s that are considered targets for an attacker. They are targets because they contain sensitive data or because they are critical for the vehicle's functionality.
     
-    \item \textbf{Bus systems}: ECUs are connected to each other using bus systems. The bus systems are the edges in the graph. The possible bus systems are \textit{CAN, CANFD, LIN, FlexRay, MOST} and \textit{Ethernet}.
+    \item \textbf{Bus systems}: \gls{ecu}s are connected to each other using bus systems. The bus systems are the edges in the graph. The possible bus systems are \textit{\gls{can}, \gls{canfd}, \gls{lin}, \gls{flexray}, \gls{most}} and \textit{Ethernet}.
     
-    \item \textbf{Interfaces}: The interfaces are the connections between the ECUs and the external world. They are the connections between the ECUs and the bus systems. The possible interfaces are \textit{Bluetooth, WiFi,} and \textit{GNSS}.
+    \item \textbf{Interfaces}: The interfaces are the connections between the \gls{ecu}s and the external world. They are the connections between the \gls{ecu}s and the bus systems. 
+    The possible interfaces are \textit{Bluetooth}, \textit{WiFi}, and \textit{\gls{gnss}}.
     
     \item \textbf{Attack \nameref{def:feasibility}}
     
@@ -55,41 +56,50 @@ This also indicated that the higher the overall rating one architecture receives
 This subsection will further explain some the aforementioned components as well as their attack feasibility based on their attributes.
 
 \begin{itemize}
-    \item \textbf{\gls{ecu}}: An ECU is an embedded system in an automotive system that cotrnols various systems in the vehicle.
-    ECUs are typically connected to each other using a bus system, enabling communication between the each other.
-    Over the years, vehicles have become more and more complex, and thus the number of ECUs has increased.
-    Since each ECU has an individual task, whose criticality varies, the attack feasibility of an ECU is based on the criticality of the task it performs.
-    For example, the Engine Control Unit (ECU) is responsible for the engine, and thus is a critical ECU, 
-    whereas the SEAT ECU, that are responsible for the seats in a vehicle, are not as critical.
-    For simplicity, the ECUs and their feasbility rating in this thesis are divided into three as seen in \ref{table:ecu_rating:ecu}.
+    \item \textbf{\gls{ecu}}: An \gls{ecu} is an embedded system in an automotive system that cotrnols various systems in the vehicle.
+    \gls{ecu}s are typically connected to each other using a bus system, enabling communication between the each other.
+    Over the years, vehicles have become more and more complex, and thus the number of \gls{ecu}s has increased.
+    Since each \gls{ecu} has an individual task, whose criticality varies, the attack feasibility of an \gls{ecu} is based on the criticality of the task it performs.
+    For example, the Engine Control Unit is responsible for the engine, and thus is a critical \gls{ecu}, 
+    whereas the SEAT \gls{ecu}, that are responsible for the seats in a vehicle, are not as critical.
+    For simplicity, the \gls{ecu}s and their feasbility rating in this thesis are divided into three as seen in \ref{table:ecu_rating}.
+
+    \item \textbf{\gls{cgw}}: In the context of automotive network architectures, the \gls{cgw} acts as a key communication node. 
+    It's a device that interconnects various \gls{ecu}s or different networks within the vehicle. 
+    This can include networks operating on different protocols such as those mentioned below.
+    The \gls{cgw} is responsible for routing and sometimes filtering messages between these different networks. 
+    It also plays a crucial role in managing security, as it can help to prevent unauthorized access to the vehicle's internal networks.
+    With the rise of connected and autonomous vehicles, the \gls{cgw} has become more complex and sophisticated, 
+    capable of handling higher data throughput and managing more advanced security measures. 
+    It's an important component for the operation and security of modern vehicles.
     
-    \item \textbf{\gls{can}}: CAN a communication protocol utilized in modern vehicles and industrial applications 
+    \item \textbf{\gls{can}}: \gls{can} a communication protocol utilized in modern vehicles and industrial applications 
     to enable devices and microcontrollers to communicate with one another. 
     It was developed by Bosch in the 1980s and has since become a widespread standard for in-vehicle communication.
     It is a dependable, durable, and cost-effective communication protocol that has become an indispensable component of modern vehicle electronics.
-    Since the \gls{can} bus is the most common bus system used in a vehicle, it will be set as a base line for security in this thesis.
+    Since the \gls{can} bus is the most common bus system used in a vehicle, it will be set as a baseline for security in this thesis.
 
     \item \textbf{\gls{canfd}}: It is an extension of \gls{can} bus.
     It provides higher data transfer rates, more efficient data communication, and increased bandwidth compared to the original \gls{can} bus.
-    It is backward compatible with the original CAN bus, which means it can function on the same network as older CAN devices.
+    It is backward compatible with the original \gls{can} bus, which means it can function on the same network as older \gls{can} devices.
     In terms of security it will be rated a bit higher than \gls{can}.
     Modern implementations of both protocols incorporate security features, such as message authentication and encryption.
     
     \item \textbf{\gls{flexray}}: It is a bus system that is used in the automotive industry used to facilitate high-speed real-time communication.
     It was developed by a group of automotive companies and aims to meet the growing need for real-time communication in complex automotive systems.
-    FlexRay is utilized to link ECUs requiring high bandwidth, such as advanced driver-assistance systems and safety-critical systems. 
+    \gls{flexray} is utilized to link \gls{ecu}s requiring high bandwidth, such as advanced driver-assistance systems and safety-critical systems. 
     It ensures deterministic data transfer, delivering data at predetermined intervals with a guaranteed maximum latency. 
     This is crucial for safety-critical systems that rely on fast and dependable data transfer.
-    FlexRay is designed for use in safety-critical systems and provides deterministic data transfer, making it highly reliable and resistant to interference. 
+    \gls{flexray} is designed for use in safety-critical systems and provides deterministic data transfer, making it highly reliable and resistant to interference. 
     It also supports encryption and authentication, providing additional security features.
 
-    \item \textbf{\gls{lin}}: LIN is a communication protocol used to connect and communicate with low-speed peripherals in modern vehicles and other industrial applications. 
-    It is a lower-cost alternative to the CAN bus communication protocol, developed by a group of automotive companies 
+    \item \textbf{\gls{lin}}: \gls{lin} is a communication protocol used to connect and communicate with low-speed peripherals in modern vehicles and other industrial applications. 
+    It is a lower-cost alternative to the \gls{can} bus communication protocol, developed by a group of automotive companies 
     and generally considered to be less secure than other protocols, as it doesn't support encryption or authentication
-    LIN is weaker bus system than \gls{can} and \gls{canfd}, in terms of technology but also use, which will contribute to the rating.
+    \gls{lin} is weaker bus system than \gls{can} and \gls{canfd}, in terms of technology but also use, which will contribute to the rating.
     
     \item \textbf{\gls{most}}: It is a communication protocol that enables high-bandwidth multimedia data transfer between devices in modern vehicles. 
-    It was developed by a consortium of automotive and multimedia companies and offers high-speed, dependable, and cost-effective data transfer.
+    It was developed by a consortium of automotive and multimedia compaGNSnies and offers high-speed, dependable, and cost-effective data transfer.
     It is a highly dependable communication protocol that has gained increase popularity in the automotive industry and
     provides secure communication between devices through encryption and authentication
 
@@ -102,21 +112,21 @@ This subsection will further explain some the aforementioned components as well 
     \item \textbf{Bluetooth}: Bluetooth is a wireless technology used to exchange data between electronic devices over short distances.
     In modern vehicles, Bluetooth is used for hands-free phone calls, music streaming, and other features that require wireless connectivity. 
     It has become an essential component in modern automotive systems, providing a convenient and safe way for drivers to interact with their vehicles.
-    Though uses encryption to secure the communication between devices, but vulnerabilities have been discovered in the past that allow attackers to intercept and decrypt Bluetooth traffic
+    Though Bluetooth uses encryption to secure the communication between devices, vulnerabilities have been discovered in the past that allow attackers to intercept and decrypt Bluetooth traffic.
 
     \item \textbf{WiFi}: WiFi is a wireless communication technology that enables electronic devices to connect to the internet and exchange data wirelessly over a local area network (LAN)
     It uses radio waves to transmit data between devices, typically using the 2.4GHz or 5GHz frequency bands.
     In modern vehicles, WiFi is used for a variety of applications, such as infotainment systems, navigation, and telematics. 
     It enables passengers to access the internet, stream video content, and browse the web, enhancing the in-car entertainment experience. 
     WiFi also provides a means for vehicles to communicate with other devices, such as smartphones or smart home devices, to access remote services or home automation features.
-    Though it has improved in terms of security over the years, is vulnerable to various attacks, including weak encryption, insecure network configurations, and attacks on the wireless network itself.
-
-    \item \textbf{\gls{gnss}}: GNSS is a satellite-based navigation technology that can determine precise positioning and timing information anywhere on Earth. 
+    Though WiFi has improved in terms of security over the years, it is still vulnerable to various attacks, including weak encryption, insecure network configurations, and attacks on the wireless network itself.
+    
+    \item \textbf{\gls{gnss}}: \gls{gnss} is a satellite-based navigation technology that can determine precise positioning and timing information anywhere on Earth. 
     It comprises various satellite navigation systems, such as GPS, GLONASS, Galileo, BeiDou, and other regional systems.
-    GNSS uses a constellation of satellites orbiting the Earth to provide accurate location and timing data to receivers on the ground. 
+    \gls{gnss} uses a constellation of satellites orbiting the Earth to provide accurate location and timing data to receivers on the ground. 
     These receivers analyze signals from the satellites to determine their position and velocity, making it possible to navigate precisely over long distances.
-    GNSS is used in vehicles primarily for navigation purposes.
-    It is generally considered to be the most secure technology since it is difficult to intercept and manipulate signals from GNSS satellites, 
+    \gls{gnss} is used in vehicles primarily for navigation purposes.
+    It is generally considered to be the most secure technology since it is difficult to intercept and manipulate signals from \gls{gnss} satellites, 
     and modern receivers incorporate security features to mitigate the risk of attacks.
 \end{itemize}
     
@@ -131,15 +141,15 @@ However, based on experts' experience, these values were given each component:
     \hline
     \textbf{Technology} & \textbf{Feasibility Rating} \\
     \hline
-    CAN & 0.5 \\
-    CANFD & 0.6 \\
-    FlexRay & 0.9 \\
-    LIN & 0.1 \\
-    MOST & 0.3 \\
+    \gls{can} & 0.5 \\
+    \gls{canfd} & 0.6 \\
+    \gls{flexray} & 0.9 \\
+    \gls{lin} & 0.1 \\
+    \gls{most} & 0.3 \\
     Ethernet & 0.8 \\
     Bluetooth & 0.4 \\
     WiFi & 0.4 \\
-    GNSS & 0.8 \\
+    \gls{gnss} & 0.8 \\
     \hline
     \end{tabular}
     \caption{Ranking of automotive communication technologies based on security}
@@ -150,12 +160,12 @@ However, based on experts' experience, these values were given each component:
     \centering
     \begin{tabular}{|l|c|}
     \hline
-    \textbf{ECU} & \textbf{Feasibility Rating} \\
+    \textbf{\gls{ecu}} & \textbf{Feasibility Rating} \\
     \hline
     \textit{Target} & 0.9 \\
-    \textit{LIN connected ECUs} & 0.1 \\
+    \textit{\gls{lin} connected \gls{ecu}s} & 0.1 \\
     \textit{Other} & 0.5 \\
     \hline
     \end{tabular}
-    \caption{Ranking of ECUs based on security}
+    \caption{Ranking of \gls{ecu}s based on security}
 \end{table}

@@ -1,4 +1,4 @@
-\chapter{Comparison and Evaluation}
+\chapter{Proof Of Concept}
 \label{chp:compeval}
 
 To prove that the criteria is properly calibrated and gives desired results, another set of architectures is evaluated.\\
@@ -14,27 +14,27 @@ The following architectures all use the same building blocks with the same value
 
 \nameref{fig:architectureA} features four entry points, and six interfaces - the highest amount of all the architectures.
 However, the strong point here is that they are are relatively separated from the rest of the components.
-In addition, it features a Centra Gateway that is not an entry point.
+In addition, it features a \gls{cgw} that is not an entry point.\\
 These factors indicate a high amount of hops for some targets.
-In terms of isolation of ECUs, most ECUs share their bus with at least two or more other ECUs, resulting in a low isolation compared to the other architectures.\\
+In terms of isolation of \gls{ecu}s, most \gls{ecu}s share their bus with at least two or more other \gls{ecu}s, resulting in a low isolation compared to the other architectures.\\
 Based on the criteria, this architecture is expected to do the best out of the three architectures.
 
 \section{Architecture B}
 \label{sec:archb}
 
 \nameref{fig:architectureB} features three entry points and five interfaces.
-Though the number is lower that that of Architecture A, the entry points are more spread out, meaning that the maximum amount of hops is lower.
-The Central Gateway, however, is not an entry point and the isolation of ECUs is better compared to A.
-This architecture, though offering better isolation, is expected to perform worse than A due to the lower amount of hops.
+Though the number is lower that that of \nameref{fig:architectureA}, the entry points are more spread out, meaning that the maximum amount of hops is lower.
+The \gls{cgw}, however, is not an entry point and the isolation of \gls{ecu}s is better compared to \ref{fig:architectureA}.\\
+This architecture, though offering better isolation, is expected to perform worse than \ref{fig:architectureA} due to the lower amount of hops.
 \section{Architecture C}
 \label{sec:archc}
 
-\nameref{fig:architectureC} has only three entry points and three interfaces - however one of them being the Central Gateway and 
+\nameref{fig:architectureC} has only three entry points and three interfaces - however one of them being the \gls{cgw} and 
 in addition, the entry points are distributed across the architecture. 
 This results in a lower amount of hops for the targets, putting this architecture at a disadvantage compared to the other two.
-Isolation of ECUs here is similar or somewhat better to B.
-Due to the low amount of hops and the Central Gateway being an entry point, this architecture is expected to perform 
-similar to B, but still the worst out of the three.
+Isolation of \gls{ecu}s here is similar or somewhat better to \nameref{fig:architectureB}.\\
+Due to the low amount of hops and the \gls{cgw} being an entry point, this architecture is expected to perform 
+similar to \nameref{fig:architectureB}, but still the worst out of the three.
 
 
 \section{Results - Proof Of Concept Architectures}
@@ -58,11 +58,15 @@ The results are as follows:
 \end{table}
 
 Taking the criteria into account, the results reflect the expectations.
-Architecture A, with the highest amount of hops, due to the secluded entry points, is ranked first.
-Architectre B, with a lower amount of hops, but better isolation, is ranked second.
-Architecture C, with the lowest amount of hops and the Central Gateway being an entry point, is ranked third.\\
+\nameref{fig:architectureA}, with the highest amount of hops, due to the secluded entry points, is ranked first.
+\nameref{fig:architectureB}, with a lower amount of hops, but better isolation, is ranked second.
+\nameref{fig:architectureC}, with the lowest amount of hops and the \gls{cgw} being an entry point, is ranked third.\\
 
-As shown by the score, \nameref{fig:architectureB} and \nameref{fig:architectureC} are relatively close to each other,
-but the Central Gateway being an entry point in \nameref{fig:architectureC} is the deciding factor for the lower score.\\
+Architecture A was expected to perform the best due to the high amount of hops and the secluded entry points.
+It was predicted that nameref{fig:architectureB} and \nameref{fig:architectureC} would perofrm similarly and score lower than A,
+but the difference between \ref{fig:architectureB} and \ref{fig:architectureC} is smaller than initially thought. 
+However, we expected \ref{fig:architectureB} to perform better than \ref{fig:architectureC}, 
+because the \gls{cgw} being an entry point in \nameref{fig:architectureC} is the deciding factor for the lower score.\\
 
-Overall, this Proof of Concept confirms that the criteria is properly calibrated and gives the desired results.
+Overall, we are satisfied with the results, as our predictions matched the actual results.
+In conclusion, this Proof of Concept confirms that the criteria is properly calibrated and gives the desired results.

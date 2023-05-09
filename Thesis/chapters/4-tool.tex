@@ -10,53 +10,53 @@ The following sections will describe the tool's implementation.
 \section{Configuration Files Structure}
 \label{sec:config}
 
-First, the architecture, ECUs and buses need to be defined in a configuration file.
+First, the architecture, \gls{ecu}s and buses need to be defined in a configuration file.
 The configuration files for the simulation are stored in JSON format, 
 which is a lightweight data interchange format that is easy to read and write, and easy for machines to parse and generate.\\
 
-There are three main configuration files used in the simulation: buses.json, ECUs.json, and graph.json.
+There are three main configuration files used in the simulation: buses.json, ecus.json, and graph.json.
 Each file has a specific structure and contains different attributes.
 
 \subsection{buses.json}
 \label{sec:buses}
 
 The tool takes as input three sets of configuration files, each of them represented in the JSON format: 
-the system architecture, the ECUs in the system, and the buses connecting the ECUs. 
+the system architecture, the \gls{ecu}s in the system, and the buses connecting the \gls{ecu}s. 
 
 This file defines the different communication buses that are used in the simulation. 
 It contains an array of objects, where each object represents a bus and has the following attributes:
 
 \begin{itemize}
-\item \textbf{type}: The type of the bus: \textit{CAN, CANFD, FlexRay, Ethernet, MOST, LIN}.
+\item \textbf{type}: The type of the bus: \textit{\gls{can}, \gls{canfd}, \gls{flexray}, Ethernet, MOST, LIN}.
 \item \textbf{feasibility rating}: A value between 0 and 1 indicating the bus' attack feasibility (\textit{see \ref{table:bus_rating}}).
 \end{itemize}
 
-\subsection{ECUs.json}
-\label{sec:ECUs}
+\subsection{ecus.json}
+\label{sec:\gls{ecu}s}
 
-This file defines the electronic control units (ECUs) that are used in the simulation. 
+This file defines the electronic control units (\gls{ecu}s) that are used in the simulation. 
 
-It contains an array of objects, where each object represents an ECU and has the following attributes
+It contains an array of objects, where each object represents an \gls{ecu} and has the following attributes:
 
 \begin{itemize}
-\item \textbf{name}: The name of the ECU.
-\item \textbf{type}: The type of the ECU (e.g., entry, target, interface).
-\item \textbf{feasibility rating}: A value between 0 and 1 indicating the ECU's attack feasibility (\textit{see \ref{table:ecu_rating}}).
+\item \textbf{name}: The name of the \gls{ecu}.
+\item \textbf{type}: The type of the \gls{ecu} (e.g., entry, target, interface).
+\item \textbf{feasibility rating}: A value between 0 and 1 indicating the \gls{ecu}'s attack feasibility (\textit{see \ref{table:ecu_rating}}).
 \end{itemize}
 
 \subsection{graph.json}
 \label{sec:graph}
 
 This file defines the topology of the system being simulated, i.e. the architecture. 
-It contains an array of objects, where each object represents a communication link which contains the ECUs and interfaces and has the following attributes:
+It contains an array of objects, where each object represents a communication link which contains the \gls{ecu}s and interfaces and has the following attributes:
 
 \begin{itemize}
 \item \textbf{name}: The name of the link.
-\item \textbf{type}: The type of the link (\textit{CAN, CANFD, FlexRay, Ethernet, MOST, LIN, Bluetooth, WiFi, Ethernet, GNSS}).
-\item \textbf{ECUs}: An array of the names of the ECUs that are connected by this link.
+\item \textbf{type}: The type of the link (\textit{\gls{can}, \gls{canfd}, \gls{flexray}, Ethernet, \gls{most}, \gls{lin} Bluetooth, WiFi, Ethernet, \gls{gnss}}).
+\item \textbf{\gls{ecu}s}: An array of the names of the \gls{ecu}s that are connected by this link.
 \end{itemize}
 
-Note that external interfaces (e.g., Bluetooth, WiFi, GNSS) are also considered as ECUs as well as buses in the simulation.
+Note that external interfaces (e.g., Bluetooth, WiFi, \gls{gnss}) are also considered as \gls{ecu}s as well as buses in the simulation.
 Treating them as such simplifies the implementation of the tool using the following libraries.
 The feasibility of the interface can be set in either the buses.json or ecus.json file, however it is recommended to set it in the buses.json file.
 Whichever file is used, note that the feasibility must be set to 0 in the other file, to avoid double counting.
@@ -73,21 +73,21 @@ The most important and useful library in the tool is \textit{networkx} for graph
 
 \texttt{main()} calls the following functions, which are integral to the tool's functionality:\\
 
-\texttt{parse\_files(architecture, ECU, bus)}: it takes in three parameters: \texttt{architecture, ecu, bus}.
+\texttt{parse\_files(architecture, ecu, bus)}: it takes in three parameters: \texttt{architecture, ecu, bus}.
 They are the above described configuration files and loads the contents of these files. 
-Specifically, the function loads the contents of the architecture file, ECU file and bus file, 
-and extracts the architecture name, architecture, ECUs configuration, and buses configuration, respectively. 
+Specifically, the function loads the contents of the architecture file, \gls{ecu} file and bus file, 
+and extracts the architecture name, architecture, \gls{ecu}s configuration, and buses configuration, respectively. 
 The function returns these four objects as a tuple.\\
 
-\texttt{generate\_graph(architecture, ECUs\_config, buses\_config)}:\\
+\texttt{generate\_graph(architecture, ecus\_config, buses\_config)}:\\
 This function takes three arguments as input: 
 \texttt{architecture}, \texttt{ecus\_config}, and \texttt{buses\_config}. 
 The function processes this input to create a directed graph \texttt{(nx.DiGraph())} 
-that represents the system's architecture and computes the feasibility between various nodes (ECUs). 
-It returns the generated graph, a list of entry points, and a list of target ECUs.
+that represents the system's architecture and computes the feasibility between various nodes (\gls{ecu}s). 
+It returns the generated graph, a list of entry points, and a list of target \gls{ecu}s.
 \begin{itemize}
-    \item \texttt{architecture}: a list of buses, where each bus contains information about its type and the Electronic Control Units (ECUs) connected to it.
-    \item \texttt{ecus\_config}: a list of ECU configurations, containing information about each ECU's name, type, and feasibility.
+    \item \texttt{architecture}: a list of buses, where each bus contains information about its type and the (\gls{ecu}s) connected to it.
+    \item \texttt{ecus\_config}: a list of \gls{ecu} configurations, containing information about each \gls{ecu}'s name, type, and feasibility.
     \item \texttt{buses\_config}: a list of bus configurations, containing information about each bus's type and feasibility.  
 \end{itemize}
 
@@ -96,50 +96,50 @@ The function goes through the following steps:
     \item Initialize empty lists for \texttt{entry\_points} and \texttt{target\_ecus}, 
         and create dictionaries for \texttt{ecus\_config} and \texttt{buses\_config}.
     \item Initialize an empty graph.
-    \item Extract the current bus type, bus feasibility, and a list of ECUs on the current bus.
-    \item Iterate through each ECU on the current bus, determine its type and feasibility, and append it to the 
+    \item Extract the current bus type, bus feasibility, and a list of \gls{ecu}s on the current bus.
+    \item Iterate through each \gls{ecu} on the current bus, determine its type and feasibility, and append it to the 
         appropriate list based on its type (entry, target, or both).
-    \item For each pair of ECUs on the current bus, if the target ECU is an interface, 
+    \item For each pair of \gls{ecu}s on the current bus, if the target \gls{ecu} is an interface, 
         add an edge in the graph with the weight as the bus feasibility; 
-        otherwise, add an edge with the weight as the sum of bus feasibility and target ECU feasibility.
+        otherwise, add an edge with the weight as the sum of bus feasibility and target \gls{ecu} feasibility.
     \item Make the \texttt{entry\_points} list unique by removing duplicates and convert the \texttt{target\_ecus} list to a set (to remove duplicates).
-    \item Return the generated graph, the list of entry points, and the list of target ECUs.
+    \item Return the generated graph, the list of entry points, and the list of target \gls{ecu}s.
 \end{enumerate}
 
-\textit{Note: This is why it was easier to treat external interfaces as ECUs as well as buses.
-Since we are looking for the shortest path for an interface type, not the ECU using it, treating all interfaces
-as a bus and ECU conntected to the internal ECUs using such interface facilitates the shortest path generation.}\\
-The function returns the generated graph, along with the entry ECUs and target ECUs lists.\\
+\textit{Note: This is why it was easier to treat external interfaces as \gls{ecu}s as well as buses.
+Since we are looking for the shortest path for an interface type, not the \gls{ecu} using it, treating all interfaces
+as a bus and \gls{ecu} conntected to the internal \gls{ecu}s using such interface facilitates the shortest path generation.}\\
+The function returns the generated graph, along with the entry \gls{ecu}s and target \gls{ecu}s lists.\\
 
 
 \texttt{find\_attack\_path}: 
-This function is designed to find the feasibility and the shortest path from each entry ECU 
-to each target ECU in a given directed graph \texttt{(nx.DiGraph)}.
+This function is designed to find the feasibility and the shortest path from each entry \gls{ecu} 
+to each target \gls{ecu} in a given directed graph \texttt{(nx.DiGraph)}.
 
 The function takes three arguments as input:
 \begin{itemize}
     \item \texttt{G}: A NetworkX directed graph representing the system architecture.
-    \item \texttt{entry\_points}: A list of dictionaries representing the entry points (ECUs that can be used as starting points for an attack).
-    \item \texttt{target\_ecus\_names}: A list of strings representing the target ECUs (ECUs that the attack aims to reach).
+    \item \texttt{entry\_points}: A list of dictionaries representing the entry points (\gls{ecu}s that can be used as starting points for an attack).
+    \item \texttt{target\_ecus\_names}: A list of strings representing the target \gls{ecu}s (\gls{ecu}s that the attack aims to reach).
 \end{itemize}
 
-The function returns a table (a dictionary) containing the feasibility and the shortest path from each entry ECU to each target ECU. 
+The function returns a table (a dictionary) containing the feasibility and the shortest path from each entry \gls{ecu} to each target \gls{ecu}. 
 The table also contains the number of hops in the shortest path.
 The function goes through the following steps:
 
 \begin{enumerate}
     \item Initialize an empty table with three keys: \texttt{feasibility}, \texttt{shortest\_path}, and \texttt{hops}. 
         Each key corresponds to a nested dictionary.
-    \item Iterate through each entry point (ECU) in the \texttt{entry\_points} list.
+    \item Iterate through each entry point (\gls{ecu}) in the \texttt{entry\_points} list.
     \item For each entry point, create nested dictionaries for \texttt{feasibility}, \texttt{shortest\_path}, and \texttt{hops} using the entry point's name as the key.
-    \item Iterate through each target ECU in the \texttt{target\_ecus\_names} list.
-    \item For each entry-target ECU pair, calculate the feasibility using the Bellman-Ford algorithm and add the entry point's feasibility.
+    \item Iterate through each target \gls{ecu} in the \texttt{target\_ecus\_names} list.
+    \item For each entry-target \gls{ecu} pair, calculate the feasibility using the Bellman-Ford algorithm and add the entry point's feasibility.
     \item Calculate the shortest path using the \texttt{nx.shortest\_path function}.
     \item Store the calculated feasibility, shortest path, and the number of hops (length of the shortest path minus 2, or 0 if the length is less than 2) in the table.
-    \item Return the table containing the feasibility, shortest path, and the number of hops for each entry-target ECU pair.
+    \item Return the table containing the feasibility, shortest path, and the number of hops for each entry-target \gls{ecu} pair.
 \end{enumerate}
 
-The resulting table can be used to analyze the most feasible attack paths between various entry points and target ECUs in the system's architecture.\\
+The resulting table can be used to analyze the most feasible attack paths between various entry points and target \gls{ecu}s in the system's architecture.\\
 
 
 Finally, \texttt{apply\_criteria} applies the \nameref{chp:criteria} to the table.
