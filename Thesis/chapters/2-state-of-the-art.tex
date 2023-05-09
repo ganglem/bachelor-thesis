@@ -6,7 +6,7 @@ The following standards are mentioned in virtually every piece of literature; th
 Moreover, they offer a basis for the thesis itself as well as the development of a tool to assess the security of vehicular networks,
 as their further use is intended to be used in conjunction with these standards and frameworks to ensure compliance with them:\\
 
-ISO 26262 is an international standard for ensuring the functional safety of \gls{e/e} systems in vehicles. 
+ISO 26262 is an international standard for ensuring the functional safety of \acrshort{e/e} systems in vehicles. 
 It provides a framework for the development and management of safety-related systems throughout the lifecycle of a vehicle, from design to operation.
 The standard is divided into several parts, each addressing a specific aspect of functional safety. 
 It aims to help organizations manage the functional safety of their systems, ensure they meet a defined level of safety, and demonstrate that the systems are safe for the intended use.
@@ -14,7 +14,7 @@ ISO 26262 helps organizations identify and mitigate potential hazards, reducing 
 It provides a systematic approach to functional safety, ensuring the safety of vehicles and their passengers.\\
 
 ISO 21434 is an international standard for the execution of functional testing and specifies engineering requirements for cybersecurity risk 
-management regarding the lifecycle of \gls{e/e} architecture systems in road vehicles, including their components and interfaces \cite{iso21434}.
+management regarding the lifecycle of \acrshort{e/e} architecture systems in road vehicles, including their components and interfaces \cite{iso21434}.
 ISO 21434 outlines the security requirements, goals, and measures to consider throughout the entire lifecycle of a vehicle, including design, development, production, and operation. 
 It aims to assist organizations in managing the security of their vehicles and ensuring they meet a defined level of security by providing a systematic approach to identifying and evaluating security-related risks and implementing measures to reduce them to an acceptable level. 
 The standard is intended to be used in conjunction with ISO 26262, which focuses on functional safety, to provide a comprehensive approach to ensuring the safety and security of vehicles. 
@@ -26,38 +26,38 @@ They are intended to be flexible, pragmatic, and adaptable in their further appl
 It provides a framework for organizations to incorporate cybersecurity into the lifecycle of vehicle systems, information on standard tools and methods used in designing and verifying systems, basic principles for cybersecurity, and a foundation for further standards development. 
 SAE J3061 is intended to be used in conjunction with other standards and guidelines, such as those mentioned above \cite{sae_j3061}.\\
 
-\gls{autosar} is a standard for the development of software for \gls{ecu}s in the automotive industry \cite{autosar}.
-The goal of AUTOSAR is to create and establish an open and standardized software architecture for automotive \gls{ecu}s that is scalable to different vehicle and platform variants, 
+\acrshort{autosar} is a standard for the development of software for \acrshort{ecu}s in the automotive industry \cite{autosar}.
+The goal of AUTOSAR is to create and establish an open and standardized software architecture for automotive \acrshort{ecu}s that is scalable to different vehicle and platform variants, 
 transferable of software, considering availability and safety requirements, collaboration between various partners, sustainable use of natural resources, 
 and maintainable during the product lifecycle. 
 This improves the efficiency of development, enables the integration, exchange, reuse, and transfer of functions within a vehicle network, 
 and helps manage the growing complexity of technology and economics in automotive software development.\\
 
-\gls{tara} is an essential process for ensuring the cybersecurity of systems and networks, especially in the automotive industry. 
-In the context of automotive systems, a \gls{tara} can be used to identify and evaluate potential threats and vulnerabilities to the electronic and electrical (E/E) architecture of vehicles.
+\acrshort{tara} is an essential process for ensuring the cybersecurity of systems and networks, especially in the automotive industry. 
+In the context of automotive systems, a \acrshort{tara} can be used to identify and evaluate potential threats and vulnerabilities to the electronic and electrical (E/E) architecture of vehicles.
 This includes identifying assets such as connected systems and networks and evaluating the likelihood and potential impact of threats such as 
 cyberattacks, hacking, and software vulnerabilities as well as determine appropriate countermeasures to mitigate these risks.
 In addition, it can help prioritize these threats and vulnerabilities based on their potential impact on safety, financial, operational, and privacy aspects.\\
-An attack path analysis can be an important component of \gls{tara}, helping to identify and evaluate the potential pathways that an attacker might use to gain unauthorized access to the vehicle's system. 
+An attack path analysis can be an important component of \acrshort{tara}, helping to identify and evaluate the potential pathways that an attacker might use to gain unauthorized access to the vehicle's system. 
 Based on such analysis, appropriate changes can be made to the vehicle's network architecture as a countermeasure.
-The \gls{tara} process can be used to ensure compliance with industry standards, such as ISO 26262 or ISO 21434, and can be integrated with other frameworks, like HEAVENS or EVITA. 
-Regularly reviewing and updating the \gls{tara} process is crucial to keep up with the evolving threats and vulnerabilities in the automotive industry, 
+The \acrshort{tara} process can be used to ensure compliance with industry standards, such as ISO 26262 or ISO 21434, and can be integrated with other frameworks, like HEAVENS or EVITA. 
+Regularly reviewing and updating the \acrshort{tara} process is crucial to keep up with the evolving threats and vulnerabilities in the automotive industry, 
 which is constantly evolving with the integration of new technologies such as connected cars, autonomous driving, and V2X communication \cite{tara}.\\
 
-Important frameworks include \gls{heavens}, and \gls{evita}.
+Important frameworks include \acrshort{heavens}, and \acrshort{evita}.
 HEAVENS performs risk assessments of general IT systems and models explicitly built for automotive systems and uses threat and impact levels to calculate risks \cite{heavens}.
 The primary objective of the framework is to identify security requirements and vulnerabilities in automotive systems and to provide countermeasures to minimize the risks associated with these vulnerabilities. 
 It uses the Microsoft \acrshort{stride} model for threat modeling and aligns its impact level estimation parameters with established industry standards such as ISO 26262. 
 It is a great candidate as a framework for automotive risk assessments over traditional IT risk assessment models.\\
-The \gls{evita} framework, which essentially performs the same things as HEAVENS, 
+The \acrshort{evita} framework, which essentially performs the same things as HEAVENS, 
 but also considers the potential of attacks to impact the privacy of vehicle passengers, financial losses, and the operational capabilities of the vehicles systems and functions \cite{evita}.\\
 
 Many of these approaches aim to standardize the process of assessing the security of vehicular networks. However, most of them are based on manual penetration testing and manual vulnerability assessment today. 
 This is because penetration testing is an experienced-based and explorative skill that is difficult to automate. 
-Further research aims to improve or couple existing approaches like performing a \gls{tara}, as well as automate and accelerate the process of security testing.\\
+Further research aims to improve or couple existing approaches like performing a \acrshort{tara}, as well as automate and accelerate the process of security testing.\\
 
-F. Sommer et al. introduce the concept of Model-Based Security Testing using an \gls{efsm} model \cite{model_based_testing}.
-The Automotive Security Model section describes an \gls{e/e} architecture, security measures, and further development artifacts to protect vehicles against attacks.
+F. Sommer et al. introduce the concept of Model-Based Security Testing using an \acrshort{efsm} model \cite{model_based_testing}.
+The Automotive Security Model section describes an \acrshort{e/e} architecture, security measures, and further development artifacts to protect vehicles against attacks.
 The model is based on the EFSM, with nodes representing attacker privileges and transitions representing a vulnerability.
 The Proof of Concept section of the paper demonstrates how the model can be used to identify different attack paths, analyze the model for attack paths, and execute the attack paths on a real vehicle. 
 The incremental approach allows for the redefinition of attack paths, making it useful at different stages during development. 
@@ -76,22 +76,22 @@ Several types of privileges that an attacker may seek to gain access to a vehicl
 They note that channels that are not protected by security measures can be immediately accessed by an attacker, but interpretation is needed in other cases. 
 It also mentioned that the attacker needs to reach one of these privileges to access further attached communication systems and components.
 The authors applied their privilege model to real-world automotive security attacks to demonstrate its practical use, in which
-an attacker is connecting to the vehicle via the \gls{obd} port, which is connected to the central gateway via \gls{can}, and then uses the central gateway to gain access to the internal vehicle network.
+an attacker is connecting to the vehicle via the \acrshort{obd} port, which is connected to the central gateway via \acrshort{can}, and then uses the central gateway to gain access to the internal vehicle network.
 They also showed the automatic generation of attack trees using a model checker in a custom software tool and an application of their privileges in security testing by describing attack paths. 
-In future work, the authors plan to formalize the security testing approach to allow for early testing during development and to evaluate the \gls{tara} and security testing approach in a case study.\\
+In future work, the authors plan to formalize the security testing approach to allow for early testing during development and to evaluate the \acrshort{tara} and security testing approach in a case study.\\
 
 In contrast, D. Zelle et al. introduce a concrete approach, "ThreatSurf" \cite{threat_surf}, which presents an algorithm for automated generation and rating of 
 attack paths in the automotive industry, using various attack building blocks and assessing attack feasibility.
-The attack feasibility assessment can be used in a \gls{tara} to assess an entire attack path of a threat scenario.
+The attack feasibility assessment can be used in a \acrshort{tara} to assess an entire attack path of a threat scenario.
 It also discusses different methods for weighing attack paths, such as Sum, Average, Maximum, and Hybrid-weighted Sum. 
 The paper describes four different types of threat agents - Thief and Owner, Terrorist, Organized Crime and Mechanic, Hacktivist, and Foreign Government - 
 and their motivations, capabilities, and window of opportunity for performing an attack. 
 The paper provides an example of how the proposed attack feasibility rating concept can be applied to threat scenarios derived from the use cases and also 
-compares it with other rating approaches such as attack-potential-based approaches, \gls{cvss} based approaches, and attack vector-based approaches.
+compares it with other rating approaches such as attack-potential-based approaches, \acrshort{cvss} based approaches, and attack vector-based approaches.
 The proposed attack feasibility rating concept is based on the attack-potential approach due to the complex nature of attacks against electric vehicles.\\
-Other approaches include the \gls{cvss} and attack vectors.
+Other approaches include the \acrshort{cvss} and attack vectors.
 They conclude that attack-potential-based approaches have high flexibility but high complexity, 
-\gls{cvss}-based approaches are easier to handle but have lower flexibility, and attack vector-based approaches are simpler but less suited for automotive applications.\\
+\acrshort{cvss}-based approaches are easier to handle but have lower flexibility, and attack vector-based approaches are simpler but less suited for automotive applications.\\
 The tool and algorthmic approach fits the needs of the thesis much better than the model-based approach, as the feasibility rating is represented as a single variable and it is easier to compare multiple architectures.\\
 
 While those papers mentioned above are a great foundation for this thesis, they do not provide a complete solution for the problem of automating the process of security testing in the automotive industry.

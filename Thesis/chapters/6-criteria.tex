@@ -3,8 +3,8 @@
 
 Just as there are many ways to evaluate an architecture, there are many ways to a general criteria for this thesis.
 Similar to \cite{threat_surf}, we decided to approach the criteria as a mathematical equation that can be applied to every architecture equally.
-This equation takes into account the architecture feasibility, attack path feasibility, presence and influence of a \gls{cgw},
-amount of hops, isolation of \gls{ecu}s and amount of interfaces/entry points.\\
+This equation takes into account the architecture feasibility, attack path feasibility, presence and influence of a \acrshort{cgw},
+amount of hops, isolation of \acrshort{ecu}s and amount of interfaces/entry points.\\
 
 Finding the most fitting equation was done in a manual, brute-force like attempt.
 The following chapter will describe the equation, the factors that are taken into account, and the reasoning behind them.\\
@@ -28,8 +28,8 @@ Since the Bellman-Ford algorithm finds and takes the lowest weighted attack path
 a high score for this path means the most feasibile path receives a high security rating.
 Multiplying the feasibility of each attack path with the amount of hops it has, we also take into account the amount of hops in each attack path.
 The more hops there are, the better.
-This is because the more hops there are, the more \gls{ecu}s there are to compromise, 
-and the more \gls{ecu}s there are to compromise, the more likely it is that the attacker will be hindered to reach the target \gls{ecu}.\\
+This is because the more hops there are, the more \acrshort{ecu}s there are to compromise, 
+and the more \acrshort{ecu}s there are to compromise, the more likely it is that the attacker will be hindered to reach the target \acrshort{ecu}.\\
 We calculate the architecture feasibility $feasibility_{a}$ by multiplying the feasibility of each attack path $feasibility_{p}$ with the amount of hops $hops_{p}$ in each attack path:
 \begin{equation}
     feasibility_{a} := \sum_{p} feasibility_{p} * hops_{p} * cgw_{a} \label{eq:feasibility}
@@ -37,13 +37,13 @@ We calculate the architecture feasibility $feasibility_{a}$ by multiplying the f
 
 \hfill \break
 
-The \gls{cgw} also plays a role in the security of an architecture.
-As mentioned before, the benefit of a \gls{cgw} is dependent on whether it is present, an entry point, and or a target.
-A \gls{cgw} is beneficial if it is present, but not an entry point or a target.
-The \gls{cgw} factor is 1 by default, and is then decreased by 0.15 if the \gls{cgw} is not present,
-by 0.1 if the \gls{cgw} is an entry point, and by 0.05 if the \gls{cgw} is a target.
-This reflects the opinion of the Security Architects.\\
-To include the influence of a \gls{cgw}, we define the \gls{cgw} factor $cgw_{a}$ as follows:\\
+The \acrshort{cgw} also plays a role in the security of an architecture.
+As mentioned before, the benefit of a \acrshort{cgw} is dependent on whether it is present, an entry point, and or a target.
+A \acrshort{cgw} is beneficial if it is present, but not an entry point or a target.
+The \acrshort{cgw} factor is 1 by default, and is then decreased by 0.15 if the \acrshort{cgw} is not present,
+by 0.1 if the \acrshort{cgw} is an entry point, and by 0.05 if the \acrshort{cgw} is a target.
+This reflects the opinion of the security experts.\\
+To include the influence of a \acrshort{cgw}, we define the \acrshort{cgw} factor $cgw_{a}$ as follows:\\
 \begin{equation}
     cgw_{a} := 
     \begin{cases}
@@ -63,9 +63,9 @@ To later norm the amount of hops, we set the hops factor $hops_{a}$ as follows:\
 
 \hfill \break
 
-Isolation of an architecture is defined as the amount of \gls{ecu}s per bus, which we call the separation factor $separation_{a}$:\\
+Isolation of an architecture is defined as the amount of \acrshort{ecu}s per bus, which we call the separation factor $separation_{a}$:\\
 \begin{equation}
-    isolation_{a} := \text{average amount of \gls{ecu}s per bus in } a \label{eq:isolation}
+    isolation_{a} := \text{average amount of ECUs per bus in } a \label{eq:isolation}
 \end{equation}
 
 \hfill \break
@@ -91,17 +91,17 @@ In genreal, we asked ourselves the questions:\\
 Let's consider any one architecture:\\
 It is clear that a high architecture feasibility score and a high number of hops in each attack path is the most desirable.
 To get the architecture feasibility, each attack path feasibility is multiplied by the amount of hops it has \ref{eq:feasibility}.
-We know that the more difficult the path, the more secure the architecture and the more hops there are in a path, the more difficult it is to reach the target \gls{ecu}.\\
-This is then muplitplied by the \gls{cgw} factor \ref{eq:cgw}.\\
-To get a reasonable rating score, the product of the feasibility and \gls{cgw} factor are multiplied by 100.\\
+We know that the more difficult the path, the more secure the architecture and the more hops there are in a path, the more difficult it is to reach the target \acrshort{ecu}.\\
+This is then muplitplied by the \acrshort{cgw} factor \ref{eq:cgw}.\\
+To get a reasonable rating score, the product of the feasibility and \acrshort{cgw} factor are multiplied by 100.\\
 
 Next, we consider the factors that are unfavorable to have more of.\\
-The isolation of an architecture, i.e. the amount of \gls{ecu}s per bus, is unfavorable to have more of.
-This is because the more \gls{ecu}s there are per bus, the more \gls{ecu}s there are to compromise on one bus.
-Taking a look back at \nameref{fig:architecture6}, which received a good rating, we can deduce that the more isolated the \gls{ecu}s are, the better.\\
+The isolation of an architecture, i.e. the amount of \acrshort{ecu}s per bus, is unfavorable to have more of.
+This is because the more \acrshort{ecu}s there are per bus, the more \acrshort{ecu}s there are to compromise on one bus.
+Taking a look back at \nameref{fig:architecture6}, which received a good rating, we can deduce that the more isolated the \acrshort{ecu}s are, the better.\\
 The amount of interfaces is also unfavorable to have more of.
 In this case, we only take into account the amount of entry points, and not the amount of total interfaces.
-Doing so, we are able to differentiate between one \gls{ecu} with many interfaces and many \gls{ecu}s with one interface since more entry points are also likely more spread out.
+Doing so, we are able to differentiate between one \acrshort{ecu} with many interfaces and many \acrshort{ecu}s with one interface since more entry points are also likely more spread out.
 Combining entry points and the amount of hops, we can deduce whether the entry points are secluded or spread out.
 High hops most likely means that the entry points are all grouped together, and low hops means that the entry points are spread out.\\
 
@@ -155,19 +155,19 @@ and so did \nameref{fig:architecture9} and \nameref{fig:architecture7}.\\
 We were able to replicate the order of architectures \ref{fig:architecture3}, \ref{fig:architecture8}, \ref{fig:architecture6}.
 Looking at their feasibility score, it is evident that their rating was very close to each other, just like the security experts' opinions.
 Concentrated entry points were an advantage of \nameref{fig:architecture3} and \ref{fig:architecture8}, 
-however the \gls{cgw} being the entry point in \nameref{fig:architecture8} is what made it rank below \nameref{fig:architecture3}.
+however the \acrshort{cgw} being the entry point in \nameref{fig:architecture8} is what made it rank below \nameref{fig:architecture3}.
 In contrast, \nameref{fig:architecture6}'s strong isolaiton is what made it rank high.
 This distribution let's us consider this rating a success.\\
 
 \nameref{fig:architecture10} ranked first in our table, which was not the case in the survey table \ref{table:survey}.
-This is due to the entry points being isolated, the \gls{cgw} only being a target and not an entry point, 
-and the amount of hops being high, as no interface shares an \gls{ecu} with another interface.
+This is due to the entry points being isolated, the \acrshort{cgw} only being a target and not an entry point, 
+and the amount of hops being high, as no interface shares an \acrshort{ecu} with another interface.
 The priorities of the security experts are in fact reflected in this architecture, and
 strictly sticking to the criteria, \nameref{fig:architecture10} is the best architecture by far.
 The opinion was not shared by the security experts, ranking it fourth, but this opinion was also surprising to us.\\
 
 \nameref{fig:architecture2} is correctly ranked above \nameref{fig:architecture1} and \nameref{fig:architecture5}..
-Though it is missing the \gls{cgw}, the CGW in \ref{fig:architecture1} is an entry point, which is more unfavorable, as it reduces the amount of total hops.
+Though it is missing the \acrshort{cgw}, the CGW in \ref{fig:architecture1} is an entry point, which is more unfavorable, as it reduces the amount of total hops.
 \ref{fig:architecture5} uses Ethernet only, which has a higher security rating than CAN, thus placing above \ref{fig:architecture1}.\\
 The result is interesting because the architectures are the same with one key difference each, thus we are able to exactly see the priorities of the security experts
 as reflected with the criteria.
@@ -176,9 +176,9 @@ as reflected with the criteria.
 Unfortunately, we were not able to replicate the low ranking of \ref{fig:architecture4}.
 As our criteria weighs the isolation factor the most out of all the factors, it is understandable that \ref{fig:architecture7} is placed last,
 even though it is placed third in the survey.
-Isolation in this architecture was intentionally removed, with every \gls{ecu}s having to share the bus with every \gls{ecu} using the same bus technology.
+Isolation in this architecture was intentionally removed, with every \acrshort{ecu}s having to share the bus with every \acrshort{ecu} using the same bus technology.
 It is surprising to see that \nameref{fig:architecture4} ranked much better than \ref{fig:architecture9} and even \ref{fig:architecture7}.
-\ref{fig:architecture9} and \ref{fig:architecture4} are the same, except for the presence of the \gls{cgw} in \ref{fig:architecture4}.
+\ref{fig:architecture9} and \ref{fig:architecture4} are the same, except for the presence of the \acrshort{cgw} in \ref{fig:architecture4}.
 However, this does reflect the opinion of some security experts that having a CGW is better than having none, if it is not an entry point.\\
 
 To summarize, we were able to choose a criteria and according weights in such a way that the resulting table was very similar to the survey table \ref{table:survey}.

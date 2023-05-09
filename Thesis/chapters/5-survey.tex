@@ -18,7 +18,7 @@ The following section will describe the test architectures and estimate the impa
 \label{subsec:arch1}
 
 \nameref{fig:architecture1} represents a scaled down version of an architecture used in a real vehicle.
-It offers six entry points with three being targets, one of which is the \textit{\gls{cgw}}, and eight targets in total.
+It offers six entry points with three being targets, one of which is the \textit{\acrshort{cgw}}, and eight targets in total.
 Due to its many entry points, the attack surface is enlarged and the attack paths are more spread out, 
 and we expect this architecture to not perform as well in terms of security as other architectures in this set.
 
@@ -26,16 +26,16 @@ and we expect this architecture to not perform as well in terms of security as o
 \label{subsec:arch2}
 
 \nameref{fig:architecture2} is essentially the same as \nameref{fig:architecture1},
-but without a \gls{cgw}, to see how the architecture would perform without it.
-We expect this architecture to perform similarly or slightly worse to \nameref{fig:architecture1} and \ref{fig:architecture5}.
+but without a \acrshort{cgw}, to see how the architecture would perform without it.
+We expect this architecture to perform similarly or slightly worse to \nameref{fig:architecture1} and \nameref{fig:architecture5}.
 
 \section{Architecture 3}
 \label{subsec:arch3}
 
 \nameref{fig:architecture3} was designed to group all the entry interfaces to see how a centralized entry would affect the architecture. 
 Isolating the possible entry locations reduces the attack surface, prolongs the attack path to each target, 
-and increases the number of \gls{ecu}s used for the path, thus making the attack more difficult as the attacker would have to compromise more \gls{ecu}s. 
-It is similar to \nameref{fig:architecture10}, in a sense that the entry points are centralized, however, in this case, the entry points are not isolated to a single \gls{ecu}.
+and increases the number of \acrshort{ecu}s used for the path, thus making the attack more difficult as the attacker would have to compromise more \acrshort{ecu}s. 
+It is similar to \nameref{fig:architecture10}, in a sense that the entry points are centralized, however, in this case, the entry points are not isolated to a single \acrshort{ecu}.
 We expect this architecture to be one of the most secure architectures out of this set due to its secluded entry points.
 
 \section{Architecture 4}
@@ -44,8 +44,8 @@ We expect this architecture to be one of the most secure architectures out of th
 \nameref{fig:architecture4} offers entry points from all domain controllers, 
 however, notice how every domain controller has only one type of interface. 
 Having an entry point from each domain controller enlarges the attack surface, 
-as the attacker would only need to compromise one \gls{ecu} in each domain controller to gain quick access to the whole domain. 
-It is essentially the same as \nameref{fig:architecture9}, however, including the \gls{cgw}.
+as the attacker would only need to compromise one \acrshort{ecu} in each domain controller to gain quick access to the whole domain. 
+It is essentially the same as \nameref{fig:architecture9}, however, including the \acrshort{cgw}.
 We expect this architecture to be one of the least secure architectures out of this set due to its many, spread out entry points.
 
 \section{Architecture 5}
@@ -54,14 +54,14 @@ We expect this architecture to be one of the least secure architectures out of t
 \nameref{fig:architecture5} uses only Ethernet as the bus system, 
 to see how the architecture would perform without any other bus system. 
 Ethernet was chosen because it receives the securest attack feasibility rating of any bus system.
-We expect this architecture to perform similarly to \nameref{fig:architecture1} and \ref{fig:architecture1}. .
+We expect this architecture to perform similarly to \nameref{fig:architecture1} and \nameref{fig:architecture2}.
 
 \section{Architecture 6}
 \label{subsec:arch6}
 
-\nameref{fig:architecture6} puts all the \gls{ecu}s onto their own bus system. 
-This increases complexity in communication between the \gls{ecu}s but it also offers great isolation between the \gls{ecu}s, 
-however, it also reduces the hops per attack path and number of \gls{ecu}s used for the path.
+\nameref{fig:architecture6} puts all the \acrshort{ecu}s onto their own bus system. 
+This increases complexity in communication between the \acrshort{ecu}s but it also offers great isolation between the \acrshort{ecu}s, 
+however, it also reduces the hops per attack path and number of \acrshort{ecu}s used for the path.
 This architecture does not make sense in a real world scenario becuase of its complexity but it is interesting to see how it performs
 and is not expected to be favorable to the security experts.
 
@@ -69,14 +69,14 @@ and is not expected to be favorable to the security experts.
 \label{subsec:arch7}
 
 \nameref{fig:architecture7} has a similar idea to \nameref{fig:architecture6},
-but instead of putting all the \gls{ecu}s on their own bus system, it puts all the \gls{ecu}s that used the same bus system on the same bus system. 
+but instead of putting all the \acrshort{ecu}s on their own bus system, it puts all the \acrshort{ecu}s that used the same bus system on the same bus system. 
 Now, the feasibility of the bus rating is much more significant to the overall architecture rating and can indicate whether the used bus systems are secure enough.
 It will be interesting to see how this architecture performs and how it compares to Architecture 6.
 
 \section{Architecture 8}
 \label{subsec:arch8}
 
-\nameref{fig:architecture8} only has one entry point, namely the \gls{cgw}.
+\nameref{fig:architecture8} only has one entry point, namely the \acrshort{cgw}.
 This architecture eliminates other entry points meaning the attack paths all start at the same point, thus reducing the attack surface. 
 Additionally, the feasibility rating of the interfaces is more significant than before and the attack paths might become much more linear, 
 thus the feasibility rating of the components.
@@ -88,7 +88,7 @@ however, the entry point is also very central which can reduce the security of t
 
 \nameref{fig:architecture9} is essentially the same as \nameref{fig:architecture4},
 but without a central gateway. Again, the entry points are more dispersed resulting in an enlarged attack surface 
-and the significance of the \gls{cgw} can be deduced more from such a comparison 
+and the significance of the \acrshort{cgw} can be deduced more from such a comparison 
 and we do not expect this architecture to do well in terms of security and perform worse than \nameref{fig:architecture4}. 
 
 \section{Architecture 10}
@@ -102,7 +102,7 @@ We expect this architecture to be one of the most secure architectures out of th
 \section{Survey}
 \label{sec:survey}
 
-Security experts at Mercedes-Benz Tech Innovation were given ten architectures as shown in \ref{chp:arch}.
+Security experts at Mercedes-Benz Tech Innovation were given ten architectures as shown in \nameref{chp:arch}.
 The experts were asked to rank the architectures and give reasoning behind their ranking, as well as add any comments they had.
 Since there are ten architectures, the ranking went from 1 to 10, where 1 is the most secure and 10 is the least secure.
 To get to a result in the end, each rank was given a score, where the first place got 1 points, the second place got 2 points, and so on.
@@ -116,7 +116,7 @@ This result thus represents the architects' mean opinion on the security of the 
 The experts agreed that the number of hops between the entry and target is a criteria in evaluating the security of attack paths. 
 The more hops there are, the more challenging it becomes for attackers to navigate from the entry point to the target, however not every hop is the same.\\
 
-Separation and isolation, both of domains and \gls{ecu}s, is a crucial consideration, as it enables compartmentalization and application of security measures to each domain or \gls{ecu} individually. 
+Separation and isolation, both of domains and \acrshort{ecu}s, is a crucial consideration, as it enables compartmentalization and application of security measures to each domain or \acrshort{ecu} individually. 
 The Powertrain domain, which controls the engine, transmission, and other critical systems, is of particular concern, and its position in the network must be carefully considered. 
 It was thus somewhat expected that \nameref{fig:architecture3} received the highest score, as it has all of the external intefaces placed in the same domain.
 \nameref{fig:architecture10} was also expected to receive a high score, as it is similar to \nameref{fig:architecture3} in terms of the placement of the external interfaces,
@@ -125,31 +125,31 @@ but the Telematic domain controller being a target was a concern and we actually
 but the experts agreed that isolation played a huge role in the evaluation.\\
 
 However, excessive isolation would make the system too complex. 
-Architectures \ref{fig:architecture6} and \ref{fig:architecture7} also provide high levels of isolation, but at the cost of increased overall complexity.
-Communication between \gls{ecu}s must also be considered, as it is an essential part of the vehicle. 
-Too many isolated \gls{ecu}s communicating with each other can result in significant overhead. 
+Architectures \nameref{fig:architecture6} and \nameref{fig:architecture7} also provide high levels of isolation, but at the cost of increased overall complexity.
+Communication between \acrshort{ecu}s must also be considered, as it is an essential part of the vehicle. 
+Too many isolated \acrshort{ecu}s communicating with each other can result in significant overhead. 
 Media change, such as from CAN to CANFD or FlexRay or Ethernet, also introduces additional hurdles.
 That is why it is very surprising to see that \nameref{fig:architecture6} received such a good score in the survey
-and in addition for it to be in such stark contrast to \ref{fig:architecture7} which received one of the worst ratings.\\
+and in addition for it to be in such stark contrast to \nameref{fig:architecture7} which received one of the worst ratings.\\
 
-Other factors that need to be evaluated include the presence of a \gls{cgw} and the number of external interfaces, 
+Other factors that need to be evaluated include the presence of a \acrshort{cgw} and the number of external interfaces, 
 as more interfaces mean more attack vectors and the need for more security mechanisms.
 \nameref{fig:architecture4} and \nameref{fig:architecture9} have most spread out interfaces, and thus they were expected to receive a low score,
-whereas Architectures \ref{fig:architecture8} was expected to receive a high score, as the \gls{cgw} is the only entry vector into the network.
-However, a \gls{cgw} with no external interfaces is overall likely more secure than an architecture with no \gls{cgw} at all, and that is why 
+whereas Architectures \nameref{fig:architecture8} was expected to receive a high score, as the \acrshort{cgw} is the only entry vector into the network.
+However, a \acrshort{cgw} with no external interfaces is overall likely more secure than an architecture with no \acrshort{cgw} at all, and that is why 
 \nameref{fig:architecture2} received a higher score than \nameref{fig:architecture1}. 
 Of course, the type and the security of the external interface plays a role as well, because every interface has different security properties.\\
 
 While the attack feasibility of each component accounts for the security mechanisms implemented in the vehicle, such as firewalls or IDCs, 
 these mechanisms and the component's feasibility have not been explicitly stated in the architectures under consideration, since every component can vary in their implementation.
-However, these feasibility assessments are represented through the feasibility of each \gls{ecu}, bus, and interface as explained in Section \ref{sec:config}.
+However, these feasibility assessments are represented through the feasibility of each \acrshort{ecu}, bus, and interface as explained in Section \nameref{sec:config}.
 The experts agreed that the presence of security mechanisms is a critical factor in evaluating the security of the architectures.
 Such security measures impede attackers from progressing quickly through the attack path. 
 For example, intelligent domain controllers that differentiate between domains are more effective than those that only forward messages.
 As a result, the final results varied between experts, as expected.\\
 
-To summarize, architectures \ref{fig:architecture3}, and \ref{fig:architecture8} received the best feedback, closely followed by architectures \ref{fig:architecture6} and \ref{fig:architecture10} and \ref{fig:architecture2},
-whereas architectures \ref{fig:architecture4}, \ref{fig:architecture7}, and \ref{fig:architecture9} received a the worst feedback, as they have been ranked last place at least once.
+To summarize, architectures \nameref{fig:architecture3}, and \nameref{fig:architecture8} received the best feedback, closely followed by architectures \nameref{fig:architecture6} and \nameref{fig:architecture10} and \nameref{fig:architecture2},
+whereas architectures \nameref{fig:architecture4}, \nameref{fig:architecture7}, and \nameref{fig:architecture9} received a the worst feedback, as they have been ranked last place at least once.
 
 \section{Results - Training Set Architectures}
 
@@ -163,16 +163,16 @@ The result is as follows:
     \hline
     Rank & Architecture & Score \\
     \hline
-    1 & \ref{fig:architecture3} & 10 \\
-    2 & \ref{fig:architecture8} & 11 \\
-    3 & \ref{fig:architecture6} & 15 \\
-    4 & \ref{fig:architecture10} & 16 \\
-    5 & \ref{fig:architecture2} & 17 \\
-    6 & \ref{fig:architecture1} & 25 \\
-    7 & \ref{fig:architecture5} & 27 \\
-    8 & \ref{fig:architecture7} & 28 \\
-    9 & \ref{fig:architecture9} & 29 \\
-    10 & \ref{fig:architecture4} & 30\\
+    1 & \nameref{fig:architecture3} & 10 \\
+    2 & \nameref{fig:architecture8} & 11 \\
+    3 & \nameref{fig:architecture6} & 15 \\
+    4 & \nameref{fig:architecture10} & 16 \\
+    5 & \nameref{fig:architecture2} & 17 \\
+    6 & \nameref{fig:architecture1} & 25 \\
+    7 & \nameref{fig:architecture5} & 27 \\
+    8 & \nameref{fig:architecture7} & 28 \\
+    9 & \nameref{fig:architecture9} & 29 \\
+    10 & \nameref{fig:architecture4} & 30\\
     \hline
     \end{tabular}
 \end{table}
