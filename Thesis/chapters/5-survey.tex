@@ -25,8 +25,11 @@ We anticipate this architecture may underperform in terms of security compared t
 \section{Architecture 2}
 \label{subsec:arch2}
 
-\nameref{fig:architecture2} is essentially the same as \nameref{fig:architecture1}, but without a \acrshort{cgw}.his setup allows us to analyze how the architecture would function without it. 
-We predict that this architecture's performance will align closely with or perhaps fall slightly short of \nameref{fig:architecture1} and \ref{fig:architecture5}.
+\nameref{fig:architecture2} is essentially the same as \nameref{fig:architecture1}, 
+but without a \acrshort{cgw}.
+This setup allows us to analyze how the architecture would function without it. 
+We predict that this architecture's performance will align closely with or perhaps 
+fall slightly short of \nameref{fig:architecture1} and \ref{fig:architecture5}.
 
 \section{Architecture 3}
 \label{subsec:arch3}
@@ -39,10 +42,10 @@ We anticipate this architecture to be among the most secure in this set due to i
 \section{Architecture 4}
 \label{subsec:arch4}
 
-\nameref{fig:architecture4} offers entry points from all domain controllers.allows entry points from all domain controllers, 
-each of which has only one type of interface. The inclusion of an entry point from each domain controller expands the attack surface. 
+\nameref{fig:architecture4} offers entry points from all domain controllers, each of which has only one type of interface. 
+The inclusion of an entry point from each domain controller expands the attack surface. 
 To gain quick access to the whole domain, an attacker would only need to compromise one \acrshort{ecu} within each domain controller. 
-This architecture, however, is essentially equivalent to Architecture 9, including the \acrshort{cgw}. 
+This architecture, however, is essentially equivalent to \nameref{fig:architecture9}, including the \acrshort{cgw}. 
 We anticipate that due to its numerous and dispersed entry points, this architecture might be one of the least secure within this set.
 \section{Architecture 5}
 \label{subsec:arch5}
@@ -60,7 +63,7 @@ We expect this architecture to perform similarly to \nameref{fig:architecture1} 
 While this layout amplifies communication complexity between the \acrshort{ecu}s, it provides robust isolation between them. 
 However, it also reduces the hops per attack path and the number of \acrshort{ecu}s used for the path. 
 This design may not be feasible in a real-world scenario due to its complexity but is intriguing to examine its performance. 
-It is not expected to appeal to security experts, given its inherent challenges.
+It is not expected to do well in the survey.
 
 \section{Architecture 7}
 \label{subsec:arch7}
@@ -83,7 +86,7 @@ However, the entry point's central location may slightly undermine the architect
 \section{Architecture 9}
 \label{subsec:arch9}
 
-\nameref{fig:architecture9} is the same as \nameref{fig:architecture4} but excludes a central gateway. 
+\nameref{fig:architecture9} is the same as \nameref{fig:architecture4} but excludes a \acrshort{cgw}. 
 Again, the dispersed entry points lead to a larger attack surface, and the significance of the \acrshort{cgw} 
 can be more accurately deduced from this comparison. 
 This architecture is not expected to perform well in security, possibly scoring worse than \nameref{fig:architecture4}.
@@ -121,9 +124,9 @@ as they enable compartmentalization and application of security measures to each
 The placement of the Powertrain domain in the network is particularly critical, 
 given its control of the engine, transmission, and other critical systems. 
 The architecture with the external interfaces placed in the same domain (\nameref{fig:architecture3}) 
-received the highest score, as expected. Similarly, \nameref{fig:architecture10} was expected to score high, 
-as it is similar to \nameref{fig:architecture3} regarding the placement of external interfaces, but
-concerns were raised regarding the Telematic domain controller being a target.
+received the highest score, as expected. 
+Similarly, \nameref{fig:architecture10} was expected to score high, as it is similar to \nameref{fig:architecture3} 
+regarding the placement of external interfaces, but concerns were raised regarding the Telematic domain controller being a target.
 
 However, isolation has its limits.
 Architectures \nameref{fig:architecture6} and \nameref{fig:architecture7} provide high levels of isolation, but at the cost of increased overall complexity.
@@ -148,8 +151,10 @@ Such security measures impede attackers from progressing quickly through the att
 For example, intelligent domain controllers that differentiate between domains are more effective than those that only forward messages.
 As a result, the final results varied between experts, as expected.\\
 
-In conclusion, architectures \nameref{fig:architecture3}, and \nameref{fig:architecture8} received the best feedback, closely followed by architectures \nameref{fig:architecture6} and \nameref{fig:architecture10} and \nameref{fig:architecture2},
-whereas architectures \nameref{fig:architecture4}, \nameref{fig:architecture7}, and \nameref{fig:architecture9} received the worst feedback, as they have been ranked last place at least once.
+In conclusion, architectures \nameref{fig:architecture3}, and \nameref{fig:architecture8} received the best feedback, 
+closely followed by architectures \nameref{fig:architecture6} and \nameref{fig:architecture10} and \nameref{fig:architecture2},
+whereas architectures \nameref{fig:architecture4}, \nameref{fig:architecture7}, 
+and \nameref{fig:architecture9} received the worst feedback, as they have been ranked last place at least once.
 
 \section{Results - Training Set Architectures}
 

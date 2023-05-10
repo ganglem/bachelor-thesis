@@ -98,8 +98,7 @@ To get a reasonable rating score, the product of the feasibility and \acrshort{c
 Next, we consider the factors that are unfavorable to have more of.\\
 The isolation of an architecture, i.e., the amount of \acrshort{ecu}s per bus, is unfavorable to have more of.
 This is because the more \acrshort{ecu}s there are per bus, the more \acrshort{ecu}s there are to compromise on one bus.
-Looking back at \nameref{fig:architecture6}, which received a good rating, we can deduce that the more isolated the \acrshort{ecu}s are, 
-the better.
+Looking back at \nameref{fig:architecture6}, which received a good rating, we can deduce that the more isolated the \acrshort{ecu}s are, the better.
 The amount of interfaces is also unfavorable to have more of.
 In this case, we only consider the number of entry points and not the number of total interfaces.
 Doing so, we can differentiate between one \acrshort{ecu} with many interfaces and many \acrshort{ecu}s with one interface since more entry points are also likely more spread out.
@@ -135,13 +134,13 @@ with \nameref{fig:architecture8} even scoring last place.
 Even though this is not ideal it is a good start, bt the denominator is definitely needed to get a better result.\\
 
 We considered the possibility of entirely excluding $w_{1}$ since its weight is only 1. 
+Initially, we introduced the factor to normalize the hops for each architecture. 
 However, the inclusion of $w_{1}$ produced better results. 
 For instance, without $w_{1}$, the score gap between \nameref{fig:architecture10} and other architectures was much wider, 
 leading to \nameref{fig:architecture8} ranking higher than \nameref{fig:architecture3} and \nameref{fig:architecture6}, 
 which didn't align with the survey results. 
 There is a limit to how large this factor can be; testing with a much higher weight for $w_{1}$ is illogical, 
 as it would imply that an increase in hops leads to a poorer architecture, which is contrary to our understanding. 
- Initially, we introduced the factor to normalize the hops for each architecture. 
 We concluded that the inclusion of total hops with a low weight of 1 was necessary to yield the desired results.\\
 
 Initially, $w_{2}$ was intended to serve as a standard multiplication factor like others in our model. 
