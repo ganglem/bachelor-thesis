@@ -79,7 +79,7 @@ Specifically, the function loads the contents of the architecture file, \acrshor
 and extracts the architecture name, architecture, \acrshort{ecu}s configuration, and buses configuration, respectively. 
 The function returns these four objects as a tuple.\\
 
-\texttt{generate\_graph(architecture, ecus\_config, buses\_config)}:\\
+\texttt{generate\_graph(architecture, ecus\_config, buses\_config)} [\ref{alg:generate_graph}]:\\
 This function takes three arguments as input: 
 \texttt{architecture}, \texttt{ecus\_config}, and \texttt{buses\_config}. 
 The function processes this input to create a directed graph \texttt{(nx.DiGraph())} 
@@ -124,12 +124,14 @@ It returns the generated graph, a list of entry points, and a list of target \ac
 \textit{Note: This is why it was easier to treat external interfaces as \acrshort{ecu}s as well as buses.
 Since we are looking for the shortest path for an interface type, not the \acrshort{ecu} using it, treating all interfaces
 as a bus and \acrshort{ecu} conntected to the internal \acrshort{ecu}s using such interface facilitates the shortest path generation.}\\
-The function returns the generated graph, along with the entry \acrshort{ecu}s and target \acrshort{ecu}s lists.\\
 
 
-\texttt{find\_attack\_path}: 
+\texttt{find\_attack\_path} [\ref{alg:findattackpath}]: 
 This function is designed to find the feasibility and the shortest path from each entry \acrshort{ecu} 
 to each target \acrshort{ecu} in a given directed graph \texttt{(nx.DiGraph)}.
+The resulting table can be used to analyze the most feasible attack paths between 
+various entry points and target \acrshort{ecu}s in the system's architecture.
+It uses the Bellman-Ford algorithm [\ref{alg:bellmanford}] to compute the most feasible attack path between two \acrshort{ecu}s.\\
 
 \begin{algorithm}[h]
     \caption{Find Attack Path}
@@ -159,28 +161,29 @@ to each target \acrshort{ecu} in a given directed graph \texttt{(nx.DiGraph)}.
     \end{algorithmic}
 \end{algorithm}
     
-The resulting table can be used to analyze the most feasible attack paths between 
-various entry points and target \acrshort{ecu}s in the system's architecture.\\
 
-Finally, \texttt{apply\_criteria} applies the \nameref{chp:criteria} to the table.
-Each architecture receives a feasibility score and the result can be interpreted as a benchmark for the architecture's security.\\
-Since the evaluation of the feasibility of the architecture is represented by a single number, 
-it is easy to rank and compare the results of different architectures, which the function is also designed to do.\\
-
-It is easy to extend the tool to support other criteria.\\
+The function \texttt{apply\_criteria} applies the criteria [\ref{chp:criteria}] to the table, 
+resulting in a feasibility score for each architecture, 
+which can be interpreted as a benchmark for its security. 
+The evaluation process generates a single number for each architecture, 
+making it straightforward to compare and rank the results of different architectures, 
+which is also the intended purpose of the function. 
+Additionally, the tool can be easily extended to support other criteria.\\
 
 Various \textit{I/O functions} are responsible for printing the results, saving them to an external file, or quickly saving the graph as an image file
-and other \textit{helper functions} are used to simplify the code.
+and other \textit{helper functions} are used to simplify the code.\\
 
-Below is the implementation of the Bellman-Ford algorithm used in \texttt{\nameref{alg:findattackpath}}.
 
-The Bellman-Ford algorithm is a graph search algorithm that computes 
+
+The Bellman-Ford algorithm [\ref{alg:bellmanford}] is a graph search algorithm that computes 
 the shortest paths from a single source vertex to all other vertices in a weighted graph.
-It is very similar to the Dijkstra algorithm, but it can work with negative edge weights.\\T
+It is used used in \texttt{\nameref{alg:findattackpath}}.
+It is very similar to the Dijkstra algorithm, but it can work with negative edge weights.
 Both algorithms are possible solutions to the our proble, but we chose the Bellman-Ford algorithm because it was mentioned in \cite{threat_surf}.
 
 \begin{algorithm}[h]
     \caption{Bellman-Ford Algorithm}
+    \label{alg:bellmanford}
     \begin{algorithmic}[1]
     \Procedure{BellmanFord}{$Graph, source$}
         \ForAll{$vertex \in Graph.vertices$}

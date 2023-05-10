@@ -90,7 +90,7 @@ This architecture is not expected to perform well in security, possibly scoring 
 \section{Architecture 10}
 \label{subsec:arch10}
 
-\nameref{fig:architecture10}, the final architecture of the test set, includes only one of each interface, 
+\nameref{fig:architecture10}, the final architecture of the training set, includes only one of each interface, 
 but they are more dispersed than in \nameref{fig:architecture8}. 
 However, the entry points are still grouped together, aligning with the concept of \nameref{fig:architecture3}. 
 This architecture is expected to be one of the most secure due to its few, isolated entry points.
@@ -98,28 +98,35 @@ This architecture is expected to be one of the most secure due to its few, isola
 \section{Survey}
 \label{sec:survey}
 
-Security experts at Mercedes-Benz Tech Innovation were given ten architectures, as shown in \nameref{chp:arch}.
-The experts were asked to rank the architectures, give the reasoning behind their ranking, and add any comments they had.
-Since there are ten architectures, the ranking went from 1 to 10, where 1 is the most secure and 10 is the least secure.
-Each rank was given a score: the first place got 1 point, the second place got 2 points, and so on.
-In the end, each architecture ranking/score got was summed up, and the architecture with the lowest score was the most secure.\\
+Mercedes-Benz Tech Innovation's security experts were tasked with evaluating ten architectures, 
+as detailed in \nameref{chp:arch}. The architects ranked each architecture and provided an explanation 
+for their ranking, along with any additional comments. 
+The rankings ranged from 1 to 10, with 1 being the most secure and 10 being the least secure. 
+The sum of each architecture's rank score determined its final score, 
+with the lowest score indicating the most secure architecture.
 
-Of course, there are many ways how a security architect approaches an evaluation.
-Each architect comes from a different background with different experience and thus will see some factors as more or less important than others.
-Even though architects generally agree about what makes an architecture secure and what does not, opinions differ in the details.
-This result thus represents the architects' mean opinion on the security of the architecture.\\
+While there are generally agreed upon factors that make an architecture secure, 
+different security architects may approach an evaluation differently based on their background and experience. 
+As a result, some factors may be seen as more or less important than others. 
+Therefore, the opinion on the security of an architecture can vary between architects. 
+The result of this evaluation reflects the mean opinion of the participating architects.\\
 
-The experts agreed that the number of hops between the entry and target is a criterion in evaluating the security of attack paths. 
-The more hops there are, the more challenging it becomes for attackers to navigate from the entry point to the target. However not every hop is the same.\\
+The number of hops between the entry and target was identified by the experts as a 
+crucial criterion in evaluating the security of attack paths, although not all hops have the same impact on security. 
+More hops can make it more difficult for attackers to navigate from the entry point to the target, 
+but a shorter but more challenging attack path might be less feasible than a longer but easier one. 
 
-Separation and isolation, both of domains and \acrshort{ecu}s, is a crucial consideration, as it enables compartmentalization and application of security measures to each domain or \acrshort{ecu} individually. 
-The Powertrain domain, which controls the engine, transmission, and other critical systems, is of particular concern, and its position in the network must be carefully considered. 
-It was thus somewhat expected that \nameref{fig:architecture3} received the highest score, as all of the external interfaces were placed in the same domain.
-\nameref{fig:architecture10} was also expected to receive a high score, as it is similar to \nameref{fig:architecture3} regarding the placement of the external interfaces. However, the Telematic domain controller being a target was a concern, and we expected it to rank better than the survey results did in the end.\\
-\nameref{fig:architecture6} was also not expected to receive a good score, as the maximum number of hops between the entry and target is two on average. However, the experts agreed that isolation played a huge role in the evaluation.\\
+Separation and isolation of domains and ECUs are critical considerations, 
+as they enable compartmentalization and application of security measures to each domain or ECU individually. 
+The placement of the Powertrain domain in the network is particularly critical, 
+given its control of the engine, transmission, and other critical systems. 
+The architecture with the external interfaces placed in the same domain (\nameref{fig:architecture3}) 
+received the highest score, as expected. Similarly, \nameref{fig:architecture10} was expected to score high, 
+as it is similar to \nameref{fig:architecture3} regarding the placement of external interfaces, but
+concerns were raised regarding the Telematic domain controller being a target.
 
-However, excessive isolation would make the system too complex. 
-Architectures \nameref{fig:architecture6} and \nameref{fig:architecture7} also provide high levels of isolation, but at the cost of increased overall complexity.
+However, isolation has its limits.
+Architectures \nameref{fig:architecture6} and \nameref{fig:architecture7} provide high levels of isolation, but at the cost of increased overall complexity.
 Communication between \acrshort{ecu}s must also be considered, as it is an essential part of the vehicle. 
 Too many isolated \acrshort{ecu}s communicating with each other can result in significant overhead. 
 Media change, such as from \acrshort{can} to \acrshort{canfd}, \acrshort{flexray}, or Ethernet, also introduces additional hurdles.
@@ -131,7 +138,7 @@ Other criteria that need to be evaluated include the presence of a \acrshort{cgw
 whereas Architectures \nameref{fig:architecture8} was expected to receive a high score, as the \acrshort{cgw} is the only entry vector into the network.
 However, a \acrshort{cgw} with no external interfaces is overall likely more secure than an architecture with no \acrshort{cgw} at all, and that is why 
 \nameref{fig:architecture2} received a higher score than \nameref{fig:architecture1}. 
-Of course, the type and the security of the external interface also play a role because every interface has different security properties.\\
+It is important to consider the type and security of the external interface as each interface has distinct security properties.
 
 While the attack feasibility of each component accounts for the security mechanisms implemented in the vehicle, such as firewalls or IDCs, 
 these mechanisms and the component's feasibility have not been explicitly stated in the architectures under consideration since every component can vary in their implementation.
@@ -141,7 +148,7 @@ Such security measures impede attackers from progressing quickly through the att
 For example, intelligent domain controllers that differentiate between domains are more effective than those that only forward messages.
 As a result, the final results varied between experts, as expected.\\
 
-To summarize, architectures \nameref{fig:architecture3}, and \nameref{fig:architecture8} received the best feedback, closely followed by architectures \nameref{fig:architecture6} and \nameref{fig:architecture10} and \nameref{fig:architecture2},
+In conclusion, architectures \nameref{fig:architecture3}, and \nameref{fig:architecture8} received the best feedback, closely followed by architectures \nameref{fig:architecture6} and \nameref{fig:architecture10} and \nameref{fig:architecture2},
 whereas architectures \nameref{fig:architecture4}, \nameref{fig:architecture7}, and \nameref{fig:architecture9} received the worst feedback, as they have been ranked last place at least once.
 
 \section{Results - Training Set Architectures}

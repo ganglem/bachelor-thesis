@@ -787,3 +787,9 @@
     \input{frontmatter/graphics.tex}
     \newpage
 }
+
+\newcommand\makedatatables{
+    \newpage
+    \input{frontmatter/datatables.tex}
+    \newpage
+}

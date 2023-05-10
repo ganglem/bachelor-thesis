@@ -263,7 +263,7 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 
     w1 = 1
     w2 = 4
-    w3 = 500
+    w3 = 32
 
     numerator = (100 * (original_architecture_feasibility * cgw))
     denominator = (total_hops * w1 + (isolation ** w2) + test_interfaces * w3)
