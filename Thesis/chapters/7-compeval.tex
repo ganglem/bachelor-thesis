@@ -1,22 +1,22 @@
 \chapter{Proof of Concept}
 \label{chp:compeval}
 
-To prove that the criteria are properly calibrated and gives desired results, another set of architectures is evaluated.\\
-These architectures were designed with the survey feedback in mind.
-In the following, they are referred to as \textit{Proof Of Concept architectures}.\\
+To prove that the criteria are properly calibrated and gives desired results, another set of architectures is evaluated.
+These architectures were designed with the survey feedback in mind and they are referred to as \textit{Proof Of Concept architectures}.
 The training set architectures sometimes differ immensely from each other to be able to better crystallize the criteria,
-whereas these now are kept relatively similar to each other to ensure the criteria are not biased towards a specific architecture.\\
+whereas these now are kept relatively similar to each other to ensure the criteria are not biased towards a specific architecture.
 Similarly to the test set, this chapter will describe the architectures, estimate the desired results, and evaluate the architectures using the tool.
-The following architectures all use the same building blocks with the same values as described in [\ref{chp:arch}].
+The following architectures all use the same building blocks with the same values as described in (\ref{chp:arch}).
 
 \section{Architecture A}
 \label{sec:archa}
 
 \nameref{fig:architectureA} features four entry points and six interfaces - the highest amount of all the architectures.
 However, the strong point here is that they are relatively separated from the rest of the components.
-In addition, it features a \acrshort{cgw} that is not an entry point.\\
+In addition, it features a \acrshort{cgw} that is not an entry point.
 These factors indicate a high amount of hops for some targets.
-In terms of isolation of \acrshort{ecu}s, most \acrshort{ecu}s share their bus with at least two or more other \acrshort{ecu}s, resulting in low isolation compared to the other architectures.\\
+In terms of isolation of \acrshort{ecu}s, most \acrshort{ecu}s share their bus with at least two or 
+more other \acrshort{ecu}s, resulting in low isolation compared to the other architectures.
 Based on the criteria, this architecture is expected to do the best out of the three architectures.
 
 \section{Architecture B}
@@ -24,7 +24,7 @@ Based on the criteria, this architecture is expected to do the best out of the t
 
 \nameref{fig:architectureB} features three entry points and five interfaces.
 Though the number is lower than that of \nameref{fig:architectureA}, the entry points are more spread out, meaning that the maximum amount of hops is lower.
-The \acrshort{cgw}, however, is not an entry point, and the isolation of \acrshort{ecu}s is better compared to \nameref{fig:architectureA}.\\
+The \acrshort{cgw}, however, is not an entry point, and the isolation of \acrshort{ecu}s is better compared to \nameref{fig:architectureA}.
 This architecture, though offering better isolation, is expected to perform worse than \nameref{fig:architectureA} due to the lower amount of hops.
 
 \section{Architecture C}
@@ -33,7 +33,7 @@ This architecture, though offering better isolation, is expected to perform wors
 \nameref{fig:architectureC} has only three entry points and three interfaces - however, one of them being the \acrshort{cgw} and 
 in addition, the entry points are distributed across the architecture. 
 This results in a lower amount of hops for the targets, putting this architecture at a disadvantage compared to the other two.
-Isolation of \acrshort{ecu}s here is similar or somewhat better to \nameref{fig:architectureB}.\\
+Isolation of \acrshort{ecu}s here is similar or somewhat better to \nameref{fig:architectureB}.
 Due to the low amount of hops and the \acrshort{cgw} being an entry point, this architecture is expected to perform 
 similar to \nameref{fig:architectureB}, but still the worst out of the three.
 
@@ -41,7 +41,7 @@ similar to \nameref{fig:architectureB}, but still the worst out of the three.
 \section{Results - Proof Of Concept Architectures}
 \label{sec:resultsproof}
 
-The results are as follows:
+The results are as follows:\\
 
 \begin{table}[h]
     \label{table:pocranking}
@@ -57,6 +57,8 @@ The results are as follows:
     \hline
     \end{tabular}
 \end{table}
+
+\hfill \break
 
 Taking the criteria into account, the results reflect the expectations.
 \nameref{fig:architectureA}, with the highest amount of hops, due to the secluded entry points, is ranked first.

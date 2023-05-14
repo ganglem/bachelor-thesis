@@ -7,6 +7,7 @@ that communicate with each other to perform different functions, such as engine 
 What started as a simple network of a few \acrshort{ecu}s has evolved into a complex network of \acrshort{ecu}s,
 and while the evolution of these systems has resulted in improved vehicle efficiency and features, 
 it has also created new cybersecurity concerns.
+\\
 
 There are several types of components in a vehicle network, and in order to understand these and their security features,
 we will first elaborate on those and define certain terms in this chapter that will be used throughout this thesis.
@@ -84,7 +85,7 @@ This subsection will further explain some the aforementioned components as well 
     It is a dependable, durable, and cost-effective communication protocol that has become an indispensable component of modern vehicle electronics.
     Since the \acrshort{can} bus is the most common bus system used in a vehicle, it will be set as a baseline for security in this thesis.
 
-    \item \textbf{\acrlong{canfd}}: It is an extension of \acrshort{can} bus.
+    \item \textbf{\acrlong{canfd}}: \acrshort{canfd} is an extension of \acrshort{can} bus.
     It provides higher data transfer rates, more efficient data communication, and increased bandwidth compared to the original \acrshort{can} bus.
     It is backward compatible with the original \acrshort{can} bus, which means it can function on the same network as older \acrshort{can} devices.
     In terms of security it will be rated a bit higher than \acrshort{can}.
@@ -105,7 +106,7 @@ This subsection will further explain some the aforementioned components as well 
     \acrshort{lin} is a weaker bus system than \acrshort{can} and \acrshort{canfd}, in terms of technology but also use, which will contribute to the bus rating 
     as well as the low security rating \acrshort{lin}-connected \acrshort{ecu}s have.
     
-    \item \textbf{\acrlong{most}}: It is a communication protocol that enables high-bandwidth multimedia data transfer between devices in modern vehicles. 
+    \item \textbf{\acrlong{most}}: \acrshort{most} is a communication protocol that enables high-bandwidth multimedia data transfer between devices in modern vehicles. 
     It was developed by a consortium of automotive and multimedia companies and offers high-speed, dependable, and cost-effective data transfer.
     It is a highly dependable communication protocol that has gained increased popularity in the automotive industry and
     provides secure communication between devices through encryption and authentication.
@@ -140,7 +141,7 @@ This subsection will further explain some the aforementioned components as well 
     
 Ranking these technologies in terms of security is a complex task, as each technology works differently,
 has different use cases and different security characteristics and vulnerabilities.
-Similarly to [\cite{threat_surf}], each component receives a rating.
+Similarly to \cite{threat_surf}, each component receives a rating.
 This rating is there to consider paths of different lengths and different feasibilities.
 A short, but secure path might be better than a long, but insecure path.
 Based on experts' experience, these values were given to each bus technology, and for 

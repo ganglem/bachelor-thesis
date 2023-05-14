@@ -2,7 +2,6 @@
 \label{chp:introcriteria}
 
 One of the most critical aspects of this thesis is the criteria used to evaluate the different architectures.
-
 In order to find and calibrate criteria, a survey was conducted in which security experts in the field of automotive security evaluated ten architectures.
 The criteria were calibrated based on their ratings and feedback on a "training set".
 Surveying with such a set rather than the architectures was done to avoid biased results and have well-evaluated criteria.
@@ -76,7 +75,7 @@ Comparing this architecture's performance to \nameref{fig:architecture6}'s will 
 \section{Architecture 8}
 \label{subsec:arch8}
 
-Figure \nameref{fig:architecture8} designates the \acrshort{cgw} as the sole entry point. 
+\nameref{fig:architecture8} designates the \acrshort{cgw} as the sole entry point. 
 This setup eliminates other entry points, meaning all attack paths originate from the same point, thereby reducing the attack surface. 
 Also, the feasibility rating of the interfaces becomes more significant, 
 and the attack paths might become much more linear, underscoring the importance of component feasibility ratings. 
@@ -101,12 +100,12 @@ This architecture is expected to be one of the most secure due to its few, isola
 \section{Survey}
 \label{sec:survey}
 
-Mercedes-Benz Tech Innovation's security experts were tasked with evaluating ten architectures, 
-as detailed in [\ref{chp:arch}]. The architects ranked each architecture and provided an explanation 
+Security experts at Mercedes-Benz Tech Innovation were tasked with evaluating ten architectures, 
+as detailed in (\ref{chp:arch}). The architects ranked each architecture and provided an explanation 
 for their ranking, along with any additional comments. 
 The rankings ranged from 1 to 10, with 1 being the most secure and 10 being the least secure. 
 The sum of each architecture's rank score determined its final score, 
-with the lowest score indicating the most secure architecture.
+with the lowest score indicating the most secure architecture.\\
 
 While there are generally agreed upon factors that make an architecture secure, 
 different security architects may approach an evaluation differently based on their background and experience. 
@@ -117,15 +116,15 @@ The result of this evaluation reflects the mean opinion of the participating arc
 The number of hops between the entry and target was identified by the experts as a 
 crucial criterion in evaluating the security of attack paths, although not all hops have the same impact on security. 
 More hops can make it more difficult for attackers to navigate from the entry point to the target, 
-but a shorter but more challenging attack path might be less feasible than a longer but easier one. 
+but a shorter but more challenging attack path might be less feasible than a longer but easier one.\\
 
 Separation and isolation of domains and ECUs are critical considerations, 
 as they enable compartmentalization and application of security measures to each domain or ECU individually. 
 The placement of the Powertrain domain in the network is particularly critical, 
 given its control of the engine, transmission, and other critical systems. 
-The architecture with the external interfaces placed in the same domain (\nameref{fig:architecture3}) 
+The architecture with the external interfaces placed in the same domain, like \nameref{fig:architecture3}, 
 received the highest score, as expected. 
-Similarly, \nameref{fig:architecture10} was expected to score high, as it is similar to \nameref{fig:architecture3} 
+Similarly, \nameref{fig:architecture10} was expected to score high, as it is akin to \nameref{fig:architecture3} 
 regarding the placement of external interfaces, but concerns were raised regarding the Telematic domain controller being a target.
 
 However, isolation has its limits.
@@ -141,7 +140,7 @@ Other criteria that need to be evaluated include the presence of a \acrshort{cgw
 Thus they were expected to receive a low score, whereas \nameref{fig:architecture8} was expected to receive a high score, as the \acrshort{cgw} is the only entry vector into the network.
 However, a \acrshort{cgw} with no external interfaces is overall likely more secure than an architecture with no \acrshort{cgw} at all, and that is why 
 \nameref{fig:architecture2} received a higher score than \nameref{fig:architecture1}. 
-It is important to consider the type and security of the external interface as each interface has distinct security properties.
+It is important to consider the type and security of the external interface as each interface has distinct security properties.\\
 
 While the attack feasibility of each component accounts for the security mechanisms implemented in the vehicle, such as firewalls or IDCs, 
 these mechanisms and the component's feasibility have not been explicitly stated in the architectures under consideration since every component can vary in their implementation.
@@ -160,6 +159,6 @@ whereas \nameref{fig:architecture4}, \ref{fig:architecture7}, and \ref{fig:archi
 \section{Results - Training Set Architectures}
 \label{sec:trainresults}
 
-The result is as follows:
+The results are as follows:
 
 \input{surveytable.tex}

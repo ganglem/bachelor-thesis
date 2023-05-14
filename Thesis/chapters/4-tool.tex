@@ -4,6 +4,7 @@
 Evaluation of multiple architectures by hand is a tedious and time-consuming task, so finding a way to automate this process is essential.
 A tool was developed to accelerate the evaluation of a vehicle network architecture based on their attack path feasibility
 by automatically generating the most feasible attack paths for the different complex architectures, as well as evalaute them based on the criteria.
+\\
 
 The following sections will describe the tool's implementation.
 
@@ -22,7 +23,6 @@ Each file has a specific structure and contains different attributes.
 
 The tool takes as input three sets of configuration files, each of them represented in the JSON format: 
 the system architecture, the \acrshort{ecu}s in the system, and the buses connecting the \acrshort{ecu}s. 
-
 This file defines the different communication buses that are used in the simulation. 
 It contains an array of objects, where each object represents a bus and has the following attributes:
 
@@ -34,8 +34,7 @@ It contains an array of objects, where each object represents a bus and has the 
 \subsection{ecus.json}
 \label{sec:ecus}
 
-This file defines the electronic control units (\acrshort{ecu}s) that are used in the simulation. 
-
+This file defines the electronic control units (\acrshort{ecu}s) that are used in the simulation.
 It contains an array of objects, where each object represents an \acrshort{ecu} and has the following attributes:
 
 \begin{itemize}
@@ -56,10 +55,10 @@ It contains an array of objects, where each object represents a communication li
 \item \textbf{\acrshort{ecu}s}: An array of the names of the \acrshort{ecu}s that are connected by this link.
 \end{itemize}
 
-Note that external interfaces (e.g., Bluetooth, WiFi, \acrshort{gnss}) are also considered as \acrshort{ecu}s as well as buses in the simulation.
+\textit{Note that external interfaces (e.g., Bluetooth, WiFi, \acrshort{gnss}) are also considered as \acrshort{ecu}s as well as buses in the simulation.
 Treating them as such simplifies the implementation of the tool using the following libraries.
 The feasibility of the interface can be set in either the buses.json or ecus.json file, however it is recommended to set it in the buses.json file.
-Whichever file is used, note that the feasibility must be set to 0 in the other file, to avoid double counting.
+Whichever file is used, note that the feasibility must be set to 0 in the other file, to avoid double counting.}
 
 
 \section{Tool Implementation}
@@ -81,12 +80,17 @@ Specifically, the function loads the contents of the architecture file, \acrshor
 and extracts the architecture name, architecture, \acrshort{ecu}s configuration, and buses configuration, respectively. 
 The function returns these four objects as a tuple.\\
 
-\texttt{generate\_graph} [\ref{alg:generate_graph}]:\\
+\texttt{generate\_graph} (\ref{alg:generate_graph}):\\
 This function takes three arguments as input: 
 \texttt{architecture}, \texttt{ecus\_config}, and \texttt{buses\_config}. 
 The function processes this input to create a directed graph \texttt{(nx.DiGraph())} 
 that represents the system's architecture and computes the feasibility between various nodes (\acrshort{ecu}s). 
 It returns the generated graph, a list of entry points, and a list of target \acrshort{ecu}s.
+\textit{Note: This is why it was easier to treat external interfaces as \acrshort{ecu}s as well as buses.
+Since we are looking for the shortest path for an interface type, not the \acrshort{ecu} using it, treating all interfaces
+as a bus and \acrshort{ecu} conntected to the internal \acrshort{ecu}s using such interface facilitates the shortest path generation.}\\
+
+\newpage
 
 \begin{algorithm}[h]
     \caption{Generate Graph}
@@ -123,17 +127,14 @@ It returns the generated graph, a list of entry points, and a list of target \ac
     \end{algorithmic}
 \end{algorithm}
 
-\textit{Note: This is why it was easier to treat external interfaces as \acrshort{ecu}s as well as buses.
-Since we are looking for the shortest path for an interface type, not the \acrshort{ecu} using it, treating all interfaces
-as a bus and \acrshort{ecu} conntected to the internal \acrshort{ecu}s using such interface facilitates the shortest path generation.}\\
+\newpage
 
-
-\texttt{find\_attack\_path} [\ref{alg:findattackpath}]: 
+\texttt{find\_attack\_path} (\ref{alg:findattackpath}): 
 This function is designed to find the feasibility and the shortest path from each entry \acrshort{ecu} 
 to each target \acrshort{ecu} in a given directed graph \texttt{(nx.DiGraph)}.
 The resulting table can be used to analyze the most feasible attack paths between 
 various entry points and target \acrshort{ecu}s in the system's architecture.
-It uses the Bellman-Ford algorithm [\ref{alg:bellmanford}] to compute the most feasible attack path between two \acrshort{ecu}s.\\
+It uses the Bellman-Ford algorithm (\ref{alg:bellmanford}) to compute the most feasible attack path between two \acrshort{ecu}s.\\
 
 \begin{algorithm}[h]
     \caption{Find Attack Path}
@@ -163,8 +164,7 @@ It uses the Bellman-Ford algorithm [\ref{alg:bellmanford}] to compute the most f
     \end{algorithmic}
 \end{algorithm}
     
-
-The function \texttt{apply\_criteria} applies the criteria [\ref{chp:criteria}] to the table, 
+\texttt{apply\_criteria} applies the criteria (\ref{chp:criteria}) to the table, 
 resulting in a feasibility score for each architecture, 
 which can be interpreted as a benchmark for its security. 
 The evaluation process generates a single number for each architecture, 
@@ -173,9 +173,11 @@ which is also the intended purpose of the function.
 Additionally, the tool can be easily extended to support other criteria.\\
 
 Various \textit{I/O functions} are responsible for printing the results, saving them to an external file, or quickly saving the graph as an image file
-and other \textit{helper functions} are used to simplify the code.\\
+and other \textit{helper functions} are used to simplify the code.
 
-The Bellman-Ford algorithm [\ref{alg:bellmanford}],used in \texttt{\nameref{alg:findattackpath}}, 
+\newpage
+
+The Bellman-Ford algorithm (\ref{alg:bellmanford}), used in \texttt{\nameref{alg:findattackpath}}, 
 is a graph search algorithm that computes 
 the shortest paths from a single source vertex to all other vertices in a weighted graph.
 It works by iteratively "relaxing" the edges in the graph. 

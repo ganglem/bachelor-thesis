@@ -608,13 +608,14 @@
     {\begingroup
             \thispagestyle{empty}
             \begin{tikzpicture}[remember picture, overlay]
-                \draw[fill=uulm-akzent!20,draw=uulm-akzent!20] ($ (current page.south west) + (0, 17.7cm) $) rectangle ++(\paperwidth, 6.8cm);
-                \draw[fill=uulm-in,draw=uulm-in] ($ (current page.south west) + (0, 14.6cm) $) rectangle ++(\paperwidth, 3.1cm);
+                %\draw[fill=uulm-akzent!20,draw=uulm-akzent!20] ($ (current page.south west) + (0, 17.7cm) $) rectangle ++(\paperwidth, 6.8cm);
+                %\draw[fill=uulm-in,draw=uulm-in] ($ (current page.south west) + (0, 14.6cm) $) rectangle ++(\paperwidth, 3.1cm);
 
-                \@titlegraphic
+                %\@titlegraphic
 
-                \node[inner sep=0, anchor=south east, align=flush right, text width=17cm, minimum height=3.1cm] at ($ (current page.south west) + (19cm, 14.6cm) $) {%
-                    {\sffamily\color{white}\huge\baselineskip=25pt\@title\par}};
+                \node[inner sep=0, anchor=south east, align=center, text width=17cm, minimum height=7.1cm] at ($ (current page.south west) + (19cm, 14.6cm) $) {%
+                    {\sffamily\color{black}\fontsize{26pt}{38pt}\centering\selectfont\@title\par}
+                        };
 
                 \node[inner sep=0, anchor=north east, align=flush right, text width=17cm] at ($ (current page.south west) + (19cm, 12.8cm) $) {{\sffamily
                         {\color{uulm-akzent} \@authorprefix}%

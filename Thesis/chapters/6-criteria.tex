@@ -62,14 +62,14 @@ To include the influence of a \acrshort{cgw}, we define the \acrshort{cgw} facto
 
 \hfill \break
 
-Isolation of an architecture is defined as the amount of \acrshort{ecu}s per bus, which we call the separation factor $isolation{a}$:\\
+Isolation of an architecture is defined as the amount of \acrshort{ecu}s per bus, which we call the separation factor $isolation_{a}$:\\
 \begin{equation}
     isolation_{a} := \text{average amount of ECUs per bus in } a \label{eq:isolation}
 \end{equation}
 
 \hfill \break
 
-And lastly, we define the number of entry points as the interfaces factor $entrypoints{a}$:\\
+And lastly, we define the number of entry points as the interfaces factor $entrypoints_{a}$:\\
 \begin{equation}
     entrypoints_{a} := \text{total amount of entry points in } a \label{eq:entrypoints}
 \end{equation}
@@ -80,19 +80,18 @@ And lastly, we define the number of entry points as the interfaces factor $entry
 Iterating over each of the ten architectures, their factors were given a weight and were then arranged in different mathematical operations.
 These weights were iterated from factors between 0 and 100, resulting in millions of combinations for every attempted equation.
 Each combination of the ten architectures using the same weights was then represented as a ranked table. 
-In the end, the weights of the tables with the smallest Euclidean distance to the survey table [\ref{table:survey}] were considered.
+In the end, the weights of the tables with the smallest Euclidean distance to the survey table (\ref{table:survey}) were considered.
 There were hundreds of feasible weight combinations, and ultimately, the smallest possible weights were chosen.
-
 Finding an equation that fit the criteria was a step-by-step progress.
-In general, we asked ourselves the questions:\\
+In general, we asked ourselves the questions:\par
 \textit{Which of the factors is it favorable to have more of?} and \textit{Which of the factors is it unfavorable to have more of?}\\
 
 Let us consider any one architecture:\\
 The most desirable is a high architecture feasibility score and many hops in each attack path.
-To get the architecture feasibility, each attack path feasibility is multiplied by the number of hops it has [\ref{eq:feasibility}].
+To get the architecture feasibility, each attack path feasibility is multiplied by the number of hops it has (\ref{eq:feasibility}).
 We know that the more difficult the path, the more secure the architecture, and the more hops there are in a path, 
 the more difficult it is to reach the target \acrshort{ecu}.
-This is then multiplied by the \acrshort{cgw} factor [\ref{eq:cgw}]. 
+This is then multiplied by the \acrshort{cgw} factor (\ref{eq:cgw}). 
 To get a reasonable rating score, the product of the feasibility and \acrshort{cgw} factor are multiplied by 100.\\
 
 Next, we consider the factors that are unfavorable to have more of.\\
@@ -113,10 +112,10 @@ In the end, we receive the following equation:\\
 \hfill \break
 
 In order to determine the optimal weights $w_{1}$, $w_{2}$, and $w_{3}$, we carried out iterations over the factors ranging from 0 to 100 for each architectural model. 
-Every permutation was subsequently ranked, and the weights of the permutations that were closest to the survey table [\ref{table:survey}] in terms of Euclidean distance were taken into account. 
+Every permutation was subsequently ranked, and the weights of the permutations that were closest to the survey table (\ref{table:survey}) in terms of Euclidean distance were taken into account. 
 Eventually, we selected the permutation with the smallest weights. 
 However, most of the other options with the same distance were also plausible since their scores were relatively close in terms of how the architecture was ranked. 
-We assigned 1 to $w_{1}$, 4 to $w_{2}$, and 32 to $w_{3}$.\\
+We assigned $1$ to $w_{1}$, $4$ to $w_{2}$, and 32 $to$ $w_{3}$.\\
 
 We multiplied the \acrshort{cgw} factor with the architectural feasibility score because it impacts the overall architecture, 
 rather than just a specific attack path or factor. 
@@ -160,41 +159,18 @@ If this factor is not considered, \nameref{fig:architecture4} lands in the middl
 which contradicts the survey results. Furthermore, without it, \nameref{fig:architecture8}
 would be deemed extremely unsecure, placing second from the bottom. 
 If we were to assign a higher weight to this factor, it would result in a lower score for \nameref{fig:architecture6}, 
-but it would not change the other architectures significantly.
+but it would not change the other architectures significantly.\\
 
 To summarize, we experimented with different weights for the factors and found that the weights of 
-1, 4, and 32 for $w_{1}$, $w_{2}$, and $w_{3}$, respectively, yielded the best results.
+$1$, $4$, and $32$ for $w_{1}$, $w_{2}$, and $w_{3}$, respectively, yielded the best results.
 
 
 \section{Calibration Results}
 \label{sec:calibration}
 
-The resulting table had a Euclidian distance of 6 to the survey table [\ref{table:survey}], which was the best result out of all the permutations, and looked as follows:\\
+The resulting table had a Euclidian distance of 6 to the survey table (\ref{table:survey}), which was the best result out of all the permutations.\\
 
-
-\begin{table}
-    \label{table:calibration}
-    \centering
-    \caption{Calibration ranking \textit{(detailed results of the calibration can be found in the appendix [\ref{apx:datatables}])}}
-    \begin{tabular}{ |c|c|c| }
-    \hline
-    Rank & Architecture & Score \\
-    \hline
-    1 & \nameref{fig:architecture10} & 151.48 \\
-    2 & \nameref{fig:architecture3} & 60.58 \\
-    3 & \nameref{fig:architecture8} & 59.85 \\
-    4 & \nameref{fig:architecture6} & 59.8 \\
-    5 & \nameref{fig:architecture2} & 56.52 \\
-    6 & \nameref{fig:architecture5} & 44.69 \\
-    7 & \nameref{fig:architecture1} & 43.46 \\
-    8 & \nameref{fig:architecture4} & 42.21 \\
-    9 & \nameref{fig:architecture9} & 31.38 \\
-    10 & \nameref{fig:architecture7} & 13.02 \\
-    \hline
-    \end{tabular}
-\end{table}
-
-As we can see, the table is very similar to the survey table [\ref{table:survey}], with the Euclidean distance being 6.
+As we can see, the table is very similar to the survey table (\ref{table:survey}), with the Euclidean distance being 6.
 The architectures that received the best rating, which were 
 \nameref{fig:architecture10}, \ref{fig:architecture3}, \ref{fig:architecture8}, and \ref{fig:architecture6} 
 also being the ones that were ranked the highest,
@@ -209,7 +185,7 @@ however the \acrshort{cgw} being the entry point in \nameref{fig:architecture8} 
 In contrast, \nameref{fig:architecture6}'s strong isolation is what made it rank high.
 We consider this distribution of this rating a success.\\
 
-\nameref{fig:architecture10} ranked first in our table, which was not the case in the survey table [\ref{table:survey}].
+\nameref{fig:architecture10} ranked first in our table, which was not the case in the survey table (\ref{table:survey}).
 This is due to the isolated entry points, the \acrshort{cgw} only being a target and not an entry point, 
 and the number of hops being high, as no interface shares an \acrshort{ecu} with another interface.
 The priorities of the security experts are reflected in this architecture, and
@@ -232,8 +208,52 @@ It is surprising to see that \nameref{fig:architecture4} ranked much better than
 However, this reflects some security experts' opinion that having a CGW is better than having none if it is not an entry point.\\
 
 To summarize, we were able to choose criteria and according weights in such a way that the resulting table 
-was very similar to the survey table [\ref{table:survey}].
+was very similar to the survey table (\ref{table:survey}).
 The criteria were constructed so that the priorities of the security experts were reflected, 
 and the weights were chosen so that the resulting table was as close to the survey table as possible.
 Though \nameref{fig:architecture10} and \ref{fig:architecture4} were the only major exceptions, 
 we find that the results, and thus our criteria equation, is nevertheless valid.\\
+
+\begin{table}[h]
+    \label{table:calibration}
+    \centering
+    \caption{Calibration ranking \textit{(detailed results of the calibration can be found in the appendix (\ref{apx:datatables}))}}
+    \begin{tabular}{ |c|c|c| }
+    \hline
+    Rank & Architecture & Score \\
+    \hline
+    1 & \nameref{fig:architecture10} & 151.48 \\
+    2 & \nameref{fig:architecture3} & 60.58 \\
+    3 & \nameref{fig:architecture8} & 59.85 \\
+    4 & \nameref{fig:architecture6} & 59.8 \\
+    5 & \nameref{fig:architecture2} & 56.52 \\
+    6 & \nameref{fig:architecture5} & 44.69 \\
+    7 & \nameref{fig:architecture1} & 43.46 \\
+    8 & \nameref{fig:architecture4} & 42.21 \\
+    9 & \nameref{fig:architecture9} & 31.38 \\
+    10 & \nameref{fig:architecture7} & 13.02 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[h]
+    \label{table:survey2}
+    \centering
+    \caption{Survey ranking for reference}
+    \begin{tabular}{ |c|c|c| }
+    \hline
+    Rank & Architecture & Score \\
+    \hline
+    1 & \nameref{fig:architecture3} & 10 \\
+    2 & \nameref{fig:architecture8} & 11 \\
+    3 & \nameref{fig:architecture6} & 15 \\
+    4 & \nameref{fig:architecture10} & 16 \\
+    5 & \nameref{fig:architecture2} & 17 \\
+    6 & \nameref{fig:architecture1} & 25 \\
+    7 & \nameref{fig:architecture5} & 27 \\
+    8 & \nameref{fig:architecture7} & 28 \\
+    9 & \nameref{fig:architecture9} & 29 \\
+    10 & \nameref{fig:architecture4} & 30\\
+    \hline
+    \end{tabular}
+\end{table}
