@@ -1,8 +1,9 @@
 \chapter{State of the Art}
 \label{chp:stateoftheart}
 
-There are various approaches to assessing the security of vehicular networks. Cybersecurity standards and frameworks give guidance and best practices for designing, implementing, and testing the cybersecurity of automotive systems and networks. 
-The following standards are mentioned in virtually every piece of literature; thus, they are the most important ones to consider. 
+There are various approaches to assessing the security of vehicular networks. 
+Cybersecurity standards and frameworks give guidance and best practices for designing, implementing, and testing the cybersecurity of automotive systems and networks. 
+The following standards are mentioned in virtually every piece of literature regarding vehicle security; thus, they are the most important ones to consider. 
 Moreover, they offer a basis for the thesis itself as well as the development of a tool to assess the security of vehicular networks,
 as their further use is intended to be used in conjunction with these standards and frameworks to ensure compliance with them:\\
 
@@ -33,7 +34,7 @@ and maintainable during the product lifecycle.
 This improves the efficiency of development, enables the integration, exchange, reuse, and transfer of functions within a vehicle network, 
 and helps manage the growing complexity of technology and economics in automotive software development.\\
 
-\acrshort{tara} is an essential process for ensuring the cybersecurity of systems and networks, especially in the automotive industry. 
+\acrlong{tara} is an essential process for ensuring the cybersecurity of systems and networks, especially in the automotive industry. 
 In the context of automotive systems, a \acrshort{tara} can be used to identify and evaluate potential threats and vulnerabilities to the electronic and electrical (E/E) architecture of vehicles.
 This includes identifying assets such as connected systems and networks and evaluating the likelihood and potential impact of threats such as 
 cyberattacks, hacking, and software vulnerabilities as well as determine appropriate countermeasures to mitigate these risks.
@@ -44,7 +45,7 @@ The \acrshort{tara} process can be used to ensure compliance with industry stand
 Regularly reviewing and updating the \acrshort{tara} process is crucial to keep up with the evolving threats and vulnerabilities in the automotive industry, 
 which is constantly evolving with the integration of new technologies such as connected cars, autonomous driving, and V2X communication \cite{tara}.\\
 
-Important frameworks include \acrshort{heavens}, and \acrshort{evita}.
+Important frameworks include \acrlong{heavens}, and \acrlong{evita}.
 HEAVENS performs risk assessments of general IT systems and models explicitly built for automotive systems and uses threat and impact levels to calculate risks \cite{heavens}.
 The primary objective of the framework is to identify security requirements and vulnerabilities in automotive systems and to provide countermeasures to minimize the risks associated with these vulnerabilities. 
 It uses the Microsoft \acrshort{stride} model for threat modeling and aligns its impact level estimation parameters with established industry standards such as ISO 26262. 
@@ -59,9 +60,9 @@ Further research aims to improve or couple existing approaches like performing a
 F. Sommer et al. introduce the concept of Model-Based Security Testing using an \acrshort{efsm} model \cite{model_based_testing}.
 The Automotive Security Model section describes an \acrshort{e/e} architecture, security measures, and further development artifacts to protect vehicles against attacks.
 The model is based on the EFSM, with nodes representing attacker privileges and transitions representing a vulnerability.
-The Proof of Concept section of the paper demonstrates how the model can be used to identify different attack paths, analyze the model for attack paths, and execute the attack paths on a real vehicle. 
+They demonstrate how the model can be used to identify different attack paths, analyze the model for attack paths, and execute the attack paths on a real vehicle. 
 The incremental approach allows for the redefinition of attack paths, making it useful at different stages during development. 
-The paper concludes that this approach can be helpful in identifying attack paths and potential vulnerabilities in automotive systems, thus helping to improve the security of vehicles.\\
+The authors conclude that this approach can be helpful in identifying attack paths and potential vulnerabilities in automotive systems, thus helping to improve the security of vehicles.\\
 
 F. Sommer et al. further expand on the same model-based approach by using a database of successful vehicular penetration tests \cite{attack_database}.
 The attack path generation process involves using an attack database, which describes vulnerabilities and exploits that can be used, including attack taxonomy and classification, attack steps, requirements, restrictions, components, and interfaces. 
@@ -76,7 +77,7 @@ Several types of privileges that an attacker may seek to gain access to a vehicl
 They note that channels that are not protected by security measures can be immediately accessed by an attacker, but interpretation is needed in other cases. 
 It also mentioned that the attacker needs to reach one of these privileges to access further attached communication systems and components.
 The authors applied their privilege model to real-world automotive security attacks to demonstrate its practical use, in which
-an attacker is connecting to the vehicle via the \acrshort{obd} port, which is connected to the central gateway via \acrshort{can}, and then uses the central gateway to gain access to the internal vehicle network.
+an attacker is connecting to the vehicle via the \acrshort{obd} port, which is connected to the \acrshort{cgw} via \acrshort{can}, and then uses the \acrshort{cgw} to gain access to the internal vehicle network.
 They also showed the automatic generation of attack trees using a model checker in a custom software tool and an application of their privileges in security testing by describing attack paths. 
 In future work, the authors plan to formalize the security testing approach to allow for early testing during development and to evaluate the \acrshort{tara} and security testing approach in a case study.\\
 

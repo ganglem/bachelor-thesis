@@ -3,11 +3,11 @@
 
 To prove that the criteria are properly calibrated and gives desired results, another set of architectures is evaluated.\\
 These architectures were designed with the survey feedback in mind.
-In the following, they are referred to as \textit{Proof Of Concept} architectures.\\
+In the following, they are referred to as \textit{Proof Of Concept architectures}.\\
 The training set architectures sometimes differ immensely from each other to be able to better crystallize the criteria,
 whereas these now are kept relatively similar to each other to ensure the criteria are not biased towards a specific architecture.\\
 Similarly to the test set, this chapter will describe the architectures, estimate the desired results, and evaluate the architectures using the tool.
-The following architectures all use the same building blocks with the same values as described in \ref{chp:arch}.
+The following architectures all use the same building blocks with the same values as described in [\ref{chp:arch}].
 
 \section{Architecture A}
 \label{sec:archa}
@@ -24,8 +24,8 @@ Based on the criteria, this architecture is expected to do the best out of the t
 
 \nameref{fig:architectureB} features three entry points and five interfaces.
 Though the number is lower than that of \nameref{fig:architectureA}, the entry points are more spread out, meaning that the maximum amount of hops is lower.
-The \acrshort{cgw}, however, is not an entry point, and the isolation of \acrshort{ecu}s is better compared to \ref{fig:architectureA}.\\
-This architecture, though offering better isolation, is expected to perform worse than \ref{fig:architectureA} due to the lower amount of hops.
+The \acrshort{cgw}, however, is not an entry point, and the isolation of \acrshort{ecu}s is better compared to \nameref{fig:architectureA}.\\
+This architecture, though offering better isolation, is expected to perform worse than \nameref{fig:architectureA} due to the lower amount of hops.
 
 \section{Architecture C}
 \label{sec:archc}
@@ -44,9 +44,9 @@ similar to \nameref{fig:architectureB}, but still the worst out of the three.
 The results are as follows:
 
 \begin{table}[h]
-    \label{table:survey}
+    \label{table:pocranking}
     \centering
-    \caption{Rank and Architecture}
+    \caption{Test set ranking}
     \begin{tabular}{ |c|c|c| } 
     \hline
     Rank & Architecture & Rating\\
@@ -70,4 +70,4 @@ However, we expected \nameref{fig:architectureB} to perform better than \nameref
 because the \acrshort{cgw} being an entry point in \nameref{fig:architectureC} is the deciding factor for the lower score.\\
 
 Overall, we are satisfied with the results, as our predictions matched the actual results.
-In conclusion, this Proof of Concept confirms that the criteria are properly calibrated and give the desired results.
+In conclusion, this proof of concept confirms that the criteria are properly calibrated and give the desired results.
