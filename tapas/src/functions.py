@@ -179,7 +179,7 @@ def find_attack_path(G: nx.DiGraph, entry_points: list, target_ecus_names: list)
 
         for target_ecu_name in target_ecus_names:
             feasibility = nx.bellman_ford_path_length(G, entry_point_name, target_ecu_name) + entry_point["feasibility"]
-            shortest_path = nx.shortest_path(G, entry_point_name, target_ecu_name)
+            shortest_path = nx.shortest_path(G, entry_point_name, target_ecu_name, method='bellman-ford')
             table["feasibility"][entry_point_name][target_ecu_name] = feasibility
             table["shortest_path"][entry_point_name][target_ecu_name] = shortest_path
             table["hops"][entry_point_name][target_ecu_name] = max(len(shortest_path) - 2, 0)
