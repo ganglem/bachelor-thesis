@@ -166,3 +166,32 @@ def export_to_excel(table: dict, architecture_name: str):
     except Exception as e:
         print(f'An error occurred: {e}')
 
+
+
+def user_input():
+
+    bus_select = []
+    ecu_select = []
+    arch_select = []
+
+    while True:
+
+        usr_in = input("Select the architecture file: ")
+        if usr_in == None:
+            break
+
+        else:
+            arch_select.append(usr_in)
+
+            usr_in = input("Select the ecu configuration file: ")
+            if usr_in == None:
+                print.err("No ecu configuration file selected.")
+                break
+            else:
+                ecu_select.append(usr_in)
+
+            usr_in = input("Select the bus configuration file: ")
+            if usr_in == None:
+                print.err("No bus configuration file selected.")
+            else:
+                bus_select.append(usr_in)

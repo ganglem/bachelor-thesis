@@ -6,10 +6,9 @@ from io_func import *
 
 def main():
 
-    #arch_number = int(input('How many architectures are there gonna be?: >'))
     bus = "..\\buses\\buses.json"
 
-    config = {'..\\graphs\\Architecture1.json': '..\\ecus\\ecus123567.json',
+    config1 = {'..\\graphs\\Architecture1.json': '..\\ecus\\ecus123567.json',
             '..\\graphs\\Architecture2.json': '..\\ecus\\ecus123567.json',
             '..\\graphs\\Architecture3.json': '..\\ecus\\ecus123567.json',
             '..\\graphs\\Architecture4.json': '..\\ecus\\ecus49.json',
@@ -27,11 +26,9 @@ def main():
 
     finals = {}
 
-    for architecture, ecu in config.items():
+    for architecture, ecu in config1.items():
 
         print(architecture)
-        #architecture = input('Select architecture file path: > ')
-        #ecu = input('Select ECU config file path: > ')
 
         architecture_name, architecture, ecus_config, buses_config = parse_files(architecture, ecu, bus)
 

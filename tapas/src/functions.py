@@ -187,12 +187,7 @@ def find_attack_path(G: nx.DiGraph, entry_points: list, target_ecus_names: list)
     return table
 
 
-def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, architecture: dict) -> list:
-    """
-    Take each feasibility and sup it up for one path. then divide that result by the amount of hops.
-    :param table:
-    :return:
-    """
+def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, architecture: dict):
 
     # total architecture feasibility
     architecture_feasibility = 0
@@ -203,16 +198,11 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     # average amount of ecus per bus
     isolation = get_avg_ecus(architecture)
 
-    # amount of external amt_interfaces
-    amt_interfaces, interfaces, avg_interfaces = get_ext_int(architecture)
+    # interfaces
+    amt_interfaces, interfaces, abs_interfaces = get_ext_int(architecture)
 
-    # amount of total attack paths
-    attack_paths = len(entry_points) * len(target_ecus_names)
 
-    # test
-    test_interfaces = avg_interfaces
-
-    print("[DEBUG] NO INTERFACES:", test_interfaces)
+    print("[DEBUG] NO INTERFACES:", abs_interfaces)
 
     cgw_count = 0
 
@@ -220,19 +210,17 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     cgw = 1
     if "CGW" not in architecture:
         cgw -= 0.15
-        print("true1")
+
     for interface in interfaces:
         if cgw_count == 0:
             if "CGW" in interface:
                 cgw -= 0.1
                 cgw_count = 1
-                print("true2")
+
     if "CGW" in target_ecus_names:
         cgw -= 0.05
-        print("true3")
 
     print("[DEBUG] CGW:", cgw)
-    #print("[DEBUG] interfaces:", interfaces)
 
     for entry_ecu in entry_points:
         entry_ecu_name = entry_ecu["name"]
@@ -244,8 +232,6 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 
             total_hops += hops
 
-            #if hops == 1:
-             #   hops = hops * 0.1
             architecture_feasibility += feasibility * hops
 
     # save the original value of architecture_feasibility
@@ -256,73 +242,55 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     feasibilities = []
     weights = []
 
-    #for w1 in range(1, 2):
-        #for w2 in range(1, 10):
-            #for w3 in range(30, 100):
-            # for w4 in range(0, 100, 10):
-
     w1 = 1
     w2 = 4
     w3 = 32
 
     numerator = (100 * (original_architecture_feasibility * cgw))
-    denominator = (total_hops * w1 + (isolation ** w2) + test_interfaces * w3)
+    denominator = (total_hops * w1 + (isolation ** w2) + abs_interfaces * w3)
 
-
-
-    #if denominator < 1:
-        #continue
-    #else:
-        #print(f"NUM: {numerator}, DEN: {denominator}")
     new_architecture_feasibility = round(numerator / denominator, 2)
 
     feasibilities.append(new_architecture_feasibility)
     weights.append([w1, w2, w3])
 
-
-
-
-    # numerator = (100 * original_architecture_feasibility * cgw)
-    # denominator = w1 * 0.1 * total_hops + w2 * 0.1 * isolation + w3 * 0.1 * amt_interfaces + w4 * 0.1 * attack_paths
-
-    # new_architecture_feasibility = numerator / denominator
     print("[DEBUG] TOTAL HOPS:", total_hops)
 
     return feasibilities, weights
 
 
-# verbindungen und interfaces habe ich nicht in der survey berücksichtigt
-# ergebnisse begründen
-
-
 def get_criteria(finals, weights):
     ranking = dict(sorted(finals.items(), key=lambda item: item[1], reverse=True))
 
-    output_file = "./highw3.txt"
+    #output_file = "../data/highw3.txt"
 
-    with open(output_file, 'w') as f:
+    #with open(output_file, 'w') as f:
 
-        survey_ranking = ["Architecture 3", "Architecture 8", "Architecture 6", "Architecture 10", "Architecture 2",
-                          "Architecture 1", "Architecture 5", "Architecture 7", "Architecture 9", "Architecture 4"]
-        num_options = len(finals["Architecture 1"])  # assume all architectures have same number of options
-        dist_cmp = {}
+    survey_ranking = ["Architecture 3", "Architecture 8", "Architecture 6", "Architecture 10", "Architecture 2",
+                      "Architecture 1", "Architecture 5", "Architecture 7", "Architecture 9", "Architecture 4"]
+    num_options = len(finals["Architecture 1"])  # assume all architectures have same number of options
+    dist_cmp = {}
 
-        for i in range(num_options):
+    for i in range(num_options):
 
-            ranked_list_for_distance = []
-            ranked_options = sorted(finals.items(), key=lambda item: item[1][i], reverse=True)
+        ranked_list_for_distance = []
+        ranked_options = sorted(finals.items(), key=lambda item: item[1][i], reverse=True)
 
-            f.write(f"\nRanking for Option {i}\n")
-            f.write(f"Weights: {weights[i]}\n")
+        #f.write(f"\nRanking for Option {i}\n")
+        #f.write(f"Weights: {weights[i]}\n")
+        print(f"\nRanking for Option {i}\n")
+        print(f"Weights: {weights[i]}\n")
 
-            for rank, (architecture, options) in enumerate(ranked_options):
-                f.write(f"{str(rank + 1)}. {architecture}: {options[i]}\n")
-                ranked_list_for_distance.append(architecture)
+        for rank, (architecture, options) in enumerate(ranked_options):
+            #f.write(f"{str(rank + 1)}. {architecture}: {options[i]}\n")
+            print(f"{str(rank + 1)}. {architecture}: {options[i]}\n")
+            ranked_list_for_distance.append(architecture)
 
-            distance = lev.distance(survey_ranking, ranked_list_for_distance)
-            dist_cmp[i] = round(distance, )
+        distance = lev.distance(survey_ranking, ranked_list_for_distance)
+        dist_cmp[i] = round(distance, )
 
-        for key, value in sorted(dist_cmp.items(), key=lambda item: item[1], reverse=True):
-            f.write(f"Option {key}: {value}\n")
+    #for key, value in sorted(dist_cmp.items(), key=lambda item: item[1], reverse=True):
+        #f.write(f"Option {key}: {value}\n")
+        #print(f"Option {key}: {value}\n")
 
-    print(f"Results written to {os.path.abspath(output_file)}")
+    #print(f"Results written to {os.path.abspath(output_file)}")
