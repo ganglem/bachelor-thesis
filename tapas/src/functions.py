@@ -268,7 +268,7 @@ def get_criteria(finals, weights):
 
     survey_ranking = ["Architecture 3", "Architecture 8", "Architecture 6", "Architecture 10", "Architecture 2",
                       "Architecture 1", "Architecture 5", "Architecture 7", "Architecture 9", "Architecture 4"]
-    num_options = len(finals["Architecture 1"])  # assume all architectures have same number of options
+    num_options = len(finals["Architecture A"])  # assume all architectures have same number of options
     dist_cmp = {}
 
     for i in range(num_options):

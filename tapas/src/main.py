@@ -26,7 +26,7 @@ def main():
 
     finals = {}
 
-    for architecture, ecu in config1.items():
+    for architecture, ecu in config2.items():
 
         print(architecture)
 

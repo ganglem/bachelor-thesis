@@ -1,4 +1,4 @@
-\chapter{Data Tables}
+\chapter{Data Tables: Training Set}
 \label{apx:datatables}
 
 \begin{table}[ht]
@@ -228,6 +228,79 @@
         DASH\_UNIT & 3.0 & 1 & 1.3 & 0 & 3.4 & 1 \\
         COMM\_UNIT & 1.3 & 0 & 3.0 & 1 & 3.4 & 1 \\
         CGW & 4.7 & 2 & 4.7 & 2 & 3.4 & 1 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\newpage
+
+\chapter{Data Tables: Proof Of Concept}
+\label{app:proofOfConcept}
+
+\begin{table}[ht]
+    \centering
+    \caption{Architecture A \\ Score: 152.97 \\ Isolation: 2.625 \\ Interfaces: COMM\_UNIT, TEL, PARK, RADIO \\ CGW: 0.8 \\ Total Hops: 81}
+    \label{tab:archA}
+    \begin{tabular}{lcccccc}
+    \hline
+    & \multicolumn{2}{c}{Wifi} & \multicolumn{2}{c}{Bluetooth} & \multicolumn{2}{c}{GNSS} \\
+    & Score & Hops & Score & Hops & Score & Hops \\
+    \hline
+        POWERTRAIN & 6.9 & 4 & 6.9 & 4 & 6.5 & 3 \\
+        ESP & 6.9 & 4 & 6.9 & 4 & 6.5 & 3 \\
+        PARK & 3.4 & 2 & 3.4 & 2 & 1.3 & 0 \\
+        ECM & 8.4 & 5 & 8.4 & 5 & 8.0 & 4 \\
+        COMM\_UNIT & 2.1 & 1 & 2.1 & 1 & 1.7 & 0 \\
+        DASH\_UNIT & 2.3 & 1 & 2.3 & 1 & 3.1 & 1 \\
+        CLS & 7.8 & 5 & 7.8 & 5 & 7.4 & 4 \\
+        CRG & 8.4 & 5 & 8.4 & 5 & 8.0 & 4 \\
+        CGW & 5.1 & 3 & 5.1 & 3 & 4.7 & 2 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \caption{Architecture B \\ Score: 129.2 \\ Isolation: 2.53 \\ Interfaces: COMM\_UNIT, TEL, RADIO \\ CGW: 0.8 \\ Total Hops: 70}
+    \label{tab:archB}
+    \begin{tabular}{lcccccc}
+    \hline
+    & \multicolumn{2}{c}{Wifi} & \multicolumn{2}{c}{Bluetooth} & \multicolumn{2}{c}{GNSS} \\
+    & Score & Hops & Score & Hops & Score & Hops \\
+    \hline
+        POWERTRAIN & 5.4 & 3 & 5.4 & 3 & 6.5 & 3 \\
+        ESP & 5.4 & 3 & 5.4 & 3 & 6.5 & 3 \\
+        PARK & 5.0 & 3 & 5.0 & 3 & 6.1 & 3 \\
+        ECM & 6.9 & 4 & 6.9 & 4 & 8.0 & 4 \\
+        COMM\_UNIT & 2.1 & 1 & 2.1 & 1 & 1.7 & 0 \\
+        DASH\_UNIT & 2.3 & 1 & 2.3 & 1 & 3.4 & 1 \\
+        CLS & 3.3 & 2 & 3.3 & 2 & 5.8 & 4 \\
+        CRG & 6.9 & 4 & 6.9 & 4 & 8.0 & 4 \\
+        CGW & 3.6 & 2 & 3.6 & 2 & 4.7 & 2 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \caption{Architecture C \\ Score: 124.66 \\ Isolation: 2.37 \\ Interfaces: TELEMATIC, CGW, PARK \\ CGW: 0.7 \\ Total Hops: 55}
+    \label{tab:archC}
+    \begin{tabular}{lcccccc}
+    \hline
+    & \multicolumn{2}{c}{Wifi} & \multicolumn{2}{c}{Bluetooth} & \multicolumn{2}{c}{GNSS} \\
+    & Score & Hops & Score & Hops & Score & Hops \\
+    \hline
+        POWERTRAIN & 3.1 & 1 & 4.4 & 2 & 3.1 & 1 \\
+        ESP & 4.9 & 2 & 6.2 & 3 & 3.1 & 1 \\
+        PARK & 4.5 & 2 & 5.8 & 3 & 1.3 & 0 \\
+        ECM & 4.6 & 2 & 5.9 & 3 & 4.6 & 2 \\
+        COMM\_UNIT & 4.3 & 2 & 2.6 & 1 & 7.9 & 4 \\
+        DASH\_UNIT & 4.3 & 2 & 2.6 & 1 & 7.9 & 4 \\
+        CLS & 4.0 & 2 & 5.3 & 3 & 7.6 & 4 \\
+        CRG & 4.6 & 2 & 5.9 & 3 & 4.6 & 2 \\
+        CGW & 1.3 & 0 & 2.6 & 1 & 4.9 & 2 \\
     \hline
     \end{tabular}
 \end{table}

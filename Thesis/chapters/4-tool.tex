@@ -93,7 +93,6 @@ as a bus and \acrshort{ecu} conntected to the internal \acrshort{ecu}s using suc
 \newpage
 
 \begin{algorithm}[h]
-    \caption{Generate Graph}
     \label{alg:generate_graph}
     \begin{algorithmic}[1]
     \Procedure{generate\_graph}{$architecture, ecus\_config, buses\_config$}
@@ -124,6 +123,7 @@ as a bus and \acrshort{ecu} conntected to the internal \acrshort{ecu}s using suc
         \State $target\_ecus \gets$ \Call{Set}{$target\_ecus$}
         \State \Return $G, entry\_points, target\_ecus$
     \EndProcedure
+    \caption{Generate Graph}
     \end{algorithmic}
 \end{algorithm}
 
@@ -137,7 +137,6 @@ various entry points and target \acrshort{ecu}s in the system's architecture.
 It uses the Bellman-Ford algorithm (\ref{alg:bellmanford}) to compute the most feasible attack path between two \acrshort{ecu}s.\\
 
 \begin{algorithm}[h]
-    \caption{Find Attack Path}
     \label{alg:findattackpath}
     \begin{algorithmic}[1]
     \Procedure{FindAttackPath}{$G, entry\_points, target\_ecus\_names$}
@@ -161,6 +160,7 @@ It uses the Bellman-Ford algorithm (\ref{alg:bellmanford}) to compute the most f
         \EndFor
         \State \Return $table$
     \EndProcedure
+    \caption{Find Attack Path}
     \end{algorithmic}
 \end{algorithm}
     
@@ -190,7 +190,7 @@ It is very similar to the Dijkstra algorithm, however, it can work with negative
 Both algorithms are possible solutions to the our problem, but we chose the Bellman-Ford algorithm because it was mentioned in \cite{threat_surf}.
 
 \begin{algorithm}[h]
-    \caption{Bellman-Ford Algorithm}
+    
     \label{alg:bellmanford}
     \begin{algorithmic}[1]
     \Procedure{BellmanFord}{$Graph, source, target$}
@@ -216,5 +216,6 @@ Both algorithms are possible solutions to the our problem, but we chose the Bell
         \EndFor
         \State \Return $distance, predecessor$
     \EndProcedure
+    \caption{Bellman-Ford Algorithm}
     \end{algorithmic}
 \end{algorithm}
