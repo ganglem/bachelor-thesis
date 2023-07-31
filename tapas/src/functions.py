@@ -1,5 +1,5 @@
 import networkx as nx
-#import Levenshtein as lev
+import Levenshtein as lev
 
 
 def generate_graph(architecture, ecus_config, buses_config):
@@ -169,7 +169,7 @@ def find_attack_path(G: nx.DiGraph, entry_points: list, target_ecus_names: list)
     table = {"feasibility": {}, "shortest_path": {}, "hops": {}}
 
     for entry_point in entry_points:
-        entry_point_name = entry_point["name"]
+        entry_point_name = get_attribute(entry_point, "name")
         table["feasibility"][entry_point_name] = {}
         table["shortest_path"][entry_point_name] = {}
         table["hops"][entry_point_name] = {}
@@ -246,14 +246,12 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
     numerator = (100 * (original_architecture_feasibility * cgw))
     denominator = (total_hops * w1 + (isolation ** w2) + abs_interfaces * w3)
 
-    new_architecture_feasibility = round(numerator / denominator, 2)
-
-    feasibilities.append(new_architecture_feasibility)
-    weights.append([w1, w2, w3])
+    total_architecture_feasibility = round(numerator / denominator, 2)
 
     print("[DEBUG] TOTAL HOPS:", total_hops)
 
-    return feasibilities
+    print("\nTOTAL ARCHITECTURE EVALUATION:", total_architecture_feasibility)
+    return total_architecture_feasibility
 
 
 def get_criteria(finals, weights):
