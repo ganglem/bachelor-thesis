@@ -1,16 +1,12 @@
 import glob
 import json
 import os
+from tkinter.filedialog import askopenfilename
 from typing import Tuple
 
 import networkx as nx
 import pandas as pd
 from matplotlib import pyplot as plt
-
-from src.functions import apply_criteria
-
-from tkinter.filedialog import askopenfilename
-
 
 
 def print_tapas():
@@ -21,7 +17,7 @@ def print_tapas():
           "                      ║║ ║╔═╗║╔══╣╔═╗╠══╗║\n"
           "                      ║║ ║║ ║║║  ║║ ║║╚═╝║\n"
           "                      ╚╝ ╚╝ ╚╩╝  ╚╝ ╚╩═══╝\n"
-          "Tool for Automatic Path Analysis in Automotive Architectures\n")
+          "Tool for Automatic Attack Path Analysis in Automotive Architectures\n")
 
 
 def parse_files(architecture_file: str, ecu_file: str, bus_file: str) -> Tuple[str, dict, dict, dict]:
@@ -97,33 +93,6 @@ def load_json(file_name: str) -> dict:
         raise ValueError(f'Error decoding JSON file {file_name} : {e}')
 
 
-def print_table(table: dict, architecture_name: str):
-    """
-    prints the feasibility table and shortest path table of dictionary of tables and the architecture name.
-
-    Args:
-        table (dict): The dictionary containing the feasibility and shortest path tables
-        architecture_name (str): The name of the architecture
-    """
-    try:
-        string = "Architecture: "+architecture_name
-        print("\n"+string)
-
-        feasibility_table = table["feasibility"]
-        path_table = table["shortest_path"]
-        hops_table = table["hops"]
-
-        print(pd.DataFrame.from_dict(feasibility_table, orient = "index").sort_index().T)
-
-        for entry in path_table:
-            for target in path_table[entry]:
-                print(entry, "->", target, ": [" + str(hops_table[entry][target]) , "hop(s)]" , str(path_table[entry][target][1:]))
-    except KeyError as e:
-        print(f'KeyError: {e}')
-    except Exception as e:
-        print(f'An error occurred: {e}')
-
-
 def save_graph(G: nx.DiGraph):
     """
     Saves directed graph `G` and as a png image.
@@ -137,41 +106,100 @@ def save_graph(G: nx.DiGraph):
         nx.draw(G, ax = f.add_subplot(), with_labels = True, node_size = 200, node_color = "skyblue", node_shape = "s")
         f.savefig("graph.png")
     except Exception as e:
-        print(f'An error occurred: {e}')
+        raise f'An error occurred: {e}'
 
 
-def export_to_excel(table: dict, architecture_name: str):
+def process_tables(table: dict):
     """
-    Exports the feasibility table, shortest path table, and total sum of feasibilitys to an excel file in the "results" directory.
+    Processes the feasibility table, shortest path table, and hops table.
 
     Args:
-        table (dict): The dictionary containing the feasibility and shortest path tables
-        architecture_name (str): The name of the architecture and the file name
+        table (dict): The dictionary containing the feasibility, shortest path, and hops tables
 
+    Returns:
+        (pd.DataFrame, pd.DataFrame, pd.DataFrame): A tuple of DataFrames for feasibility, shortest path, and hops tables
+    """
+    feasibility_table = table["feasibility"]
+    path_table = table["shortest_path"]
+    hops_table = table["hops"]
+
+    feasibility_df = pd.DataFrame.from_dict(feasibility_table, orient="index").sort_index().T
+    path_df = pd.DataFrame.from_dict(path_table, orient="index").sort_index().T
+    hops_df = pd.DataFrame.from_dict(hops_table, orient="index").sort_index().T
+
+    return feasibility_df, path_df, hops_df
+
+
+def print_table(table: dict, architecture_name: str):
+    """
+    Prints the feasibility table and shortest path table of a dictionary of tables and the architecture name.
+
+    Args:
+        table (dict): The dictionary containing the feasibility, shortest path, and hops tables
+        architecture_name (str): The name of the architecture
     """
     try:
-        feasibility_table = table["feasibility"]
-        path_table = table["shortest_path"]
+        string = "Architecture: " + architecture_name
+        print("\n" + string)
 
-        os.makedirs("../results", exist_ok = True)
-        with pd.ExcelWriter(f'../results/{architecture_name}.xlsx') as writer:
-            feasibility_df = pd.DataFrame.from_dict(feasibility_table, orient = "index").sort_index().T
-            feasibility_df.to_excel(writer, sheet_name = 'feasibility', index = True)
+        feasibility_df, path_df, hops_df = process_tables(table)
 
-            path_df = pd.DataFrame.from_dict(path_table, orient = "index").sort_index().T
-            path_df.to_excel(writer, sheet_name = 'Shortest Path', index = True)
+        print(feasibility_df)
 
-            total = apply_criteria(table)
-            total_df = pd.DataFrame({'Total': [total]})
-            total_df.to_excel(writer, sheet_name = 'Total', index = True)
+        for entry in path_df.columns:
+            for target in path_df.index:
+                hops = hops_df.loc[target, entry]
+                path = path_df.loc[target, entry][1:]
+                if not pd.isna(hops):
+                    print(entry, "->", target, f": [{hops} hop(s)]", path)
+
+    except KeyError as e:
+        raise KeyError(f'KeyError: {e}')
+
+    except Exception as e:
+        raise Exception(f'An error occurred: {e}')
+
+
+def export_to_excel(table: dict, architecture_name: str, total_evaluation: float):
+    """
+    Exports the feasibility table, shortest path table, and hops table to an Excel file in the "results" directory.
+
+    Args:
+        table (dict): The dictionary containing the feasibility, shortest path, and hops tables
+        architecture_name (str): The name of the architecture and the file name
+    """
+
+    try:
+        feasibility_df, path_df, hops_df = process_tables(table)
+
+        metadata = {"ARCHITECTURE NAME": architecture_name, "TOTAL EVALUATION": total_evaluation}
+        metadata_df = pd.DataFrame.from_dict(metadata, orient="index").sort_index().T
+
+        os.makedirs("results", exist_ok=True)
+        with pd.ExcelWriter(f'results/{architecture_name}.xlsx') as writer:
+
+            print("Exporting to Excel...")
+
+            metadata_df.to_excel(writer, sheet_name='Metadata', index=False)
+            feasibility_df.to_excel(writer, sheet_name='Feasibility Table', index=True)
+            path_df.to_excel(writer, sheet_name='Shortest Path', index=True)
+            hops_df.to_excel(writer, sheet_name='Hops', index=True)
+
+            print("Exported to Excel successfully!")
+
     except KeyError as e:
         print(f'KeyError: {e}')
     except Exception as e:
         print(f'An error occurred: {e}')
 
 
-
 def file_select():
+    """
+    This function opens a file dialog and returns the selected files
+
+    Returns:
+        A tuple containing the architecture, ecu and bus file names
+    """
 
     arch_in = askopenfilename(filetypes = [("JSON files", "*.json")], title = "Select the architecture file")
     print("[INFO]", arch_in)
