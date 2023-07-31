@@ -1,8 +1,5 @@
 import networkx as nx
-
-import Levenshtein as lev
-
-import os
+#import Levenshtein as lev
 
 
 def generate_graph(architecture, ecus_config, buses_config):
@@ -256,7 +253,7 @@ def apply_criteria(entry_points: list, target_ecus_names: list, table: dict, arc
 
     print("[DEBUG] TOTAL HOPS:", total_hops)
 
-    return feasibilities, weights
+    return feasibilities
 
 
 def get_criteria(finals, weights):

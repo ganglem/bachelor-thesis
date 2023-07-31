@@ -9,6 +9,9 @@ from matplotlib import pyplot as plt
 
 from src.functions import apply_criteria
 
+from tkinter.filedialog import askopenfilename
+
+
 
 def print_tapas():
     print("                         Welcome to\n"
@@ -168,30 +171,15 @@ def export_to_excel(table: dict, architecture_name: str):
 
 
 
-def user_input():
+def file_select():
 
-    bus_select = []
-    ecu_select = []
-    arch_select = []
+    arch_in = askopenfilename(filetypes = [("JSON files", "*.json")], title = "Select the architecture file")
+    print("[INFO]", arch_in)
 
-    while True:
+    ecu_in = askopenfilename(filetypes = [("JSON files", "*.json")], title = "Select the ecu file")
+    print("[INFO]", ecu_in)
 
-        usr_in = input("Select the architecture file: ")
-        if usr_in == None:
-            break
+    bus_in = askopenfilename(filetypes = [("JSON files", "*.json")], title = "Select the bus file")
+    print("[INFO]", bus_in)
 
-        else:
-            arch_select.append(usr_in)
-
-            usr_in = input("Select the ecu configuration file: ")
-            if usr_in == None:
-                print.err("No ecu configuration file selected.")
-                break
-            else:
-                ecu_select.append(usr_in)
-
-            usr_in = input("Select the bus configuration file: ")
-            if usr_in == None:
-                print.err("No bus configuration file selected.")
-            else:
-                bus_select.append(usr_in)
+    return arch_in, ecu_in, bus_in
